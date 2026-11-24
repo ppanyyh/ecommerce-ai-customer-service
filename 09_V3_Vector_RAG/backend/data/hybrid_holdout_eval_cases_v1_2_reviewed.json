@@ -1,0 +1,369 @@
+{
+  "meta": {
+    "name": "V3.0 混合检索留出测试集（代码冻结后创建，评测后不得修改）",
+    "version": "1.2",
+    "created_at": "2026-09-25",
+    "case_counts": {
+      "product_rewrite": 5,
+      "faq_colloquial": 8,
+      "rule_risk": 6,
+      "multi_intent": 5,
+      "ecommerce_no_policy": 3,
+      "irrelevant": 3
+    },
+    "rules": "30条全新用例（24可回答+6不可回答），未复制20条开发集问题与知识片段标题；使用新口语/错别字式近义/不同语序；relevant_chunk_ids 与 required_rule_ids 依据原始资料人工指定；不可回答问题 is_answerable=false；冻结依据见 hybrid_code_freeze_manifest.json；禁止把本文件问题写回知识片段/关键词/aliases。",
+    "category_design": "可回答24条分类：product(6, 含编号+属性混淆H-023)、faq(8)、rule(6)、multi(4, 多意图/编号+属性)；answerable=24, unanswerable=6",
+    "note_holdout_sha256": "本文件创建后的SHA-256由评测与泄漏检查脚本运行时计算并记录于 retrieval_mode_comparison.json，创建后不得再修改本文件。",
+    "validation_set_label": "validation_set_v1",
+    "validation_note": "本集合已参与 v2 失败诊断与调试，正式标记为 validation_set_v1：可用于算法调试，不再作为最终无偏测试集；检索算法定稿后必须重新创建全新 final blind set。",
+    "annotation_revision": [
+      {
+        "case_id": "H-009",
+        "revised_at": "2026-09-25",
+        "change": "relevant_chunk_ids 由 [FAQ-005] 扩展为 [FAQ-005, PRODUCT-P004]",
+        "reason": "人工复核：P004 商品片段（CityPack 通勤双肩包）与其 FAQ-005（双肩包防水注意事项）来自同一商品资料，对问题（下雨天背包内笔记本电脑是否被淋湿）均能完整回答；原标注仅含 FAQ-005，属标注过窄，不是为通过而删除失败案例。",
+        "original_relevant_chunk_ids": [
+          "FAQ-005"
+        ],
+        "query_unchanged": true,
+        "note": "除本条相关性扩展外，其余29条用例的 query/预期/标记一律未改。"
+      },
+      {
+        "case_id": "H-020",
+        "revised_at": "2026-09-25",
+        "revision_round": "v1.2（V3.1 第一阶段调修）",
+        "change": "relevant_chunk_ids 由 [FAQ-015, FAQ-017] 扩展为 [FAQ-015, FAQ-017, FAQ-013]",
+        "reason": "人工复核：FAQ-013（七天无理由退货条件：商品保持完好且不属于排除范围可申请、最终需人工审核）对问题第一子问（拆封用过还能不能退）给出实质性部分回答，且在关键词（'想退'/'退回'等多关键词合法命中）与向量两路均为最高分匹配；原标注仅含 FAQ-015/017 属标注过窄，不是为通过而扩标注（query 未改，扩注依据为片段内容与问题的实质对应关系）。",
+        "query_unchanged": true
+      }
+    ],
+    "evaluation_status": "annotation-corrected exploratory evaluation：H-020 的 relevant_chunk_ids 修订（+FAQ-013，部分相关性）发生在看到检索结果之后，本版本结果仅作探索性参考，不参与最终盲测成绩；H-013（发票）保持原始标注不变，其在新业务口径下的偏差作为 V3.1 有意进行的业务语义变更单独报告，不改标注。",
+    "note_v1_1_preserved": "原始 v1.1 标注经 original_relevant_chunk_ids_h020 恢复至 hybrid_holdout_eval_cases_v1_1_frozen.json（冻结不可修改）。"
+  },
+  "cases": [
+    {
+      "case_id": "H-001",
+      "category": "product",
+      "query": "那款无线的耳机，连续听歌一次能撑多久？",
+      "relevant_chunk_ids": [
+        "PRODUCT-P001"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-002",
+      "category": "product",
+      "query": "敲起来很清脆的那个键盘，是红轴吗？能插线直接连电脑不？",
+      "relevant_chunk_ids": [
+        "PRODUCT-P002"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-003",
+      "category": "product",
+      "query": "你们那个钢内胆的杯子，内层是不是304的？能倒多少水进去？",
+      "relevant_chunk_ids": [
+        "PRODUCT-P003"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-004",
+      "category": "product",
+      "query": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+      "relevant_chunk_ids": [
+        "PRODUCT-P004"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-005",
+      "category": "product",
+      "query": "写字台上那盏灯是插电用的还是自带电池？能定个时候自动关吗？",
+      "relevant_chunk_ids": [
+        "PRODUCT-P005"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-006",
+      "category": "faq",
+      "query": "戴着耳机冲个淋浴，应该没什么事吧？",
+      "relevant_chunk_ids": [
+        "FAQ-002"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-007",
+      "category": "faq",
+      "query": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+      "relevant_chunk_ids": [
+        "FAQ-003"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-008",
+      "category": "faq",
+      "query": "把可乐倒进那个保温杯里带着走，会不会炸开？",
+      "relevant_chunk_ids": [
+        "FAQ-004"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-009",
+      "category": "faq",
+      "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+      "relevant_chunk_ids": [
+        "FAQ-005",
+        "PRODUCT-P004"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true,
+      "annotation_note": "v1.1 人工复核扩展：P004 与 FAQ-005 同源均可回答（见 meta.annotation_revision）"
+    },
+    {
+      "case_id": "H-010",
+      "category": "faq",
+      "query": "快递明明显示送到了，可我手上根本没见着包裹，这找谁？",
+      "relevant_chunk_ids": [
+        "FAQ-012"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-011",
+      "category": "faq",
+      "query": "东西还没发出来，我想换个地方收货，还来得及改吗？",
+      "relevant_chunk_ids": [
+        "FAQ-011"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-012",
+      "category": "faq",
+      "query": "明明已经扣过钱了，订单里怎么还让我再付一遍？",
+      "relevant_chunk_ids": [
+        "FAQ-007"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-013",
+      "category": "faq",
+      "query": "公司报销需要票据，你们这边能给开票吗？",
+      "relevant_chunk_ids": [
+        "FAQ-018"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-014",
+      "category": "rule",
+      "query": "再不给我解决，我就去消协举报你们这家店！",
+      "relevant_chunk_ids": [
+        "FAQ-020",
+        "RULE-HR-01"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-01"
+      ],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-015",
+      "category": "rule",
+      "query": "银行卡明明被你们扣了两笔钱，多扣的那笔必须退回来！",
+      "relevant_chunk_ids": [
+        "FAQ-007",
+        "RULE-HR-02"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-02"
+      ],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-016",
+      "category": "rule",
+      "query": "退款拖了一个礼拜还没影，现在马上给我退！",
+      "relevant_chunk_ids": [
+        "FAQ-016",
+        "RULE-HR-03"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-03"
+      ],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-017",
+      "category": "rule",
+      "query": "包裹停在半路三天没动静了，到底还送不送了？",
+      "relevant_chunk_ids": [
+        "FAQ-010",
+        "RULE-HR-04"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-04"
+      ],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-018",
+      "category": "rule",
+      "query": "这是我给室友代买的东西，你帮我看看他那边的单子到哪一步了。",
+      "relevant_chunk_ids": [
+        "FAQ-006",
+        "RULE-HR-05"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-05"
+      ],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-019",
+      "category": "rule",
+      "query": "耳机用了没几天，右边就没声音了，这属于质量问题吧？",
+      "relevant_chunk_ids": [
+        "FAQ-014",
+        "RULE-HR-08"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-020",
+      "category": "multi",
+      "query": "耳机想退，但我已经拆开用过一次了还能退不？退回去的运费算谁的？",
+      "relevant_chunk_ids": [
+        "FAQ-015",
+        "FAQ-017",
+        "FAQ-013"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true,
+      "original_relevant_chunk_ids_h020": [
+        "FAQ-015",
+        "FAQ-017"
+      ],
+      "annotation_note": "v1.2 人工复核扩展：FAQ-013（七天无理由退货条件）对第一子问（拆封使用后还能否退）给出实质性部分回答，见 meta.annotation_revision"
+    },
+    {
+      "case_id": "H-021",
+      "category": "multi",
+      "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+      "relevant_chunk_ids": [
+        "FAQ-014",
+        "FAQ-016",
+        "RULE-HR-08"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-022",
+      "category": "multi",
+      "query": "我要投诉你们发假货，顺便把我这单给退了。",
+      "relevant_chunk_ids": [
+        "FAQ-020",
+        "FAQ-013"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-01"
+      ],
+      "is_answerable": true
+    },
+    {
+      "case_id": "H-023",
+      "category": "product",
+      "query": "你们这个灯是不是不用插电也能亮？",
+      "relevant_chunk_ids": [
+        "PRODUCT-P005"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true,
+      "note": "属性混淆：P005注意事项明确不含充电电池、需连接电源"
+    },
+    {
+      "case_id": "H-024",
+      "category": "multi",
+      "query": "P003这个型号的杯子，可以直接放进洗碗机里清洗吗？",
+      "relevant_chunk_ids": [
+        "PRODUCT-P003"
+      ],
+      "required_rule_ids": [],
+      "is_answerable": true,
+      "note": "编号+属性混合查询，用于对比 hybrid 与 keyword 在编号查询上的表现"
+    },
+    {
+      "case_id": "H-025",
+      "category": "no_policy",
+      "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "is_answerable": false
+    },
+    {
+      "case_id": "H-026",
+      "category": "no_policy",
+      "query": "我是学生党没什么钱，能不能再给我打个折？",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "is_answerable": false
+    },
+    {
+      "case_id": "H-027",
+      "category": "no_policy",
+      "query": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "is_answerable": false
+    },
+    {
+      "case_id": "H-028",
+      "category": "irrelevant",
+      "query": "帮我写一首关于春天的短诗呗。",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "is_answerable": false
+    },
+    {
+      "case_id": "H-029",
+      "category": "irrelevant",
+      "query": "下一届世界杯在哪个国家举办来着？",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "is_answerable": false
+    },
+    {
+      "case_id": "H-030",
+      "category": "irrelevant",
+      "query": "有没有好用的学英语手机App推荐几个？",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "is_answerable": false
+    }
+  ]
+}

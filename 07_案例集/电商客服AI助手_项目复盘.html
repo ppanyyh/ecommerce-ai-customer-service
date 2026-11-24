@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>电商客服AI助手_项目复盘</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Microsoft YaHei',sans-serif; }
+  body { width:210mm; min-height:297mm; padding:9mm 11mm; color:#1A2333; font-size:8.4pt; line-height:1.34; background:#fff; }
+  .hd { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid #2563EB; padding-bottom:6px; margin-bottom:8px; }
+  .hd h1 { font-size:15pt; color:#2563EB; }
+  .hd .sub { font-size:8pt; color:#64748B; text-align:right; line-height:1.5; }
+  h2 { font-size:9.5pt; color:#2563EB; margin:5px 0 3px; }
+  h2::before { content:'▍'; margin-right:2px; }
+  p, li { font-size:8.4pt; }
+  ul { padding-left:14px; }
+  li { margin-bottom:1px; }
+  .grid { display:flex; gap:8px; }
+  .col { flex:1; }
+  .tag { display:inline-block; background:#EFF4FF; color:#2563EB; border-radius:3px; padding:0 5px; font-size:8pt; margin:1px 2px 1px 0; }
+  table { width:100%; border-collapse:collapse; font-size:7.8pt; margin-top:2px; }
+  th { background:#EFF4FF; color:#2563EB; padding:2px 4px; border:0.5pt solid #C7D6F5; text-align:left; }
+  td { padding:2px 4px; border:0.5pt solid #C7D6F5; vertical-align:top; }
+  .note { background:#F4F7FE; border-left:3px solid #2563EB; padding:3px 8px; margin-top:3px; font-size:7.6pt; color:#475569; }
+  .foot { margin-top:5px; border-top:0.5pt solid #C7D6F5; padding-top:4px; font-size:7.5pt; color:#94A3B8; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+  <div class="hd">
+    <h1>电商客服AI助手 · 项目复盘</h1>
+    <div class="sub">个人作品集项目 · Demo v1.2 · 全部为模拟数据<br>角色：产品规划 / 知识整理 / Prompt设计 / 原型与测试 · 工具：WorkBuddy · Axure RP 11 · WPS</div>
+  </div>
+
+  <h2>一、项目目标</h2>
+  <p>针对电商客服中商品、物流、售后问题重复回答、人工检索资料慢、回答口径不一致的痛点，基于商品资料、客服FAQ、售后SOP与模拟订单四类业务资料，制作一个可本地运行的客服能力验证Demo：按统一口径生成带依据的建议回复，自动分类问题、识别风险，并在投诉赔偿、金额争议、隐私请求等高风险场景及时转人工。项目定位为个人作品集与能力验证，不接入真实系统。</p>
+
+  <h2>二、实际完成内容</h2>
+  <div class="grid">
+    <div class="col">
+      <ul>
+        <li><b>需求与设计：</b>1份需求分析；1份3~5页正式PRD（V1.0，12章节）；1张标准业务流程图</li>
+        <li><b>知识整理：</b>5款商品、20条FAQ（5类）、3笔模拟订单（15字段）、售后SOP转人工规则的结构化整理，并完成资料一致性检查</li>
+        <li><b>原型与实现：</b>5个Axure关键页面状态；1个可运行的HTML/CSS/JS网页Demo（三栏布局，WorkBuddy辅助开发）</li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul>
+        <li><b>测试与迭代：</b>25条正式测试用例（15字段记录）；两轮测试、问题清单与回归记录</li>
+        <li><b>核心能力：</b>问题五分类、风险三级独立判断、有依据才回答、未知订单不编造、高风险必转人工</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>三、第一轮测试问题（25条：20通过 / 4部分通过 / 1不通过，严格通过率80%）</h2>
+  <table>
+    <tr><th style="width:33%;">问题</th><th style="width:33%;">问题</th><th>问题</th></tr>
+    <tr>
+      <td>口语化投诉表达（如"太坑了""找315"）漏识别，答非所问且未转人工（P1，唯一不通过项）</td>
+      <td>一句话问多个商品属性时回答不完整；物流超24小时未更新未判定转人工（P1）</td>
+      <td>"拆封退货"误匹配泛化FAQ；不完整订单号无针对性提示；金额争议复用通用投诉话术（P2）</td>
+    </tr>
+  </table>
+
+  <h2>四、第二轮修复结果（25条全部通过，严格通过率100%，P0/P1/P2遗留均为0）</h2>
+  <p>建立可维护的风险关键词集合与金额争议专用回复；多属性问题按属性逐项作答并标注未覆盖项；物流停滞命中即中风险转人工；专用FAQ优先匹配；6~11位订单号提示补全12位；空输入用例经浏览器实测复核。<b>说明：100%仅代表现有25条预设用例全部通过，不代表覆盖所有真实用户表达。</b></p>
+
+  <h2>五、做得较好的地方</h2>
+  <ul>
+    <li><b>先知识、后实现：</b>先完成知识整理与资料一致性检查、明确回答边界，再开发Demo，数据层质量直接决定回答质量，返工极少；</li>
+    <li><b>分类与风险解耦：</b>问题分类（5类）与风险判断（低/中/高）拆成独立维度，避免了"订单类=高风险"的粗粒度误判；</li>
+    <li><b>测试验证的不只是答案：</b>每条用例同时校验分类、依据出处、风险与转人工判断，暴露了纯内容测试发现不了的口径问题；</li>
+    <li><b>边界设计完整：</b>资料未覆盖、未知订单、隐私请求均有一致处理策略，Demo全程未编造任何政策或数据。</li>
+  </ul>
+
+  <h2>六、可以改进的地方</h2>
+  <ul>
+    <li>规则匹配的语义泛化能力有限：口语化、模糊表达需要持续维护关键词集合，成本会随表达多样性上升；</li>
+    <li>测试用例由资料推导而来，覆盖度依赖设计者经验，缺少真实用户表达的随机样本；</li>
+    <li>当前无多轮上下文与效果度量，问题漏识别主要依赖测试发现，缺少线上化的反馈闭环；</li>
+    <li>工程实现使用关键词+规则检索，距离可对话的生产形态还有距离，应尽早验证大模型方案。</li>
+  </ul>
+
+  <h2>七、后续业务指标设计（上线后观察指标方案，当前无真实数据）</h2>
+  <table>
+    <tr><th style="width:22%;">指标</th><th style="width:44%;">定义</th><th>用途</th></tr>
+    <tr><td>自助解决率</td><td>未转人工且用户未再次追问的问题占比</td><td>衡量AI整体承接能力</td></tr>
+    <tr><td>有依据回答率</td><td>回答中标注了明确信息依据的比例</td><td>衡量知识库覆盖与引用质量</td></tr>
+    <tr><td>风险问题转人工召回率</td><td>应转人工问题中被正确识别并转出的比例</td><td>核心安全指标，要求优先达标</td></tr>
+    <tr><td>错误回答率</td><td>回答与资料不符或编造的比例</td><td>衡量回答可信度，越低越好</td></tr>
+    <tr><td>平均处理时长</td><td>从用户提问到问题解决的平均时间</td><td>对比人工基线的效率收益</td></tr>
+    <tr><td>用户反馈率</td><td>点击"有帮助/无帮助"的比例及无帮助占比</td><td>定位低质量回答场景</td></tr>
+    <tr><td>客服满意度</td><td>人工客服接手后用户评价</td><td>衡量转人工衔接质量</td></tr>
+  </table>
+  <div class="note">真实性边界：本项目为个人作品集与能力验证Demo，未正式上线、未服务真实用户、未接入真实订单/支付/物流系统、未使用真实企业数据、未实现大模型RAG；网页Demo由WorkBuddy辅助完成；上述指标仅为后续设计，不代表已取得的业务结果。</div>
+
+  <div class="foot"><span>电商客服AI助手 · 项目复盘</span><span>第 1 页 / 共 1 页</span></div>
+</body>
+</html>

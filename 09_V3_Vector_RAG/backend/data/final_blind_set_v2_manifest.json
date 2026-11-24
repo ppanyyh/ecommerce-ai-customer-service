@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-09-25T18:48:36",
+  "name": "final blind set v2 冻结清单（候选冻结，等待一次性评测指令）",
+  "status": "frozen_pending_one_time_evaluation",
+  "files_sha256": {
+    "data/final_blind_set_v2.json": "06bf27e4eb50a3cf5921f82a1b0306a53f3cc1b53fa815b1eb5d3786f3ed18b5",
+    "data/final_blind_set_v2_label_review.md": "f1d056326506d4cb635f1959e6fa25f8f4d3f43191bc1c516590ba0da6e926b7",
+    "data/final_blind_v2_query_blacklist.json": "e2a4f78e518a1123c0b051c6764d0ff4ca5a1c795a42f921b0fa2b6cb16a391a",
+    "data/final_blind_set_v2_review_checklist.md": "baed1f571e9564fb7e6de829ffb9249b24eea28c03591208c36291be8b51f00c"
+  },
+  "v3_1_runtime_freeze_manifest_sha256": "b6f867838775a0b65f1a69131a76c9157318631c4d6bd367c6ab80466c8721ab",
+  "runtime_candidate_files_sha256": {
+    "main.py": "42dfd185697ddd1667037e7b1e83141bb5bd8aef5f9cab25d6b04dcf6d8bb967",
+    "schemas.py": "b52c293ac31f2ca8fc90e08d02b3d141fa7034cb4b67771ce489eea3499216f8",
+    "prompts.py": "3e170b796feda8c6e16f0b08ad0cb5abf91e3974daed54a0e55592e2a9df476b",
+    "v3_retrieval_adapter.py": "c50ac5b37da9c19bfc4ea0a787ad91c282fc044ce87ac231e41265dde8cba035",
+    "retriever.py": "6023270bbe38716b9cc339fb7ef64aa2820297a43f6718e81ebc4c05c1a9c794",
+    "query_analyzer.py": "ef3e9028b5257cc2234aa9e20dbf80d0546fd039deb2b4546d68751539af8c20",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "52eac3d8142e69efc8436e471e408369696f2b07d76e161fa11518d6c4975abd",
+    "deepseek_client.py": "a5c7597edf7d04ba9c01759a3e31561c8917e42d3ef5465a06ce187e9b512ecd",
+    "build_vector_index.py": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8",
+    "data/knowledge_chunks.jsonl": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+    "data/index_manifest.json": "cc0da3fe74433c1a8a782a9165e71806b2ddbd3a4744537f57cdf8a1c4c44602"
+  },
+  "runtime_candidate_files_match_baseline": true,
+  "counts": {
+    "total": 70,
+    "by_layer": {
+      "retrieval_scope_order": 60,
+      "api_contract": 10
+    },
+    "by_category_A": {
+      "product": 8,
+      "faq": 10,
+      "rule": 10,
+      "multi": 8,
+      "order": 6,
+      "unsupported_business": 10,
+      "irrelevant": 8
+    },
+    "by_difficulty": {
+      "easy": 14,
+      "medium": 32,
+      "hard": 24
+    },
+    "by_scope": {
+      "supported": 48,
+      "unsupported_business": 11,
+      "irrelevant": 11
+    },
+    "multi_answer_cases": 17,
+    "risk_rule_cases": 17,
+    "quality_defect_cases": 8,
+    "order_cases": 6
+  },
+  "leakage_check": {
+    "script": "backend/check_final_blind_set_v2.py",
+    "result": "16/16 通过",
+    "blacklist_unique_queries": 382,
+    "exact_duplicates": 0,
+    "near_duplicates": 0
+  },
+  "manual_review": {
+    "checklist": "backend/data/final_blind_set_v2_review_checklist.md",
+    "sampled": 23,
+    "required": 20,
+    "conclusion": "23条抽查全部通过（自然度/独立性/资料可支持性/scope/风险要求），无回改条目"
+  },
+  "retrieval_executed": false,
+  "api_chat_called": false,
+  "deepseek_called": false,
+  "old_final_blind_reexecuted": false,
+  "final_blind_v2_executed": false,
+  "execution_count": 0
+}

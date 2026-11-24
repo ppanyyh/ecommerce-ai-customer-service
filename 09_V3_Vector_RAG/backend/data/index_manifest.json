@@ -1,0 +1,17 @@
+{
+  "collection": "ecommerce_kb_v1",
+  "embedding_model": "BAAI/bge-small-zh-v1.5",
+  "vector_dimension": 512,
+  "total_chunks": 33,
+  "doc_type_counts": {
+    "product": 5,
+    "faq": 20,
+    "rule": 8
+  },
+  "chunks_sha256": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+  "built_at": "2026-09-25T16:00:09",
+  "contains_orders": false,
+  "data_version": "1.2",
+  "embedding_source": "retrieval_text 优先（规则片段8条均使用），缺失时回退 text；原始 text 由 vector_retriever 按 chunk_id 从 knowledge_chunks.jsonl 取回。",
+  "notes": "订单不进入向量数据库：订单通过订单号精确查询，避免相似度检索串单与隐私风险；所有数据为模拟数据。"
+}

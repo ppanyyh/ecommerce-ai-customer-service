@@ -1,0 +1,99 @@
+V2.0 阶段六集成测试（/api/chat 全链路 + 双层输出口径，含风险决策模式与内部信息泄露检查）
+
+== 一、8条集成用例（含真实DeepSeek调用） ==
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 1883.10it/s]
+[TC-01] mode=fallback category=商品 risk=低 handoff=False decision=allow_model attempts+1 sources=['《商品资料》P001', '《售后SOP》退款处理', '《商品资料》P002']
+    answer: 抱歉，AI服务暂时繁忙。你可以稍后重新提问，或联系人工客服进一步核实。
+[TC-02] mode=fallback category=商品 risk=低 handoff=False decision=allow_model attempts+1 sources=['《商品资料》P002', '《商品资料》P005', '无明确规则依据', '《商品资料》P003', '《售后SOP》物流异常处理']
+    answer: 抱歉，AI服务暂时繁忙。你可以稍后重新提问，或联系人工客服进一步核实。
+[TC-03] mode=fallback category=订单与支付 risk=低 handoff=False decision=allow_model attempts+1 sources=['《模拟订单数据》订单202609180001']
+    answer: 抱歉，AI服务暂时繁忙。你可以稍后重新提问，或联系人工客服进一步核实。
+[TC-04] mode=fallback category=订单与支付 risk=低 handoff=False decision=allow_model attempts+1 sources=['《模拟订单数据》订单202609180002']
+    answer: 抱歉，AI服务暂时繁忙。你可以稍后重新提问，或联系人工客服进一步核实。
+[TC-05] mode=fallback category=售后 risk=高 handoff=True decision=allow_model attempts+1 sources=['《售后SOP》质量问题处理', '无明确规则依据', '《售后SOP》七天无理由规则']
+    answer: 抱歉，AI服务暂时繁忙，无法完成本次查询。建议你联系人工客服进一步处理，或稍后重新提问。
+[TC-06] mode=fallback category=售后 risk=高 handoff=True decision=allow_model attempts+1 sources=['《售后SOP》必须转人工', '《售后SOP》质量问题处理', '《售后SOP》退款处理/必须转人工', '《售后SOP》七天无理由规则']
+    answer: 抱歉，AI服务暂时繁忙，无法完成本次查询。建议你联系人工客服进一步处理，或稍后重新提问。
+[TC-07] mode=deterministic category=订单与支付 risk=低 handoff=False decision=force_safe attempts+0 sources=['《模拟订单数据》']
+    answer: 未查询到该模拟订单，请核对完整订单号。
+[TC-08] mode=deterministic category=其他 risk=低 handoff=False decision=force_safe attempts+0 sources=['现有资料未覆盖']
+    answer: 抱歉，我只能协助处理本店商品、订单和售后相关问题。
+
+== 二、业务口径回归用例（6条，风险决策模式） ==
+[RG-01] mode=fallback category=订单与支付 risk=低 handoff=False decision=allow_model attempts+1 sources=['《模拟订单数据》订单202609180002']
+    answer: 抱歉，AI服务暂时繁忙。你可以稍后重新提问，或联系人工客服进一步核实。
+[RG-02] mode=fallback category=订单与支付 risk=中 handoff=True decision=allow_model attempts+1 sources=['《模拟订单数据》订单202609180002']
+    answer: 抱歉，AI服务暂时繁忙，无法完成本次查询。建议你联系人工客服进一步处理，或稍后重新提问。
+[RG-03] mode=fallback category=售后 risk=高 handoff=True decision=allow_model attempts+1 sources=['《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）', '《售后SOP》必须转人工', '《售后SOP》退款处理']
+    answer: 抱歉，AI服务暂时繁忙，无法完成本次查询。建议你联系人工客服进一步处理，或稍后重新提问。
+[RG-04] mode=deterministic category=其他 risk=低 handoff=False decision=force_safe attempts+0 sources=['现有资料未覆盖']
+    answer: 抱歉，我只能协助处理本店商品、订单和售后相关问题。
+[RG-05] mode=deterministic category=其他 risk=中 handoff=True decision=force_handoff attempts+0 sources=['现有资料未覆盖']
+    answer: 现有资料没有覆盖这项信息，建议联系人工客服确认。
+[RG-06] mode=fallback category=售后 risk=高 handoff=True decision=allow_model attempts+1 sources=['《售后SOP》必须转人工', '《售后SOP》质量问题处理', '《售后SOP》退款处理/必须转人工', '《售后SOP》七天无理由规则']
+    answer: 抱歉，AI服务暂时繁忙，无法完成本次查询。建议你联系人工客服进一步处理，或稍后重新提问。
+
+== 三、补充确定性用例（空输入 / 隐私 / 不完整订单号） ==
+[TC-EX1] mode=deterministic category=其他 risk=低 handoff=False decision=force_safe attempts+0 sources=['现有资料未覆盖']
+    answer: 请输入你需要咨询的问题，例如商品参数、订单进度或售后规则。
+[TC-EX2] mode=deterministic category=其他 risk=高 handoff=True decision=force_handoff attempts+0 sources=['《售后SOP》隐私规则']
+    answer: 为保护你的信息安全，他人订单和隐私信息需要人工核实后才能处理，请勿在对话中发送手机号、验证码、完整地址等敏感信息。如需核实，请联系人工客服。
+[TC-EX3] mode=deterministic category=订单与支付 risk=低 handoff=False decision=force_safe attempts+0 sources=['《模拟订单数据》']
+    answer: 你输入的订单号可能不完整，请提供完整的12位订单号后再查询。
+
+== 四、health 接口 ==
+health 响应：{"status": "ok", "version": "2.0.0", "mode": "deepseek_with_retrieval", "deepseek_configured": false}
+
+== 五、回退测试（FORCE_DEEPSEEK_FAILURE=true，模拟失败不泄露Key） ==
+[FB-01] mode=fallback risk=低 handoff=False sources=['《商品资料》P001', '《售后SOP》退款处理', '《商品资料》P002']
+[FB-02] mode=fallback risk=高 handoff=True
+FORCE_DEEPSEEK_FAILURE 已恢复关闭
+[FB-03] 恢复后 mode=fallback
+
+== 六、统计 ==
+检查项：269/309 通过
+DeepSeek实际调用次数(attempts)=11，成功=0，失败/未过校验=11
+确定性回答次数=7，降级回答次数=13
+未通过项：
+  ✗ [TC-01] sources均在retriever来源内 允许=['《商品资料》P001'], 实际=['《商品资料》P001', '《售后SOP》退款处理', '《商品资料》P002']
+  ✗ [TC-01] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [TC-01] answer包含关键信息('小时',) 
+  ✗ [TC-02] sources均在retriever来源内 允许=['《商品资料》P002'], 实际=['《商品资料》P002', '《商品资料》P005', '无明确规则依据', '《商品资料》P003', '《售后SOP》物流异常处理']
+  ✗ [TC-02] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [TC-02] answer包含关键信息('459',) 
+  ✗ [TC-03] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [TC-03] answer包含关键信息('运输中', '已发货', '顺丰') 
+  ✗ [TC-04] category正确 期望{'售后'}, 实际=订单与支付
+  ✗ [TC-04] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [TC-04] risk_decision正确 期望{'force_safe'}, 实际=allow_model
+  ✗ [TC-04] answer包含关键信息('退款审核', '审核中', '退款') 
+  ✗ [TC-05] sources均在retriever来源内 允许=['《售后SOP》质量问题处理'], 实际=['《售后SOP》质量问题处理', '无明确规则依据', '《售后SOP》七天无理由规则']
+  ✗ [TC-05] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [TC-05] risk_decision正确 期望{'force_handoff'}, 实际=allow_model
+  ✗ [TC-06] sources均在retriever来源内 允许=['《售后SOP》必须转人工'], 实际=['《售后SOP》必须转人工', '《售后SOP》质量问题处理', '《售后SOP》退款处理/必须转人工', '《售后SOP》七天无理由规则']
+  ✗ [TC-06] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [TC-06] risk_decision正确 期望{'force_handoff'}, 实际=allow_model
+  ✗ [TC-08] answer包含关键信息('只能协助处理商品、订单、物流和售后',) 
+  ✗ [RG-01] category正确 期望{'售后'}, 实际=订单与支付
+  ✗ [RG-01] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [RG-01] risk_decision正确 期望{'force_safe'}, 实际=allow_model
+  ✗ [RG-02] category正确 期望{'售后'}, 实际=订单与支付
+  ✗ [RG-02] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [RG-02] risk_decision正确 期望{'force_handoff'}, 实际=allow_model
+  ✗ [RG-03] sources均在retriever来源内 允许=['《售后SOP》必须转人工', '《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）'], 实际=['《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）', '《售后SOP》必须转人工', '《售后SOP》退款处理']
+  ✗ [RG-03] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [RG-03] risk_decision正确 期望{'force_handoff'}, 实际=allow_model
+  ✗ [RG-04] answer包含关键信息('只能协助处理商品、订单、物流和售后',) 
+  ✗ [RG-05] sources均在retriever来源内 允许=['无明确规则依据'], 实际=['现有资料未覆盖']
+  ✗ [RG-05] answer_mode正确 期望{'deepseek'}, 实际=deterministic
+  ✗ [RG-05] risk_decision正确 期望{'allow_model'}, 实际=force_handoff
+  ✗ [RG-06] sources均在retriever来源内 允许=['《售后SOP》必须转人工'], 实际=['《售后SOP》必须转人工', '《售后SOP》质量问题处理', '《售后SOP》退款处理/必须转人工', '《售后SOP》七天无理由规则']
+  ✗ [RG-06] answer_mode正确 期望{'deepseek'}, 实际=fallback
+  ✗ [RG-06] risk_decision正确 期望{'force_handoff'}, 实际=allow_model
+  ✗ [FB-01] sources均在retriever来源内 允许=['《商品资料》P001'], 实际=['《商品资料》P001', '《售后SOP》退款处理', '《商品资料》P002']
+  ✗ [FB-01] sources保留 sources=['《商品资料》P001', '《售后SOP》退款处理', '《商品资料》P002']
+  ✗ [FB-02] sources均在retriever来源内 允许=['《售后SOP》质量问题处理'], 实际=['《售后SOP》质量问题处理', '无明确规则依据', '《售后SOP》七天无理由规则']
+  ✗ [FB-03] sources均在retriever来源内 允许=['《商品资料》P001'], 实际=['《商品资料》P001', '《售后SOP》退款处理', '《商品资料》P002']
+  ✗ [FB-03] 恢复后answer_mode=deepseek 实际=fallback
+P0/P1问题：存在，见未通过项

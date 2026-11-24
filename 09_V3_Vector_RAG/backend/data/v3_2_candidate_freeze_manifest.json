@@ -1,0 +1,106 @@
+{
+  "manifest": "v3_2_candidate_freeze_manifest",
+  "created_at": "2026-09-26",
+  "phase": "V3.2 第二阶段（标注批准落档、全量回归复核、候选版本冻结）",
+  "frozen": true,
+  "files_sha256": {
+    "main.py": "0da75571d2abcedd4d84ef83b0fb8cd939f5f7ff4e35c7facac2d117377de841",
+    "schemas.py": "b52c293ac31f2ca8fc90e08d02b3d141fa7034cb4b67771ce489eea3499216f8",
+    "prompts.py": "3e170b796feda8c6e16f0b08ad0cb5abf91e3974daed54a0e55592e2a9df476b",
+    "v3_retrieval_adapter.py": "3e0d80386ab3392bc2d20f56e3ba2a5812f9681f0d3ae7bb037b10637555ff1d",
+    "retriever.py": "6023270bbe38716b9cc339fb7ef64aa2820297a43f6718e81ebc4c05c1a9c794",
+    "query_analyzer.py": "86c326913ac9237ea45bbd7e42f85c15c5ddde01b5fb8d3c4bbbff5fdbc98559",
+    "risk_intents.py": "874a0e6e0773f0788b0afb5ad570afd801bb2802e3af966734092828c7ff9cd6",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "0efe027456332549a30d7221cdeaef7c5142e678a934c324003adec731442e33",
+    "deepseek_client.py": "a5c7597edf7d04ba9c01759a3e31561c8917e42d3ef5465a06ce187e9b512ecd",
+    "build_vector_index.py": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8",
+    "evaluate_final_blind_v2.py": "ae2312b1e09a0eb013445770506cf066218c01e31dab39e9d2ec01761d3abfcd",
+    "data/business_capability_catalog.json": "2074e8c8c4bb5086c0fdf0bd42aabccd6d9f3849831c71ae82082c471a7fdacd",
+    "data/knowledge_chunks.jsonl": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+    "data/index_manifest.json": "cc0da3fe74433c1a8a782a9165e71806b2ddbd3a4744537f57cdf8a1c4c44602"
+  },
+  "v3_1_runtime_freeze_manifest_sha256": "b6f867838775a0b65f1a69131a76c9157318631c4d6bd367c6ab80466c8721ab",
+  "v3_2_baseline_manifest_sha256": "664d34fce2926562cc40ccf430232c5ef18f8500cc35207165c48d047c307f9d",
+  "environment": {
+    "python": "3.12.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "chromadb": "1.5.9",
+    "sentence_transformers": "6.1.0",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.53.0"
+  },
+  "embedding": {
+    "model": "BAAI/bge-small-zh-v1.5",
+    "dim": 512,
+    "collection": "ecommerce_kb_v1",
+    "data_version": "1.2"
+  },
+  "retrieval_params": {
+    "RRF_K": 60,
+    "double_weight": [
+      null,
+      null
+    ],
+    "top_k": 5,
+    "EPSILON": 0.0003,
+    "ALIAS_BOOST": 0.0002,
+    "RULE_NET_VEC_SIM": 0.42,
+    "rule_keep_top3": "风险意图或安全网启用时保留位（1内容片段+必需规则≤2条）"
+  },
+  "capability_catalog": {
+    "version": "1.1",
+    "sha256": "2074e8c8c4bb5086c0fdf0bd42aabccd6d9f3849831c71ae82082c471a7fdacd"
+  },
+  "rule_id_normalization": "risk_intents/INTENT_RULE_MAP 输出 RULE-HR-xx 带前缀格式；adapter._risk_floor 仅去除 'RULE-' 前缀（rid[5:]），不改变 HR 编号；retriever.RULES 与 knowledge_chunks(RULE-HR-xx/ref_id=HR-xx) 编号一致，8/8 映射核验通过",
+  "dev_and_regress_summary": {
+    "v3_2_dev_eval_targets": "17/17 PASS（详见 data/v3_2_dev_eval_results.json）",
+    "risk_intents_selftest": "19/19",
+    "evaluator_unit_tests": "52/52",
+    "check_v3_2_dev_set": "16/16",
+    "validation_v1_1_frozen": "见 phase2 报告第12节",
+    "validation_v1_2_reviewed": "见 phase2 报告第12节",
+    "v3_1_dev_eval": "见 phase2 报告第12节",
+    "api_integration": "见 phase2 报告第12节",
+    "chat_integration": "见 phase2 报告第12节（V2 时代基线的预期差异）",
+    "latency_order": "见 phase2 报告第12节",
+    "check_leakage": "PASS",
+    "service_test_14_scenarios": "见 phase2 报告第13节"
+  },
+  "known_residues": [
+    "DV3-010（HR-05 规则片段未进 Top-3，意图识别与 handoff 均正确）——开发集已知残留，按第二阶段指令不修改算法",
+    "DV3-079/DV3-089 hit1 Top-2 语义竞争（Recall@3 正常）",
+    "wrong_handoff 2 条（DV3-080/090 诱导用例保守侧转人工）",
+    "detect_over_promise 无否定守卫（'我不要求你保证退款'类否定表达会保守侧误触发）——静态审核发现，非 P0，按指令只报告",
+    "V3.1 开发集 DV-007/025/029/032 hit1 残留（既有）",
+    "服务实测：未收录商品句式'你们的XX有XX功能吗'（行车记录仪）未被未知商品检测拦截，检索返回 P005 事实（功率10W）——答非所问但无编造无泄漏，属未知商品检测泛化缺口（开发集 B 层 7 条未收录用例全部正确拦截）",
+    "服务实测：已知商品+未覆盖业务'二手回收价格'因含'价格'子串命中价格属性词条而放行，回答仅给售价事实+人工提示，未编造回收价",
+    "DeepSeek 禁用环境既定行为：handoff 用例 answer 为通用繁忙文案（handoff 分支不组稿，一阶段设计）；有效订单号 answer 为通用降级文案（v2_order_structured 路径不走 compose_local_answer），路由/来源/风险字段均正确"
+  ],
+  "deepseek_calls_total": 0,
+  "old_blind_v1_reexecuted": false,
+  "old_blind_v2_reexecuted": false,
+  "final_blind_v3_created": false,
+  "final_blind_v3_executed": false,
+  "blind_v2_status": "已执行并永久消耗（execution_count=1），不得重建/重跑/用于V3.2评分",
+  "all_match": true,
+  "verification": {
+    "main.py": true,
+    "schemas.py": true,
+    "prompts.py": true,
+    "v3_retrieval_adapter.py": true,
+    "retriever.py": true,
+    "query_analyzer.py": true,
+    "risk_intents.py": true,
+    "keyword_retriever_v3.py": true,
+    "vector_retriever.py": true,
+    "hybrid_retriever_v2.py": true,
+    "deepseek_client.py": true,
+    "build_vector_index.py": true,
+    "evaluate_final_blind_v2.py": true,
+    "data/business_capability_catalog.json": true,
+    "data/knowledge_chunks.jsonl": true,
+    "data/index_manifest.json": true
+  }
+}

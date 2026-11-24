@@ -1,0 +1,4417 @@
+{
+  "generated_at": "2026-09-25T11:05:11",
+  "holdout_file": "hybrid_holdout_eval_cases.json",
+  "holdout_sha256": "26ee720d21c486a5d9829a3fd390db9b173360f251a41a6f1523c74759616948",
+  "holdout_sha256_expected": "26ee720d21c486a5d9829a3fd390db9b173360f251a41a6f1523c74759616948",
+  "holdout_unchanged": true,
+  "freeze_manifest": {
+    "frozen_at": "2026-09-25T11:01:01",
+    "purpose": "混合检索阶段代码冻结：冻结后本阶段不得再修改检索代码与知识片段",
+    "files_sha256": {
+      "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+      "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+      "hybrid_retriever.py": "e71b454f5d07912b4a574c37e19e3daadfc1201da9c4e763e36552430faddffe",
+      "data/knowledge_chunks.jsonl": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+      "build_vector_index.py": "af0dd5fdfa843fc371f6bf51ed92864c90a66e4d66ef25d8fe9b2be21ed849b0"
+    },
+    "rrf_params": {
+      "RRF_K": 60,
+      "KEYWORD_WEIGHT": 1.0,
+      "VECTOR_WEIGHT": 1.0,
+      "KEYWORD_TOP_N": 10,
+      "VECTOR_TOP_N": 10
+    },
+    "collection": "ecommerce_kb_v1",
+    "collection_data_version": "1.1",
+    "chunks_sha256_in_manifest": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+    "embedding_model": "BAAI/bge-small-zh-v1.5",
+    "vector_dimension": 512,
+    "unit_test": "backend/test_hybrid_retriever_unit.py 10/10 通过（2026-09-25）"
+  },
+  "freeze_hashes_verified_after_eval": true,
+  "freeze_hashes_now": {
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever.py": "e71b454f5d07912b4a574c37e19e3daadfc1201da9c4e763e36552430faddffe",
+    "data/knowledge_chunks.jsonl": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+    "build_vector_index.py": "af0dd5fdfa843fc371f6bf51ed92864c90a66e4d66ef25d8fe9b2be21ed849b0"
+  },
+  "modes": {
+    "keyword_only": {
+      "metrics": {
+        "answer_hit_at_1": 0.7083,
+        "answer_recall_at_3": 0.9583,
+        "mrr": 0.8333,
+        "rule_recall_at_3": 0.875,
+        "hit1_correct": 17,
+        "recall3_correct": 23,
+        "rule_cases": 8,
+        "rule_ok": 7
+      },
+      "category_metrics": {
+        "faq": {
+          "n": 8,
+          "hit_at_1": 0.5,
+          "recall_at_3": 1.0
+        },
+        "multi": {
+          "n": 4,
+          "hit_at_1": 0.5,
+          "recall_at_3": 1.0
+        },
+        "product": {
+          "n": 6,
+          "hit_at_1": 0.8333,
+          "recall_at_3": 0.8333
+        },
+        "rule": {
+          "n": 6,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        }
+      },
+      "failures": [
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "query": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+          "problem": "hit1_miss recall3_miss",
+          "top3": [
+            "FAQ-002",
+            "PRODUCT-P005",
+            "FAQ-004"
+          ],
+          "relevant": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "query": "戴着耳机冲个淋浴，应该没什么事吧？",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P001",
+            "FAQ-002",
+            "FAQ-007"
+          ],
+          "relevant": [
+            "FAQ-002"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "query": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P002",
+            "FAQ-003",
+            "PRODUCT-P005"
+          ],
+          "relevant": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P004",
+            "FAQ-005",
+            "FAQ-013"
+          ],
+          "relevant": [
+            "FAQ-005"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "query": "明明已经扣过钱了，订单里怎么还让我再付一遍？",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-006",
+            "FAQ-007",
+            "RULE-HR-02"
+          ],
+          "relevant": [
+            "FAQ-007"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-020",
+          "category": "multi",
+          "query": "耳机想退，但我已经拆开用过一次了还能退不？退回去的运费算谁的？",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-013",
+            "FAQ-015",
+            "FAQ-017"
+          ],
+          "relevant": [
+            "FAQ-015",
+            "FAQ-017"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+          "problem": "hit1_miss rule_miss",
+          "top3": [
+            "PRODUCT-P003",
+            "FAQ-016",
+            "RULE-HR-02"
+          ],
+          "relevant": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ]
+        }
+      ],
+      "irrelevant_records": [
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 7.9,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 7.9,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 1.5,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 7.9,
+          "error_hit_flag": true
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "query": "我是学生党没什么钱，能不能再给我打个折？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-007",
+          "top1_score": 0.8,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "query": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-015",
+          "top1_score": 0.6,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "query": "帮我写一首关于春天的短诗呗。",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-04",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "query": "下一届世界杯在哪个国家举办来着？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "top1_chunk_id": "FAQ-002",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "query": "有没有好用的学英语手机App推荐几个？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "FAQ-010",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        }
+      ],
+      "latency": {
+        "cold_start_ms": 0.24,
+        "warm_p50_ms": 0.21,
+        "warm_p95_ms": 0.38,
+        "n_samples": 30
+      },
+      "per_case_top3": [
+        {
+          "case_id": "H-001",
+          "category": "product",
+          "query": "那款无线的耳机，连续听歌一次能撑多久？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P001"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 6.8,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "query": "敲起来很清脆的那个键盘，是红轴吗？能插线直接连电脑不？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P002"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 6.4,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-003",
+          "category": "product",
+          "query": "你们那个钢内胆的杯子，内层是不是304的？能倒多少水进去？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 8.1,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》隐私规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "query": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.4,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P003"
+            }
+          ],
+          "hit1": false,
+          "recall3": false,
+          "first_relevant_rank": null,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-005",
+          "category": "product",
+          "query": "写字台上那盏灯是插电用的还是自带电池？能定个时候自动关吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 2.1,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 1.5,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "query": "戴着耳机冲个淋浴，应该没什么事吧？",
+          "relevant_chunk_ids": [
+            "FAQ-002"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 6.4,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "query": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+          "relevant_chunk_ids": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 6.4,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 1.0,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.4,
+              "source": "《商品资料》P005"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-008",
+          "category": "faq",
+          "query": "把可乐倒进那个保温杯里带着走，会不会炸开？",
+          "relevant_chunk_ids": [
+            "FAQ-004"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 8.5,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 8.1,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+          "relevant_chunk_ids": [
+            "FAQ-005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.4,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-010",
+          "category": "faq",
+          "query": "快递明明显示送到了，可我手上根本没见着包裹，这找谁？",
+          "relevant_chunk_ids": [
+            "FAQ-012"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 1.2,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-011",
+          "category": "faq",
+          "query": "东西还没发出来，我想换个地方收货，还来得及改吗？",
+          "relevant_chunk_ids": [
+            "FAQ-011"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 1.0,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "query": "明明已经扣过钱了，订单里怎么还让我再付一遍？",
+          "relevant_chunk_ids": [
+            "FAQ-007"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 2.3,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 2.3,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 2.3,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-013",
+          "category": "faq",
+          "query": "公司报销需要票据，你们这边能给开票吗？",
+          "relevant_chunk_ids": [
+            "FAQ-018"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-018",
+              "doc_type": "faq",
+              "score": 13.0,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-014",
+          "category": "rule",
+          "query": "再不给我解决，我就去消协举报你们这家店！",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "RULE-HR-01"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 13.0,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 6.6,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-015",
+          "category": "rule",
+          "query": "银行卡明明被你们扣了两笔钱，多扣的那笔必须退回来！",
+          "relevant_chunk_ids": [
+            "FAQ-007",
+            "RULE-HR-02"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-02"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 7.0,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 6.6,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-07",
+              "doc_type": "rule",
+              "score": 0.8,
+              "source": "《售后SOP》退款处理/必须转人工"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-016",
+          "category": "rule",
+          "query": "退款拖了一个礼拜还没影，现在马上给我退！",
+          "relevant_chunk_ids": [
+            "FAQ-016",
+            "RULE-HR-03"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-03"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 2.5,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-07",
+              "doc_type": "rule",
+              "score": 2.5,
+              "source": "《售后SOP》退款处理/必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 2.3,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-017",
+          "category": "rule",
+          "query": "包裹停在半路三天没动静了，到底还送不送了？",
+          "relevant_chunk_ids": [
+            "FAQ-010",
+            "RULE-HR-04"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-04"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 6.8,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.8,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-018",
+          "category": "rule",
+          "query": "这是我给室友代买的东西，你帮我看看他那边的单子到哪一步了。",
+          "relevant_chunk_ids": [
+            "FAQ-006",
+            "RULE-HR-05"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-05"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-05",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-07",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》退款处理/必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-019",
+          "category": "rule",
+          "query": "耳机用了没几天，右边就没声音了，这属于质量问题吧？",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 8.7,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 8.5,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 7.9,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-020",
+          "category": "multi",
+          "query": "耳机想退，但我已经拆开用过一次了还能退不？退回去的运费算谁的？",
+          "relevant_chunk_ids": [
+            "FAQ-015",
+            "FAQ-017"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 13.0,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 7.2,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 6.8,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 6.4,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 2.5,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 2.5,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "query": "我要投诉你们发假货，顺便把我这单给退了。",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 8.3,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 8.3,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-023",
+          "category": "product",
+          "query": "你们这个灯是不是不用插电也能亮？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.4,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-024",
+          "category": "multi",
+          "query": "P003这个型号的杯子，可以直接放进洗碗机里清洗吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 7.9,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 1.7,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 1.7,
+              "source": "《商品资料》P002"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 7.9,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 7.9,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 1.5,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 7.9,
+          "error_hit_flag": true
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "query": "我是学生党没什么钱，能不能再给我打个折？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-007",
+          "top1_score": 0.8,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "query": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-015",
+          "top1_score": 0.6,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "query": "帮我写一首关于春天的短诗呗。",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-04",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "query": "下一届世界杯在哪个国家举办来着？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "top1_chunk_id": "FAQ-002",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "query": "有没有好用的学英语手机App推荐几个？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "FAQ-010",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        }
+      ]
+    },
+    "vector_only": {
+      "metrics": {
+        "answer_hit_at_1": 0.875,
+        "answer_recall_at_3": 1.0,
+        "mrr": 0.9375,
+        "rule_recall_at_3": 0.75,
+        "hit1_correct": 21,
+        "recall3_correct": 24,
+        "rule_cases": 8,
+        "rule_ok": 6
+      },
+      "category_metrics": {
+        "faq": {
+          "n": 8,
+          "hit_at_1": 0.875,
+          "recall_at_3": 1.0
+        },
+        "multi": {
+          "n": 4,
+          "hit_at_1": 0.75,
+          "recall_at_3": 1.0
+        },
+        "product": {
+          "n": 6,
+          "hit_at_1": 0.8333,
+          "recall_at_3": 1.0
+        },
+        "rule": {
+          "n": 6,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        }
+      },
+      "failures": [
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "query": "敲起来很清脆的那个键盘，是红轴吗？能插线直接连电脑不？",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-003",
+            "PRODUCT-P002",
+            "RULE-HR-08"
+          ],
+          "relevant": [
+            "PRODUCT-P002"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P004",
+            "FAQ-005",
+            "FAQ-002"
+          ],
+          "relevant": [
+            "FAQ-005"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+          "problem": " rule_miss",
+          "top3": [
+            "FAQ-016",
+            "FAQ-007",
+            "FAQ-019"
+          ],
+          "relevant": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ]
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "query": "我要投诉你们发假货，顺便把我这单给退了。",
+          "problem": "hit1_miss rule_miss",
+          "top3": [
+            "FAQ-017",
+            "FAQ-020",
+            "FAQ-008"
+          ],
+          "relevant": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ]
+        }
+      ],
+      "irrelevant_records": [
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.508948,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.455594,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.44727,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 0.508948,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "query": "我是学生党没什么钱，能不能再给我打个折？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.428788,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.390877,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.364132,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "FAQ-019",
+          "top1_score": 0.428788,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "query": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.457916,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.419835,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.378779,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.457916,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "query": "帮我写一首关于春天的短诗呗。",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.251156,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.249711,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.237768,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.251156,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "query": "下一届世界杯在哪个国家举办来着？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.296342,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.265569,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.259224,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P003",
+          "top1_score": 0.296342,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "query": "有没有好用的学英语手机App推荐几个？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.427869,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.419542,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.411558,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-06",
+          "top1_score": 0.427869,
+          "error_hit_flag": false
+        }
+      ],
+      "latency": {
+        "cold_start_ms": 17.36,
+        "warm_p50_ms": 17.54,
+        "warm_p95_ms": 18.97,
+        "n_samples": 30
+      },
+      "per_case_top3": [
+        {
+          "case_id": "H-001",
+          "category": "product",
+          "query": "那款无线的耳机，连续听歌一次能撑多久？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P001"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.510432,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.5077,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.494818,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "query": "敲起来很清脆的那个键盘，是红轴吗？能插线直接连电脑不？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P002"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.602645,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.543966,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.403442,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-003",
+          "category": "product",
+          "query": "你们那个钢内胆的杯子，内层是不是304的？能倒多少水进去？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.496716,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.458282,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.347422,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "query": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.44361,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.369764,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.360151,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-005",
+          "category": "product",
+          "query": "写字台上那盏灯是插电用的还是自带电池？能定个时候自动关吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.548765,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.399024,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.396107,
+              "source": "《商品资料》P002"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "query": "戴着耳机冲个淋浴，应该没什么事吧？",
+          "relevant_chunk_ids": [
+            "FAQ-002"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.589715,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.408883,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.382203,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "query": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+          "relevant_chunk_ids": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.680125,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.547634,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.405903,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-008",
+          "category": "faq",
+          "query": "把可乐倒进那个保温杯里带着走，会不会炸开？",
+          "relevant_chunk_ids": [
+            "FAQ-004"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.557955,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.444566,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.315051,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+          "relevant_chunk_ids": [
+            "FAQ-005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.418277,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.415744,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.397328,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-010",
+          "category": "faq",
+          "query": "快递明明显示送到了，可我手上根本没见着包裹，这找谁？",
+          "relevant_chunk_ids": [
+            "FAQ-012"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.621864,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.430487,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.420727,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-011",
+          "category": "faq",
+          "query": "东西还没发出来，我想换个地方收货，还来得及改吗？",
+          "relevant_chunk_ids": [
+            "FAQ-011"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.626666,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.537507,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.520855,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "query": "明明已经扣过钱了，订单里怎么还让我再付一遍？",
+          "relevant_chunk_ids": [
+            "FAQ-007"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.637287,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.509955,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.497178,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-013",
+          "category": "faq",
+          "query": "公司报销需要票据，你们这边能给开票吗？",
+          "relevant_chunk_ids": [
+            "FAQ-018"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-018",
+              "doc_type": "faq",
+              "score": 0.679506,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.473958,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.400142,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-014",
+          "category": "rule",
+          "query": "再不给我解决，我就去消协举报你们这家店！",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "RULE-HR-01"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.50265,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.462403,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.460978,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-015",
+          "category": "rule",
+          "query": "银行卡明明被你们扣了两笔钱，多扣的那笔必须退回来！",
+          "relevant_chunk_ids": [
+            "FAQ-007",
+            "RULE-HR-02"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-02"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.56039,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.50873,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.506691,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-016",
+          "category": "rule",
+          "query": "退款拖了一个礼拜还没影，现在马上给我退！",
+          "relevant_chunk_ids": [
+            "FAQ-016",
+            "RULE-HR-03"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-03"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.552313,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.545686,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.540907,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-017",
+          "category": "rule",
+          "query": "包裹停在半路三天没动静了，到底还送不送了？",
+          "relevant_chunk_ids": [
+            "FAQ-010",
+            "RULE-HR-04"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-04"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.546613,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.535129,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.525686,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-018",
+          "category": "rule",
+          "query": "这是我给室友代买的东西，你帮我看看他那边的单子到哪一步了。",
+          "relevant_chunk_ids": [
+            "FAQ-006",
+            "RULE-HR-05"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-05"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.465463,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-05",
+              "doc_type": "rule",
+              "score": 0.412083,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.391105,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-019",
+          "category": "rule",
+          "query": "耳机用了没几天，右边就没声音了，这属于质量问题吧？",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.628437,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.614536,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.591321,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-020",
+          "category": "multi",
+          "query": "耳机想退，但我已经拆开用过一次了还能退不？退回去的运费算谁的？",
+          "relevant_chunk_ids": [
+            "FAQ-015",
+            "FAQ-017"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.717359,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.584844,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.580231,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.661863,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.522906,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.5059,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "query": "我要投诉你们发假货，顺便把我这单给退了。",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.529217,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.501914,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.485302,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-023",
+          "category": "product",
+          "query": "你们这个灯是不是不用插电也能亮？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.507139,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.341367,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.337833,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-024",
+          "category": "multi",
+          "query": "P003这个型号的杯子，可以直接放进洗碗机里清洗吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.631372,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.536796,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.425744,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.508948,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.455594,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.44727,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 0.508948,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "query": "我是学生党没什么钱，能不能再给我打个折？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.428788,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.390877,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.364132,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "FAQ-019",
+          "top1_score": 0.428788,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "query": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.457916,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.419835,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.378779,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.457916,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "query": "帮我写一首关于春天的短诗呗。",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.251156,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.249711,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.237768,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.251156,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "query": "下一届世界杯在哪个国家举办来着？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.296342,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.265569,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.259224,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P003",
+          "top1_score": 0.296342,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "query": "有没有好用的学英语手机App推荐几个？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.427869,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.419542,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.411558,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-06",
+          "top1_score": 0.427869,
+          "error_hit_flag": false
+        }
+      ]
+    },
+    "hybrid_rrf": {
+      "metrics": {
+        "answer_hit_at_1": 0.875,
+        "answer_recall_at_3": 1.0,
+        "mrr": 0.9306,
+        "rule_recall_at_3": 0.75,
+        "hit1_correct": 21,
+        "recall3_correct": 24,
+        "rule_cases": 8,
+        "rule_ok": 6
+      },
+      "category_metrics": {
+        "faq": {
+          "n": 8,
+          "hit_at_1": 0.75,
+          "recall_at_3": 1.0
+        },
+        "multi": {
+          "n": 4,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        },
+        "product": {
+          "n": 6,
+          "hit_at_1": 0.8333,
+          "recall_at_3": 1.0
+        },
+        "rule": {
+          "n": 6,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        }
+      },
+      "failures": [
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "query": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-002",
+            "FAQ-005",
+            "PRODUCT-P004"
+          ],
+          "relevant": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "query": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P002",
+            "FAQ-003",
+            "PRODUCT-P005"
+          ],
+          "relevant": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P004",
+            "FAQ-005",
+            "FAQ-002"
+          ],
+          "relevant": [
+            "FAQ-005"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+          "problem": " rule_miss",
+          "top3": [
+            "FAQ-016",
+            "RULE-HR-02",
+            "RULE-HR-03"
+          ],
+          "relevant": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ]
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "query": "我要投诉你们发假货，顺便把我这单给退了。",
+          "problem": " rule_miss",
+          "top3": [
+            "FAQ-020",
+            "FAQ-017",
+            "FAQ-013"
+          ],
+          "relevant": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ]
+        }
+      ],
+      "irrelevant_records": [
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.031514,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.030622,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 0.032787,
+          "error_hit_flag": true
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "query": "我是学生党没什么钱，能不能再给我打个折？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.031025,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.016393,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "FAQ-007",
+          "top1_score": 0.032522,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "query": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.030622,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.032266,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "query": "帮我写一首关于春天的短诗呗。",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.032522,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-04",
+          "top1_score": 0.032522,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "query": "下一届世界杯在哪个国家举办来着？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.031778,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.028986,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P003",
+          "top1_score": 0.031778,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "query": "有没有好用的学英语手机App推荐几个？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.031778,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.031281,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.030777,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-06",
+          "top1_score": 0.031778,
+          "error_hit_flag": false
+        }
+      ],
+      "latency": {
+        "cold_start_ms": 16.25,
+        "warm_p50_ms": 18.02,
+        "warm_p95_ms": 20.73,
+        "n_samples": 30
+      },
+      "per_case_top3": [
+        {
+          "case_id": "H-001",
+          "category": "product",
+          "query": "那款无线的耳机，连续听歌一次能撑多久？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P001"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.031746,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "query": "敲起来很清脆的那个键盘，是红轴吗？能插线直接连电脑不？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P002"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.029911,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-003",
+          "category": "product",
+          "query": "你们那个钢内胆的杯子，内层是不是304的？能倒多少水进去？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.031754,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.030366,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "query": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.031099,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 3,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-005",
+          "category": "product",
+          "query": "写字台上那盏灯是插电用的还是自带电池？能定个时候自动关吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032002,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.030579,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "query": "戴着耳机冲个淋浴，应该没什么事吧？",
+          "relevant_chunk_ids": [
+            "FAQ-002"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.032266,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.03101,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "query": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+          "relevant_chunk_ids": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.031498,
+              "source": "《商品资料》P005"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-008",
+          "category": "faq",
+          "query": "把可乐倒进那个保温杯里带着走，会不会炸开？",
+          "relevant_chunk_ids": [
+            "FAQ-004"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032258,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.031746,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+          "relevant_chunk_ids": [
+            "FAQ-005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.031025,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-010",
+          "category": "faq",
+          "query": "快递明明显示送到了，可我手上根本没见着包裹，这找谁？",
+          "relevant_chunk_ids": [
+            "FAQ-012"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.016129,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-011",
+          "category": "faq",
+          "query": "东西还没发出来，我想换个地方收货，还来得及改吗？",
+          "relevant_chunk_ids": [
+            "FAQ-011"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.031258,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "query": "明明已经扣过钱了，订单里怎么还让我再付一遍？",
+          "relevant_chunk_ids": [
+            "FAQ-007"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.032018,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.031746,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-013",
+          "category": "faq",
+          "query": "公司报销需要票据，你们这边能给开票吗？",
+          "relevant_chunk_ids": [
+            "FAQ-018"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-018",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.031754,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.031754,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-014",
+          "category": "rule",
+          "query": "再不给我解决，我就去消协举报你们这家店！",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "RULE-HR-01"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.032522,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.031258,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-015",
+          "category": "rule",
+          "query": "银行卡明明被你们扣了两笔钱，多扣的那笔必须退回来！",
+          "relevant_chunk_ids": [
+            "FAQ-007",
+            "RULE-HR-02"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-02"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.032787,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.030579,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.03031,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-016",
+          "category": "rule",
+          "query": "退款拖了一个礼拜还没影，现在马上给我退！",
+          "relevant_chunk_ids": [
+            "FAQ-016",
+            "RULE-HR-03"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-03"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.032787,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.031754,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.031025,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-017",
+          "category": "rule",
+          "query": "包裹停在半路三天没动静了，到底还送不送了？",
+          "relevant_chunk_ids": [
+            "FAQ-010",
+            "RULE-HR-04"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-04"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.031746,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-018",
+          "category": "rule",
+          "query": "这是我给室友代买的东西，你帮我看看他那边的单子到哪一步了。",
+          "relevant_chunk_ids": [
+            "FAQ-006",
+            "RULE-HR-05"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-05"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-05",
+              "doc_type": "rule",
+              "score": 0.032522,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.031258,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.03125,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-019",
+          "category": "rule",
+          "query": "耳机用了没几天，右边就没声音了，这属于质量问题吧？",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.032266,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.031025,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-020",
+          "category": "multi",
+          "query": "耳机想退，但我已经拆开用过一次了还能退不？退回去的运费算谁的？",
+          "relevant_chunk_ids": [
+            "FAQ-015",
+            "FAQ-017"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.032002,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.031319,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.030798,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.030769,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "query": "我要投诉你们发假货，顺便把我这单给退了。",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.031545,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.031258,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-023",
+          "category": "product",
+          "query": "你们这个灯是不是不用插电也能亮？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.031498,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.030077,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-024",
+          "category": "multi",
+          "query": "P003这个型号的杯子，可以直接放进洗碗机里清洗吗？",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "is_answerable": true,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.03101,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.030835,
+              "source": "《商品资料》P003"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.031514,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.030622,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 0.032787,
+          "error_hit_flag": true
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "query": "我是学生党没什么钱，能不能再给我打个折？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.031025,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.016393,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "FAQ-007",
+          "top1_score": 0.032522,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "query": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.030622,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.032266,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "query": "帮我写一首关于春天的短诗呗。",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.032522,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-04",
+          "top1_score": 0.032522,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "query": "下一届世界杯在哪个国家举办来着？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.031778,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.028986,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P003",
+          "top1_score": 0.031778,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "query": "有没有好用的学英语手机App推荐几个？",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "is_answerable": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.031778,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.031281,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.030777,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-06",
+          "top1_score": 0.031778,
+          "error_hit_flag": false
+        }
+      ]
+    }
+  },
+  "success_criteria": {
+    "1_hybrid_hit1_ge_vector": true,
+    "2_hybrid_recall3_ge_vector": true,
+    "3_hybrid_rule_recall3_ge_vector": true,
+    "4_id_query_not_worse_than_keyword": true,
+    "5_no_new_severe_mismatch": false,
+    "6_latency_p95_acceptable": true
+  },
+  "recommendation": {
+    "integrate_into_api_chat": false,
+    "statement": "hybrid 未全面优于/持平 vector_only——如实报告，不建议本阶段接入 /api/chat"
+  },
+  "notes": "本评测为留出集单次运行；开发集100%结果不作为泛化结论；未设置自动拒答阈值；未调用DeepSeek。"
+}

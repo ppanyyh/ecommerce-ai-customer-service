@@ -1,0 +1,15 @@
+cleaned='202609180002退款到哪一步'
+decision={'decision': 'force_safe', 'category': '售后', 'risk': '低', 'handoff': False, 'reason': ''}
+allowed_sources=['《模拟订单数据》订单202609180002']
+reply[0]={"category": "售后", "answer": "根据《模拟订单数据》订单202609180002：该订单商品为 KeyPro 87 机械键盘 x1（单价459.00元，合计459.00元），订单状态为“已完成”，物流状态为“已签收”（中通快递 ZT9876543210），售后状态为“退款审核中”。目前退款仍处于审核环节，该订单存在进行中的售后申请，审核结果需人工处理，AI无法告知具体审核进度、退款结果或到账时间，建议转接人工客服为您查询最新进度。", "sources": ["《模拟订单数据》订单202609180002"], "risk_level": "中", "handoff_required": true, "handoff_reason": "订单存在进行中的退款申请，审核结果需人工处理，AI不作承诺，需转人工核查询问进度", "answer_mode": "deepseek", "risk_decision": "allow_model"}
+  category_ok=True
+  promise_violation=None
+  bad_order_nums=[]
+  filtered_sources=['《模拟订单数据》订单202609180002'] (model=['《模拟订单数据》订单202609180002'])
+  model_risk=中 model_handoff=True
+reply[1]={"category": "售后", "answer": "您好，根据《模拟订单数据》订单202609180002，该订单（KeyPro 87机械键盘 x1，459.00元）目前订单状态为“已完成”、物流状态为“已签收”（中通快递 ZT9876543210），售后状态显示为“退款审核中”。也就是说，您的退款申请已提交，目前仍在审核环节，尚未完成。该订单存在进行中的售后申请，审核结果需由人工处理，AI无法承诺审核结果及退款到账时间，请您耐心等待。如需进一步了解审核进度，可转接人工客服为您处理。", "sources": ["《模拟订单数据》订单202609180002"], "risk_level": "中", "handoff_required": false, "handoff_reason": "", "answer_mode": "deepseek", "risk_decision": "allow_model"}
+  category_ok=True
+  promise_violation=None
+  bad_order_nums=[]
+  filtered_sources=['《模拟订单数据》订单202609180002'] (model=['《模拟订单数据》订单202609180002'])
+  model_risk=中 model_handoff=False

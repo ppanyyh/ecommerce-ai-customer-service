@@ -1,0 +1,654 @@
+{
+  "catalog_version": "1.2",
+  "created_at": "2026-09-25",
+  "purpose": "V3.2 业务范围门控的事实依据目录：记录已知商品、每个商品的已覆盖属性、全局已覆盖业务意图、未覆盖业务类型与范围外主题。门控判断以本目录为准：未知属性默认 unsupported_business，未知电商政策默认 unsupported_business，无关主题判 irrelevant。",
+  "data_sources": [
+    "backend/knowledge_base.json（商品 attributes/notes 原文）",
+    "backend/data/knowledge_chunks.jsonl（PRODUCT-P001~P005 原始 text）",
+    "已批准的业务范围口径（v3_1_phase2_freeze_report.md 第三节：存在兜底FAQ≠资料已覆盖）"
+  ],
+  "integrity_rules": {
+    "attribute_coverage_source": "仅 knowledge_chunks 原始 text（商品 attributes 表）",
+    "retrieval_text_not_fact": "retrieval_text 中的扩展语句不作为事实覆盖依据",
+    "unknown_attribute_default": "unsupported_business",
+    "unknown_business_policy_default": "unsupported_business",
+    "irrelevant_rule": "非电商主题一律 irrelevant",
+    "risk_priority": "风险意图优先级高于普通门控（真正投诉/隐私请求不得被当成普通未知问题）"
+  },
+  "known_products": {
+    "P001": {
+      "name": "SoundGo Air无线蓝牙耳机",
+      "source_refs": [
+        "PRODUCT-P001"
+      ],
+      "covered_attributes": [
+        {
+          "attr": "型号",
+          "keywords": [
+            "型号",
+            "sga",
+            "sga-01"
+          ]
+        },
+        {
+          "attr": "颜色",
+          "keywords": [
+            "颜色",
+            "配色",
+            "什么色",
+            "黑色",
+            "白色"
+          ]
+        },
+        {
+          "attr": "蓝牙版本",
+          "keywords": [
+            "蓝牙",
+            "连接版本",
+            "5.3"
+          ]
+        },
+        {
+          "attr": "降噪能力",
+          "keywords": [
+            "降噪",
+            "隔音",
+            "消噪"
+          ]
+        },
+        {
+          "attr": "续航",
+          "keywords": [
+            "一次能听",
+            "几个小时",
+            "听多久",
+            "听歌",
+            "撑多久",
+            "用多久",
+            "电池够",
+            "电量",
+            "续航",
+            "能用多久",
+            "连续听"
+          ]
+        },
+        {
+          "attr": "充电接口",
+          "keywords": [
+            "充电",
+            "接口",
+            "usb",
+            "type-c",
+            "充电口",
+            "充多久",
+            "充一次电",
+            "充满一次电",
+            "插多久"
+          ]
+        },
+        {
+          "attr": "防护等级",
+          "keywords": [
+            "ipx",
+            "下雨",
+            "冲凉",
+            "出汗",
+            "汗",
+            "洗漱",
+            "淋浴",
+            "淋雨",
+            "防水",
+            "防泼溅"
+          ]
+        },
+        {
+          "attr": "兼容设备",
+          "keywords": [
+            "兼容",
+            "安卓",
+            "android",
+            "ios",
+            "苹果",
+            "iphone",
+            "ipad",
+            "平板",
+            "系统",
+            "mac",
+            "macos",
+            "电脑",
+            "连接电脑"
+          ]
+        },
+        {
+          "attr": "包装内容",
+          "keywords": [
+            "包装",
+            "包装里",
+            "配件",
+            "清单",
+            "里面有什么",
+            "盒子里"
+          ]
+        },
+        {
+          "attr": "保修期限",
+          "keywords": [
+            "保修",
+            "质保",
+            "保多久",
+            "保修期"
+          ]
+        },
+        {
+          "attr": "使用注意",
+          "keywords": [
+            "游泳",
+            "浸水",
+            "洗澡",
+            "戴着洗澡"
+          ]
+        },
+        {
+          "attr": "价格",
+          "keywords": [
+            "多少钱",
+            "价格",
+            "售价",
+            "贵不贵",
+            "便宜",
+            "价位",
+            "优惠价"
+          ]
+        }
+      ]
+    },
+    "P002": {
+      "name": "KeyPro 87机械键盘",
+      "source_refs": [
+        "PRODUCT-P002"
+      ],
+      "covered_attributes": [
+        {
+          "attr": "型号",
+          "keywords": [
+            "型号",
+            "kp-87",
+            "kp87"
+          ]
+        },
+        {
+          "attr": "配列",
+          "keywords": [
+            "87键",
+            "配列",
+            "几个键",
+            "键数",
+            "键位"
+          ]
+        },
+        {
+          "attr": "连接方式",
+          "keywords": [
+            "连接",
+            "蓝牙",
+            "2.4g",
+            "无线",
+            "有线",
+            "usb",
+            "接收器"
+          ]
+        },
+        {
+          "attr": "轴体",
+          "keywords": [
+            "轴",
+            "红轴",
+            "青轴",
+            "茶轴",
+            "手感",
+            "段落感"
+          ]
+        },
+        {
+          "attr": "灯光",
+          "keywords": [
+            "背光",
+            "灯光",
+            "灯效",
+            "发光",
+            "rgb",
+            "灯"
+          ]
+        },
+        {
+          "attr": "系统兼容",
+          "keywords": [
+            "mac",
+            "macos",
+            "windows",
+            "苹果",
+            "win",
+            "系统",
+            "兼容"
+          ]
+        },
+        {
+          "attr": "电池容量",
+          "keywords": [
+            "电池",
+            "容量",
+            "mah",
+            "续航",
+            "充电"
+          ]
+        },
+        {
+          "attr": "保修期限",
+          "keywords": [
+            "保修",
+            "质保",
+            "保多久"
+          ]
+        },
+        {
+          "attr": "使用注意",
+          "keywords": [
+            "防水",
+            "进水",
+            "进液",
+            "泼水",
+            "洒水"
+          ]
+        },
+        {
+          "attr": "价格",
+          "keywords": [
+            "多少钱",
+            "价格",
+            "售价",
+            "贵不贵",
+            "便宜",
+            "价位",
+            "优惠价"
+          ]
+        }
+      ]
+    },
+    "P003": {
+      "name": "WarmDay 500保温杯",
+      "source_refs": [
+        "PRODUCT-P003"
+      ],
+      "covered_attributes": [
+        {
+          "attr": "型号",
+          "keywords": [
+            "型号",
+            "wd-500",
+            "wd500"
+          ]
+        },
+        {
+          "attr": "容量",
+          "keywords": [
+            "容量",
+            "500",
+            "毫升",
+            "ml",
+            "多大",
+            "装多少水",
+            "升"
+          ]
+        },
+        {
+          "attr": "材质",
+          "keywords": [
+            "材质",
+            "不锈钢",
+            "内胆",
+            "304",
+            "什么材料",
+            "塑料吗"
+          ]
+        },
+        {
+          "attr": "颜色",
+          "keywords": [
+            "颜色",
+            "什么色",
+            "黑色",
+            "白色",
+            "蓝色"
+          ]
+        },
+        {
+          "attr": "保温性能",
+          "keywords": [
+            "保温",
+            "保冷",
+            "保温多久",
+            "几个小时",
+            "温度",
+            "烫",
+            "凉"
+          ]
+        },
+        {
+          "attr": "使用注意",
+          "keywords": [
+            "碳酸",
+            "可乐",
+            "汽水",
+            "洗碗机",
+            "洗碗",
+            "消毒柜",
+            "微波炉"
+          ]
+        },
+        {
+          "attr": "价格",
+          "keywords": [
+            "多少钱",
+            "价格",
+            "售价",
+            "贵不贵",
+            "便宜",
+            "价位",
+            "优惠价"
+          ]
+        }
+      ]
+    },
+    "P004": {
+      "name": "CityPack通勤双肩包",
+      "source_refs": [
+        "PRODUCT-P004"
+      ],
+      "covered_attributes": [
+        {
+          "attr": "型号",
+          "keywords": [
+            "型号",
+            "cp-20",
+            "cp20"
+          ]
+        },
+        {
+          "attr": "容量",
+          "keywords": [
+            "容量",
+            "20l",
+            "升",
+            "能装多少",
+            "多大"
+          ]
+        },
+        {
+          "attr": "颜色",
+          "keywords": [
+            "颜色",
+            "什么色",
+            "黑色",
+            "灰色"
+          ]
+        },
+        {
+          "attr": "电脑仓",
+          "keywords": [
+            "电脑",
+            "笔记本",
+            "15.6",
+            "15.6寸",
+            "16寸",
+            "电脑仓",
+            "夹层",
+            "侧面口袋",
+            "装得下",
+            "放得下",
+            "装下",
+            "放下",
+            "主袋"
+          ]
+        },
+        {
+          "attr": "防水能力",
+          "keywords": [
+            "防水",
+            "泼水",
+            "下雨",
+            "淋雨",
+            "淋湿",
+            "雨天"
+          ]
+        },
+        {
+          "attr": "使用注意",
+          "keywords": [
+            "拉链",
+            "缝线",
+            "防水"
+          ]
+        },
+        {
+          "attr": "价格",
+          "keywords": [
+            "多少钱",
+            "价格",
+            "售价",
+            "贵不贵",
+            "便宜",
+            "价位",
+            "优惠价"
+          ]
+        }
+      ]
+    },
+    "P005": {
+      "name": "LightMate智能桌面台灯",
+      "source_refs": [
+        "PRODUCT-P005"
+      ],
+      "covered_attributes": [
+        {
+          "attr": "型号",
+          "keywords": [
+            "型号",
+            "lm-01",
+            "lm01"
+          ]
+        },
+        {
+          "attr": "色温",
+          "keywords": [
+            "色温",
+            "三档",
+            "黄光",
+            "白光",
+            "暖光",
+            "冷光",
+            "光色"
+          ]
+        },
+        {
+          "attr": "亮度",
+          "keywords": [
+            "亮度",
+            "五档",
+            "调光",
+            "亮",
+            "档位",
+            "调节",
+            "刺眼",
+            "晃眼"
+          ]
+        },
+        {
+          "attr": "功率",
+          "keywords": [
+            "功率",
+            "10w",
+            "瓦",
+            "费电",
+            "耗电"
+          ]
+        },
+        {
+          "attr": "供电",
+          "keywords": [
+            "供电",
+            "usb",
+            "插电",
+            "电池",
+            "充电",
+            "电源线",
+            "插头",
+            "充一次电",
+            "充满一次电",
+            "插多久",
+            "电源"
+          ]
+        },
+        {
+          "attr": "定时",
+          "keywords": [
+            "定时",
+            "45分钟",
+            "自动关",
+            "关灯",
+            "计时"
+          ]
+        },
+        {
+          "attr": "保修期限",
+          "keywords": [
+            "保修",
+            "质保",
+            "保多久"
+          ]
+        },
+        {
+          "attr": "使用注意",
+          "keywords": [
+            "充电电池",
+            "内置电池",
+            "插电"
+          ]
+        },
+        {
+          "attr": "价格",
+          "keywords": [
+            "多少钱",
+            "价格",
+            "售价",
+            "贵不贵",
+            "便宜",
+            "价位",
+            "优惠价"
+          ]
+        }
+      ]
+    }
+  },
+  "global_covered_intents": [
+    "order_status_query",
+    "order_modify_query",
+    "address_change_query",
+    "return_exchange_query",
+    "refund_progress_query",
+    "payment_issue_query",
+    "warranty_repair_query",
+    "aftersales_process_query",
+    "shipping_issue_query",
+    "human_service_query"
+  ],
+  "uncovered_business_types": [
+    {
+      "type": "promo_activity",
+      "reason": "资料无任何促销/优惠活动政策"
+    },
+    {
+      "type": "gift_policy",
+      "reason": "资料无赠品政策"
+    },
+    {
+      "type": "livestream_policy",
+      "reason": "资料无直播间专属政策"
+    },
+    {
+      "type": "stock_promise",
+      "reason": "资料无实时库存数据"
+    },
+    {
+      "type": "delivery_promise",
+      "reason": "资料无配送时效承诺"
+    },
+    {
+      "type": "invoice_policy",
+      "reason": "仅有兜底说明片段（FAQ-018，内容即转人工），不构成发票政策答案（用户批准口径，v3_1_phase2_freeze_report 第三节）"
+    },
+    {
+      "type": "price_protect",
+      "reason": "资料无价保政策"
+    },
+    {
+      "type": "warehouse_carrier",
+      "reason": "资料未记录发货仓与承运商选择"
+    },
+    {
+      "type": "unknown_product_sales",
+      "reason": "资料仅覆盖P001-P005，其他商品/新品无信息"
+    },
+    {
+      "type": "warranty_extension",
+      "reason": "资料仅有12个月有限保修，无延保/付费保修政策"
+    },
+    {
+      "type": "product_cleaning_method",
+      "reason": "商品资料未记录清洗/保养方法类说明"
+    },
+    {
+      "type": "price_related_uncovered",
+      "reason": "复合未覆盖价格意图：二手回收/估价/以旧换新/折价/回购/保值/残值/历史价格/未来降价等。与商品售价（已覆盖属性\"价格\"）区分：问句包含\"价格\"字样不等于询问商品售价，复合意图优先判定。",
+      "keywords": [
+        "二手回收",
+        "回收价",
+        "回收",
+        "估价",
+        "估值",
+        "评估价",
+        "以旧换新",
+        "旧机换新",
+        "旧品换新",
+        "折价",
+        "折抵",
+        "抵扣",
+        "回购",
+        "保值",
+        "残值",
+        "历史价格",
+        "价格走势",
+        "未来价格",
+        "会不会降价",
+        "什么时候降价",
+        "以后降价",
+        "降价预测"
+      ],
+      "source_ref": "V3.2.1 落地前修复阶段（用户指令第三节）；知识库仅记录商品售价与保修政策，未记录回收/换新/保值/历史价格类政策",
+      "expected_scope": "unsupported_business"
+    }
+  ],
+  "out_of_scope_topics": [
+    "weather",
+    "investment",
+    "travel_visa",
+    "study_writing",
+    "health_medical",
+    "entertainment",
+    "life_misc",
+    "tech_dev",
+    "office_software",
+    "pet_animal"
+  ],
+  "revision_note": "V3.2 第一阶段补充词条（均为类别级通用表述）：P001/P005 充电询问的拆字表述（充一次电/充满一次电/插多久/电源）、P004 电脑仓的放下/主袋表述。原因：充电动作词常被数量词隔开（充一次电），子串匹配无法命中。",
+  "revision_note_v3_2_1": "V3.2.1 新增复合未覆盖价格意图类别 price_related_uncovered（回收/估价/以旧换新/折价/保值/历史与未来价格），关键词优先于通用\"价格\"属性判定；不改任何商品售价事实。"
+}

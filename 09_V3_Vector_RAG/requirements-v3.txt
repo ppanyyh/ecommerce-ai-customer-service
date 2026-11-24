@@ -1,0 +1,15 @@
+# V3.0 Vector RAG stack validation deps (V2 deps + vector retrieval additions)
+# Install into V3 isolated .venv (Python 3.12). Do NOT touch V2 env.
+
+# --- V2 existing deps ---
+fastapi
+uvicorn[standard]
+openai
+python-dotenv
+pydantic
+httpx
+
+# --- V3 new: vector retrieval ---
+chromadb
+sentence-transformers
+numpy

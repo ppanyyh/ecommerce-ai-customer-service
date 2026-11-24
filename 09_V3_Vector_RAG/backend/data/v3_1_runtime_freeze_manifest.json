@@ -1,0 +1,118 @@
+{
+  "manifest": "v3_1_runtime_freeze_manifest",
+  "created_at": "2026-09-25T18:20:07",
+  "phase": "V3.1 Phase 3（V3.1 混合检索接入 /api/chat，端到端集成，运行版本冻结）",
+  "files_sha256": {
+    "main.py": "42dfd185697ddd1667037e7b1e83141bb5bd8aef5f9cab25d6b04dcf6d8bb967",
+    "schemas.py": "b52c293ac31f2ca8fc90e08d02b3d141fa7034cb4b67771ce489eea3499216f8",
+    "prompts.py": "3e170b796feda8c6e16f0b08ad0cb5abf91e3974daed54a0e55592e2a9df476b",
+    "v3_retrieval_adapter.py": "c50ac5b37da9c19bfc4ea0a787ad91c282fc044ce87ac231e41265dde8cba035",
+    "retriever.py": "6023270bbe38716b9cc339fb7ef64aa2820297a43f6718e81ebc4c05c1a9c794",
+    "query_analyzer.py": "ef3e9028b5257cc2234aa9e20dbf80d0546fd039deb2b4546d68751539af8c20",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "52eac3d8142e69efc8436e471e408369696f2b07d76e161fa11518d6c4975abd",
+    "deepseek_client.py": "a5c7597edf7d04ba9c01759a3e31561c8917e42d3ef5465a06ce187e9b512ecd",
+    "build_vector_index.py": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8",
+    "data/knowledge_chunks.jsonl": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+    "data/index_manifest.json": "cc0da3fe74433c1a8a782a9165e71806b2ddbd3a4744537f57cdf8a1c4c44602"
+  },
+  "retrieval_kernel_baseline": {
+    "file": "v3_1_candidate_freeze_manifest.json",
+    "sha256": "a0c6f070b74cdff0b58bd1daf7e91f964589edfcb9bc77a89c24eae6ad9b20aa",
+    "per_file_check": {
+      "query_analyzer.py": {
+        "unchanged": true,
+        "old_sha256": "ef3e9028b5257cc2234aa9e20dbf80d0546fd039deb2b4546d68751539af8c20",
+        "now_sha256": "ef3e9028b5257cc2234aa9e20dbf80d0546fd039deb2b4546d68751539af8c20"
+      },
+      "keyword_retriever_v3.py": {
+        "unchanged": true,
+        "old_sha256": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+        "now_sha256": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e"
+      },
+      "vector_retriever.py": {
+        "unchanged": true,
+        "old_sha256": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+        "now_sha256": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1"
+      },
+      "hybrid_retriever_v2.py": {
+        "unchanged": true,
+        "old_sha256": "52eac3d8142e69efc8436e471e408369696f2b07d76e161fa11518d6c4975abd",
+        "now_sha256": "52eac3d8142e69efc8436e471e408369696f2b07d76e161fa11518d6c4975abd"
+      },
+      "build_vector_index.py": {
+        "unchanged": true,
+        "old_sha256": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8",
+        "now_sha256": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8"
+      },
+      "main.py": {
+        "unchanged": false,
+        "old_sha256": "01adbd28886c3bae944e5d3e00474026f5ed44be81a1e0f8a47cca72e1273500",
+        "now_sha256": "42dfd185697ddd1667037e7b1e83141bb5bd8aef5f9cab25d6b04dcf6d8bb967"
+      },
+      "schemas.py": {
+        "unchanged": true,
+        "old_sha256": "b52c293ac31f2ca8fc90e08d02b3d141fa7034cb4b67771ce489eea3499216f8",
+        "now_sha256": "b52c293ac31f2ca8fc90e08d02b3d141fa7034cb4b67771ce489eea3499216f8"
+      },
+      "prompts.py": {
+        "unchanged": true,
+        "old_sha256": "3e170b796feda8c6e16f0b08ad0cb5abf91e3974daed54a0e55592e2a9df476b",
+        "now_sha256": "3e170b796feda8c6e16f0b08ad0cb5abf91e3974daed54a0e55592e2a9df476b"
+      },
+      "data/knowledge_chunks.jsonl": {
+        "unchanged": true,
+        "old_sha256": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+        "now_sha256": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d"
+      },
+      "data/index_manifest.json": {
+        "unchanged": true,
+        "old_sha256": "cc0da3fe74433c1a8a782a9165e71806b2ddbd3a4744537f57cdf8a1c4c44602",
+        "now_sha256": "cc0da3fe74433c1a8a782a9165e71806b2ddbd3a4744537f57cdf8a1c4c44602"
+      }
+    },
+    "kernel_unchanged_except_allowed": true,
+    "note": "原检索内核冻结基线保留未覆盖；main.py/schemas.py/prompts.py 为接入允许修改项（本阶段实际仅修改 main.py，schemas.py/prompts.py 未改动）。"
+  },
+  "environment": {
+    "python": "3.12.0",
+    "chromadb": "1.5.9",
+    "sentence_transformers": "6.1.0",
+    "embedding_model": "BAAI/bge-small-zh-v1.5",
+    "vector_dimension": 512,
+    "collection": "ecommerce_kb_v1",
+    "data_version": "1.2"
+  },
+  "api_routing": {
+    "chat_entry": "POST /api/chat -> v3_retrieval_adapter.retrieve(message)",
+    "order_routing": "消息含完整12位或疑似6-11位订单号 → V2 retriever 结构化订单查询（存在性/状态/金额/物流/风险标注），订单不入向量库；订单号+高风险表达时本地风险下限（_risk_decision force_handoff）不被降低",
+    "other_routing": "其余问题 → hybrid_retriever_v2.hybrid_search_v2（冻结内核）",
+    "gate_behavior": {
+      "supported": "Top-K 原始片段构造 context → 确定性/DeepSeek 生成 → 校验兜底降级；高风险强制转人工",
+      "unsupported_business": "确定性回复（不调 DeepSeek，results/context 为空），sources=[现有资料未覆盖]，风险中、转人工",
+      "irrelevant": "确定性回复（不调 DeepSeek），范围说明文案，不携带知识片段"
+    },
+    "user_visible_boundary": "answer 不含 HR 编号/SOP 名/scope 标签/门控/相似度/分数/阈值（main._INTERNAL_LEAK_RE + 集成测试 _USER_LEAK_RE 双重校验）",
+    "warmup": "lifespan 启动预热本地 Embedding+向量库（约17.4s），不调用 DeepSeek；GET /api/ready 上报就绪状态"
+  },
+  "results": {
+    "new_api_integration": "test_v3_1_api_integration.py：169/169 通过（16 类用例）",
+    "old_chat_integration": "test_chat_integration.py：269/309（40 项失败已归因：无Key环境性模型断言 / V3多源sources预期变化 / 门控文案与发票口径有意语义变更，详见 v3_1_phase3_integration_report.md 第10节）",
+    "unit_tests": "test_hybrid_v2_validation 20/20；test_retriever 8/8 一致性通过；test_hybrid_retriever_unit 10/10；test_latency_order 全过",
+    "dev_set": "v3_1_dev_cases：Hit@1 36/40(90.0%)、Recall@3 100%、Rule 17/17、门控 60/60、误放行 0/20、HR-08 7/7（与 Phase 2 完全一致）",
+    "validation_v1_1_frozen": "Hit@1 22/24、Recall@3 23/24、Rule 8/8（v2 失败=H-013 语义变更 + H-020 排序差异，与 Phase 2 一致）",
+    "validation_v1_2_reviewed": "Hit@1 23/24、Recall@3 23/24、Rule 8/8（v2 失败=仅 H-013，与 Phase 2 一致）",
+    "leakage": "check_leakage.py 全过；开发集 vs 旧盲测 leak=0（Phase 2）",
+    "live_service": "uvicorn 实测 /api/health ok、/api/ready ready=true(vector_warmed=true, warmup_ms≈17393.7)、/api/chat 四类行为正确；测试后服务已停止、端口已释放"
+  },
+  "deepseek_calls": 0,
+  "old_final_blind_reexecuted": false,
+  "final_blind_v2_created": false,
+  "final_blind_v2_executed": false,
+  "verify": {
+    "verified_at": "2026-09-25T18:20:07",
+    "all_match": true,
+    "n_files": 13
+  }
+}

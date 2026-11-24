@@ -1,0 +1,56 @@
+<Slide style={{ width: 1280, height: 720, padding: '20px 60px', background: '#FFFFFF' }}>
+  <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1A2333' }}>用户问题与项目目标</Text>
+    <Text style={{ fontSize: 15, color: '#94A3B8' }}>01 / 问题定义</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', gap: 24, height: 520, marginTop: 8 }}>
+    <Box style={{ width: 500, flexDirection: 'column', gap: 12 }}>
+      <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#2563EB' }}>客服场景的四个痛点</Text>
+      {[
+        { n: '01', t: '重复回答率高', d: '商品参数、物流、售后问题被反复询问，占用大量人工坐席时间' },
+        { n: '02', t: '人工检索资料慢', d: '客服需要在多份文档间翻找价格、参数与售后规则，响应慢' },
+        { n: '03', t: '回答口径不一致', d: '不同客服对同一规则的表述可能不同，容易引发二次投诉' },
+        { n: '04', t: '高风险问题需及时升级', d: '投诉、金额争议、赔偿诉求必须第一时间转人工，避免AI误承诺' }
+      ].map((p, i) => (
+        <Box key={i} style={{ flexDirection: 'row', gap: 14, background: '#F4F7FE', borderRadius: 10, padding: '14px 16px', alignItems: 'flex-start' }}>
+          <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#2563EB', width: 44 }}>{p.n}</Text>
+          <Box style={{ flex: 1 }}>
+            <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#1A2333', marginBottom: 3 }}>{p.t}</Text>
+            <Text style={{ fontSize: 13.5, color: '#64748B', lineHeight: 1.5 }}>{p.d}</Text>
+          </Box>
+        </Box>
+      ))}
+    </Box>
+    <Box style={{ flex: 1, flexDirection: 'column', gap: 14 }}>
+      <Box style={{ background: '#2563EB', borderRadius: 12, padding: '18px 20px', flex: 1.35 }}>
+        <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#FFFFFF', marginBottom: 10 }}>产品目标</Text>
+        {['基于资料生成客服建议回复，并标注信息依据', '自动识别问题分类（商品 / 订单支付 / 物流 / 售后 / 其他）', '支持 3 个模拟订单的状态查询与售后进度展示', '识别风险并判断是否转人工，收集用户反馈'].map((g, i) => (
+          <Box key={i} style={{ flexDirection: 'row', gap: 8, marginBottom: 7, alignItems: 'flex-start' }}>
+            <Text style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)' }}>▸</Text>
+            <Text style={{ fontSize: 14.5, color: '#FFFFFF', lineHeight: 1.45, flex: 1 }}>{g}</Text>
+          </Box>
+        ))}
+      </Box>
+      <Box style={{ background: '#F4F7FE', borderRadius: 12, padding: '16px 20px', flex: 1 }}>
+        <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#1A2333', marginBottom: 8 }}>非目标（当前版本不做）</Text>
+        <Text style={{ fontSize: 14, color: '#64748B', lineHeight: 1.6 }}>不对接真实订单 / 支付 / 物流系统 · 不处理真实用户隐私数据 · 不自动批准退款或赔偿 · 不承诺到账或处理时间 · 不包含真实大模型 API 与 RAG</Text>
+      </Box>
+      <Box style={{ flexDirection: 'row', gap: 12, height: 86 }}>
+        {[
+          { t: '消费者', d: '随时提问，获得有依据的回答' },
+          { t: '客服人员', d: '参考建议回复，统一口径' },
+          { t: '客服主管 / 运营', d: '关注风险问题与转人工质量' }
+        ].map((r, i) => (
+          <Box key={i} style={{ flex: 1, border: '1px solid #DBE4F5', borderRadius: 10, padding: '12px 14px', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#2563EB', marginBottom: 4 }}>{r.t}</Text>
+            <Text style={{ fontSize: 12.5, color: '#64748B', lineHeight: 1.4 }}>{r.d}</Text>
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  </Box>
+  <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>电商客服AI助手 · 个人作品集</Text>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>02 / 07</Text>
+  </Box>
+</Slide>

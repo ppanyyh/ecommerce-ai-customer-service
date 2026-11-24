@@ -1,0 +1,62 @@
+{
+  "purpose": "最终盲测候选代码冻结：final blind set 运行前以下哈希必须保持不变；冻结后本阶段不得修改检索代码与知识片段。",
+  "frozen_at": "2026-09-25T14:29:50",
+  "files_sha256": {
+    "query_analyzer.py": "cc3d09445d7f009b27a5502f4184a14e897f94b0ecfa8f739c9efd7ab44b24bb",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "721a554f844cc7f2eda366ae310c827263a3dbe54dc658117a0b762d70303c3f",
+    "data/knowledge_chunks.jsonl": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+    "build_vector_index.py": "af0dd5fdfa843fc371f6bf51ed92864c90a66e4d66ef25d8fe9b2be21ed849b0"
+  },
+  "embedding_model": "BAAI/bge-small-zh-v1.5",
+  "vector_dimension": 512,
+  "collection": "ecommerce_kb_v1",
+  "collection_data_version": "1.1",
+  "chunks_sha256_in_index_manifest": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+  "rrf_params": {
+    "RRF_K": 60,
+    "KEYWORD_WEIGHT": 1.0,
+    "VECTOR_WEIGHT": 1.0,
+    "KEYWORD_TOP_N": 10,
+    "VECTOR_TOP_N": 10
+  },
+  "epsilon_params": {
+    "EPSILON": 0.0003,
+    "ALIAS_BOOST": 0.0002
+  },
+  "keyword_governance": {
+    "GENERIC_WEAK_WORDS": [
+      "商品",
+      "处理",
+      "怎么样",
+      "订单",
+      "质量",
+      "购物",
+      "问题"
+    ],
+    "WEAK_WORD_CAP": 0.5,
+    "HAN_CHAR_SCORE": 0.15,
+    "HAN_OVERLAP_CAP": 0.8
+  },
+  "product_synonym_extension": {
+    "source": "query_analyzer.EXTENDED_SYNONYMS（仅 V3 检索层，不修改 V2 knowledge_base.json）",
+    "mapping": {
+      "书包": "P004"
+    }
+  },
+  "risk_intent_config": {
+    "source": "query_analyzer.INTENT_RULE_MAP（通用意图 -> 必需规则片段）",
+    "intent_rule_map": {
+      "complaint_compensation": "RULE-HR-01",
+      "amount_dispute": "RULE-HR-02",
+      "refund_urge": "RULE-HR-03",
+      "logistics_stall": "RULE-HR-04",
+      "other_order": "RULE-HR-05",
+      "privacy_info": "RULE-HR-06",
+      "over_promise": "RULE-HR-07",
+      "post_purchase_defect": "RULE-HR-08"
+    }
+  },
+  "unit_test_evidence": "test_hybrid_v2_validation.py 20/20 通过；四模式回归（validation_set_v1）8 项成功条件全部 PASS（2026-09-25）。"
+}

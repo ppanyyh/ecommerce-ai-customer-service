@@ -1,0 +1,29 @@
+<Slide style={{ width: 1280, height: 720, padding: 0, background: 'linear-gradient(135deg, #1D4ED8 0%, #3B82F6 55%, #60A5FA 100%)', position: 'relative', overflow: 'hidden' }}>
+  <Box style={{ position: 'absolute', top: -120, right: -100, width: 420, height: 420, borderRadius: 210, background: 'rgba(255,255,255,0.08)' }} />
+  <Box style={{ position: 'absolute', bottom: -160, right: 180, width: 320, height: 320, borderRadius: 160, background: 'rgba(255,255,255,0.06)' }} />
+  <Box style={{ position: 'absolute', top: 96, left: 80, right: 80, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+    <Box style={{ width: 34, height: 34, borderRadius: 8, background: 'rgba(255,255,255,0.2)', alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{ fontSize: 18, color: '#FFFFFF', fontWeight: 'bold' }}>AI</Text>
+    </Box>
+    <Text style={{ fontSize: 15, color: 'rgba(255,255,255,0.85)', letterSpacing: 2 }}>个人作品集项目 · 能力验证 DEMO</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 80, top: 210, width: 900 }}>
+    <Text style={{ fontSize: 66, color: '#FFFFFF', fontWeight: 'bold', lineHeight: 1.15 }}>电商客服AI助手</Text>
+    <Text style={{ fontSize: 24, color: 'rgba(255,255,255,0.92)', marginTop: 18, lineHeight: 1.5 }}>基于业务资料和规则检索的客服能力验证 Demo</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 80, bottom: 120, width: 1120, flexDirection: 'row', gap: 16 }}>
+    <Box style={{ background: 'rgba(255,255,255,0.14)', borderRadius: 10, padding: '14px 20px', width: 460 }}>
+      <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', marginBottom: 6 }}>我的角色</Text>
+      <Text style={{ fontSize: 15, color: '#FFFFFF', lineHeight: 1.5 }}>产品规划 · 知识整理 · Prompt设计 · 原型与测试</Text>
+    </Box>
+    <Box style={{ background: 'rgba(255,255,255,0.14)', borderRadius: 10, padding: '14px 20px', width: 300 }}>
+      <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', marginBottom: 6 }}>使用工具</Text>
+      <Text style={{ fontSize: 15, color: '#FFFFFF', lineHeight: 1.5 }}>WorkBuddy · Axure RP 11 · WPS</Text>
+    </Box>
+    <Box style={{ background: 'rgba(255,255,255,0.14)', borderRadius: 10, padding: '14px 20px', flex: 1 }}>
+      <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', marginBottom: 6 }}>数据说明</Text>
+      <Text style={{ fontSize: 15, color: '#FFFFFF', lineHeight: 1.5 }}>全部为模拟数据，未接入真实系统</Text>
+    </Box>
+  </Box>
+  <Text style={{ position: 'absolute', left: 80, bottom: 56, fontSize: 14, color: 'rgba(255,255,255,0.65)' }}>2026 · 求职作品集案例</Text>
+</Slide>

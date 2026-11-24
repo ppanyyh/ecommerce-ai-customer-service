@@ -1,0 +1,74 @@
+===== H-006 | 戴着耳机冲个淋浴，应该没什么事吧？
+  scope=supported intents=[] required=[] sup=[] uncov=[] oos=[] concern=True entity=['P001'] aliases=['耳机'] rewrites=[]
+  KW : PRODUCT-P001(6.0) | FAQ-002(0.6) | FAQ-007(0.45) | FAQ-001(0.3) | FAQ-009(0.3) | FAQ-010(0.3) | FAQ-012(0.3) | FAQ-015(0.3)
+  VEC: FAQ-002(0.590) | PRODUCT-P001(0.382) | PRODUCT-P003(0.381) | FAQ-001(0.377) | RULE-HR-01(0.340) | FAQ-004(0.326) | RULE-HR-08(0.319) | FAQ-020(0.316)
+  FIN: 1.PRODUCT-P001(rrf=0.032722) | 2.FAQ-002(rrf=0.032522) | 3.FAQ-001(rrf=0.03125) | 4.PRODUCT-P003(rrf=0.015873) | 5.FAQ-007(rrf=0.015873)
+  reserved=[] missing=[]
+
+===== H-007 | 这台键盘接苹果电脑上能用吗，会不会有按键不管用？
+  scope=supported intents=[] required=[] sup=[] uncov=[] oos=[] concern=True entity=['P002'] aliases=['键盘'] rewrites=[]
+  KW : PRODUCT-P002(6.0) | FAQ-003(0.75) | PRODUCT-P005(0.3) | FAQ-010(0.3) | FAQ-013(0.3) | RULE-HR-02(0.3) | RULE-HR-03(0.3) | RULE-HR-04(0.3)
+  VEC: FAQ-003(0.680) | PRODUCT-P002(0.548) | FAQ-001(0.406) | PRODUCT-P005(0.403) | RULE-HR-08(0.387) | FAQ-011(0.371) | FAQ-002(0.370) | RULE-HR-06(0.370)
+  FIN: 1.PRODUCT-P002(rrf=0.032722) | 2.FAQ-003(rrf=0.032522) | 3.PRODUCT-P005(rrf=0.031498) | 4.FAQ-001(rrf=0.030159) | 5.RULE-HR-08(rrf=0.027877)
+  reserved=[] missing=[]
+
+===== H-008 | 把可乐倒进那个保温杯里带着走，会不会炸开？
+  scope=supported intents=[] required=[] sup=[] uncov=[] oos=[] concern=True entity=['P003'] aliases=['保温杯'] rewrites=[]
+  KW : FAQ-004(7.65) | PRODUCT-P003(7.5) | FAQ-002(0.3) | FAQ-013(0.3) | FAQ-015(0.3) | FAQ-018(0.3) | FAQ-019(0.3) | RULE-HR-07(0.3)
+  VEC: FAQ-004(0.558) | PRODUCT-P003(0.445) | FAQ-015(0.344) | FAQ-002(0.315) | FAQ-019(0.304) | FAQ-014(0.293) | FAQ-005(0.284) | FAQ-012(0.279)
+  FIN: 1.PRODUCT-P003(rrf=0.032458) | 2.FAQ-004(rrf=0.032787) | 3.FAQ-015(rrf=0.031258) | 4.FAQ-002(rrf=0.031498) | 5.FAQ-019(rrf=0.03031)
+  reserved=[] missing=[]
+
+===== H-009 | 下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？
+  scope=irrelevant intents=[] required=[] sup=[] uncov=[] oos=['weather'] concern=True entity=[] aliases=[] rewrites=[]
+  KW : PRODUCT-P004(0.3) | FAQ-005(0.3) | FAQ-013(0.3) | RULE-HR-04(0.3) | PRODUCT-P005(0.15) | FAQ-002(0.15) | FAQ-008(0.15) | FAQ-010(0.15)
+  VEC: PRODUCT-P004(0.418) | FAQ-005(0.416) | FAQ-002(0.397) | FAQ-012(0.370) | RULE-HR-07(0.351) | RULE-HR-08(0.339) | FAQ-014(0.335) | FAQ-004(0.335)
+  GATED: 抱歉，我只能协助处理本店商品、订单和售后相关问题。
+
+===== H-012 | 明明已经扣过钱了，订单里怎么还让我再付一遍？
+  scope=unknown intents=[] required=[] sup=[] uncov=[] oos=[] concern=False entity=[] aliases=[] rewrites=[]
+  KW : FAQ-006(0.6) | FAQ-007(0.6) | RULE-HR-02(0.6) | FAQ-009(0.45) | FAQ-010(0.45) | FAQ-014(0.45) | FAQ-008(0.3) | FAQ-012(0.3)
+  VEC: FAQ-006(0.521) | FAQ-007(0.521) | FAQ-008(0.510) | RULE-HR-02(0.497) | FAQ-012(0.482) | FAQ-011(0.482) | FAQ-019(0.481) | FAQ-017(0.480)
+  FIN: 1.FAQ-006(rrf=0.032787) | 2.FAQ-007(rrf=0.032258) | 3.FAQ-008(rrf=0.030798) | 4.FAQ-012(rrf=0.03009) | 5.RULE-HR-02(rrf=0.029498)
+  reserved=[] missing=[]
+
+===== H-013 | 公司报销需要票据，你们这边能给开票吗？
+  scope=unsupported_business intents=[] required=[] sup=[] uncov=['invoice_policy'] oos=[] concern=False entity=[] aliases=[] rewrites=[]
+  KW : FAQ-018(12.15) | FAQ-013(0.3) | FAQ-015(0.3) | FAQ-020(0.3) | RULE-HR-01(0.3) | PRODUCT-P005(0.15) | FAQ-001(0.15) | FAQ-002(0.15)
+  VEC: FAQ-018(0.680) | FAQ-020(0.474) | FAQ-014(0.412) | FAQ-006(0.406) | RULE-HR-08(0.400) | FAQ-009(0.388) | FAQ-008(0.388) | RULE-HR-01(0.387)
+  GATED: 现有资料没有覆盖这项信息，建议联系人工客服确认。
+
+===== H-020 | 耳机想退，但我已经拆开用过一次了还能退不？退回去的运费算谁的？
+  scope=supported intents=[] required=[] sup=['return_exchange_query', 'shipping_issue_query'] uncov=[] oos=[] concern=False entity=['P001'] aliases=['耳机'] rewrites=['七天无理由退货条件 拆封未使用退货 换货流程', '物流查询 包裹签收未收到 退货运费']
+  KW : FAQ-013(12.3) | FAQ-015(6.6) | FAQ-017(6.3) | PRODUCT-P001(6.0) | RULE-HR-02(0.75) | RULE-HR-03(0.45) | RULE-HR-04(0.45) | RULE-HR-08(0.45)
+  VEC: FAQ-013(0.712) | FAQ-015(0.671) | FAQ-017(0.641) | FAQ-002(0.592) | FAQ-019(0.591) | FAQ-011(0.583) | FAQ-008(0.578) | FAQ-014(0.563)
+  FIN: 1.PRODUCT-P001(rrf=0.015825) | 2.FAQ-013(rrf=0.032787) | 3.FAQ-015(rrf=0.032258) | 4.FAQ-017(rrf=0.031746) | 5.FAQ-002(rrf=0.029911)
+  reserved=[] missing=[]
+
+===== H-021 | 杯子到手就有裂痕要退款，那钱一般多久能到我卡里？
+  scope=supported intents=['refund_urge', 'post_purchase_defect'] required=['RULE-HR-03', 'RULE-HR-08'] sup=['refund_progress_query'] uncov=['delivery_promise'] oos=[] concern=True entity=['P003'] aliases=['杯子'] rewrites=['退款进度 退款多久到账']
+  KW : PRODUCT-P003(6.0) | FAQ-016(1.95) | RULE-HR-02(1.95) | RULE-HR-07(1.95) | RULE-HR-03(1.65) | RULE-HR-08(1.5) | RULE-HR-04(0.75) | FAQ-009(0.3)
+  VEC: FAQ-016(0.720) | FAQ-013(0.562) | FAQ-015(0.549) | FAQ-019(0.530) | RULE-HR-03(0.529) | FAQ-007(0.529) | FAQ-006(0.529) | FAQ-009(0.507)
+  FIN: 1.RULE-HR-03(rrf=0.030769) | 2.RULE-HR-08(rrf=0.015152) | 3.PRODUCT-P003(rrf=0.016593) | 4.FAQ-016(rrf=0.032522) | 5.RULE-HR-02(rrf=0.030159)
+  reserved=['RULE-HR-03', 'RULE-HR-08'] missing=[]
+
+===== H-022 | 我要投诉你们发假货，顺便把我这单给退了。
+  scope=supported intents=['complaint_compensation'] required=['RULE-HR-01'] sup=[] uncov=[] oos=[] concern=False entity=[] aliases=[] rewrites=[]
+  KW : FAQ-020(6.3) | RULE-HR-01(6.3) | FAQ-013(0.6) | FAQ-009(0.45) | FAQ-015(0.3) | FAQ-017(0.3) | FAQ-019(0.3) | RULE-HR-02(0.3)
+  VEC: FAQ-017(0.554) | FAQ-013(0.540) | FAQ-020(0.502) | FAQ-015(0.490) | FAQ-011(0.486) | FAQ-008(0.485) | FAQ-009(0.484) | FAQ-019(0.484)
+  FIN: 1.RULE-HR-01(rrf=0.016129) | 2.FAQ-013(rrf=0.032002) | 3.FAQ-020(rrf=0.032266) | 4.FAQ-017(rrf=0.031545) | 5.FAQ-015(rrf=0.03101)
+  reserved=['RULE-HR-01'] missing=[]
+
+===== H-014 | 再不给我解决，我就去消协举报你们这家店！
+  scope=supported intents=['complaint_compensation'] required=['RULE-HR-01'] sup=[] uncov=[] oos=[] concern=False entity=[] aliases=[] rewrites=[]
+  KW : RULE-HR-01(12.15) | FAQ-020(6.15) | FAQ-008(0.15) | FAQ-010(0.15) | FAQ-013(0.15) | FAQ-018(0.15) | RULE-HR-02(0.15) | RULE-HR-03(0.15)
+  VEC: FAQ-020(0.503) | FAQ-014(0.474) | FAQ-015(0.464) | FAQ-013(0.463) | RULE-HR-01(0.462) | FAQ-019(0.461) | FAQ-011(0.457) | FAQ-008(0.453)
+  FIN: 1.RULE-HR-01(rrf=0.031778) | 2.FAQ-020(rrf=0.032522) | 3.FAQ-013(rrf=0.03101) | 4.FAQ-008(rrf=0.030579) | 5.FAQ-018(rrf=0.029437)
+  reserved=['RULE-HR-01'] missing=[]
+
+===== H-018 | 这是我给室友代买的东西，你帮我看看他那边的单子到哪一步了。
+  scope=supported intents=['other_order'] required=['RULE-HR-05'] sup=['order_status_query'] uncov=[] oos=[] concern=False entity=[] aliases=[] rewrites=['查询订单状态 物流进度 发货情况']
+  KW : RULE-HR-05(0.45) | RULE-HR-07(0.45) | FAQ-008(0.3) | FAQ-012(0.3) | RULE-HR-01(0.3) | RULE-HR-02(0.3) | PRODUCT-P003(0.15) | FAQ-006(0.15)
+  VEC: FAQ-006(0.760) | FAQ-009(0.753) | FAQ-011(0.618) | FAQ-012(0.590) | FAQ-007(0.564) | FAQ-014(0.562) | FAQ-017(0.549) | FAQ-010(0.522)
+  FIN: 1.RULE-HR-05(rrf=0.016393) | 2.FAQ-006(rrf=0.031099) | 3.FAQ-012(rrf=0.03125) | 4.FAQ-009(rrf=0.030415) | 5.FAQ-007(rrf=0.029877)
+  reserved=['RULE-HR-05'] missing=[]

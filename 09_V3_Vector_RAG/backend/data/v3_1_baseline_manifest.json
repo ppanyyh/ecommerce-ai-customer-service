@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-09-25T15:50:28",
+  "purpose": "V3.1 第一阶段调修前的现状基线：记录旧 final blind set 结果与候选文件哈希，调修不得改动这些资产。",
+  "old_blind_set_reused_for_tuning": false,
+  "old_blind_set_reexecuted": false,
+  "old_blind_set_sha256": "27ff8622aa3387b0e46f504b4c489bfd2755d63f2c7edd233e8f40479ea030c1",
+  "old_evaluated_mode": "hybrid_business_v2",
+  "old_candidate_files_sha256": {
+    "query_analyzer.py": "cc3d09445d7f009b27a5502f4184a14e897f94b0ecfa8f739c9efd7ab44b24bb",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "721a554f844cc7f2eda366ae310c827263a3dbe54dc658117a0b762d70303c3f",
+    "data/knowledge_chunks.jsonl": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+    "build_vector_index.py": "af0dd5fdfa843fc371f6bf51ed92864c90a66e4d66ef25d8fe9b2be21ed849b0"
+  },
+  "old_blind_metrics": {
+    "answer_hit1": "23/30",
+    "answer_hit1_pct": 76.7,
+    "answer_recall3": "28/30",
+    "answer_recall3_pct": 93.3,
+    "mrr": 0.8583,
+    "rule_recall3": "10/12",
+    "rule_recall3_pct": 83.3,
+    "supported_accuracy": "30/40",
+    "supported_accuracy_pct": 75.0,
+    "unanswerable_false_hits": "10/10",
+    "unanswerable_false_hit_rate_pct": 100.0
+  },
+  "latency_errata": {
+    "reported_in_original_report": {
+      "latency_ms_cold_start_first_call": 11.43,
+      "latency_ms_p95_overall": 33.79
+    },
+    "corrected": {
+      "real_cold_start_first_call_ms": 194742.21,
+      "warm_p50_ms": 14.44,
+      "warm_p95_excluding_first_ms": 31.46
+    },
+    "errata_file": "final_blind_eval_errata.md",
+    "note": "原脚本先排序后取首元素，误把最小值当成首次调用；勘误详见 final_blind_eval_errata.md。"
+  }
+}

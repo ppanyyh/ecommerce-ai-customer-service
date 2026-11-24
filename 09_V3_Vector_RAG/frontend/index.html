@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电商客服AI助手</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 顶部栏 -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">AI</span>
+      <span class="title">电商客服AI助手</span>
+      <span class="badge badge-demo">V2.0 · DeepSeek增强版</span>
+      <span id="apiStatus" class="status-chip status-checking">服务检测中…</span>
+    </div>
+    <div class="top-notice">所有订单和用户信息均为模拟数据</div>
+  </header>
+
+  <div class="layout">
+    <!-- 左侧：会话 + 快捷问题 -->
+    <aside class="left-panel">
+      <button id="newSessionBtn" class="btn-primary btn-block">＋ 新建会话</button>
+      <div class="panel-title">当前会话<span class="panel-sub">仅保留本次浏览会话，刷新后清空</span></div>
+      <div id="sessionList" class="session-list"></div>
+      <div class="panel-title">快捷问题</div>
+      <div id="quickQuestions" class="quick-list"></div>
+    </aside>
+
+    <!-- 中间：对话区 -->
+    <main class="chat-panel">
+      <div class="chat-header">
+        <span>对话窗口</span>
+        <button id="clearBtn" class="btn-ghost">清空会话</button>
+      </div>
+      <div id="chatList" class="chat-list"></div>
+      <div class="chat-input-row">
+        <input id="inputBox" type="text" placeholder="请输入问题，或直接输入订单号查询（回车发送）">
+        <button id="sendBtn" class="btn-primary">发送</button>
+      </div>
+      <div id="inputTip" class="input-tip" style="display:none;">请输入问题后再发送</div>
+    </main>
+
+    <!-- 右侧：分析面板 -->
+    <aside class="right-panel">
+      <div class="panel-title">内部分析（演示）<span class="panel-sub">以下内容用于展示资料引用和风险判断，实际面向消费者的界面可隐藏</span></div>
+      <div class="analysis">
+        <div class="an-row"><span class="an-key">问题分类</span><span id="anCategory" class="val">—</span></div>
+        <div class="an-row"><span class="an-key">命中商品/订单</span><span id="anHit" class="val">—</span></div>
+        <div class="an-row"><span class="an-key">信息依据</span><span id="anBasis" class="val">—</span></div>
+        <div class="an-row"><span class="an-key">风险等级</span><span id="anRisk" class="val">—</span></div>
+        <div class="an-row"><span class="an-key">是否转人工</span><span id="anTransfer" class="val">—</span></div>
+        <div class="an-row"><span class="an-key">转人工原因</span><span id="anReason" class="val">—</span></div>
+        <div class="an-row"><span class="an-key">回答模式</span><span id="anMode" class="val">—</span></div>
+      </div>
+      <div class="panel-title">会话记录（问题 / 分类 / 转人工 / 反馈）</div>
+      <div id="sessionLog" class="session-log"></div>
+    </aside>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

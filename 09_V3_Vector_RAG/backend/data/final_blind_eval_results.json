@@ -1,0 +1,3179 @@
+{
+  "meta": {
+    "evaluated_mode": "hybrid_business_v2",
+    "executed_at": "2026-09-25T15:21:40",
+    "execution_count": 1,
+    "blind_set_sha256": "27ff8622aa3387b0e46f504b4c489bfd2755d63f2c7edd233e8f40479ea030c1",
+    "top_k": 5,
+    "metric_top": 3,
+    "no_retry_policy": "每条用例仅调用检索器一次；异常只记录不重试；未调参未重跑",
+    "retrieval_executed": true,
+    "deepseek_called": false
+  },
+  "overall": {
+    "n_cases": 40,
+    "n_answerable": 30,
+    "n_unanswerable": 10,
+    "answer_hit1": "23/30",
+    "answer_hit1_pct": 76.7,
+    "answer_recall3": "28/30",
+    "answer_recall3_pct": 93.3,
+    "mrr": 0.8583,
+    "rule_recall3": "10/12",
+    "rule_recall3_pct": 83.3,
+    "supported_accuracy": "30/40",
+    "supported_accuracy_pct": 75.0,
+    "unanswerable_false_hits": "10/10",
+    "unanswerable_false_hit_rate_pct": 100.0,
+    "false_hit_case_ids": [
+      "FB-031",
+      "FB-032",
+      "FB-033",
+      "FB-034",
+      "FB-035",
+      "FB-036",
+      "FB-037",
+      "FB-038",
+      "FB-039",
+      "FB-040"
+    ],
+    "latency_ms_p50_overall": 14.44,
+    "latency_ms_p95_overall": 33.79,
+    "latency_ms_cold_start_first_call": 11.43,
+    "latency_ms_p50_excluding_first": 14.49,
+    "latency_ms_p95_excluding_first": 33.79,
+    "exceptions": []
+  },
+  "group_by_category": {
+    "faq": {
+      "n": 8,
+      "hit1": "6/8",
+      "recall3": "6/8",
+      "mrr": 0.7812,
+      "rule_recall3": "-",
+      "supported_ok": "8/8",
+      "false_hits": 0
+    },
+    "irrelevant": {
+      "n": 5,
+      "hit1": "-",
+      "recall3": "-",
+      "mrr": "-",
+      "rule_recall3": "-",
+      "supported_ok": "0/5",
+      "false_hits": 5
+    },
+    "multi": {
+      "n": 6,
+      "hit1": "5/6",
+      "recall3": "6/6",
+      "mrr": 0.9167,
+      "rule_recall3": "2/4",
+      "supported_ok": "6/6",
+      "false_hits": 0
+    },
+    "no_policy": {
+      "n": 5,
+      "hit1": "-",
+      "recall3": "-",
+      "mrr": "-",
+      "rule_recall3": "-",
+      "supported_ok": "0/5",
+      "false_hits": 5
+    },
+    "product": {
+      "n": 8,
+      "hit1": "8/8",
+      "recall3": "8/8",
+      "mrr": 1.0,
+      "rule_recall3": "-",
+      "supported_ok": "8/8",
+      "false_hits": 0
+    },
+    "rule": {
+      "n": 8,
+      "hit1": "4/8",
+      "recall3": "8/8",
+      "mrr": 0.75,
+      "rule_recall3": "8/8",
+      "supported_ok": "8/8",
+      "false_hits": 0
+    }
+  },
+  "group_by_difficulty": {
+    "easy": {
+      "n": 10,
+      "hit1": "4/5",
+      "recall3": "4/5",
+      "mrr": 0.8,
+      "rule_recall3": "-",
+      "supported_ok": "5/10",
+      "false_hits": 5
+    },
+    "medium": {
+      "n": 18,
+      "hit1": "12/17",
+      "recall3": "16/17",
+      "mrr": 0.8382,
+      "rule_recall3": "8/8",
+      "supported_ok": "17/18",
+      "false_hits": 1
+    },
+    "hard": {
+      "n": 12,
+      "hit1": "7/8",
+      "recall3": "8/8",
+      "mrr": 0.9375,
+      "rule_recall3": "2/4",
+      "supported_ok": "8/12",
+      "false_hits": 4
+    }
+  },
+  "per_case": [
+    {
+      "case_id": "FB-001",
+      "category": "product",
+      "difficulty": "medium",
+      "query": "P005这款台灯的色温有几档？功率是多少瓦？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P005"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 194742.21,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P005",
+          "doc_type": "product",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.65503,
+          "keyword_score": 9.0
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "PRODUCT-P003",
+          "doc_type": "product",
+          "rrf_score": 0.031054,
+          "vector_similarity": 0.493048,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-004",
+          "doc_type": "faq",
+          "rrf_score": 0.029631,
+          "vector_similarity": 0.315622,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "PRODUCT-P002",
+          "doc_type": "product",
+          "rrf_score": 0.015873,
+          "vector_similarity": 0.384529,
+          "keyword_score": null
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.016129,
+          "vector_similarity": null,
+          "keyword_score": 0.6
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-002",
+      "category": "product",
+      "difficulty": "medium",
+      "query": "SGA-01这款耳机的蓝牙是哪个版本？都有什么颜色？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P001"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 19.83,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P001",
+          "doc_type": "product",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.573963,
+          "keyword_score": 17.0
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "PRODUCT-P002",
+          "doc_type": "product",
+          "rrf_score": 0.031754,
+          "vector_similarity": 0.4313,
+          "keyword_score": 1.65
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "PRODUCT-P003",
+          "doc_type": "product",
+          "rrf_score": 0.031258,
+          "vector_similarity": 0.415946,
+          "keyword_score": 1.5
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-001",
+          "doc_type": "faq",
+          "rrf_score": 0.030835,
+          "vector_similarity": 0.497187,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.030077,
+          "vector_similarity": 0.411203,
+          "keyword_score": 0.45
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-003",
+      "category": "product",
+      "difficulty": "easy",
+      "query": "WarmDay 500有几种颜色可以选？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P003"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 21.77,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P003",
+          "doc_type": "product",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.480361,
+          "keyword_score": 17.5
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "PRODUCT-P004",
+          "doc_type": "product",
+          "rrf_score": 0.031746,
+          "vector_similarity": 0.370904,
+          "keyword_score": 1.5
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "PRODUCT-P001",
+          "doc_type": "product",
+          "rrf_score": 0.031514,
+          "vector_similarity": 0.347328,
+          "keyword_score": 1.5
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-002",
+          "doc_type": "faq",
+          "rrf_score": 0.030331,
+          "vector_similarity": 0.309109,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "PRODUCT-P005",
+          "doc_type": "product",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.387194,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-004",
+      "category": "product",
+      "difficulty": "hard",
+      "query": "那个能主动降噪的耳机，坐地铁的时候用管用吗？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P001",
+        "FAQ-001"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 15.13,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-001",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.629824,
+          "keyword_score": 14.45
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-002",
+          "doc_type": "faq",
+          "rrf_score": 0.031754,
+          "vector_similarity": 0.494805,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.031746,
+          "vector_similarity": 0.483652,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "PRODUCT-P001",
+          "doc_type": "product",
+          "rrf_score": 0.031754,
+          "vector_similarity": 0.459936,
+          "keyword_score": 7.5
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.029877,
+          "vector_similarity": 0.342913,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-005",
+      "category": "product",
+      "difficulty": "hard",
+      "query": "通勤包装下笔记本后，遇上雨天面料会不会渗水？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P004",
+        "FAQ-005"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 14.69,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P004",
+          "doc_type": "product",
+          "rrf_score": 0.032522,
+          "vector_similarity": 0.465614,
+          "keyword_score": 6.0
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-005",
+          "doc_type": "faq",
+          "rrf_score": 0.031545,
+          "vector_similarity": 0.509743,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-002",
+          "doc_type": "faq",
+          "rrf_score": 0.031258,
+          "vector_similarity": 0.427384,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-004",
+          "doc_type": "faq",
+          "rrf_score": 0.03125,
+          "vector_similarity": 0.423338,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-014",
+          "doc_type": "faq",
+          "rrf_score": 0.031258,
+          "vector_similarity": 0.418305,
+          "keyword_score": 1.5
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-006",
+      "category": "product",
+      "difficulty": "medium",
+      "query": "KP-87键盘的保修期是多长？进液了还给不给保修？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P002"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 15.91,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P002",
+          "doc_type": "product",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.700547,
+          "keyword_score": 15.5
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-003",
+          "doc_type": "faq",
+          "rrf_score": 0.031281,
+          "vector_similarity": 0.535834,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.03031,
+          "vector_similarity": 0.484397,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.029911,
+          "vector_similarity": 0.487709,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-013",
+          "doc_type": "faq",
+          "rrf_score": 0.029418,
+          "vector_similarity": 0.460428,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-007",
+      "category": "product",
+      "difficulty": "easy",
+      "query": "有没有那种能自己设定时间自动关掉的灯？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P005"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 31.46,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P005",
+          "doc_type": "product",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.414257,
+          "keyword_score": 1.8
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-001",
+          "doc_type": "faq",
+          "rrf_score": 0.030303,
+          "vector_similarity": 0.307635,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.03031,
+          "vector_similarity": 0.30583,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-013",
+          "doc_type": "faq",
+          "rrf_score": 0.028571,
+          "vector_similarity": 0.303971,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.338252,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-008",
+      "category": "product",
+      "difficulty": "easy",
+      "query": "你们家无线耳机卖多少钱一个？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P001"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 13.49,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P001",
+          "doc_type": "product",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.550596,
+          "keyword_score": 14.0
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-001",
+          "doc_type": "faq",
+          "rrf_score": 0.032258,
+          "vector_similarity": 0.504182,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.031746,
+          "vector_similarity": 0.478832,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-002",
+          "doc_type": "faq",
+          "rrf_score": 0.03055,
+          "vector_similarity": 0.447255,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "PRODUCT-P002",
+          "doc_type": "product",
+          "rrf_score": 0.029211,
+          "vector_similarity": 0.387818,
+          "keyword_score": 0.15
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-009",
+      "category": "faq",
+      "difficulty": "easy",
+      "query": "我下午刚拍的这单，什么时候能给我发货啊？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-009"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 14.54,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-009",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.633658,
+          "keyword_score": 6.75
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.031754,
+          "vector_similarity": 0.475781,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-006",
+          "doc_type": "faq",
+          "rrf_score": 0.031754,
+          "vector_similarity": 0.453724,
+          "keyword_score": 1.8
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-008",
+          "doc_type": "faq",
+          "rrf_score": 0.029877,
+          "vector_similarity": 0.403274,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.015873,
+          "vector_similarity": 0.473188,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-010",
+      "category": "faq",
+      "difficulty": "medium",
+      "query": "包裹已经在路上了，收货地点还能换吗？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-011"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 14.61,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-011",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.608836,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.032258,
+          "vector_similarity": 0.563057,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-008",
+          "doc_type": "faq",
+          "rrf_score": 0.030777,
+          "vector_similarity": 0.4669,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.029631,
+          "vector_similarity": 0.434327,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.015873,
+          "vector_similarity": 0.467442,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-011",
+      "category": "faq",
+      "difficulty": "hard",
+      "query": "付款的时候提示失败了，可是银行卡里的钱已经没了，这算付上没有？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-007"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 15.43,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.604737,
+          "keyword_score": 6.3
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.031514,
+          "vector_similarity": 0.481853,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.031746,
+          "vector_similarity": 0.477654,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-04",
+          "doc_type": "rule",
+          "rrf_score": 0.030777,
+          "vector_similarity": 0.425086,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-010",
+          "doc_type": "faq",
+          "rrf_score": 0.029631,
+          "vector_similarity": 0.424287,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-012",
+      "category": "faq",
+      "difficulty": "medium",
+      "query": "买了个台灯不太喜欢，还没拆封能直接退吗？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-013"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 14.18,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.560377,
+          "keyword_score": 6.3
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "PRODUCT-P005",
+          "doc_type": "product",
+          "rrf_score": 0.032258,
+          "vector_similarity": 0.528712,
+          "keyword_score": 6.15
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.031258,
+          "vector_similarity": 0.481388,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-013",
+          "doc_type": "faq",
+          "rrf_score": 0.031498,
+          "vector_similarity": 0.466224,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.029199,
+          "vector_similarity": 0.385973,
+          "keyword_score": 0.45
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.25,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": [
+        "hit1_miss",
+        "recall3_miss"
+      ]
+    },
+    {
+      "case_id": "FB-013",
+      "category": "faq",
+      "difficulty": "medium",
+      "query": "退款审核都通过了，钱怎么还没到银行卡里？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-016"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 15.11,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-03"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.032018,
+          "vector_similarity": 0.643464,
+          "keyword_score": 1.65
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.032018,
+          "vector_similarity": 0.513025,
+          "keyword_score": 1.8
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.031281,
+          "vector_similarity": 0.562558,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.030798,
+          "vector_similarity": 0.535467,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.030769,
+          "vector_similarity": 0.500185,
+          "keyword_score": 1.65
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-014",
+      "category": "faq",
+      "difficulty": "medium",
+      "query": "下单的时候颜色选错了，能不能帮我改成白色的？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-008"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 14.61,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-008",
+          "doc_type": "faq",
+          "rrf_score": 0.032018,
+          "vector_similarity": 0.468118,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.030159,
+          "vector_similarity": 0.421411,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-05",
+          "doc_type": "rule",
+          "rrf_score": 0.030077,
+          "vector_similarity": 0.385119,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.424477,
+          "keyword_score": null
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "PRODUCT-P001",
+          "doc_type": "product",
+          "rrf_score": 0.016393,
+          "vector_similarity": null,
+          "keyword_score": 1.5
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-015",
+      "category": "faq",
+      "difficulty": "medium",
+      "query": "刚买完就赶上活动降价了，能把差价补给我吗？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-019"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 14.08,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.645146,
+          "keyword_score": 12.3
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.031025,
+          "vector_similarity": 0.403562,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-013",
+          "doc_type": "faq",
+          "rrf_score": 0.029877,
+          "vector_similarity": 0.386788,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.444641,
+          "keyword_score": null
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-001",
+          "doc_type": "faq",
+          "rrf_score": 0.016129,
+          "vector_similarity": null,
+          "keyword_score": 0.45
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-016",
+      "category": "faq",
+      "difficulty": "easy",
+      "query": "有没有办法看看我买的这单现在走到哪个环节了？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-006"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 12.75,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.031778,
+          "vector_similarity": 0.410703,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-008",
+          "doc_type": "faq",
+          "rrf_score": 0.030777,
+          "vector_similarity": 0.420635,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-014",
+          "doc_type": "faq",
+          "rrf_score": 0.030579,
+          "vector_similarity": 0.400659,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-05",
+          "doc_type": "rule",
+          "rrf_score": 0.029418,
+          "vector_similarity": 0.406368,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.028778,
+          "vector_similarity": 0.391015,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": [
+        "hit1_miss",
+        "recall3_miss"
+      ]
+    },
+    {
+      "case_id": "FB-017",
+      "category": "rule",
+      "difficulty": "medium",
+      "query": "再不处理我就给你们打差评，然后找媒体曝光你们！",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-020",
+        "RULE-HR-01"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-01"
+      ],
+      "expected_supported": true,
+      "latency_ms": 14.44,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-01"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-020",
+          "doc_type": "faq",
+          "rrf_score": 0.030835,
+          "vector_similarity": 0.517631,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-01",
+          "doc_type": "rule",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.527924,
+          "keyword_score": 12.15
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.030835,
+          "vector_similarity": 0.453644,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.03031,
+          "vector_similarity": 0.477368,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.029644,
+          "vector_similarity": 0.447391,
+          "keyword_score": 0.15
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-018",
+      "category": "rule",
+      "difficulty": "medium",
+      "query": "说好退88结果只到账50，少退的钱是怎么回事？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-02"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-02"
+      ],
+      "expected_supported": true,
+      "latency_ms": 12.83,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-02"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.566189,
+          "keyword_score": 6.15
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.032258,
+          "vector_similarity": 0.514006,
+          "keyword_score": 6.0
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.030777,
+          "vector_similarity": 0.505857,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.030118,
+          "vector_similarity": 0.416738,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-013",
+          "doc_type": "faq",
+          "rrf_score": 0.029631,
+          "vector_similarity": 0.452817,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": true,
+      "rr": 0.5,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": [
+        "hit1_miss"
+      ]
+    },
+    {
+      "case_id": "FB-019",
+      "category": "rule",
+      "difficulty": "medium",
+      "query": "我那笔退款都半个月了还卡着，今天必须给我退回来！",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-03",
+        "FAQ-016"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-03"
+      ],
+      "expected_supported": true,
+      "latency_ms": 13.49,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-03"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-013",
+          "doc_type": "faq",
+          "rrf_score": 0.032018,
+          "vector_similarity": 0.507527,
+          "keyword_score": 6.3
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.031754,
+          "vector_similarity": 0.546541,
+          "keyword_score": 1.65
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.031545,
+          "vector_similarity": 0.569415,
+          "keyword_score": 1.5
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.031025,
+          "vector_similarity": 0.504631,
+          "keyword_score": 1.65
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.030579,
+          "vector_similarity": 0.514969,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": true,
+      "rr": 0.5,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": [
+        "hit1_miss"
+      ]
+    },
+    {
+      "case_id": "FB-020",
+      "category": "rule",
+      "difficulty": "medium",
+      "query": "物流信息一个礼拜都没有任何变化，这快递是不是不动了？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-04",
+        "FAQ-010"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-04"
+      ],
+      "expected_supported": true,
+      "latency_ms": 14.8,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-010",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.664396,
+          "keyword_score": 6.8
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-04",
+          "doc_type": "rule",
+          "rrf_score": 0.032258,
+          "vector_similarity": 0.607075,
+          "keyword_score": 2.25
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.031746,
+          "vector_similarity": 0.533049,
+          "keyword_score": 1.8
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-009",
+          "doc_type": "faq",
+          "rrf_score": 0.03125,
+          "vector_similarity": 0.475859,
+          "keyword_score": 1.65
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-011",
+          "doc_type": "faq",
+          "rrf_score": 0.030769,
+          "vector_similarity": 0.465396,
+          "keyword_score": 1.5
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-021",
+      "category": "rule",
+      "difficulty": "medium",
+      "query": "我帮我爸买的东西，想看看他名下那笔快递到哪了。",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-05",
+        "FAQ-006"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-05"
+      ],
+      "expected_supported": true,
+      "latency_ms": 33.79,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.031778,
+          "vector_similarity": 0.477965,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-05",
+          "doc_type": "rule",
+          "rrf_score": 0.031281,
+          "vector_similarity": 0.352744,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-008",
+          "doc_type": "faq",
+          "rrf_score": 0.030331,
+          "vector_similarity": 0.343381,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-020",
+          "doc_type": "faq",
+          "rrf_score": 0.028778,
+          "vector_similarity": 0.335913,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-006",
+          "doc_type": "faq",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.414863,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": true,
+      "rr": 0.5,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": [
+        "hit1_miss"
+      ]
+    },
+    {
+      "case_id": "FB-022",
+      "category": "rule",
+      "difficulty": "medium",
+      "query": "你把我收货的详细家庭住址报给我，我核对下写得对不对。",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-06"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-06"
+      ],
+      "expected_supported": true,
+      "latency_ms": 14.78,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-06"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-011",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.526396,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-06",
+          "doc_type": "rule",
+          "rrf_score": 0.031281,
+          "vector_similarity": 0.426667,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-020",
+          "doc_type": "faq",
+          "rrf_score": 0.03101,
+          "vector_similarity": 0.44126,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.028778,
+          "vector_similarity": 0.397985,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.479944,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": true,
+      "rr": 0.5,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": [
+        "hit1_miss"
+      ]
+    },
+    {
+      "case_id": "FB-023",
+      "category": "rule",
+      "difficulty": "medium",
+      "query": "你们给我保证退款当天就到账，做不到这事没完。",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-07",
+        "FAQ-016"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-07"
+      ],
+      "expected_supported": true,
+      "latency_ms": 14.63,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-07"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.032522,
+          "vector_similarity": 0.687396,
+          "keyword_score": 7.5
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-07",
+          "doc_type": "rule",
+          "rrf_score": 0.030679,
+          "vector_similarity": 0.452446,
+          "keyword_score": 9.95
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.031514,
+          "vector_similarity": 0.555781,
+          "keyword_score": 1.65
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.030579,
+          "vector_similarity": 0.54829,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-013",
+          "doc_type": "faq",
+          "rrf_score": 0.030777,
+          "vector_similarity": 0.537202,
+          "keyword_score": 0.45
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-024",
+      "category": "rule",
+      "difficulty": "medium",
+      "query": "音箱放歌有杂音，听着像接触不良，这种情况该怎么处理？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "expected_supported": true,
+      "latency_ms": 14.49,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-08"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-014",
+          "doc_type": "faq",
+          "rrf_score": 0.032018,
+          "vector_similarity": 0.460269,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.450357,
+          "keyword_score": null
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-002",
+          "doc_type": "faq",
+          "rrf_score": 0.029418,
+          "vector_similarity": 0.385418,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.029211,
+          "vector_similarity": 0.370499,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-010",
+          "doc_type": "faq",
+          "rrf_score": 0.016393,
+          "vector_similarity": null,
+          "keyword_score": 0.6
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-025",
+      "category": "multi",
+      "difficulty": "hard",
+      "query": "耳机充不进电了，这个能修吗？另外还在保修期内吗？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "PRODUCT-P001"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "expected_supported": true,
+      "latency_ms": 14.07,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-08"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P001",
+          "doc_type": "product",
+          "rrf_score": 0.031778,
+          "vector_similarity": 0.509039,
+          "keyword_score": 7.5
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.014706,
+          "vector_similarity": 0.464735,
+          "keyword_score": null
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.031319,
+          "vector_similarity": 0.627426,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-002",
+          "doc_type": "faq",
+          "rrf_score": 0.031514,
+          "vector_similarity": 0.596826,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-001",
+          "doc_type": "faq",
+          "rrf_score": 0.031498,
+          "vector_similarity": 0.547345,
+          "keyword_score": 0.45
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-026",
+      "category": "multi",
+      "difficulty": "hard",
+      "query": "保温杯到手杯盖就裂了还漏水，这种问题保修吗？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "PRODUCT-P003"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "expected_supported": true,
+      "latency_ms": 13.51,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-004",
+          "doc_type": "faq",
+          "rrf_score": 0.032522,
+          "vector_similarity": 0.55997,
+          "keyword_score": 1.95
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "PRODUCT-P003",
+          "doc_type": "product",
+          "rrf_score": 0.032266,
+          "vector_similarity": 0.516704,
+          "keyword_score": 7.65
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-014",
+          "doc_type": "faq",
+          "rrf_score": 0.031281,
+          "vector_similarity": 0.529933,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.03031,
+          "vector_similarity": 0.45619,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.029857,
+          "vector_similarity": 0.445959,
+          "keyword_score": 0.45
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": true,
+      "rr": 0.5,
+      "rule_ok": false,
+      "supported_ok": true,
+      "failure_types": [
+        "hit1_miss",
+        "rule_miss"
+      ]
+    },
+    {
+      "case_id": "FB-027",
+      "category": "multi",
+      "difficulty": "hard",
+      "query": "我要举报你们卖假货，另外帮我查查那笔退款现在到哪一步了。",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-01",
+        "FAQ-020",
+        "FAQ-016"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-01"
+      ],
+      "expected_supported": true,
+      "latency_ms": 15.01,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [
+        "RULE-HR-01"
+      ],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-020",
+          "doc_type": "faq",
+          "rrf_score": 0.031099,
+          "vector_similarity": 0.467886,
+          "keyword_score": 6.3
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-01",
+          "doc_type": "rule",
+          "rrf_score": 0.016129,
+          "vector_similarity": null,
+          "keyword_score": 6.15
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.031025,
+          "vector_similarity": 0.508067,
+          "keyword_score": 1.65
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-017",
+          "doc_type": "faq",
+          "rrf_score": 0.030679,
+          "vector_similarity": 0.568402,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.03031,
+          "vector_similarity": 0.489084,
+          "keyword_score": 1.65
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-028",
+      "category": "multi",
+      "difficulty": "hard",
+      "query": "双肩包的拉链昨天发现拉不动了，算不算质量问题？退货运费谁出？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "FAQ-017"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "expected_supported": true,
+      "latency_ms": 15.29,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-017",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.617385,
+          "keyword_score": 7.65
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "PRODUCT-P004",
+          "doc_type": "product",
+          "rrf_score": 0.032002,
+          "vector_similarity": 0.574353,
+          "keyword_score": 6.0
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-005",
+          "doc_type": "faq",
+          "rrf_score": 0.030798,
+          "vector_similarity": 0.570406,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-014",
+          "doc_type": "faq",
+          "rrf_score": 0.03101,
+          "vector_similarity": 0.551571,
+          "keyword_score": 0.8
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.030536,
+          "vector_similarity": 0.539518,
+          "keyword_score": 0.8
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": false,
+      "supported_ok": true,
+      "failure_types": [
+        "rule_miss"
+      ]
+    },
+    {
+      "case_id": "FB-029",
+      "category": "multi",
+      "difficulty": "hard",
+      "query": "想买你们那款双肩包送人，能装下15寸的笔记本吗？现在买有没有优惠？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P004"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 14.95,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "PRODUCT-P004",
+          "doc_type": "product",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.60328,
+          "keyword_score": 6.0
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-005",
+          "doc_type": "faq",
+          "rrf_score": 0.031754,
+          "vector_similarity": 0.41811,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.030303,
+          "vector_similarity": 0.401378,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.028992,
+          "vector_similarity": 0.398746,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.449016,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-030",
+      "category": "multi",
+      "difficulty": "medium",
+      "query": "耳机戴着洗澡会不会坏？另外退换货的政策是怎么样的？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-002",
+        "FAQ-013"
+      ],
+      "required_rule_ids": [],
+      "expected_supported": true,
+      "latency_ms": 13.36,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-002",
+          "doc_type": "faq",
+          "rrf_score": 0.031778,
+          "vector_similarity": 0.632626,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.031754,
+          "vector_similarity": 0.601492,
+          "keyword_score": 0.75
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "PRODUCT-P001",
+          "doc_type": "product",
+          "rrf_score": 0.032018,
+          "vector_similarity": 0.477956,
+          "keyword_score": 6.0
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.031514,
+          "vector_similarity": 0.476085,
+          "keyword_score": 1.8
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-014",
+          "doc_type": "faq",
+          "rrf_score": 0.030579,
+          "vector_similarity": 0.499489,
+          "keyword_score": 0.45
+        }
+      ],
+      "exception": null,
+      "hit1": true,
+      "recall3": true,
+      "rr": 1.0,
+      "rule_ok": true,
+      "supported_ok": true,
+      "failure_types": []
+    },
+    {
+      "case_id": "FB-031",
+      "category": "no_policy",
+      "difficulty": "easy",
+      "query": "你们店里卖不卖苹果手机？想入一台最新的iPhone。",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 13.14,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-003",
+          "doc_type": "faq",
+          "rrf_score": 0.032787,
+          "vector_similarity": 0.419525,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.031514,
+          "vector_similarity": 0.419072,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-06",
+          "doc_type": "rule",
+          "rrf_score": 0.030579,
+          "vector_similarity": 0.414692,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.029418,
+          "vector_similarity": 0.395675,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "PRODUCT-P002",
+          "doc_type": "product",
+          "rrf_score": 0.028571,
+          "vector_similarity": 0.394631,
+          "keyword_score": 0.15
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-032",
+      "category": "no_policy",
+      "difficulty": "medium",
+      "query": "双11活动的时候下单是不是比平时便宜不少？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 13.36,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "RULE-HR-04",
+          "doc_type": "rule",
+          "rrf_score": 0.032002,
+          "vector_similarity": 0.408237,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-009",
+          "doc_type": "faq",
+          "rrf_score": 0.032018,
+          "vector_similarity": 0.406614,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "PRODUCT-P004",
+          "doc_type": "product",
+          "rrf_score": 0.030835,
+          "vector_similarity": 0.41746,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.030536,
+          "vector_similarity": 0.394903,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-05",
+          "doc_type": "rule",
+          "rrf_score": 0.029857,
+          "vector_similarity": 0.383641,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-033",
+      "category": "no_policy",
+      "difficulty": "hard",
+      "query": "你们家主播说今晚直播间下单有专属赠品，是真的吗？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 13.11,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-008",
+          "doc_type": "faq",
+          "rrf_score": 0.031099,
+          "vector_similarity": 0.39,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-001",
+          "doc_type": "faq",
+          "rrf_score": 0.030798,
+          "vector_similarity": 0.390159,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.030366,
+          "vector_similarity": 0.400929,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-015",
+          "doc_type": "faq",
+          "rrf_score": 0.029857,
+          "vector_similarity": 0.390989,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-05",
+          "doc_type": "rule",
+          "rrf_score": 0.028778,
+          "vector_similarity": 0.386643,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-034",
+      "category": "no_policy",
+      "difficulty": "hard",
+      "query": "下单时显示有货，是不是代表仓库里一定有现货库存？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 12.89,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-009",
+          "doc_type": "faq",
+          "rrf_score": 0.032266,
+          "vector_similarity": 0.53606,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.032266,
+          "vector_similarity": 0.487739,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-006",
+          "doc_type": "faq",
+          "rrf_score": 0.030415,
+          "vector_similarity": 0.490985,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-04",
+          "doc_type": "rule",
+          "rrf_score": 0.030622,
+          "vector_similarity": 0.405929,
+          "keyword_score": 0.6
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.015625,
+          "vector_similarity": 0.472535,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-035",
+      "category": "no_policy",
+      "difficulty": "hard",
+      "query": "你们能不能承诺下单后三天内一定送到我家？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 11.43,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-013",
+          "doc_type": "faq",
+          "rrf_score": 0.031498,
+          "vector_similarity": 0.506045,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-020",
+          "doc_type": "faq",
+          "rrf_score": 0.03101,
+          "vector_similarity": 0.500966,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-04",
+          "doc_type": "rule",
+          "rrf_score": 0.031054,
+          "vector_similarity": 0.469642,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-07",
+          "doc_type": "rule",
+          "rrf_score": 0.031099,
+          "vector_similarity": 0.445688,
+          "keyword_score": 0.75
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.030415,
+          "vector_similarity": 0.50705,
+          "keyword_score": 0.15
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-036",
+      "category": "irrelevant",
+      "difficulty": "easy",
+      "query": "这周末天气怎么样，适合去海边玩吗？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 13.11,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-002",
+          "doc_type": "faq",
+          "rrf_score": 0.031319,
+          "vector_similarity": 0.369273,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-001",
+          "doc_type": "faq",
+          "rrf_score": 0.030303,
+          "vector_similarity": 0.258167,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-005",
+          "doc_type": "faq",
+          "rrf_score": 0.029911,
+          "vector_similarity": 0.266069,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "PRODUCT-P001",
+          "doc_type": "product",
+          "rrf_score": 0.016129,
+          "vector_similarity": 0.295875,
+          "keyword_score": null
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-006",
+          "doc_type": "faq",
+          "rrf_score": 0.016393,
+          "vector_similarity": null,
+          "keyword_score": 0.45
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-037",
+      "category": "irrelevant",
+      "difficulty": "easy",
+      "query": "最近黄金价格涨得太猛了，现在还能不能入手？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 13.59,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-019",
+          "doc_type": "faq",
+          "rrf_score": 0.032018,
+          "vector_similarity": 0.431868,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.032266,
+          "vector_similarity": 0.376424,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.031514,
+          "vector_similarity": 0.354806,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-007",
+          "doc_type": "faq",
+          "rrf_score": 0.030835,
+          "vector_similarity": 0.38901,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-009",
+          "doc_type": "faq",
+          "rrf_score": 0.015625,
+          "vector_similarity": 0.355277,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-038",
+      "category": "irrelevant",
+      "difficulty": "easy",
+      "query": "办日本旅游签证一般需要多长时间才能下来？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 13.08,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-016",
+          "doc_type": "faq",
+          "rrf_score": 0.032522,
+          "vector_similarity": 0.453124,
+          "keyword_score": 0.45
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-012",
+          "doc_type": "faq",
+          "rrf_score": 0.031025,
+          "vector_similarity": 0.366422,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-009",
+          "doc_type": "faq",
+          "rrf_score": 0.03125,
+          "vector_similarity": 0.360376,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-04",
+          "doc_type": "rule",
+          "rrf_score": 0.030886,
+          "vector_similarity": 0.323008,
+          "keyword_score": 0.75
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-010",
+          "doc_type": "faq",
+          "rrf_score": 0.03031,
+          "vector_similarity": 0.335365,
+          "keyword_score": 0.3
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-039",
+      "category": "irrelevant",
+      "difficulty": "easy",
+      "query": "帮我列一份毕业论文的开题提纲吧。",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 12.97,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "FAQ-018",
+          "doc_type": "faq",
+          "rrf_score": 0.031778,
+          "vector_similarity": 0.377342,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "RULE-HR-05",
+          "doc_type": "rule",
+          "rrf_score": 0.030366,
+          "vector_similarity": 0.340069,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "FAQ-008",
+          "doc_type": "faq",
+          "rrf_score": 0.030622,
+          "vector_similarity": 0.332515,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "RULE-HR-02",
+          "doc_type": "rule",
+          "rrf_score": 0.029851,
+          "vector_similarity": 0.334122,
+          "keyword_score": 0.15
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "FAQ-020",
+          "doc_type": "faq",
+          "rrf_score": 0.029857,
+          "vector_similarity": 0.333561,
+          "keyword_score": 0.15
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    },
+    {
+      "case_id": "FB-040",
+      "category": "irrelevant",
+      "difficulty": "hard",
+      "query": "最近老是失眠，有什么办法能改善睡眠质量吗？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "expected_supported": false,
+      "latency_ms": 12.35,
+      "supported": true,
+      "gate_reason": null,
+      "rule_reserved": [],
+      "rule_candidate_missing": [],
+      "top5": [
+        {
+          "final_rank": 1,
+          "chunk_id": "RULE-HR-08",
+          "doc_type": "rule",
+          "rrf_score": 0.032522,
+          "vector_similarity": 0.41482,
+          "keyword_score": 0.7
+        },
+        {
+          "final_rank": 2,
+          "chunk_id": "FAQ-014",
+          "doc_type": "faq",
+          "rrf_score": 0.032522,
+          "vector_similarity": 0.402707,
+          "keyword_score": 0.8
+        },
+        {
+          "final_rank": 3,
+          "chunk_id": "RULE-HR-03",
+          "doc_type": "rule",
+          "rrf_score": 0.030366,
+          "vector_similarity": 0.390085,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 4,
+          "chunk_id": "FAQ-008",
+          "doc_type": "faq",
+          "rrf_score": 0.029857,
+          "vector_similarity": 0.341258,
+          "keyword_score": 0.3
+        },
+        {
+          "final_rank": 5,
+          "chunk_id": "RULE-HR-01",
+          "doc_type": "rule",
+          "rrf_score": 0.015625,
+          "vector_similarity": 0.356305,
+          "keyword_score": null
+        }
+      ],
+      "exception": null,
+      "hit1": false,
+      "recall3": false,
+      "rr": 0.0,
+      "rule_ok": true,
+      "supported_ok": false,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "case_id": "FB-012",
+      "query": "买了个台灯不太喜欢，还没拆封能直接退吗？",
+      "expected_relevant_chunk_ids": [
+        "FAQ-013"
+      ],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-015",
+        "PRODUCT-P005",
+        "FAQ-019"
+      ],
+      "supported": true,
+      "failure_types": [
+        "hit1_miss",
+        "recall3_miss"
+      ],
+      "brief_reason": "Top-1 不在预期 relevant_chunk_ids；Top-3 未命中任何预期片段"
+    },
+    {
+      "case_id": "FB-016",
+      "query": "有没有办法看看我买的这单现在走到哪个环节了？",
+      "expected_relevant_chunk_ids": [
+        "FAQ-006"
+      ],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-012",
+        "FAQ-008",
+        "FAQ-014"
+      ],
+      "supported": true,
+      "failure_types": [
+        "hit1_miss",
+        "recall3_miss"
+      ],
+      "brief_reason": "Top-1 不在预期 relevant_chunk_ids；Top-3 未命中任何预期片段"
+    },
+    {
+      "case_id": "FB-018",
+      "query": "说好退88结果只到账50，少退的钱是怎么回事？",
+      "expected_relevant_chunk_ids": [
+        "RULE-HR-02"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-02"
+      ],
+      "actual_top3": [
+        "FAQ-016",
+        "RULE-HR-02",
+        "FAQ-007"
+      ],
+      "supported": true,
+      "failure_types": [
+        "hit1_miss"
+      ],
+      "brief_reason": "Top-1 不在预期 relevant_chunk_ids"
+    },
+    {
+      "case_id": "FB-019",
+      "query": "我那笔退款都半个月了还卡着，今天必须给我退回来！",
+      "expected_relevant_chunk_ids": [
+        "RULE-HR-03",
+        "FAQ-016"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-03"
+      ],
+      "actual_top3": [
+        "FAQ-013",
+        "RULE-HR-03",
+        "FAQ-016"
+      ],
+      "supported": true,
+      "failure_types": [
+        "hit1_miss"
+      ],
+      "brief_reason": "Top-1 不在预期 relevant_chunk_ids"
+    },
+    {
+      "case_id": "FB-021",
+      "query": "我帮我爸买的东西，想看看他名下那笔快递到哪了。",
+      "expected_relevant_chunk_ids": [
+        "RULE-HR-05",
+        "FAQ-006"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-05"
+      ],
+      "actual_top3": [
+        "FAQ-012",
+        "RULE-HR-05",
+        "FAQ-008"
+      ],
+      "supported": true,
+      "failure_types": [
+        "hit1_miss"
+      ],
+      "brief_reason": "Top-1 不在预期 relevant_chunk_ids"
+    },
+    {
+      "case_id": "FB-022",
+      "query": "你把我收货的详细家庭住址报给我，我核对下写得对不对。",
+      "expected_relevant_chunk_ids": [
+        "RULE-HR-06"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-06"
+      ],
+      "actual_top3": [
+        "FAQ-011",
+        "RULE-HR-06",
+        "FAQ-020"
+      ],
+      "supported": true,
+      "failure_types": [
+        "hit1_miss"
+      ],
+      "brief_reason": "Top-1 不在预期 relevant_chunk_ids"
+    },
+    {
+      "case_id": "FB-026",
+      "query": "保温杯到手杯盖就裂了还漏水，这种问题保修吗？",
+      "expected_relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "PRODUCT-P003"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "actual_top3": [
+        "FAQ-004",
+        "PRODUCT-P003",
+        "FAQ-014"
+      ],
+      "supported": true,
+      "failure_types": [
+        "hit1_miss",
+        "rule_miss"
+      ],
+      "brief_reason": "Top-1 不在预期 relevant_chunk_ids；必需规则未进入 Top-3"
+    },
+    {
+      "case_id": "FB-028",
+      "query": "双肩包的拉链昨天发现拉不动了，算不算质量问题？退货运费谁出？",
+      "expected_relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "FAQ-017"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "actual_top3": [
+        "FAQ-017",
+        "PRODUCT-P004",
+        "FAQ-005"
+      ],
+      "supported": true,
+      "failure_types": [
+        "rule_miss"
+      ],
+      "brief_reason": "必需规则未进入 Top-3"
+    },
+    {
+      "case_id": "FB-031",
+      "query": "你们店里卖不卖苹果手机？想入一台最新的iPhone。",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-003",
+        "FAQ-015",
+        "RULE-HR-06"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-032",
+      "query": "双11活动的时候下单是不是比平时便宜不少？",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "RULE-HR-04",
+        "FAQ-009",
+        "PRODUCT-P004"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-033",
+      "query": "你们家主播说今晚直播间下单有专属赠品，是真的吗？",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-008",
+        "FAQ-001",
+        "FAQ-019"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-034",
+      "query": "下单时显示有货，是不是代表仓库里一定有现货库存？",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-009",
+        "FAQ-012",
+        "FAQ-006"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-035",
+      "query": "你们能不能承诺下单后三天内一定送到我家？",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-013",
+        "FAQ-020",
+        "RULE-HR-04"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-036",
+      "query": "这周末天气怎么样，适合去海边玩吗？",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-002",
+        "FAQ-001",
+        "FAQ-005"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-037",
+      "query": "最近黄金价格涨得太猛了，现在还能不能入手？",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-019",
+        "RULE-HR-02",
+        "RULE-HR-03"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-038",
+      "query": "办日本旅游签证一般需要多长时间才能下来？",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-016",
+        "FAQ-012",
+        "FAQ-009"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-039",
+      "query": "帮我列一份毕业论文的开题提纲吧。",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "FAQ-018",
+        "RULE-HR-05",
+        "FAQ-008"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    },
+    {
+      "case_id": "FB-040",
+      "query": "最近老是失眠，有什么办法能改善睡眠质量吗？",
+      "expected_relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "actual_top3": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "RULE-HR-03"
+      ],
+      "supported": true,
+      "failure_types": [
+        "gate_miss_false_hit"
+      ],
+      "brief_reason": "不可回答问题未被门控拦截并返回了结果"
+    }
+  ]
+}

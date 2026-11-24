@@ -1,0 +1,1324 @@
+{
+  "generated_at": "2026-09-25T11:16:35",
+  "purpose": "失败/边界案例诊断（只读采集，未修改任何检索代码/知识片段/关键词/测试集/参数）",
+  "validation_set_designation": {
+    "set": "hybrid_holdout_eval_cases.json",
+    "formal_name": "validation_set_v1",
+    "meaning": "该测试集后续可用于调试，但不再作为最终无偏测试集；算法修改完成后必须重新创建一套全新的 final blind set",
+    "sha256": "26ee720d21c486a5d9829a3fd390db9b173360f251a41a6f1523c74759616948"
+  },
+  "comparison_file_saved": true,
+  "comparison_generated_at": "2026-09-25T11:05:11",
+  "rrf_params": {
+    "RRF_K": 60,
+    "KEYWORD_WEIGHT": 1.0,
+    "VECTOR_WEIGHT": 1.0
+  },
+  "freeze_hashes_verified": true,
+  "cases": [
+    {
+      "case_id": "H-004",
+      "category": "product",
+      "query": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "PRODUCT-P004"
+      ],
+      "required_rule_ids": [],
+      "keyword_only_top5": [
+        {
+          "chunk_id": "FAQ-002",
+          "rank": 1,
+          "keyword_score": 0.6,
+          "matched_terms": [
+            "汉字重合x3"
+          ],
+          "doc_type": "faq",
+          "title": "耳机可以戴着游泳吗？",
+          "source": "《商品资料》P001"
+        },
+        {
+          "chunk_id": "PRODUCT-P005",
+          "rank": 2,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "product",
+          "title": "LightMate智能桌面台灯",
+          "source": "《商品资料》P005"
+        },
+        {
+          "chunk_id": "FAQ-004",
+          "rank": 3,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "保温杯可以装碳酸饮料吗？",
+          "source": "《商品资料》P003"
+        },
+        {
+          "chunk_id": "FAQ-005",
+          "rank": 4,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "双肩包完全防水吗？",
+          "source": "《商品资料》P004"
+        },
+        {
+          "chunk_id": "FAQ-008",
+          "rank": 5,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "可以修改订单中的商品吗？",
+          "source": "无明确规则依据"
+        }
+      ],
+      "vector_only_top5": [
+        {
+          "chunk_id": "PRODUCT-P004",
+          "rank": 1,
+          "similarity": 0.44361,
+          "doc_type": "product",
+          "title": "CityPack通勤双肩包",
+          "source": "《商品资料》P004"
+        },
+        {
+          "chunk_id": "FAQ-002",
+          "rank": 2,
+          "similarity": 0.369764,
+          "doc_type": "faq",
+          "title": "耳机可以戴着游泳吗？",
+          "source": "《商品资料》P001"
+        },
+        {
+          "chunk_id": "FAQ-005",
+          "rank": 3,
+          "similarity": 0.360151,
+          "doc_type": "faq",
+          "title": "双肩包完全防水吗？",
+          "source": "《商品资料》P004"
+        },
+        {
+          "chunk_id": "FAQ-003",
+          "rank": 4,
+          "similarity": 0.358766,
+          "doc_type": "faq",
+          "title": "机械键盘支持Mac吗？",
+          "source": "《商品资料》P002"
+        },
+        {
+          "chunk_id": "FAQ-014",
+          "rank": 5,
+          "similarity": 0.334336,
+          "doc_type": "faq",
+          "title": "商品有质量问题怎么办？",
+          "source": "《售后SOP》质量问题处理"
+        }
+      ],
+      "hybrid_top5": [
+        {
+          "chunk_id": "FAQ-002",
+          "final_rank": 1,
+          "keyword_rank": 1,
+          "vector_rank": 2,
+          "rrf_keyword_component": 0.016393,
+          "rrf_vector_component": 0.016129,
+          "rrf_score": 0.032522,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "FAQ-005",
+          "final_rank": 2,
+          "keyword_rank": 4,
+          "vector_rank": 3,
+          "rrf_keyword_component": 0.015625,
+          "rrf_vector_component": 0.015873,
+          "rrf_score": 0.031498,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "PRODUCT-P004",
+          "final_rank": 3,
+          "keyword_rank": 8,
+          "vector_rank": 1,
+          "rrf_keyword_component": 0.014706,
+          "rrf_vector_component": 0.016393,
+          "rrf_score": 0.031099,
+          "doc_type": "product"
+        },
+        {
+          "chunk_id": "FAQ-015",
+          "final_rank": 4,
+          "keyword_rank": 6,
+          "vector_rank": 6,
+          "rrf_keyword_component": 0.015152,
+          "rrf_vector_component": 0.015152,
+          "rrf_score": 0.030303,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "FAQ-004",
+          "final_rank": 5,
+          "keyword_rank": 3,
+          "vector_rank": 10,
+          "rrf_keyword_component": 0.015873,
+          "rrf_vector_component": 0.014286,
+          "rrf_score": 0.030159,
+          "doc_type": "faq"
+        }
+      ],
+      "expected_chunk_ranks": [
+        {
+          "chunk_id": "PRODUCT-P004",
+          "keyword_rank_top10": 8,
+          "vector_rank_top10": 1,
+          "hybrid_rank_top10": 3,
+          "keyword_score": 0.2,
+          "vector_similarity": 0.44361
+        }
+      ],
+      "term_analysis": {
+        "product_ids": [],
+        "rule_ids": [],
+        "product_name_or_alias_hits": [],
+        "faq_keyword_hits": [],
+        "risk_keyword_hits": [],
+        "generic_word_hits": [
+          "那个"
+        ],
+        "multi_intent_marked": false
+      }
+    },
+    {
+      "case_id": "H-007",
+      "category": "faq",
+      "query": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-003"
+      ],
+      "required_rule_ids": [],
+      "keyword_only_top5": [
+        {
+          "chunk_id": "PRODUCT-P002",
+          "rank": 1,
+          "keyword_score": 6.4,
+          "matched_terms": [
+            "键盘",
+            "汉字重合x2"
+          ],
+          "doc_type": "product",
+          "title": "KeyPro 87机械键盘",
+          "source": "《商品资料》P002"
+        },
+        {
+          "chunk_id": "FAQ-003",
+          "rank": 2,
+          "keyword_score": 1.0,
+          "matched_terms": [
+            "汉字重合x5"
+          ],
+          "doc_type": "faq",
+          "title": "机械键盘支持Mac吗？",
+          "source": "《商品资料》P002"
+        },
+        {
+          "chunk_id": "PRODUCT-P005",
+          "rank": 3,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "product",
+          "title": "LightMate智能桌面台灯",
+          "source": "《商品资料》P005"
+        },
+        {
+          "chunk_id": "FAQ-010",
+          "rank": 4,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "物流信息一直没有更新怎么办？",
+          "source": "《售后SOP》物流异常处理"
+        },
+        {
+          "chunk_id": "FAQ-013",
+          "rank": 5,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "商品可以七天无理由退货吗？",
+          "source": "《售后SOP》七天无理由规则"
+        }
+      ],
+      "vector_only_top5": [
+        {
+          "chunk_id": "FAQ-003",
+          "rank": 1,
+          "similarity": 0.680125,
+          "doc_type": "faq",
+          "title": "机械键盘支持Mac吗？",
+          "source": "《商品资料》P002"
+        },
+        {
+          "chunk_id": "PRODUCT-P002",
+          "rank": 2,
+          "similarity": 0.547634,
+          "doc_type": "product",
+          "title": "KeyPro 87机械键盘",
+          "source": "《商品资料》P002"
+        },
+        {
+          "chunk_id": "FAQ-001",
+          "rank": 3,
+          "similarity": 0.405903,
+          "doc_type": "faq",
+          "title": "无线耳机支持主动降噪吗？",
+          "source": "《商品资料》P001"
+        },
+        {
+          "chunk_id": "PRODUCT-P005",
+          "rank": 4,
+          "similarity": 0.402965,
+          "doc_type": "product",
+          "title": "LightMate智能桌面台灯",
+          "source": "《商品资料》P005"
+        },
+        {
+          "chunk_id": "RULE-HR-08",
+          "rank": 5,
+          "similarity": 0.387195,
+          "doc_type": "rule",
+          "title": "质量问题凭证核验",
+          "source": "《售后SOP》质量问题处理"
+        }
+      ],
+      "hybrid_top5": [
+        {
+          "chunk_id": "PRODUCT-P002",
+          "final_rank": 1,
+          "keyword_rank": 1,
+          "vector_rank": 2,
+          "rrf_keyword_component": 0.016393,
+          "rrf_vector_component": 0.016129,
+          "rrf_score": 0.032522,
+          "doc_type": "product"
+        },
+        {
+          "chunk_id": "FAQ-003",
+          "final_rank": 2,
+          "keyword_rank": 2,
+          "vector_rank": 1,
+          "rrf_keyword_component": 0.016129,
+          "rrf_vector_component": 0.016393,
+          "rrf_score": 0.032522,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "PRODUCT-P005",
+          "final_rank": 3,
+          "keyword_rank": 3,
+          "vector_rank": 4,
+          "rrf_keyword_component": 0.015873,
+          "rrf_vector_component": 0.015625,
+          "rrf_score": 0.031498,
+          "doc_type": "product"
+        },
+        {
+          "chunk_id": "FAQ-001",
+          "final_rank": 4,
+          "keyword_rank": 10,
+          "vector_rank": 3,
+          "rrf_keyword_component": 0.014286,
+          "rrf_vector_component": 0.015873,
+          "rrf_score": 0.030159,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "RULE-HR-08",
+          "final_rank": 5,
+          "keyword_rank": 9,
+          "vector_rank": 5,
+          "rrf_keyword_component": 0.014493,
+          "rrf_vector_component": 0.015385,
+          "rrf_score": 0.029877,
+          "doc_type": "rule"
+        }
+      ],
+      "expected_chunk_ranks": [
+        {
+          "chunk_id": "FAQ-003",
+          "keyword_rank_top10": 2,
+          "vector_rank_top10": 1,
+          "hybrid_rank_top10": 2,
+          "keyword_score": 1.0,
+          "vector_similarity": 0.680125
+        }
+      ],
+      "term_analysis": {
+        "product_ids": [],
+        "rule_ids": [],
+        "product_name_or_alias_hits": [
+          {
+            "product": "P002",
+            "term": "键盘"
+          }
+        ],
+        "faq_keyword_hits": [],
+        "risk_keyword_hits": [],
+        "generic_word_hits": [],
+        "multi_intent_marked": false
+      }
+    },
+    {
+      "case_id": "H-009",
+      "category": "faq",
+      "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-005"
+      ],
+      "required_rule_ids": [],
+      "keyword_only_top5": [
+        {
+          "chunk_id": "PRODUCT-P004",
+          "rank": 1,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "product",
+          "title": "CityPack通勤双肩包",
+          "source": "《商品资料》P004"
+        },
+        {
+          "chunk_id": "FAQ-005",
+          "rank": 2,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "双肩包完全防水吗？",
+          "source": "《商品资料》P004"
+        },
+        {
+          "chunk_id": "FAQ-013",
+          "rank": 3,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "商品可以七天无理由退货吗？",
+          "source": "《售后SOP》七天无理由规则"
+        },
+        {
+          "chunk_id": "RULE-HR-04",
+          "rank": 4,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "rule",
+          "title": "物流长时间未更新",
+          "source": "《售后SOP》物流异常处理"
+        },
+        {
+          "chunk_id": "PRODUCT-P005",
+          "rank": 5,
+          "keyword_score": 0.2,
+          "matched_terms": [
+            "汉字重合x1"
+          ],
+          "doc_type": "product",
+          "title": "LightMate智能桌面台灯",
+          "source": "《商品资料》P005"
+        }
+      ],
+      "vector_only_top5": [
+        {
+          "chunk_id": "PRODUCT-P004",
+          "rank": 1,
+          "similarity": 0.418277,
+          "doc_type": "product",
+          "title": "CityPack通勤双肩包",
+          "source": "《商品资料》P004"
+        },
+        {
+          "chunk_id": "FAQ-005",
+          "rank": 2,
+          "similarity": 0.415744,
+          "doc_type": "faq",
+          "title": "双肩包完全防水吗？",
+          "source": "《商品资料》P004"
+        },
+        {
+          "chunk_id": "FAQ-002",
+          "rank": 3,
+          "similarity": 0.397328,
+          "doc_type": "faq",
+          "title": "耳机可以戴着游泳吗？",
+          "source": "《商品资料》P001"
+        },
+        {
+          "chunk_id": "RULE-HR-07",
+          "rank": 4,
+          "similarity": 0.351312,
+          "doc_type": "rule",
+          "title": "超范围承诺",
+          "source": "《售后SOP》退款处理/必须转人工"
+        },
+        {
+          "chunk_id": "RULE-HR-08",
+          "rank": 5,
+          "similarity": 0.338606,
+          "doc_type": "rule",
+          "title": "质量问题凭证核验",
+          "source": "《售后SOP》质量问题处理"
+        }
+      ],
+      "hybrid_top5": [
+        {
+          "chunk_id": "PRODUCT-P004",
+          "final_rank": 1,
+          "keyword_rank": 1,
+          "vector_rank": 1,
+          "rrf_keyword_component": 0.016393,
+          "rrf_vector_component": 0.016393,
+          "rrf_score": 0.032787,
+          "doc_type": "product"
+        },
+        {
+          "chunk_id": "FAQ-005",
+          "final_rank": 2,
+          "keyword_rank": 2,
+          "vector_rank": 2,
+          "rrf_keyword_component": 0.016129,
+          "rrf_vector_component": 0.016129,
+          "rrf_score": 0.032258,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "FAQ-002",
+          "final_rank": 3,
+          "keyword_rank": 6,
+          "vector_rank": 3,
+          "rrf_keyword_component": 0.015152,
+          "rrf_vector_component": 0.015873,
+          "rrf_score": 0.031025,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "FAQ-013",
+          "final_rank": 4,
+          "keyword_rank": 3,
+          "vector_rank": null,
+          "rrf_keyword_component": 0.015873,
+          "rrf_vector_component": 0.0,
+          "rrf_score": 0.015873,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "RULE-HR-04",
+          "final_rank": 5,
+          "keyword_rank": 4,
+          "vector_rank": null,
+          "rrf_keyword_component": 0.015625,
+          "rrf_vector_component": 0.0,
+          "rrf_score": 0.015625,
+          "doc_type": "rule"
+        }
+      ],
+      "expected_chunk_ranks": [
+        {
+          "chunk_id": "FAQ-005",
+          "keyword_rank_top10": 2,
+          "vector_rank_top10": 2,
+          "hybrid_rank_top10": 2,
+          "keyword_score": 0.4,
+          "vector_similarity": 0.415744
+        }
+      ],
+      "term_analysis": {
+        "product_ids": [],
+        "rule_ids": [],
+        "product_name_or_alias_hits": [],
+        "faq_keyword_hits": [],
+        "risk_keyword_hits": [],
+        "generic_word_hits": [
+          "这个"
+        ],
+        "multi_intent_marked": false
+      }
+    },
+    {
+      "case_id": "H-021",
+      "category": "multi",
+      "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-014",
+        "FAQ-016",
+        "RULE-HR-08"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "keyword_only_top5": [
+        {
+          "chunk_id": "PRODUCT-P003",
+          "rank": 1,
+          "keyword_score": 6.4,
+          "matched_terms": [
+            "杯子",
+            "汉字重合x2"
+          ],
+          "doc_type": "product",
+          "title": "WarmDay 500保温杯",
+          "source": "《商品资料》P003"
+        },
+        {
+          "chunk_id": "FAQ-016",
+          "rank": 2,
+          "keyword_score": 2.5,
+          "matched_terms": [
+            "退款(属性)",
+            "汉字重合x5"
+          ],
+          "doc_type": "faq",
+          "title": "退款多久到账？",
+          "source": "《售后SOP》退款处理"
+        },
+        {
+          "chunk_id": "RULE-HR-02",
+          "rank": 3,
+          "keyword_score": 2.5,
+          "matched_terms": [
+            "退款(属性)",
+            "汉字重合x5"
+          ],
+          "doc_type": "rule",
+          "title": "金额争议",
+          "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+        },
+        {
+          "chunk_id": "RULE-HR-07",
+          "rank": 4,
+          "keyword_score": 2.5,
+          "matched_terms": [
+            "退款(属性)",
+            "汉字重合x5"
+          ],
+          "doc_type": "rule",
+          "title": "超范围承诺",
+          "source": "《售后SOP》退款处理/必须转人工"
+        },
+        {
+          "chunk_id": "RULE-HR-03",
+          "rank": 5,
+          "keyword_score": 2.1,
+          "matched_terms": [
+            "退款(属性)",
+            "汉字重合x3"
+          ],
+          "doc_type": "rule",
+          "title": "催促退款或要求人工",
+          "source": "《售后SOP》退款处理"
+        }
+      ],
+      "vector_only_top5": [
+        {
+          "chunk_id": "FAQ-016",
+          "rank": 1,
+          "similarity": 0.661863,
+          "doc_type": "faq",
+          "title": "退款多久到账？",
+          "source": "《售后SOP》退款处理"
+        },
+        {
+          "chunk_id": "FAQ-007",
+          "rank": 2,
+          "similarity": 0.522906,
+          "doc_type": "faq",
+          "title": "为什么付款后还是待付款？",
+          "source": "无明确规则依据"
+        },
+        {
+          "chunk_id": "FAQ-019",
+          "rank": 3,
+          "similarity": 0.5059,
+          "doc_type": "faq",
+          "title": "商品降价了可以退差价吗？",
+          "source": "无明确规则依据"
+        },
+        {
+          "chunk_id": "FAQ-013",
+          "rank": 4,
+          "similarity": 0.502082,
+          "doc_type": "faq",
+          "title": "商品可以七天无理由退货吗？",
+          "source": "《售后SOP》七天无理由规则"
+        },
+        {
+          "chunk_id": "RULE-HR-03",
+          "rank": 5,
+          "similarity": 0.479448,
+          "doc_type": "rule",
+          "title": "催促退款或要求人工",
+          "source": "《售后SOP》退款处理"
+        }
+      ],
+      "hybrid_top5": [
+        {
+          "chunk_id": "FAQ-016",
+          "final_rank": 1,
+          "keyword_rank": 2,
+          "vector_rank": 1,
+          "rrf_keyword_component": 0.016129,
+          "rrf_vector_component": 0.016393,
+          "rrf_score": 0.032522,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "RULE-HR-02",
+          "final_rank": 2,
+          "keyword_rank": 3,
+          "vector_rank": 7,
+          "rrf_keyword_component": 0.015873,
+          "rrf_vector_component": 0.014925,
+          "rrf_score": 0.030798,
+          "doc_type": "rule"
+        },
+        {
+          "chunk_id": "RULE-HR-03",
+          "final_rank": 3,
+          "keyword_rank": 5,
+          "vector_rank": 5,
+          "rrf_keyword_component": 0.015385,
+          "rrf_vector_component": 0.015385,
+          "rrf_score": 0.030769,
+          "doc_type": "rule"
+        },
+        {
+          "chunk_id": "RULE-HR-08",
+          "final_rank": 4,
+          "keyword_rank": 6,
+          "vector_rank": 10,
+          "rrf_keyword_component": 0.015152,
+          "rrf_vector_component": 0.014286,
+          "rrf_score": 0.029437,
+          "doc_type": "rule"
+        },
+        {
+          "chunk_id": "FAQ-012",
+          "final_rank": 5,
+          "keyword_rank": 10,
+          "vector_rank": 8,
+          "rrf_keyword_component": 0.014286,
+          "rrf_vector_component": 0.014706,
+          "rrf_score": 0.028992,
+          "doc_type": "faq"
+        }
+      ],
+      "expected_chunk_ranks": [
+        {
+          "chunk_id": "FAQ-014",
+          "keyword_rank_top10": "NOT_IN_TOP10",
+          "vector_rank_top10": 9,
+          "hybrid_rank_top10": "NOT_IN_TOP10",
+          "keyword_score": null,
+          "vector_similarity": 0.434677
+        },
+        {
+          "chunk_id": "FAQ-016",
+          "keyword_rank_top10": 2,
+          "vector_rank_top10": 1,
+          "hybrid_rank_top10": 1,
+          "keyword_score": 2.5,
+          "vector_similarity": 0.661863
+        },
+        {
+          "chunk_id": "RULE-HR-08",
+          "keyword_rank_top10": 6,
+          "vector_rank_top10": 10,
+          "hybrid_rank_top10": 4,
+          "keyword_score": 1.5,
+          "vector_similarity": 0.42803
+        }
+      ],
+      "term_analysis": {
+        "product_ids": [],
+        "rule_ids": [],
+        "product_name_or_alias_hits": [
+          {
+            "product": "P003",
+            "term": "杯子"
+          }
+        ],
+        "faq_keyword_hits": [],
+        "risk_keyword_hits": [],
+        "generic_word_hits": [
+          "一般",
+          "多久"
+        ],
+        "multi_intent_marked": true
+      }
+    },
+    {
+      "case_id": "H-022",
+      "category": "multi",
+      "query": "我要投诉你们发假货，顺便把我这单给退了。",
+      "is_answerable": true,
+      "relevant_chunk_ids": [
+        "FAQ-020",
+        "FAQ-013"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-01"
+      ],
+      "keyword_only_top5": [
+        {
+          "chunk_id": "FAQ-020",
+          "rank": 1,
+          "keyword_score": 8.3,
+          "matched_terms": [
+            "投诉",
+            "投诉(属性)",
+            "汉字重合x4"
+          ],
+          "doc_type": "faq",
+          "title": "我要投诉并要求三倍赔偿。",
+          "source": "《售后SOP》必须转人工"
+        },
+        {
+          "chunk_id": "RULE-HR-01",
+          "rank": 2,
+          "keyword_score": 8.3,
+          "matched_terms": [
+            "投诉",
+            "投诉(属性)",
+            "汉字重合x4"
+          ],
+          "doc_type": "rule",
+          "title": "投诉与赔偿",
+          "source": "《售后SOP》必须转人工"
+        },
+        {
+          "chunk_id": "FAQ-013",
+          "rank": 3,
+          "keyword_score": 0.8,
+          "matched_terms": [
+            "汉字重合x4"
+          ],
+          "doc_type": "faq",
+          "title": "商品可以七天无理由退货吗？",
+          "source": "《售后SOP》七天无理由规则"
+        },
+        {
+          "chunk_id": "FAQ-009",
+          "rank": 4,
+          "keyword_score": 0.6,
+          "matched_terms": [
+            "汉字重合x3"
+          ],
+          "doc_type": "faq",
+          "title": "订单什么时候发货？",
+          "source": "《模拟订单数据》"
+        },
+        {
+          "chunk_id": "FAQ-015",
+          "rank": 5,
+          "keyword_score": 0.4,
+          "matched_terms": [
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "拆封的耳机可以无理由退货吗？",
+          "source": "《售后SOP》七天无理由规则"
+        }
+      ],
+      "vector_only_top5": [
+        {
+          "chunk_id": "FAQ-017",
+          "rank": 1,
+          "similarity": 0.529217,
+          "doc_type": "faq",
+          "title": "退货运费由谁承担？",
+          "source": "无明确规则依据"
+        },
+        {
+          "chunk_id": "FAQ-020",
+          "rank": 2,
+          "similarity": 0.501914,
+          "doc_type": "faq",
+          "title": "我要投诉并要求三倍赔偿。",
+          "source": "《售后SOP》必须转人工"
+        },
+        {
+          "chunk_id": "FAQ-008",
+          "rank": 3,
+          "similarity": 0.485302,
+          "doc_type": "faq",
+          "title": "可以修改订单中的商品吗？",
+          "source": "无明确规则依据"
+        },
+        {
+          "chunk_id": "FAQ-019",
+          "rank": 4,
+          "similarity": 0.483626,
+          "doc_type": "faq",
+          "title": "商品降价了可以退差价吗？",
+          "source": "无明确规则依据"
+        },
+        {
+          "chunk_id": "FAQ-013",
+          "rank": 5,
+          "similarity": 0.461899,
+          "doc_type": "faq",
+          "title": "商品可以七天无理由退货吗？",
+          "source": "《售后SOP》七天无理由规则"
+        }
+      ],
+      "hybrid_top5": [
+        {
+          "chunk_id": "FAQ-020",
+          "final_rank": 1,
+          "keyword_rank": 1,
+          "vector_rank": 2,
+          "rrf_keyword_component": 0.016393,
+          "rrf_vector_component": 0.016129,
+          "rrf_score": 0.032522,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "FAQ-017",
+          "final_rank": 2,
+          "keyword_rank": 6,
+          "vector_rank": 1,
+          "rrf_keyword_component": 0.015152,
+          "rrf_vector_component": 0.016393,
+          "rrf_score": 0.031545,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "FAQ-013",
+          "final_rank": 3,
+          "keyword_rank": 3,
+          "vector_rank": 5,
+          "rrf_keyword_component": 0.015873,
+          "rrf_vector_component": 0.015385,
+          "rrf_score": 0.031258,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "RULE-HR-01",
+          "final_rank": 4,
+          "keyword_rank": 2,
+          "vector_rank": 7,
+          "rrf_keyword_component": 0.016129,
+          "rrf_vector_component": 0.014925,
+          "rrf_score": 0.031054,
+          "doc_type": "rule"
+        },
+        {
+          "chunk_id": "FAQ-019",
+          "final_rank": 5,
+          "keyword_rank": 7,
+          "vector_rank": 4,
+          "rrf_keyword_component": 0.014925,
+          "rrf_vector_component": 0.015625,
+          "rrf_score": 0.03055,
+          "doc_type": "faq"
+        }
+      ],
+      "expected_chunk_ranks": [
+        {
+          "chunk_id": "FAQ-020",
+          "keyword_rank_top10": 1,
+          "vector_rank_top10": 2,
+          "hybrid_rank_top10": 1,
+          "keyword_score": 8.3,
+          "vector_similarity": 0.501914
+        },
+        {
+          "chunk_id": "FAQ-013",
+          "keyword_rank_top10": 3,
+          "vector_rank_top10": 5,
+          "hybrid_rank_top10": 3,
+          "keyword_score": 0.8,
+          "vector_similarity": 0.461899
+        },
+        {
+          "chunk_id": "RULE-HR-01",
+          "keyword_rank_top10": 2,
+          "vector_rank_top10": 7,
+          "hybrid_rank_top10": 4,
+          "keyword_score": 8.3,
+          "vector_similarity": 0.455594
+        }
+      ],
+      "term_analysis": {
+        "product_ids": [],
+        "rule_ids": [],
+        "product_name_or_alias_hits": [],
+        "faq_keyword_hits": [
+          {
+            "faq": "FAQ-020",
+            "term": "投诉"
+          }
+        ],
+        "risk_keyword_hits": [
+          {
+            "rule": "HR-01",
+            "term": "投诉"
+          }
+        ],
+        "generic_word_hits": [
+          "货",
+          "你们",
+          "顺便"
+        ],
+        "multi_intent_marked": true
+      }
+    },
+    {
+      "case_id": "H-025",
+      "category": "no_policy",
+      "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+      "is_answerable": false,
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "keyword_only_top5": [
+        {
+          "chunk_id": "FAQ-014",
+          "rank": 1,
+          "keyword_score": 7.9,
+          "matched_terms": [
+            "质量",
+            "质量(属性)",
+            "汉字重合x2"
+          ],
+          "doc_type": "faq",
+          "title": "商品有质量问题怎么办？",
+          "source": "《售后SOP》质量问题处理"
+        },
+        {
+          "chunk_id": "RULE-HR-08",
+          "rank": 2,
+          "keyword_score": 7.9,
+          "matched_terms": [
+            "质量",
+            "质量(属性)",
+            "汉字重合x2"
+          ],
+          "doc_type": "rule",
+          "title": "质量问题凭证核验",
+          "source": "《售后SOP》质量问题处理"
+        },
+        {
+          "chunk_id": "PRODUCT-P001",
+          "rank": 3,
+          "keyword_score": 1.5,
+          "matched_terms": [
+            "质量(属性)"
+          ],
+          "doc_type": "product",
+          "title": "SoundGo Air无线蓝牙耳机",
+          "source": "《商品资料》P001"
+        },
+        {
+          "chunk_id": "PRODUCT-P002",
+          "rank": 4,
+          "keyword_score": 1.5,
+          "matched_terms": [
+            "质量(属性)"
+          ],
+          "doc_type": "product",
+          "title": "KeyPro 87机械键盘",
+          "source": "《商品资料》P002"
+        },
+        {
+          "chunk_id": "PRODUCT-P005",
+          "rank": 5,
+          "keyword_score": 1.5,
+          "matched_terms": [
+            "质量(属性)"
+          ],
+          "doc_type": "product",
+          "title": "LightMate智能桌面台灯",
+          "source": "《商品资料》P005"
+        }
+      ],
+      "vector_only_top5": [
+        {
+          "chunk_id": "FAQ-014",
+          "rank": 1,
+          "similarity": 0.508948,
+          "doc_type": "faq",
+          "title": "商品有质量问题怎么办？",
+          "source": "《售后SOP》质量问题处理"
+        },
+        {
+          "chunk_id": "FAQ-009",
+          "rank": 2,
+          "similarity": 0.455594,
+          "doc_type": "faq",
+          "title": "订单什么时候发货？",
+          "source": "《模拟订单数据》"
+        },
+        {
+          "chunk_id": "FAQ-017",
+          "rank": 3,
+          "similarity": 0.44727,
+          "doc_type": "faq",
+          "title": "退货运费由谁承担？",
+          "source": "无明确规则依据"
+        },
+        {
+          "chunk_id": "FAQ-008",
+          "rank": 4,
+          "similarity": 0.445122,
+          "doc_type": "faq",
+          "title": "可以修改订单中的商品吗？",
+          "source": "无明确规则依据"
+        },
+        {
+          "chunk_id": "RULE-HR-08",
+          "rank": 5,
+          "similarity": 0.441785,
+          "doc_type": "rule",
+          "title": "质量问题凭证核验",
+          "source": "《售后SOP》质量问题处理"
+        }
+      ],
+      "hybrid_top5": [
+        {
+          "chunk_id": "FAQ-014",
+          "final_rank": 1,
+          "keyword_rank": 1,
+          "vector_rank": 1,
+          "rrf_keyword_component": 0.016393,
+          "rrf_vector_component": 0.016393,
+          "rrf_score": 0.032787,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "RULE-HR-08",
+          "final_rank": 2,
+          "keyword_rank": 2,
+          "vector_rank": 5,
+          "rrf_keyword_component": 0.016129,
+          "rrf_vector_component": 0.015385,
+          "rrf_score": 0.031514,
+          "doc_type": "rule"
+        },
+        {
+          "chunk_id": "FAQ-009",
+          "final_rank": 3,
+          "keyword_rank": 9,
+          "vector_rank": 2,
+          "rrf_keyword_component": 0.014493,
+          "rrf_vector_component": 0.016129,
+          "rrf_score": 0.030622,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "FAQ-008",
+          "final_rank": 4,
+          "keyword_rank": 8,
+          "vector_rank": 4,
+          "rrf_keyword_component": 0.014706,
+          "rrf_vector_component": 0.015625,
+          "rrf_score": 0.030331,
+          "doc_type": "faq"
+        },
+        {
+          "chunk_id": "PRODUCT-P001",
+          "final_rank": 5,
+          "keyword_rank": 3,
+          "vector_rank": null,
+          "rrf_keyword_component": 0.015873,
+          "rrf_vector_component": 0.0,
+          "rrf_score": 0.015873,
+          "doc_type": "product"
+        }
+      ],
+      "expected_chunk_ranks": [],
+      "term_analysis": {
+        "product_ids": [],
+        "rule_ids": [],
+        "product_name_or_alias_hits": [],
+        "faq_keyword_hits": [
+          {
+            "faq": "FAQ-014",
+            "term": "质量"
+          }
+        ],
+        "risk_keyword_hits": [
+          {
+            "rule": "HR-08",
+            "term": "质量"
+          }
+        ],
+        "generic_word_hits": [
+          "货",
+          "一样"
+        ],
+        "multi_intent_marked": false
+      }
+    }
+  ],
+  "analysis": {
+    "root_causes": {
+      "H-004": {
+        "root_causes": [
+          "exact_entity_not_protected",
+          "generic_keyword_pollution",
+          "fixed_weight_problem"
+        ],
+        "explanation": "query不含商品编号，且\"书包\"不在P004别名表（仅双肩包/背包/通勤包/CityPack/CP-20），keyword侧P004仅得汉字重合0.2分排第8；无关的FAQ-002凭汉字重合x3(0.6分)登顶keyword Top-1。向量侧P004正确排第1(0.4436)，但等权RRF下 FAQ-002(kw1+vec2)=0.032522 > P004(kw8+vec1)=0.031099，P004被压到第3。属于keyword侧实体同义覆盖缺口+汉字重合泛化污染，叠加等权RRF放大低质keyword证据。",
+        "rrf_math": "FAQ-002: 1/(60+1)+1/(60+2)=0.016393+0.016129=0.032522；P004: 1/(60+8)+1/(60+1)=0.014706+0.016393=0.031099"
+      },
+      "H-007": {
+        "root_causes": [
+          "fixed_weight_problem",
+          "other"
+        ],
+        "explanation": "query不含P002编号，仅命中别名\"键盘\"。PRODUCT-P002凭别名\"键盘\"(6.0分)+汉字重合x2得kw rank1(6.4)；预期FAQ-003的关键词表(mac/苹果系统/macos/键盘兼容)没有一个字面命中——\"苹果电脑\"与\"苹果系统\"不同词，\"键盘兼容\"也不是子串——kw证据仅剩汉字重合x5=1.0分排kw rank2。向量侧FAQ-003正确第1(0.680)。RRF完全并列：P002(kw1+vec2)与FAQ-003(kw2+vec1)都是1/61+1/62=0.032522，tie-break取keyword_rank小者→P002 Top-1，FAQ-003被挤到Top-2。注意：把预期FAQ-003挤到第2的是商品P002（别名\"键盘\"），不是其他FAQ。",
+        "rrf_math": "P002: 1/(60+1)+1/(60+2)=0.032522；FAQ-003: 1/(60+2)+1/(60+1)=0.032522（完全并列，tie-break按keyword_rank）"
+      },
+      "H-009": {
+        "root_causes": [
+          "other",
+          "generic_keyword_pollution",
+          "fixed_weight_problem"
+        ],
+        "explanation": "query\"下雨天背这个包...淋湿\"预期FAQ-005(双肩包防水)。P004与FAQ-005语义同源（FAQ-005本就来自P004资料的防水注意事项），两者向量相似度仅差0.0025(0.4183 vs 0.4157)，keyword侧并列0.4分（均只有汉字重合x2），并列时按片段文件顺序P004在前。双路P004均为rank1→RRF 0.032787登顶，FAQ-005双rank2=0.032258居第2。属于商品片段与其源FAQ的同源竞争，不是检索错误——FAQ-005仍在Recall@3内。",
+        "rrf_math": "P004: 1/61+1/61=0.032787；FAQ-005: 1/62+1/62=0.032258"
+      },
+      "H-021": {
+        "root_causes": [
+          "faq_rule_competition",
+          "fixed_weight_problem",
+          "generic_keyword_pollution"
+        ],
+        "explanation": "required RULE-HR-08在候选池内（kw rank6 + vec rank10）但hybrid第4，被HR-02(kw3+vec7=0.030798)和HR-03(kw5+vec5=0.030769)挤出Top-3。根因：(1)特征词\"裂痕\"不在任何关键词表（HR-08关键词为坏了/损坏/破损/故障等，FAQ-014因此kw侧NOT_IN_TOP10），HR-08的keyword证据仅剩\"质量(属性)\"1.5分；(2)泛化属性词\"退款\"(1.5分)把HR-02/HR-03/HR-07三条退款规则同质化抬分，与HR-08竞争；(3)Top-3构成=FAQ-016(1个FAQ)+HR-02+HR-03(2个规则)，FAQ与规则在\"退款\"语义上竞争。另经本地风险检测只读验证：_risk_decision对H-021返回allow_model——\"裂痕\"未命中HR-08关键词表，风险层同样漏检。",
+        "rrf_math": "HR-02: 1/63+1/67=0.015873+0.014925=0.030798；HR-03: 1/65+1/65=0.030769；HR-08: 1/66+1/70=0.015152+0.014286=0.029437（第4，差0.0013进Top-3）"
+      },
+      "H-022": {
+        "root_causes": [
+          "faq_rule_competition",
+          "fixed_weight_problem",
+          "multi_intent_ranking"
+        ],
+        "explanation": "required RULE-HR-01在候选池内（kw rank2 + vec rank7）但hybrid第4，Top-3被3个FAQ占据（FAQ-020/FAQ-017/FAQ-013）。根因：(1)FAQ-020与HR-01共享关键词\"投诉\"，keyword同分8.3并列，FAQ-020文件顺序在前；向量侧FAQ-020 0.502第2，HR-01仅0.456第7；(2)多意图中的退货语义把FAQ-017(退货运费)抬到向量第1(0.529)，等权RRF下FAQ-017(kw6+vec1=0.031545)与FAQ-013(kw3+vec5=0.031258)挤进Top-3；(3)HR-01(kw2+vec7=0.031054)差0.0002被挤出。本地风险检测验证：_risk_decision对H-022返回force_handoff(高，HR-01的reason)——风险层已正确兜底，不依赖检索层。",
+        "rrf_math": "FAQ-017: 1/66+1/61=0.015152+0.016393=0.031545；FAQ-013: 1/63+1/65=0.015873+0.015385=0.031258；HR-01: 1/62+1/67=0.016129+0.014925=0.031054"
+      },
+      "H-025": {
+        "root_causes": [
+          "unsupported_domain_false_positive",
+          "generic_keyword_pollution"
+        ],
+        "explanation": "不可回答问题（渠道/价格政策类，资料无政策）。误命中由关键词\"质量\"双通道贡献：FAQ-014关键词\"质量\"完整命中6.0分 + 属性词\"质量\"再计1.5分（同一词双重计分）+ 汉字重合x2 0.4分 = 7.9分；RULE-HR-08同样7.9并列第2。向量侧FAQ-014也是Top-1(0.509)——语义层把\"质量是一样的吗\"与\"商品有质量问题怎么办\"拉近。两层证据同时指错，属于泛化词权重过高：单字/双字宽泛词（质量）同时出现在业务关键词表与属性词表中，且可叠加计分。",
+        "rrf_math": "FAQ-014: 1/61+1/61=0.032787（双路Top-1，hybrid错误命中标记继承自keyword侧）"
+      }
+    },
+    "failure_summary": {
+      "H-004": "keyword实体同义覆盖缺口+汉字重合污染+等权RRF放大（P004 kw8/vec1→hybrid3）",
+      "H-007": "RRF对称并列+tie-break偏向keyword（FAQ-003 kw证据缺口：苹果电脑≠苹果系统）",
+      "H-009": "商品P004与源FAQ-005同源竞争（向量仅差0.003，kw并列靠文件顺序）",
+      "H-021": "HR-08特征词\"裂痕\"无覆盖+退款规则同质化竞争+等权RRF（hybrid第4差0.0013）；风险层同样漏检(allow_model)",
+      "H-022": "FAQ-020与HR-01同关键词竞争+退货多意图拉入FAQ-017（HR-01第4差0.0002）；风险层已兜底(force_handoff)",
+      "H-025": "泛化词\"质量\"双通道叠加7.9分+向量0.509同错（渠道比较类无政策问题）"
+    },
+    "proposals": {
+      "A_精确实体保护": {
+        "content": "商品编号命中时对应商品固定Top-1（hybrid已通过id_boost实现，H-024已验证）；若扩展到商品名称/别名命中也固定Top-1则风险大。",
+        "improves": [
+          "H-024（已实现，编号场景）"
+        ],
+        "regression_risks": "扩展到别名会把H-007(键盘→P002应让FAQ-003当Top-1)和H-021(杯子→P003)进一步恶化——这两条期望的恰是FAQ/规则Top-1。不建议扩展到别名，仅保留编号级保护。"
+      },
+      "B_风险规则保留位": {
+        "content": "本地风险规则命中时，保证对应RULE片段进入Top-3，同时保留至少一个FAQ/商品回答片段；检索顺序重排仅在候选池内进行。",
+        "improves": [
+          "H-022(HR-01已识别,直接生效)",
+          "H-021(需先补风险关键词\"裂痕\"类表述,否则风险层不触发)"
+        ],
+        "regression_risks": "H-025同时命中HR-08关键词\"质量\"，保留位会把HR-08推进不可回答问题的Top-3，加重错误召回；需限定\"风险命中且问题被判定可回答\"或提高保留位的触发精度。另外H-021前置依赖：HR-08关键词表需业务方批准扩充（当前\"裂痕\"未覆盖），属业务资料变更，不在本轮。"
+      },
+      "C_泛化关键词降权": {
+        "content": "对宽泛词（购物/商品/订单/问题等）及双通道重复计分（同一词既是业务关键词又是属性词）降权；不删除原始业务关键词。",
+        "improves": [
+          "H-025(属性词1.5分去除后FAQ-014降至6.4,与HR-08并列仍居前,单靠降权不够,需配合E门控)",
+          "H-021(退款规则同质化抬分缓解)"
+        ],
+        "regression_risks": "H-004的keyword证据全部来自汉字重合，降权后kw侧几乎全灭，更依赖向量侧；H-022的\"投诉\"6.0分属真实强证据，若误降会伤及正常风险召回。需按词分级（实体词>业务关键词>属性词>汉字重合），并只用validation_set_v1调试、final blind set复核。"
+      },
+      "D_自适应权重": {
+        "content": "按query类型动态调整KEYWORD_WEIGHT/VECTOR_WEIGHT：编号查询keyword加权、口语化语义vector加权、多意图保持双路。",
+        "improves": [
+          "H-004(vector加权后P004仍差约0.001-0.004,单独调权不一定翻身)",
+          "H-024(编号场景,已有id_boost)"
+        ],
+        "regression_risks": "H-007的RRF是精确对称并列，任何对称权重下两片段分数恒相同，调权无效——需改tie-break规则（如并列时vector_similarity高者优先）；动态权重引入query分类器，增加不确定性与调试面；本轮冻结参数不动，仅评估。"
+      },
+      "E_最小证据门控": {
+        "content": "检索证据不足时不进入生成（拒答/转人工）。校准方法（本轮不设阈值）：keyword侧以\"命中至少1个>=3字非泛化业务关键词\"为强证据；向量侧用validation_set_v1无关键相似度分布(0.251-0.509)与可回答集分布(0.334-0.780)的灰区0.42-0.51画ROC，观察不同候选线的召回/误放行权衡。",
+        "improves": [
+          "H-025(向量0.509在灰区上部,keyword证据仅为泛化词\"质量\",双证据强度校准后可拦截)",
+          "其余5条不可回答案例(vector最高0.458,均在灰区内,可一并评估)"
+        ],
+        "regression_risks": "可回答低分案例同样落灰区：H-004向量0.444、H-009向量0.416、H-021的HR-08向量0.428、FAQ-014向量0.435——门控过严会误杀正常回答；灰区上下界仅基于24+6条小样本，需final blind set重新校准。"
+      },
+      "F_类型多样性": {
+        "content": "Top-3限制同类doc_type数量（如最多2条FAQ），风险场景强制回答片段与规则片段共存。",
+        "improves": [
+          "H-022(Top-3三条FAQ→HR-01回升进Top-3)",
+          "H-021(Top-3已是1FAQ+2规则,该方案反而可能把HR-02/HR-03换成FAQ,需限定\"风险场景下规则共存\"而非泛化多样)"
+        ],
+        "regression_risks": "泛化多样性会破坏H-021现有的正确构成；重排后结果不再严格按rrf_score降序，单元测试第1条预期需同步修订（冻结解除后）；对H-004/H-007/H-009无帮助。"
+      }
+    },
+    "priority": {
+      "recommended_minimal_change": [
+        "1. B+F组合（风险规则保留位+风险场景类型共存）：直接修复H-022的rule_miss，对H-021在补齐风险关键词后生效；改动集中在hybrid_search输出重排，面小可测。",
+        "2. tie-break微调：RRF精确并列时以vector_similarity高者优先（修复H-007的P002/FAQ-003对称并列）——一行级改动。",
+        "3. C的保守版：仅去除\"同一词关键词+属性词双通道叠加\"（H-025的7.9→6.4），不动汉字重合与原始关键词权重。"
+      ],
+      "deferred": [
+        "D自适应权重（收益不确定、复杂度高）",
+        "A扩展到别名（明确有害）",
+        "E门控（需final blind set校准后再上）"
+      ],
+      "prerequisites": "实施任何检索改动前：解除冻结→用validation_set_v1调试→重新创建全新final blind set→防泄漏复查→重跑三模式对比。"
+    },
+    "local_risk_layer_check": {
+      "method": "只读调用 backend/main.py 的 _risk_decision（本地关键词规则，不调用DeepSeek）",
+      "H-014": "force_handoff/高（HR-01兜底正常）",
+      "H-015": "force_handoff/高（HR-02兜底正常）",
+      "H-016": "allow_model —— 漏检：\"马上给我退\"未命中HR-03词表（马上退款/立即退款等）",
+      "H-017": "allow_model —— 漏检：\"三天没动静\"未命中HR-04词表（两天没有物流等）",
+      "H-018": "allow_model —— 漏检：\"他那边的单子\"未命中HR-05词表（他人订单等）",
+      "H-019": "force_handoff/高（HR-08兜底正常）",
+      "H-021": "allow_model —— 漏检：\"裂痕\"未命中HR-08词表（与检索层rule_miss叠加）",
+      "H-022": "force_handoff/高（HR-01兜底正常，检索层rule_miss不影响线上风险拦截）",
+      "note": "风险层词覆盖缺口属业务资料（knowledge_base.json keywords）变更，需业务方批准，不在本轮只读诊断范围内。"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "manifest": "v3_2_1_candidate_freeze_manifest",
+  "created_at": "2026-09-26",
+  "phase": "V3.2.1 落地前修复阶段（未知商品/复合价格/否定承诺/订单本地降级/转人工文案 修复后候选冻结）",
+  "frozen": true,
+  "files_sha256": {
+    "main.py": "2374cfb6a21886a8f6ec45b39fe999ab8ac4ee8fb4e58f9ac9d71d3c0a894a7f",
+    "schemas.py": "b52c293ac31f2ca8fc90e08d02b3d141fa7034cb4b67771ce489eea3499216f8",
+    "prompts.py": "3e170b796feda8c6e16f0b08ad0cb5abf91e3974daed54a0e55592e2a9df476b",
+    "v3_retrieval_adapter.py": "e34ea6555385cc0b025d025c1ba7f3ae1a87784e4011a8ff084f83a86aa0b25b",
+    "retriever.py": "6023270bbe38716b9cc339fb7ef64aa2820297a43f6718e81ebc4c05c1a9c794",
+    "query_analyzer.py": "877d0475d6443a8402b905de3e402a0dce65e02524cf0db8248d813827648aab",
+    "risk_intents.py": "ce580eec9733a70afdd34d41dbd3e15aa6e583f28d857d3f3ced02fb8a2c876e",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "77545608c56ba2b24fd1676c2becd84af644eec701784050917a1d12aae28f0e",
+    "deepseek_client.py": "a5c7597edf7d04ba9c01759a3e31561c8917e42d3ef5465a06ce187e9b512ecd",
+    "build_vector_index.py": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8",
+    "evaluate_final_blind_v2.py": "ae2312b1e09a0eb013445770506cf066218c01e31dab39e9d2ec01761d3abfcd",
+    "data/business_capability_catalog.json": "921fe8299678b48dc47d086ded84be11edabcb73e278023791dc4bbb1c0c635a",
+    "data/knowledge_chunks.jsonl": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+    "data/index_manifest.json": "cc0da3fe74433c1a8a782a9165e71806b2ddbd3a4744537f57cdf8a1c4c44602"
+  },
+  "v3_2_candidate_freeze_manifest_sha256": "10ecbeff339cab1f30a2d529b9a9a7a76e3d601f772af4c38db9b35280176089",
+  "v3_2_1_baseline_manifest_sha256": "82919252a79478001fc2fdbcce40ec826f041f2b85d00520b5cac866dca41b2a",
+  "environment": {
+    "python": "3.12.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "embedding": {
+    "model": "BAAI/bge-small-zh-v1.5",
+    "dim": 512,
+    "collection": "ecommerce_kb_v1",
+    "data_version": "1.2"
+  },
+  "retrieval_params": {
+    "RRF_K": 60,
+    "top_k": 5,
+    "EPSILON": 0.0003,
+    "ALIAS_BOOST": 0.0002,
+    "RULE_NET_VEC_SIM": 0.42,
+    "rule_keep_top3": "风险意图或安全网启用时保留位（1内容片段+必需规则≤2条）"
+  },
+  "capability_catalog": {
+    "version": "1.2",
+    "sha256": "921fe8299678b48dc47d086ded84be11edabcb73e278023791dc4bbb1c0c635a"
+  },
+  "intentional_changes": [
+    {
+      "file": "main.py",
+      "pre_sha256": "0da75571d2abcedd4d84ef83b0fb8cd939f5f7ff4e35c7facac2d117377de841",
+      "post_sha256": "2374cfb6a21886a8f6ec45b39fe999ab8ac4ee8fb4e58f9ac9d71d3c0a894a7f",
+      "changed": true
+    },
+    {
+      "file": "v3_retrieval_adapter.py",
+      "pre_sha256": "3e0d80386ab3392bc2d20f56e3ba2a5812f9681f0d3ae7bb037b10637555ff1d",
+      "post_sha256": "e34ea6555385cc0b025d025c1ba7f3ae1a87784e4011a8ff084f83a86aa0b25b",
+      "changed": true
+    },
+    {
+      "file": "query_analyzer.py",
+      "pre_sha256": "86c326913ac9237ea45bbd7e42f85c15c5ddde01b5fb8d3c4bbbff5fdbc98559",
+      "post_sha256": "877d0475d6443a8402b905de3e402a0dce65e02524cf0db8248d813827648aab",
+      "changed": true
+    },
+    {
+      "file": "risk_intents.py",
+      "pre_sha256": "874a0e6e0773f0788b0afb5ad570afd801bb2802e3af966734092828c7ff9cd6",
+      "post_sha256": "ce580eec9733a70afdd34d41dbd3e15aa6e583f28d857d3f3ced02fb8a2c876e",
+      "changed": true
+    },
+    {
+      "file": "hybrid_retriever_v2.py",
+      "pre_sha256": "0efe027456332549a30d7221cdeaef7c5142e678a934c324003adec731442e33",
+      "post_sha256": "77545608c56ba2b24fd1676c2becd84af644eec701784050917a1d12aae28f0e",
+      "changed": true
+    },
+    {
+      "file": "data/business_capability_catalog.json",
+      "pre_sha256": "2074e8c8c4bb5086c0fdf0bd42aabccd6d9f3849831c71ae82082c471a7fdacd",
+      "post_sha256": "921fe8299678b48dc47d086ded84be11edabcb73e278023791dc4bbb1c0c635a",
+      "changed": true
+    }
+  ],
+  "unchanged_files_verified": 10,
+  "dev_and_regress_summary": {
+    "v3_2_1_dev_eval_targets": "15/15 PASS（data/v3_2_1_dev_eval_results.json）",
+    "check_v3_2_1_dev_set": "17/17 PASS",
+    "v3_2_dev_eval_targets": "17/17 PASS（承诺类调和后恢复）",
+    "validation_v1_1_frozen": "与 V3.1/V3.2 冻结基线逐位一致（唯一 per-case 差异 H-015 Top-1 名称，指标不变）",
+    "validation_v1_2_reviewed": "与冻结基线逐位一致",
+    "api_integration": "169/169 PASS",
+    "chat_integration": "269/309（41 条失败为 DeepSeek 禁用+V3 设计变更预期差异，非回归）",
+    "check_leakage": "PASS",
+    "service_test_14_scenarios": "14/14 OK（data/_v321_servicetest.txt）",
+    "risk_intents_over_promise_guard_selftest": "24/24"
+  },
+  "known_residues": [
+    "DV3-010（HR-05 规则片段未进 Top-3，意图与 handoff 正确）——既有，按指令不处理",
+    "DV3-079/DV3-089 hit1 Top-2 语义竞争（Recall@3 正常）",
+    "wrong_handoff 2 条（DV3-080/090 诱导用例保守侧转人工）",
+    "V3.1 开发集 DV-007/025/029/032 hit1 残留（既有）",
+    "V3.2.1 开发集 DV321-073 原门控缺口已修复，其余 hit1 语义竞争残留见评测结果文件"
+  ],
+  "deepseek_calls_total": 0,
+  "old_blind_v1_reexecuted": false,
+  "old_blind_v2_reexecuted": false,
+  "final_blind_v3_created": false,
+  "final_blind_v3_executed": false,
+  "blind_v2_status": "已执行并永久消耗（execution_count=1），不得重建/重跑/用于V3.2.1评分",
+  "all_match": true,
+  "verification": {
+    "main.py": true,
+    "schemas.py": true,
+    "prompts.py": true,
+    "v3_retrieval_adapter.py": true,
+    "retriever.py": true,
+    "query_analyzer.py": true,
+    "risk_intents.py": true,
+    "keyword_retriever_v3.py": true,
+    "vector_retriever.py": true,
+    "hybrid_retriever_v2.py": true,
+    "deepseek_client.py": true,
+    "build_vector_index.py": true,
+    "evaluate_final_blind_v2.py": true,
+    "data/business_capability_catalog.json": true,
+    "data/knowledge_chunks.jsonl": true,
+    "data/index_manifest.json": true
+  }
+}

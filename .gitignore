@@ -1,0 +1,23 @@
+# ===== 密钥（严禁提交真实 Key）=====
+.env
+.env.*
+!.env.example
+
+# ===== Python =====
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ===== 向量库与构建缓存 =====
+chroma_db/
+*.sqlite3
+.cache/
+.slidep/
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

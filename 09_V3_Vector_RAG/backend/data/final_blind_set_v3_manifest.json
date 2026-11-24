@@ -1,0 +1,122 @@
+{
+  "manifest": "final_blind_set_v3_manifest",
+  "created_at": "2026-09-26",
+  "status": "frozen_pending_one_time_evaluation",
+  "note": "本项目最后一套最终盲测集（no_future_blind_set_planned=true）。创建阶段仅读取文件，未调用任何检索器/向量库/候选API/DeepSeek。",
+  "final_blind_set_v3_sha256": "938582f31a5506c52c0beafdb0f395dd19e7d7fada04ef9697af8bbe2a9fc10d",
+  "label_review_sha256": "c0bf0b5f0e72615b2482dce6b812879dfb1ed6f3cfc5aae63cf351502067e915",
+  "query_blacklist_sha256": "c0d43afef0bca83776021108c4c2b2b00cc89156c513b47784d20ce8a8edbd9d",
+  "review_checklist_sha256": "c1316cf1533387d4ba3ad863a4202c5966c3f924e2588d64f25b188d14e3b417",
+  "v3_2_2_candidate_freeze_manifest_sha256": "29d417d42bdb914a09e27a5c6ad6fbb6609227ceb9aee60bc41736cf582381cd",
+  "candidate_files_sha256": {
+    "main.py": "e72b7daaef975ade143699ab3a9640d7c8531da007a866d0c16f9774c8250070",
+    "schemas.py": "b52c293ac31f2ca8fc90e08d02b3d141fa7034cb4b67771ce489eea3499216f8",
+    "prompts.py": "3e170b796feda8c6e16f0b08ad0cb5abf91e3974daed54a0e55592e2a9df476b",
+    "v3_retrieval_adapter.py": "3df86468f27577c1f24fa41acf22a131afd467483015171455b88bb054f6d15a",
+    "retriever.py": "6023270bbe38716b9cc339fb7ef64aa2820297a43f6718e81ebc4c05c1a9c794",
+    "query_analyzer.py": "877d0475d6443a8402b905de3e402a0dce65e02524cf0db8248d813827648aab",
+    "risk_intents.py": "a0e9c4e06f241836d06fdc80d7c14089697013d98daf6b3b6dadabbe642a190b",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "77545608c56ba2b24fd1676c2becd84af644eec701784050917a1d12aae28f0e",
+    "deepseek_client.py": "a5c7597edf7d04ba9c01759a3e31561c8917e42d3ef5465a06ce187e9b512ecd",
+    "build_vector_index.py": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8",
+    "evaluate_final_blind_v2.py": "ae2312b1e09a0eb013445770506cf066218c01e31dab39e9d2ec01761d3abfcd",
+    "data/business_capability_catalog.json": "921fe8299678b48dc47d086ded84be11edabcb73e278023791dc4bbb1c0c635a",
+    "data/knowledge_chunks.jsonl": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+    "data/index_manifest.json": "cc0da3fe74433c1a8a782a9165e71806b2ddbd3a4744537f57cdf8a1c4c44602",
+    "risk_levels.py": "18767229344d2a343dc0e6af880ae8189a9afd4176cc2aff7f8c6124c603ca16"
+  },
+  "counts": {
+    "total": 80,
+    "layer_a_retrieval_scope_order": 70,
+    "layer_b_api_contract": 10,
+    "category": {
+      "product": 8,
+      "faq": 10,
+      "rule": 16,
+      "multi": 8,
+      "order": 8,
+      "unsupported_business": 10,
+      "irrelevant": 10,
+      "api": 10
+    },
+    "difficulty": {
+      "easy": 16,
+      "medium": 36,
+      "hard": 28
+    },
+    "scope": {
+      "supported": 56,
+      "unsupported_business": 12,
+      "irrelevant": 12
+    },
+    "multi_answer_cases": 5,
+    "order_cases": 12,
+    "quality_defect_cases_HR08": 4
+  },
+  "risk_rule_distribution": {
+    "RULE-HR-01": 2,
+    "RULE-HR-02": 4,
+    "RULE-HR-03": 3,
+    "RULE-HR-04": 3,
+    "RULE-HR-05": 4,
+    "RULE-HR-06": 4,
+    "RULE-HR-07": 4,
+    "RULE-HR-08": 4
+  },
+  "official_risk_levels": {
+    "HR-01": "高",
+    "HR-02": "高",
+    "HR-03": "中",
+    "HR-04": "中",
+    "HR-05": "高",
+    "HR-06": "高",
+    "HR-07": "高",
+    "HR-08": "高",
+    "source": "knowledge_chunks.jsonl 原始规则 / knowledge_base.json retriever.RULES，未降低任何等级",
+    "unified_definition": "risk_levels.py RISK_SCORE（低=0 中=1 高=2），main.py 与 v3_retrieval_adapter.py 统一调用"
+  },
+  "leakage_check": {
+    "script": "check_final_blind_set_v3.py（24项，只读）",
+    "result": "24/24 通过，失败 0",
+    "blacklist_entries": 1250,
+    "detail_file": "data/_blindv3_check_result.json"
+  },
+  "manual_review": {
+    "checklist": "final_blind_set_v3_review_checklist.md",
+    "sampled": 28,
+    "stratification": "product3/faq3/rule6/multi4/order4/unsupported3/irrelevant3/api2",
+    "hr_coverage": "HR-01..08 全覆盖",
+    "conclusion": "28条全部通过：自然、历史独立、标注可溯源、无诱导痕迹"
+  },
+  "pre_frozen_targets": {
+    "answer_hit_at_1": ">= 85%",
+    "union_hit_at_3": ">= 95%",
+    "coverage_recall_at_3": "只报告，不设阈值",
+    "rule_recall_at_3": ">= 90%",
+    "hr08_recall_at_3": "= 100%",
+    "scope_accuracy": ">= 95%",
+    "unsupported_false_pass_rate": "<= 5%",
+    "irrelevant_false_pass_rate": "<= 5%",
+    "risk_floor_compliance": "= 100%",
+    "high_risk_handoff": "= 100%",
+    "wrong_handoff_rate": "<= 10%",
+    "order_route_and_fact_accuracy": "= 100%",
+    "api_contract_pass_rate": ">= 90%",
+    "internal_term_leakage": "= 0",
+    "forbidden_promise_violation": "= 0",
+    "deepseek_real_calls": "= 0",
+    "p95_latency_after_warmup_ms": "< 100",
+    "frozen_before_execution": true
+  },
+  "retrieval_executed": false,
+  "api_chat_called": false,
+  "deepseek_called": false,
+  "old_blind_v1_reexecuted": false,
+  "old_blind_v2_reexecuted": false,
+  "final_blind_v3_executed": false,
+  "execution_count": 0,
+  "no_future_blind_set_planned": true,
+  "all_match": true
+}

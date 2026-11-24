@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>电商客服AI助手 业务流程图（源文件）</title>
+<style>
+  body { margin: 0; background: #fff; font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+  #wrap { width: 1280px; }
+  svg text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+</style>
+</head>
+<body>
+<div id="wrap">
+<svg viewBox="0 0 1280 1660" width="1280" height="1660" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#64748B"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1280" height="1660" fill="#FFFFFF"/>
+  <text x="600" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#1F5AA8">电商客服AI助手 核心业务流程图（Demo v1.2，全部为模拟数据）</text>
+
+  <!-- ===================== 连接线 ===================== -->
+  <g fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)">
+    <!-- 主干 -->
+    <line x1="600" y1="100" x2="600" y2="140"/>
+    <line x1="600" y1="198" x2="600" y2="253"/>
+    <line x1="600" y1="345" x2="600" y2="400"/>                     <!-- 输入有效=是 -->
+    <line x1="600" y1="498" x2="600" y2="540" />
+    <polyline points="600,540 350,540 350,560"/>                    <!-- 有订单号=是 → 查询订单 -->
+    <polyline points="750,450 870,450 870,560"/>                    <!-- 有订单号=否 → 问题分类 -->
+    <line x1="350" y1="618" x2="350" y2="673"/>                     <!-- → 订单是否存在 -->
+    <line x1="350" y1="765" x2="350" y2="846"/>                     <!-- 订单存在=是 -->
+    <line x1="870" y1="618" x2="870" y2="686"/>                     <!-- → 检索资料 -->
+    <line x1="870" y1="752" x2="870" y2="807"/>                     <!-- → 是否有依据 -->
+    <line x1="870" y1="901" x2="870" y2="955"/>                     <!-- 有依据=是 -->
+    <polyline points="995,855 1120,855"/>                           <!-- 有依据=否 → 未覆盖 -->
+    <polyline points="1120,890 1120,1020 1005,1020 1005,1393 754,1393"/> <!-- 未覆盖 → 展示 -->
+    <line x1="870" y1="1013" x2="870" y2="1062"/>                   <!-- → 是否高风险 -->
+    <polyline points="1000,1110 1023,1110"/>                        <!-- 高风险=是 -->
+    <polyline points="1135,1145 1135,1410 754,1410"/>               <!-- 转人工 → 展示 -->
+    <line x1="870" y1="1156" x2="870" y2="1210"/>                   <!-- 高风险=否 -->
+    <polyline points="870,1268 870,1380 754,1380"/>                 <!-- 正常回复 → 展示 -->
+    <polyline points="230,720 207,720"/>                            <!-- 订单存在=否 -->
+    <polyline points="105,755 105,1400 446,1400"/>                  <!-- 未查询到 → 展示 -->
+    <polyline points="350,912 350,1380 446,1380"/>                  <!-- 订单状态 → 展示 -->
+    <line x1="600" y1="1414" x2="600" y2="1468"/>                   <!-- 展示 → 反馈 -->
+    <line x1="600" y1="1532" x2="600" y2="1553"/>                   <!-- 反馈 → 结束 -->
+    <!-- 输入无效回环 -->
+    <polyline points="950,272 950,170 714,170"/>                    <!-- 无效 → 提示 → 回到输入 -->
+  </g>
+
+  <!-- 是/否 标签 -->
+  <g font-size="14" font-weight="bold" fill="#334155" paint-order="stroke" stroke="#FFFFFF" stroke-width="4">
+    <text x="612" y="378">是</text>
+    <text x="588" y="522" text-anchor="end">是（含完整12位订单号）</text>
+    <text x="765" y="438">否（无订单号/不完整）</text>
+    <text x="362" y="800">是</text>
+    <text x="218" y="706">否</text>
+    <text x="884" y="932">是</text>
+    <text x="1000" y="843">否</text>
+    <text x="884" y="1188">否</text>
+    <text x="1006" y="1098">是</text>
+    <text x="778" y="160">否，重新输入</text>
+  </g>
+  <text x="790" y="512" font-size="13" fill="#94A3B8" font-style="italic">注：仅输入6~11位数字且有查询意图时，提示提供完整的12位订单号</text>
+
+  <!-- ===================== 节点 ===================== -->
+  <!-- 开始/结束（椭圆） -->
+  <ellipse cx="600" cy="70" rx="90" ry="30" fill="#1F5AA8"/>
+  <text x="600" y="76" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">开 始</text>
+  <ellipse cx="600" cy="1585" rx="90" ry="30" fill="#1F5AA8"/>
+  <text x="600" y="1591" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">结 束</text>
+
+  <!-- 处理步骤（矩形） -->
+  <g fill="#EAF1FA" stroke="#1F5AA8" stroke-width="1.8">
+    <rect x="490" y="142" width="220" height="56" rx="6"/>
+    <rect x="240" y="562" width="220" height="56" rx="6"/>
+    <rect x="760" y="562" width="220" height="56" rx="6"/>
+    <rect x="225" y="848" width="250" height="64" rx="6"/>
+    <rect x="750" y="688" width="240" height="64" rx="6"/>
+    <rect x="760" y="957" width="220" height="56" rx="6"/>
+    <rect x="770" y="1212" width="200" height="56" rx="6"/>
+    <rect x="450" y="1350" width="300" height="64" rx="6"/>
+    <rect x="470" y="1470" width="260" height="60" rx="6"/>
+  </g>
+  <g font-size="15" fill="#1E293B" text-anchor="middle">
+    <text x="600" y="176">用户输入问题</text>
+    <text x="350" y="596">查询模拟订单数据</text>
+    <text x="870" y="596">识别问题分类</text>
+    <text x="350" y="874">返回订单/物流/售后状态</text>
+    <text x="350" y="894" font-size="12" fill="#475569">（催促/金额争议等意图同步判定风险）</text>
+    <text x="870" y="714">检索商品资料 / 客服FAQ</text>
+    <text x="870" y="734">/ 售后SOP规则</text>
+    <text x="870" y="991">生成建议回复</text>
+    <text x="870" y="1246">正常回复（低/中风险）</text>
+    <text x="600" y="1376">展示回答、问题分类、</text>
+    <text x="600" y="1396">风险等级与信息依据</text>
+    <text x="600" y="1506">用户反馈（有帮助 / 无帮助）</text>
+  </g>
+
+  <!-- 判断（菱形） -->
+  <g fill="#FFF6DE" stroke="#C9971C" stroke-width="1.8">
+    <polygon points="600,255 720,300 600,345 480,300"/>
+    <polygon points="600,402 750,450 600,498 450,450"/>
+    <polygon points="350,675 470,720 350,765 230,720"/>
+    <polygon points="870,809 995,855 870,901 745,855"/>
+    <polygon points="870,1064 1000,1110 870,1156 740,1110"/>
+  </g>
+  <g font-size="14" fill="#1E293B" text-anchor="middle">
+    <text x="600" y="296">输入是否有效？</text>
+    <text x="600" y="446">是否包含完整</text>
+    <text x="600" y="466">12位订单号？</text>
+    <text x="350" y="716">订单是否存在？</text>
+    <text x="870" y="851">是否找到明确依据？</text>
+    <text x="870" y="1106">是否属于高风险问题？</text>
+  </g>
+
+  <!-- 提示/异常节点（矩形，红色系） -->
+  <g fill="#FDECEC" stroke="#C0392B" stroke-width="1.8">
+    <rect x="835" y="272" width="230" height="56" rx="6"/>
+    <rect x="5" y="690" width="200" height="60" rx="6"/>
+    <rect x="1015" y="823" width="210" height="64" rx="6"/>
+    <rect x="1025" y="1078" width="220" height="64" rx="6"/>
+  </g>
+  <g font-size="13.5" fill="#7F1D1D" text-anchor="middle">
+    <text x="950" y="296">提示：请输入有效问题</text>
+    <text x="950" y="314" font-size="12">（空输入不发送）</text>
+    <text x="105" y="714">提示：未查询到该模拟订单</text>
+    <text x="105" y="732" font-size="12">（不编造订单信息）</text>
+    <text x="1120" y="849">提示：资料未覆盖该问题</text>
+    <text x="1120" y="867" font-size="12">（说明信息不足并转人工）</text>
+    <text x="1135" y="1104">建议转人工并说明原因</text>
+    <text x="1135" y="1122" font-size="12">（不承诺结果与时间）</text>
+  </g>
+
+  <!-- 图例 -->
+  <g>
+    <rect x="1000" y="48" width="250" height="140" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/>
+    <text x="1125" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">图 例</text>
+    <ellipse cx="1032" cy="96" rx="24" ry="11" fill="#1F5AA8"/>
+    <text x="1068" y="101" font-size="13" fill="#334155">开始 / 结束</text>
+    <rect x="1010" y="116" width="44" height="20" rx="3" fill="#EAF1FA" stroke="#1F5AA8"/>
+    <text x="1068" y="131" font-size="13" fill="#334155">处理步骤</text>
+    <polygon points="1032,148 1056,160 1032,172 1008,160" fill="#FFF6DE" stroke="#C9971C"/>
+    <text x="1068" y="165" font-size="13" fill="#334155">判断</text>
+    <line x1="1010" y1="182" x2="1054" y2="182" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="1068" y="187" font-size="13" fill="#334155">流向</text>
+  </g>
+</svg>
+</div>
+</body>
+</html>

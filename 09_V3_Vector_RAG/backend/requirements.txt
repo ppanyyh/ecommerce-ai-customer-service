@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+openai
+python-dotenv
+pydantic
+httpx  # 集成测试 TestClient 依赖（fastapi.testclient 需要）

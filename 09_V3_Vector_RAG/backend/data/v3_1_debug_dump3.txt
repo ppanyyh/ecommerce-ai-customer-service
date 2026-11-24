@@ -1,0 +1,47 @@
+===== DV-022 | 讲好是全额退的，结果只回来了一半的钱，剩下那笔怎么算？
+  required=['RULE-HR-02'] relevant=['RULE-HR-02', 'FAQ-016'] sup=[] concern=False entity=[]
+  NATURAL: 1.RULE-HR-02(0.032787,expl=False) | 2.FAQ-019(0.030415,expl=False) | 3.RULE-HR-07(0.03009,expl=False) | 4.FAQ-013(0.030159,expl=False) | 5.FAQ-017(0.015873,expl=False) | 6.FAQ-010(0.016129,expl=False)
+  KW: RULE-HR-02(0.6,expl=False):['汉字重合x4'] | FAQ-010(0.45,expl=False):['汉字重合x3'] | FAQ-013(0.45,expl=False):['汉字重合x3'] | FAQ-014(0.45,expl=False):['汉字重合x3'] | RULE-HR-07(0.45,expl=False):['汉字重合x3']
+  VEC: RULE-HR-02(0.561) | FAQ-019(0.532) | FAQ-017(0.525) | RULE-HR-03(0.497) | FAQ-020(0.467) | FAQ-016(0.456)
+
+===== DV-024 | 这包裹都一个礼拜了轨迹一条没动过，是不是出问题了？
+  required=['RULE-HR-04'] relevant=['RULE-HR-04', 'FAQ-010'] sup=[] concern=True entity=[]
+  NATURAL: 1.FAQ-012(0.032018,expl=False) | 2.RULE-HR-04(0.032258,expl=False) | 3.FAQ-010(0.032266,expl=True) | 4.FAQ-007(0.03055,expl=False) | 5.FAQ-014(0.030769,expl=False) | 6.RULE-HR-08(0.030579,expl=False)
+  KW: FAQ-010(6.6,expl=True):['轨迹', '汉字重合x4'] | RULE-HR-04(0.75,expl=False):['汉字重合x5'] | RULE-HR-08(0.6,expl=False):['汉字重合x4'] | FAQ-012(0.45,expl=False):['汉字重合x3'] | FAQ-014(0.45,expl=False):['汉字重合x3']
+  VEC: FAQ-012(0.506) | RULE-HR-04(0.494) | FAQ-010(0.489) | FAQ-007(0.478) | FAQ-014(0.477) | FAQ-009(0.432)
+
+===== DV-025 | 东西是我给我妈下单的，能不能帮我看看她名下那个件到哪儿了？
+  required=['RULE-HR-05'] relevant=['RULE-HR-05', 'FAQ-006'] sup=[] concern=False entity=[]
+  NATURAL: 1.FAQ-013(0.031754,expl=False) | 2.RULE-HR-05(0.031025,expl=False) | 3.FAQ-006(0.029911,expl=False) | 4.RULE-HR-08(0.029211,expl=False) | 5.FAQ-012(0.016393,expl=False) | 6.RULE-HR-01(0.016393,expl=False)
+  KW: RULE-HR-01(0.45,expl=False):['汉字重合x3'] | RULE-HR-07(0.45,expl=False):['汉字重合x3'] | FAQ-008(0.3,expl=False):['汉字重合x2'] | FAQ-013(0.3,expl=False):['汉字重合x2'] | RULE-HR-02(0.3,expl=False):['汉字重合x2']
+  VEC: FAQ-012(0.448) | FAQ-013(0.433) | RULE-HR-05(0.428) | FAQ-006(0.427) | FAQ-017(0.419) | FAQ-009(0.418)
+
+===== DV-026 | 你把系统里留的收件电话念给我听一下，我自己核对下对不对。
+  required=['RULE-HR-06'] relevant=['RULE-HR-06'] sup=[] concern=False entity=[]
+  NATURAL: 1.RULE-HR-06(0.032018,expl=False) | 2.RULE-HR-02(0.030798,expl=False) | 3.RULE-HR-08(0.03009,expl=False) | 4.FAQ-003(0.016129,expl=True) | 5.PRODUCT-P002(0.016393,expl=True) | 6.FAQ-011(0.016129,expl=False)
+  KW: PRODUCT-P002(1.5,expl=True):['系统(属性)'] | FAQ-003(1.5,expl=True):['系统(属性)'] | RULE-HR-02(0.45,expl=False):['汉字重合x3'] | RULE-HR-06(0.45,expl=False):['汉字重合x3'] | FAQ-010(0.3,expl=False):['汉字重合x2']
+  VEC: RULE-HR-06(0.514) | FAQ-011(0.508) | RULE-HR-05(0.481) | FAQ-017(0.480) | RULE-HR-08(0.473) | FAQ-020(0.469)
+
+===== DV-029 | 杯盖拧上之后老往外渗水，密封好像不行了。
+  required=['RULE-HR-08'] relevant=['RULE-HR-08', 'FAQ-014', 'PRODUCT-P003'] sup=[] concern=False entity=[]
+  NATURAL: 1.FAQ-004(0.032522,expl=False) | 2.PRODUCT-P003(0.032266,expl=False) | 3.FAQ-005(0.030331,expl=False) | 4.FAQ-002(0.030077,expl=False) | 5.RULE-HR-08(0.029857,expl=False) | 6.FAQ-015(0.016129,expl=False)
+  KW: PRODUCT-P003(0.3,expl=False):['汉字重合x2'] | FAQ-004(0.3,expl=False):['汉字重合x2'] | FAQ-013(0.3,expl=False):['汉字重合x2'] | RULE-HR-02(0.3,expl=False):['汉字重合x2'] | RULE-HR-03(0.3,expl=False):['汉字重合x2']
+  VEC: FAQ-004(0.498) | FAQ-015(0.493) | PRODUCT-P003(0.455) | FAQ-005(0.448) | FAQ-014(0.438) | FAQ-002(0.413)
+
+===== DV-032 | 耳机左边那只老是接触不良，戴一会儿就一只响一只不响。
+  required=['RULE-HR-08'] relevant=['RULE-HR-08', 'FAQ-014', 'PRODUCT-P001'] sup=[] concern=False entity=['P001']
+  NATURAL: 1.FAQ-002(0.032522,expl=False) | 2.PRODUCT-P001(0.032218,expl=True) | 3.FAQ-001(0.032002,expl=False) | 4.RULE-HR-02(0.030303,expl=False) | 5.RULE-HR-04(0.029631,expl=False) | 6.FAQ-015(0.029877,expl=False)
+  KW: PRODUCT-P001(6.0,expl=True):['耳机'] | FAQ-002(0.45,expl=False):['汉字重合x3'] | FAQ-001(0.3,expl=False):['汉字重合x2'] | FAQ-010(0.3,expl=False):['汉字重合x2'] | FAQ-015(0.3,expl=False):['汉字重合x2']
+  VEC: FAQ-002(0.553) | FAQ-001(0.547) | RULE-HR-08(0.482) | PRODUCT-P001(0.476) | FAQ-014(0.459) | RULE-HR-02(0.445)
+
+===== DV-018 | 钱退回来一般得等几个工作日？
+  required=[] relevant=['FAQ-016'] sup=['refund_progress_query'] concern=False entity=[]
+  NATURAL: 1.FAQ-013(0.031545,expl=True) | 2.FAQ-016(0.031319,expl=False) | 3.FAQ-017(0.03009,expl=False) | 4.RULE-HR-03(0.029754,expl=False) | 5.FAQ-015(0.029644,expl=False) | 6.RULE-HR-02(0.028579,expl=False)
+  KW: FAQ-013(6.0,expl=True):['退回'] | RULE-HR-07(0.6,expl=False):['汉字重合x4'] | RULE-HR-02(0.3,expl=False):['汉字重合x2'] | RULE-HR-03(0.3,expl=False):['汉字重合x2'] | FAQ-010(0.15,expl=False):['汉字重合x1']
+  VEC: FAQ-016(0.752) | RULE-HR-03(0.605) | FAQ-006(0.583) | FAQ-007(0.572) | FAQ-017(0.572) | FAQ-013(0.556)
+
+===== DV-046 | 买台灯可以给开增值税的票吗？走什么流程？
+  required=[] relevant=['FAQ-018'] sup=['invoice_query'] concern=False entity=['P005']
+  NATURAL: 1.PRODUCT-P005(0.032722,expl=True) | 2.FAQ-018(0.032266,expl=False) | 3.FAQ-008(0.031498,expl=False) | 4.FAQ-019(0.030118,expl=False) | 5.FAQ-015(0.016129,expl=False) | 6.FAQ-014(0.015385,expl=False)
+  KW: PRODUCT-P005(6.0,expl=True):['台灯'] | FAQ-015(0.75,expl=False):['汉字重合x5'] | FAQ-018(0.75,expl=False):['汉字重合x5'] | FAQ-008(0.6,expl=False):['汉字重合x4'] | FAQ-002(0.45,expl=False):['汉字重合x3']
+  VEC: FAQ-018(0.614) | PRODUCT-P005(0.469) | FAQ-008(0.391) | FAQ-019(0.386) | FAQ-014(0.384) | RULE-HR-03(0.380)

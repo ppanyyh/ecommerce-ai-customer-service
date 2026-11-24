@@ -1,0 +1,41 @@
+<Slide style={{ width: 1280, height: 720, padding: '20px 60px', background: '#FFFFFF' }}>
+  <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1A2333' }}>原型与可运行 Demo</Text>
+    <Text style={{ fontSize: 15, color: '#94A3B8' }}>04 / 原型与实现</Text>
+  </Box>
+  <Box style={{ height: 512, marginTop: 8, flexDirection: 'column', gap: 10 }}>
+    <Box style={{ flexDirection: 'row', gap: 16 }}>
+      {[
+        { f: 'assets/proto_product.png', c: '商品问答 · 回答附资料依据' },
+        { f: 'assets/proto_order.png', c: '退款进度查询 · 展示售后状态' },
+        { f: 'assets/proto_uncovered.png', c: '资料未覆盖 · 明确告知不编造' }
+      ].map((s, i) => (
+        <Box key={i} style={{ width: 376, flexDirection: 'column' }}>
+          <Image src={s.f} style={{ width: 376, height: 178, objectFit: 'cover', borderRadius: 8, border: '1px solid #DBE4F5' }} />
+          <Text style={{ fontSize: 13, color: '#64748B', marginTop: 5, textAlign: 'center' }}>{s.c}</Text>
+        </Box>
+      ))}
+    </Box>
+    <Box style={{ flexDirection: 'row', gap: 16 }}>
+      {[
+        { f: 'assets/proto_risk.png', c: '风险转人工 · 高风险提示与原因' },
+        { f: 'assets/proto_blank.png', c: '空白会话 · 快捷问题与三栏布局' }
+      ].map((s, i) => (
+        <Box key={i} style={{ width: 572, flexDirection: 'column' }}>
+          <Image src={s.f} style={{ width: 572, height: 224, objectFit: 'cover', borderRadius: 8, border: '1px solid #DBE4F5' }} />
+          <Text style={{ fontSize: 13, color: '#64748B', marginTop: 5, textAlign: 'center' }}>{s.c}</Text>
+        </Box>
+      ))}
+    </Box>
+    <Box style={{ background: '#EFF4FF', borderRadius: 10, padding: '8px 16px', flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+      <Text style={{ fontSize: 13.5, color: '#1A2333', lineHeight: 1.5 }}>
+        <span style={{ fontWeight: 'bold', color: '#2563EB' }}>Axure RP 11</span> 用于关键状态与路径展示（上图为 5 个典型状态）；
+        <span style={{ fontWeight: 'bold', color: '#2563EB' }}>HTML/CSS/JavaScript 网页 Demo</span> 可本地实际运行，每条回答同时展示问题分类、信息依据、风险等级与转人工判断。
+      </Text>
+    </Box>
+  </Box>
+  <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>电商客服AI助手 · 个人作品集</Text>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>05 / 07</Text>
+  </Box>
+</Slide>

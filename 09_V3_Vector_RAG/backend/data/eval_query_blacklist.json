@@ -1,0 +1,1587 @@
+{
+  "meta": {
+    "name": "历史评测/测试问题黑名单（最终盲测集查重依据）",
+    "created_at": "2026-09-25",
+    "normalization": "去首尾空白与全部标点/空白、转小写",
+    "sources": [
+      "vector_eval_cases.json（原20条开发集）",
+      "hybrid_holdout_eval_cases.json（validation_set_v1，30条）",
+      "test_hybrid_retriever_unit.py / test_hybrid_v2_validation.py（单元测试问题）",
+      "test_chat_integration.py / test_deepseek.py / test_e2e_frontend.py（V2测试问题）"
+    ],
+    "total_unique": 223
+  },
+  "queries": [
+    {
+      "normalized": "01_商品编号识别",
+      "original": "01_商品编号识别",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "02_同义词扩展书包到p004",
+      "original": "02_同义词扩展书包到P004",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "03_售后缺陷映射hr08",
+      "original": "03_售后缺陷映射HR-08",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "04_泛化质量咨询不触发缺陷",
+      "original": "04_泛化质量咨询不触发缺陷",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "05_泛化咨询触发门控",
+      "original": "05_泛化咨询触发门控",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "06_有实体不门控",
+      "original": "06_有实体不门控",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "07a_退款催促映射hr03",
+      "original": "07a_退款催促映射HR-03",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "07b_物流停滞映射hr04",
+      "original": "07b_物流停滞映射HR-04",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "07c_他人订单映射hr05",
+      "original": "07c_他人订单映射HR-05",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "08_门控返回空结果",
+      "original": "08_门控返回空结果",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "09_rrf_score降序",
+      "original": "09_rrf_score降序",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "10_chunk_id不重复",
+      "original": "10_chunk_id不重复",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "10检索代码不调用deepseek",
+      "original": "10.检索代码不调用DeepSeek",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "11_编号强制top1",
+      "original": "11_编号强制Top1",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "12_订单号不触发编号置顶",
+      "original": "12_订单号不触发编号置顶",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "13_规则返回原始text",
+      "original": "13_规则返回原始text",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "14a_必需规则进top3",
+      "original": "14a_必需规则进Top3",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "14b_top3含内容片段",
+      "original": "14b_Top3含内容片段",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "14c_保留位标记",
+      "original": "14c_保留位标记",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "15_弱词单独不构成高分",
+      "original": "15_弱词单独不构成高分",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "16_无deepseek依赖",
+      "original": "16_无DeepSeek依赖",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "1结果按rrf_score降序",
+      "original": "1.结果按rrf_score降序",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "202609180002为什么还不退款请立即处理",
+      "original": "202609180002为什么还不退款？请立即处理",
+      "sources": [
+        "v2_integration_test",
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "202609180002退款到哪一步",
+      "original": "202609180002退款到哪一步",
+      "sources": [
+        "v2_integration_test",
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "2chunk_id不重复",
+      "original": "2.chunk_id不重复",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "3keyword_rank/vector_rank记录正确",
+      "original": "3.keyword_rank/vector_rank记录正确",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "4只有关键词结果时仍可进入排名",
+      "original": "4.只有关键词结果时仍可进入排名",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "5只有向量结果时仍可进入排名",
+      "original": "5.只有向量结果时仍可进入排名",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "6双侧命中获得融合分数",
+      "original": "6.双侧命中获得融合分数",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "7商品编号p001精确命中且置顶",
+      "original": "7.商品编号P001精确命中且置顶",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "8000状态标签应为ai服务已连接",
+      "original": "8000状态标签应为'AI服务已连接':",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "8001状态标签应为本地模式",
+      "original": "8001状态标签应为'本地模式':",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "8订单号不进入混合检索回答",
+      "original": "8.订单号不进入混合检索回答",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "9返回原始text而非retrieval_text",
+      "original": "9.返回原始text而非retrieval_text",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "=====混合检索v2单元级验证",
+      "original": "===== 混合检索 v2 单元级验证",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "==一8条集成用例含真实deepseek调用==",
+      "original": "== 一、8条集成用例（含真实DeepSeek调用） ==",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "==三补充确定性用例空输入/隐私/不完整订单号==",
+      "original": "== 三、补充确定性用例（空输入 / 隐私 / 不完整订单号） ==",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "==二业务口径回归用例6条风险决策模式==",
+      "original": "== 二、业务口径回归用例（6条，风险决策模式） ==",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "==六统计==",
+      "original": "== 六、统计 ==",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "==四health接口==",
+      "original": "== 四、health 接口 ==",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "[8000]tc10空输入与快速连续点击",
+      "original": "[8000] TC10 空输入与快速连续点击",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "[8000]状态标签",
+      "original": "[8000] 状态标签:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "[8001]tc9b页面未崩溃可继续交互",
+      "original": "[8001] TC9b 页面未崩溃可继续交互:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "[8001]tc9后端不可用回退",
+      "original": "[8001] TC9 后端不可用回退:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "[8001]状态标签",
+      "original": "[8001] 状态标签:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "[fb03]恢复后mode=",
+      "original": "[FB-03] 恢复后 mode=",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "[来源《售后sop》]现有资料没有明确的赔偿标准投诉赔偿和金额争议需要转人工客服处理ai不得直接承诺赔偿金额或处理结果",
+      "original": "[来源：《售后SOP》]现有资料没有明确的赔偿标准。投诉、赔偿和金额争议需要转人工客服处理。AI不得直接承诺赔偿金额或处理结果。",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "\\[来源+\\]",
+      "original": "\\[来源：(.+?)\\]",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "ai服务已连接",
+      "original": "AI服务已连接",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "answer_mode正确",
+      "original": "answer_mode正确",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "answer包含关键信息",
+      "original": "answer包含关键信息",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "answer非空",
+      "original": "answer非空",
+      "sources": [
+        "v2_integration_test",
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "category存在",
+      "original": "category 存在",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "category正确",
+      "original": "category正确",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "deepseek_configured为布尔",
+      "original": "deepseek_configured为布尔",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "deepseek实际调用次数attempts=",
+      "original": "DeepSeek实际调用次数(attempts)=",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "deepseek客户端连通性与输出校验测试阶段二验收脚本用法先在backend/env中本地填写真实keykey不会被读取或打印venv\\scripts\\pythonexebackend\\test_deepseekpy输出仅包含是否调用成功模型名称六字段json校验结果token用量错误类型绝不输出apikey",
+      "original": "DeepSeek 客户端连通性与输出校验测试（阶段二验收脚本）。\n\n用法（先在 backend/.env 中本地填写真实 Key，Key 不会被读取或打印）：\n    .venv\\Scripts\\python.exe backend\\test_deepseek.py\n\n输出仅包含：是否调用成功、模型名称、六字段 JSON、校验结果、Token 用量、错误类型。\n绝不输出 API Key。",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "f\\电商ai客服助手\\08_v2_deepseek\\backend\\e2e_reporttxt",
+      "original": "F:\\电商AI客服助手\\08_V2_DeepSeek\\backend\\e2e_report.txt",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "f\\电商ai客服助手\\08_v2_deepseek\\frontend",
+      "original": "F:\\电商AI客服助手\\08_V2_DeepSeek\\frontend",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "force_deepseek_failure已恢复关闭",
+      "original": "FORCE_DEEPSEEK_FAILURE 已恢复关闭",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "handoff_reason存在",
+      "original": "handoff_reason 存在",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "handoff_required为布尔值",
+      "original": "handoff_required 为布尔值",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "handoff不被降低",
+      "original": "handoff不被降低",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "handoff与reason自洽",
+      "original": "handoff与reason自洽",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "handoff保持true",
+      "original": "handoff保持True",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "handoff判断正确",
+      "original": "handoff判断正确",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "health响应",
+      "original": "health 响应：",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "http状态=200",
+      "original": "HTTP状态=200",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "p0/p1问题",
+      "original": "P0/P1问题：",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "p001的耳机续航多久",
+      "original": "P001的耳机续航多久",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "p001耳机续航多久",
+      "original": "P001耳机续航多久",
+      "sources": [
+        "v2_integration_test",
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "p001这个耳机充电一次能用多久",
+      "original": "P001这个耳机充电一次能用多久",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "p002价格连接方式和保修",
+      "original": "P002价格、连接方式和保修",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "p002的价格连接方式和保修是多久",
+      "original": "P002的价格、连接方式和保修是多久？",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "p003保温效果如何",
+      "original": "P003保温效果如何？",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "p003这个型号的杯子可以直接放进洗碗机里清洗吗",
+      "original": "P003这个型号的杯子，可以直接放进洗碗机里清洗吗？",
+      "sources": [
+        "validation_set_v1:H-024"
+      ]
+    },
+    {
+      "normalized": "p003这个杯子质量怎么样",
+      "original": "P003这个杯子质量怎么样",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "risk_decision合法",
+      "original": "risk_decision合法",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "risk_decision正确",
+      "original": "risk_decision正确",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "risk_level为低/中/高之一",
+      "original": "risk_level 为 低/中/高 之一",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "risk_level合法",
+      "original": "risk_level合法",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "sources为数组",
+      "original": "sources 为数组",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "sources为非空字符串数组",
+      "original": "sources为非空字符串数组",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "sources保留",
+      "original": "sources保留",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "sources均在retriever来源内",
+      "original": "sources均在retriever来源内",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "sources必须来自资料提供的来源标签",
+      "original": "sources 必须来自资料提供的来源标签",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "sources至少包含一个非空字符串不得为空",
+      "original": "sources 至少包含一个非空字符串（不得为空）",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "tc10明细空输入=",
+      "original": "TC10 明细: 空输入=",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "tc1p001耳机续航",
+      "original": "TC1 P001耳机续航",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "tc2p002价格/连接/保修",
+      "original": "TC2 P002价格/连接/保修",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "tc3查询订单202609180001",
+      "original": "TC3 查询订单202609180001",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "tc4退款进度查询",
+      "original": "TC4 退款进度查询",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "tc5催促退款",
+      "original": "TC5 催促退款",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "tc6投诉三倍赔偿",
+      "original": "TC6 投诉三倍赔偿",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "tc7不存在订单",
+      "original": "TC7 不存在订单",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "tc8天气问题",
+      "original": "TC8 天气问题",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "v30业务感知混合检索v2单元级验证仅技术验证问题不使用validation_set_v1句子验证点全部本地不调用deepseek不接入/api/chat1analyzer商品编号识别+has_exact_entity2analyzer扩展同义词书包映射到p004产品同义词扩展仅v3检索层3analyzer已发生质量缺陷→post_purchase_defect→rulehr084analyzer泛化质量咨询不算缺陷质量怎么样/靠谱吗不触发hr085analyzer无实体+仅泛化质量咨询→业务范围门控is_supported_domain=false6analyzer有实体+泛化质量措辞→不门控7analyzer退款催促/物流停滞/他人订单分别映射hr03/hr04/hr058v2门控生效supported=false且results为空9v2结果按rrf_score降序允许epsilon内并列重排分差>=epsilon时必须降序10v2chunk_id不重复11v2完整商品编号p001→productp001强制top112v2订单号不触发编号置顶不进入知识检索加分无id_boost13v2规则片段返回原始text售后转人工规则开头非retrieval_text扩写14v2缺陷+退款合成问题→必需规则进入top3且top3含至少1个内容片段15治理评分仅含通用弱词/汉字重合的查询弱词单独不得构成高分<1016不调用deepseek源码无deepseek导入运行项目根目录09_v3_vector_rag下\\venv\\scripts\\pythonexebackend\\test_hybrid_v2_validationpy",
+      "original": "V3.0 业务感知混合检索 v2 单元级验证（仅技术验证问题，不使用 validation_set_v1 句子）。\n\n验证点（全部本地，不调用 DeepSeek，不接入 /api/chat）：\n 1. analyzer：商品编号识别 + has_exact_entity\n 2. analyzer：扩展同义词\"书包\"映射到 P004（产品同义词扩展，仅 V3 检索层）\n 3. analyzer：已发生质量缺陷 → post_purchase_defect → RULE-HR-08\n 4. analyzer：泛化质量咨询不算缺陷（\"质量怎么样/靠谱吗\"不触发 HR-08）\n 5. analyzer：无实体 + 仅泛化质量咨询 → 业务范围门控 is_supported_domain=False\n 6. analyzer：有实体 + 泛化质量措辞 → 不门控\n 7. analyzer：退款催促/物流停滞/他人订单 分别映射 HR-03/HR-04/HR-05\n 8. v2 门控生效：supported=False 且 results 为空\n 9. v2：结果按 rrf_score 降序（允许 epsilon 内并列重排，分差 >= EPSILON 时必须降序）\n10. v2：chunk_id 不重复\n11. v2：完整商品编号 P001 → PRODUCT-P001 强制 Top-1\n12. v2：订单号不触发编号置顶、不进入知识检索加分（无 id_boost）\n13. v2：规则片段返回原始 text（\"售后转人工规则\"开头），非 retrieval_text 扩写\n14. v2：缺陷+退款合成问题 → 必需规则进入 Top-3 且 Top-3 含至少 1 个内容片段\n15. 治理评分：仅含通用弱词/汉字重合的查询，弱词单独不得构成高分（< 1.0）\n16. 不调用 DeepSeek（源码无 deepseek 导入）\n\n运行（项目根目录 09_V3_Vector_RAG 下）：\n    .\\.venv\\Scripts\\python.exe backend\\test_hybrid_v2_validation.py",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "v30混合检索器基础单元测试技术验证不使用留出测试集不调用deepseek验证项1返回结果按rrf_score降序2chunk_id不重复3keyword_rank/vector_rank与两个子检索器的真实排名一致4只有关键词结果时仍可进入排名vector_rank=none5只有向量结果时仍可进入排名keyword_rank=none6同时命中两种检索时获得融合分数等于两项rrf分量之和7商品编号p001精确命中对应商品必须置顶8订单号不被当成向量知识回答无order片段订单号不出现在任何返回text中9原始text与retrieval_text不混淆规则片段返回触发条件为原文不含retrieval_text的触发类型标记10不调用deepseek静态检查三个检索模块源码不含deepseek/网络调用运行方式项目根目录09_v3_vector_rag下\\venv\\scripts\\pythonexebackend\\test_hybrid_retriever_unitpy",
+      "original": "V3.0 混合检索器基础单元测试（技术验证，不使用留出测试集，不调用 DeepSeek）。\n\n验证项：\n1. 返回结果按 rrf_score 降序；\n2. chunk_id 不重复；\n3. keyword_rank / vector_rank 与两个子检索器的真实排名一致；\n4. 只有关键词结果时仍可进入排名（vector_rank=None）；\n5. 只有向量结果时仍可进入排名（keyword_rank=None）；\n6. 同时命中两种检索时获得融合分数（等于两项 RRF 分量之和）；\n7. 商品编号 P001 精确命中（对应商品必须置顶）；\n8. 订单号不被当成向量知识回答（无 order 片段、订单号不出现在任何返回 text 中）；\n9. 原始 text 与 retrieval_text 不混淆（规则片段返回\"触发条件为\"原文，\n   不含 retrieval_text 的\"触发类型：\"标记）；\n10. 不调用 DeepSeek（静态检查三个检索模块源码不含 deepseek/网络调用）。\n\n运行方式（项目根目录 09_V3_Vector_RAG 下）：\n    .\\.venv\\Scripts\\python.exe backend\\test_hybrid_retriever_unit.py",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "下一届世界杯在哪个国家举办来着",
+      "original": "下一届世界杯在哪个国家举办来着？",
+      "sources": [
+        "validation_set_v1:H-029"
+      ]
+    },
+    {
+      "normalized": "下雨天背这个包出门里面的笔记本电脑会不会被淋湿",
+      "original": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+      "sources": [
+        "validation_set_v1:H-009"
+      ]
+    },
+    {
+      "normalized": "不允许直接承诺三倍赔偿回复须体现转人工/不承诺",
+      "original": "不允许直接承诺三倍赔偿（回复须体现转人工/不承诺）",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "不得编造来源",
+      "original": "（不得编造来源）",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "不调用deepseek",
+      "original": "不调用deepseek",
+      "sources": [
+        "unit_test_hybrid_v1",
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "不锈钢内胆的水杯最多能装多少毫升的水",
+      "original": "不锈钢内胆的水杯最多能装多少毫升的水？",
+      "sources": [
+        "dev20:VE-003"
+      ]
+    },
+    {
+      "normalized": "东西显示已经签收了但我根本没拿到货怎么办",
+      "original": "东西显示已经签收了但我根本没拿到货怎么办？",
+      "sources": [
+        "dev20:VE-008"
+      ]
+    },
+    {
+      "normalized": "东西还没发出来我想换个地方收货还来得及改吗",
+      "original": "东西还没发出来，我想换个地方收货，还来得及改吗？",
+      "sources": [
+        "validation_set_v1:H-011"
+      ]
+    },
+    {
+      "normalized": "书包侧面能装下16寸的电脑吗",
+      "original": "书包侧面能装下16寸的电脑吗",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "书包侧面那个夹层塞一台16寸的游戏本进去装得下吗",
+      "original": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+      "sources": [
+        "validation_set_v1:H-004"
+      ]
+    },
+    {
+      "normalized": "买来的蓝牙耳机充满电大概能用多少个小时",
+      "original": "买来的蓝牙耳机充满电大概能用多少个小时？",
+      "sources": [
+        "dev20:VE-001"
+      ]
+    },
+    {
+      "normalized": "你们家的东西质量怎么样靠谱吗",
+      "original": "你们家的东西质量怎么样，靠谱吗",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "你们的货是从哪个仓发出来的是自营仓库吗",
+      "original": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+      "sources": [
+        "validation_set_v1:H-027"
+      ]
+    },
+    {
+      "normalized": "你们这个灯是不是不用插电也能亮",
+      "original": "你们这个灯是不是不用插电也能亮？",
+      "sources": [
+        "validation_set_v1:H-023"
+      ]
+    },
+    {
+      "normalized": "你们这店太坑人了我直接打315投诉到底",
+      "original": "你们这店太坑人了，我直接打315投诉到底！",
+      "sources": [
+        "dev20:VE-011"
+      ]
+    },
+    {
+      "normalized": "你们那个钢内胆的杯子内层是不是304的能倒多少水进去",
+      "original": "你们那个钢内胆的杯子，内层是不是304的？能倒多少水进去？",
+      "sources": [
+        "validation_set_v1:H-003"
+      ]
+    },
+    {
+      "normalized": "保温杯装汽水",
+      "original": "保温杯装汽水",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "公司报销需要票据你们这边能给开票吗",
+      "original": "公司报销需要票据，你们这边能给开票吗？",
+      "sources": [
+        "validation_set_v1:H-013"
+      ]
+    },
+    {
+      "normalized": "六字段json",
+      "original": "六字段JSON:",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "再不给我解决我就去消协举报你们这家店",
+      "original": "再不给我解决，我就去消协举报你们这家店！",
+      "sources": [
+        "validation_set_v1:H-014"
+      ]
+    },
+    {
+      "normalized": "写字台上那盏灯是插电用的还是自带电池能定个时候自动关吗",
+      "original": "写字台上那盏灯是插电用的还是自带电池？能定个时候自动关吗？",
+      "sources": [
+        "validation_set_v1:H-005"
+      ]
+    },
+    {
+      "normalized": "分类=订单与支付",
+      "original": "分类=订单与支付",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "刚拆开包装的耳机不想要了还能退吗",
+      "original": "刚拆开包装的耳机不想要了还能退吗？",
+      "sources": [
+        "dev20:VE-007"
+      ]
+    },
+    {
+      "normalized": "包裹停在半路三天没动静了到底还送不送了",
+      "original": "包裹停在半路三天没动静了，到底还送不送了？",
+      "sources": [
+        "validation_set_v1:H-017"
+      ]
+    },
+    {
+      "normalized": "包裹好多天没动静了是不是卡住了",
+      "original": "包裹好多天没动静了，是不是卡住了",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "包裹都两天没物流了一直卡在原地不动",
+      "original": "包裹都两天没物流了，一直卡在原地不动。",
+      "sources": [
+        "dev20:VE-013"
+      ]
+    },
+    {
+      "normalized": "北京今天会下雨吗",
+      "original": "北京今天会下雨吗",
+      "sources": [
+        "v2_integration_test",
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "单元测试结论",
+      "original": "单元测试结论:",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "取最后一条ai回复的文本与分析面板内容",
+      "original": "取最后一条AI回复的文本与分析面板内容。",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "只能协助处理商品订单物流和售后",
+      "original": "只能协助处理商品、订单、物流和售后",
+      "sources": [
+        "v2_integration_test",
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "可以开发票吗",
+      "original": "可以开发票吗？",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "台灯定时功能",
+      "original": "台灯定时功能",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "周末想去吃火锅附近有什么推荐的餐厅吗",
+      "original": "周末想去吃火锅，附近有什么推荐的餐厅吗？",
+      "sources": [
+        "dev20:VE-018"
+      ]
+    },
+    {
+      "normalized": "售后转人工规则",
+      "original": "售后转人工规则",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "商品收到就有破损了钱什么时候退回来",
+      "original": "商品收到就有破损了，钱什么时候退回来",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "商品质量怎么样处理问题",
+      "original": "商品质量怎么样，处理问题",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "商品质量有问题怎么办",
+      "original": "商品质量有问题怎么办",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "回答前60字=",
+      "original": "回答前60字=",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "回答前80字",
+      "original": "回答前80字:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "回答含订单号",
+      "original": "回答含订单号",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "多属性完整含价格",
+      "original": "多属性完整(含价格)",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "多属性完整含保修",
+      "original": "多属性完整(含保修)",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "多属性完整含连接/蓝牙",
+      "original": "多属性完整(含连接/蓝牙)",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "失败/未过校验=",
+      "original": "，失败/未过校验=",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "字段结构完整",
+      "original": "字段结构完整",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "实际尝试次数=",
+      "original": "实际尝试次数=",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "帮我写一首关于春天的短诗呗",
+      "original": "帮我写一首关于春天的短诗呗。",
+      "sources": [
+        "validation_set_v1:H-028"
+      ]
+    },
+    {
+      "normalized": "帮我查一下别人的订单",
+      "original": "帮我查一下别人的订单",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "帮我查一下订单202609180001发货到哪了",
+      "original": "帮我查一下订单202609180001发货到哪了",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "帮我查下我同事的单子到哪了",
+      "original": "帮我查下我同事的单子到哪了",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "帮我看看我同事下的那笔订单到哪了",
+      "original": "帮我看看我同事下的那笔订单到哪了？",
+      "sources": [
+        "dev20:VE-014"
+      ]
+    },
+    {
+      "normalized": "快递明明显示送到了可我手上根本没见着包裹这找谁",
+      "original": "快递明明显示送到了，可我手上根本没见着包裹，这找谁？",
+      "sources": [
+        "validation_set_v1:H-010"
+      ]
+    },
+    {
+      "normalized": "恢复后answer_mode=deepseek",
+      "original": "恢复后answer_mode=deepseek",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "我是学生党没什么钱能不能再给我打个折",
+      "original": "我是学生党没什么钱，能不能再给我打个折？",
+      "sources": [
+        "validation_set_v1:H-026"
+      ]
+    },
+    {
+      "normalized": "我查一下订单202609180001到哪一步了",
+      "original": "我查一下订单202609180001到哪一步了",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "我的订单号是20260918",
+      "original": "我的订单号是20260918",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "我要投诉你们发假货顺便把我这单给退了",
+      "original": "我要投诉你们发假货，顺便把我这单给退了。",
+      "sources": [
+        "validation_set_v1:H-022"
+      ]
+    },
+    {
+      "normalized": "我要投诉并要求三倍赔偿",
+      "original": "我要投诉并要求三倍赔偿",
+      "sources": [
+        "v2_integration_test",
+        "v2_deepseek_test",
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "我退的钱什么时候能退回来啊",
+      "original": "我退的钱什么时候能退回来啊？",
+      "sources": [
+        "dev20:VE-016"
+      ]
+    },
+    {
+      "normalized": "戴着耳机冲个淋浴应该没什么事吧",
+      "original": "戴着耳机冲个淋浴，应该没什么事吧？",
+      "sources": [
+        "validation_set_v1:H-006"
+      ]
+    },
+    {
+      "normalized": "把可乐倒进那个保温杯里带着走会不会炸开",
+      "original": "把可乐倒进那个保温杯里带着走，会不会炸开？",
+      "sources": [
+        "validation_set_v1:H-008"
+      ]
+    },
+    {
+      "normalized": "投诉赔偿怎么处理",
+      "original": "投诉赔偿怎么处理",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "控制台红色错误",
+      "original": "控制台红色错误:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "推荐几部好看的太空科幻电影呗",
+      "original": "推荐几部好看的太空科幻电影呗。",
+      "sources": [
+        "dev20:VE-019"
+      ]
+    },
+    {
+      "normalized": "提示核对订单号",
+      "original": "提示核对订单号",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "敲起来很清脆的那个键盘是红轴吗能插线直接连电脑不",
+      "original": "敲起来很清脆的那个键盘，是红轴吗？能插线直接连电脑不？",
+      "sources": [
+        "validation_set_v1:H-002"
+      ]
+    },
+    {
+      "normalized": "无js错误=",
+      "original": "无JS错误=",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "无关问题引导话术",
+      "original": "无关问题引导话术",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "无新增js错误",
+      "original": "; 无新增JS错误:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "明天a股开盘会涨还是会跌",
+      "original": "明天A股开盘会涨还是会跌？",
+      "sources": [
+        "dev20:VE-020"
+      ]
+    },
+    {
+      "normalized": "明明已经扣过钱了订单里怎么还让我再付一遍",
+      "original": "明明已经扣过钱了，订单里怎么还让我再付一遍？",
+      "sources": [
+        "validation_set_v1:H-012"
+      ]
+    },
+    {
+      "normalized": "晚上写作业用的那盏灯能调几档亮度",
+      "original": "晚上写作业用的那盏灯能调几档亮度？",
+      "sources": [
+        "dev20:VE-005"
+      ]
+    },
+    {
+      "normalized": "暂时无法确认",
+      "original": "暂时无法确认",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "有没有好用的学英语手机app推荐几个",
+      "original": "有没有好用的学英语手机App推荐几个？",
+      "sources": [
+        "validation_set_v1:H-030"
+      ]
+    },
+    {
+      "normalized": "未发起真实api调用",
+      "original": "未发起真实API调用",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "未查询到该模拟订单",
+      "original": "未查询到该模拟订单",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "未调用deepseek",
+      "original": "未调用DeepSeek",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "本地规则回答",
+      "original": "本地规则回答",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "本测试sources必须包含",
+      "original": "本测试 sources 必须包含：",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "条页面异常",
+      "original": "条; 页面异常:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "杯子到手就有裂痕要退款那钱一般多久能到我卡里",
+      "original": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+      "sources": [
+        "validation_set_v1:H-021"
+      ]
+    },
+    {
+      "normalized": "查询不存在的订单202609189999",
+      "original": "查询不存在的订单202609189999",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "查询订单202609180001",
+      "original": "查询订单202609180001",
+      "sources": [
+        "v2_integration_test",
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "查询订单202609189999",
+      "original": "查询订单202609189999",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "根据《|依据《|《[^》]{124}》|根据[^]{08}资料|依据[^]{08}资料|hr\\d|faq\\d|sop|知识库|现有资料未覆盖|资料未覆盖|ai无法|ai不|模型判断|模型返回|risk_level|handoff_required|answer_mode|force_safe|force_handoff|allow_model|deepseek|模拟数据",
+      "original": "根据《|依据《|《[^》]{1,24}》|根据[^。？！]{0,8}资料|依据[^。？！]{0,8}资料|HR-\\d|FAQ-\\d|SOP|知识库|现有资料未覆盖|资料未覆盖|AI无法|AI不|模型判断|模型返回|risk_level|handoff_required|answer_mode|force_safe|force_handoff|allow_model|DeepSeek|模拟数据",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "模式=ai生成",
+      "original": "模式=AI生成",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "模式=确定性规则",
+      "original": "模式=确定性规则",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "洗澡的时候能顺便戴着这个耳机听歌吗",
+      "original": "洗澡的时候能顺便戴着这个耳机听歌吗？",
+      "sources": [
+        "dev20:VE-006"
+      ]
+    },
+    {
+      "normalized": "版本=200",
+      "original": "版本=2.0.0",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "物流一直不动",
+      "original": "物流一直不动",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "物流一直没更新我大概还要等多久",
+      "original": "物流一直没更新，我大概还要等多久？",
+      "sources": [
+        "dev20:VE-017"
+      ]
+    },
+    {
+      "normalized": "直播买的东西是不是质量都差不多啊靠谱吗",
+      "original": "直播买的东西是不是质量都差不多啊，靠谱吗",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "直播间买的和店铺里发的货质量是一样的吗",
+      "original": "直播间买的和店铺里发的货，质量是一样的吗？",
+      "sources": [
+        "validation_set_v1:H-025"
+      ]
+    },
+    {
+      "normalized": "确定性回答次数=",
+      "original": "确定性回答次数=",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "空输入不发送",
+      "original": "空输入不发送:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "空输入提示显示",
+      "original": "; 空输入提示显示:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "端到端合计",
+      "original": "端到端合计:",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "系统重复扣款了多扣了一次钱必须给我处理",
+      "original": "系统重复扣款了，多扣了一次钱必须给我处理。",
+      "sources": [
+        "dev20:VE-012"
+      ]
+    },
+    {
+      "normalized": "耳机主动降噪效果",
+      "original": "耳机主动降噪效果",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "耳机已经开封用过一次了还能不能申请七天无理由退货",
+      "original": "耳机已经开封用过一次了，还能不能申请七天无理由退货？",
+      "sources": [
+        "dev20:VE-015"
+      ]
+    },
+    {
+      "normalized": "耳机想退但我已经拆开用过一次了还能退不退回去的运费算谁的",
+      "original": "耳机想退，但我已经拆开用过一次了还能退不？退回去的运费算谁的？",
+      "sources": [
+        "validation_set_v1:H-020"
+      ]
+    },
+    {
+      "normalized": "耳机用了没几天右边就没声音了这属于质量问题吧",
+      "original": "耳机用了没几天，右边就没声音了，这属于质量问题吧？",
+      "sources": [
+        "validation_set_v1:H-019"
+      ]
+    },
+    {
+      "normalized": "背包的电脑隔层最大可以放进多大的笔记本",
+      "original": "背包的电脑隔层最大可以放进多大的笔记本？",
+      "sources": [
+        "dev20:VE-004"
+      ]
+    },
+    {
+      "normalized": "蓝牙耳机充电盒续航",
+      "original": "蓝牙耳机充电盒续航",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "调用成功是",
+      "original": "调用成功: 是",
+      "sources": [
+        "v2_deepseek_test"
+      ]
+    },
+    {
+      "normalized": "质量坏了怎么办",
+      "original": "质量坏了怎么办",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "输入并发送等待本轮回答完成发送按钮恢复可用且无加载气泡",
+      "original": "输入并发送，等待本轮回答完成（发送按钮恢复可用且无加载气泡）。",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "这个东西到手就有裂痕了要求退款",
+      "original": "这个东西到手就有裂痕了，要求退款",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "这台键盘接苹果电脑上能用吗会不会有按键不管用",
+      "original": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+      "sources": [
+        "validation_set_v1:H-007"
+      ]
+    },
+    {
+      "normalized": "这是我给室友代买的东西你帮我看看他那边的单子到哪一步了",
+      "original": "这是我给室友代买的东西，你帮我看看他那边的单子到哪一步了。",
+      "sources": [
+        "validation_set_v1:H-018"
+      ]
+    },
+    {
+      "normalized": "这款87键的键盘多少钱平时能用蓝牙连电脑吗",
+      "original": "这款87键的键盘多少钱，平时能用蓝牙连电脑吗？",
+      "sources": [
+        "dev20:VE-002"
+      ]
+    },
+    {
+      "normalized": "连点只发一次新增提问=",
+      "original": "; 连点只发一次(新增提问=",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "退款什么时候到账",
+      "original": "退款什么时候到账",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "退款拖了一个礼拜还没影现在马上给我退",
+      "original": "退款拖了一个礼拜还没影，现在马上给我退！",
+      "sources": [
+        "validation_set_v1:H-016"
+      ]
+    },
+    {
+      "normalized": "退款拖了好多天了马上给我退",
+      "original": "退款拖了好多天了，马上给我退",
+      "sources": [
+        "unit_test_hybrid_v2"
+      ]
+    },
+    {
+      "normalized": "退款金额不对我要投诉",
+      "original": "退款金额不对，我要投诉",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "退货寄回去的邮费要我自己出吗",
+      "original": "退货寄回去的邮费要我自己出吗？",
+      "sources": [
+        "dev20:VE-010"
+      ]
+    },
+    {
+      "normalized": "那款无线的耳机连续听歌一次能撑多久",
+      "original": "那款无线的耳机，连续听歌一次能撑多久？",
+      "sources": [
+        "validation_set_v1:H-001"
+      ]
+    },
+    {
+      "normalized": "钱都付了怎么订单还显示待付款",
+      "original": "钱都付了怎么订单还显示待付款？",
+      "sources": [
+        "dev20:VE-009"
+      ]
+    },
+    {
+      "normalized": "银行卡明明被你们扣了两笔钱多扣的那笔必须退回来",
+      "original": "银行卡明明被你们扣了两笔钱，多扣的那笔必须退回来！",
+      "sources": [
+        "validation_set_v1:H-015"
+      ]
+    },
+    {
+      "normalized": "键盘蓝牙连接",
+      "original": "键盘蓝牙连接",
+      "sources": [
+        "unit_test_hybrid_v1"
+      ]
+    },
+    {
+      "normalized": "降级回答次数=",
+      "original": "，降级回答次数=",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "风险=中或高",
+      "original": "风险=中或高",
+      "sources": [
+        "v2_e2e_test"
+      ]
+    },
+    {
+      "normalized": "风险不低于下限",
+      "original": "风险不低于下限",
+      "sources": [
+        "v2_integration_test"
+      ]
+    },
+    {
+      "normalized": "风险保持高不降低",
+      "original": "风险保持高（不降低）",
+      "sources": [
+        "v2_integration_test"
+      ]
+    }
+  ]
+}

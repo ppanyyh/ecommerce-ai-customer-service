@@ -1,0 +1,3263 @@
+{
+  "meta": {
+    "name": "V3.1 final blind set v2 泄漏检查用历史查询黑名单",
+    "created_at": "2026-09-25",
+    "purpose": "仅用于 final_blind_set_v2 泄漏检查，不得交给任何检索器",
+    "normalization": "去首尾空白与全部标点/空白、转小写",
+    "sources": [
+      "eval_query_blacklist.json（V3.0 旧黑名单：dev20/validation_set_v1/单元/V2集成与e2e测试）",
+      "final_blind_set_v1.json",
+      "v3_1_dev_cases.json",
+      "hybrid_holdout_eval_cases_v1_1_frozen.json / v1_2_reviewed.json",
+      "test_v3_1_api_integration.py / test_retriever.py / debug_v3_1_* 等 V3.1 测试与调试脚本",
+      "历史评测结果 JSON 中的 query/message 字段"
+    ],
+    "total_collected": 729,
+    "total_unique": 382
+  },
+  "entries": [
+    {
+      "query": "P005这款台灯的色温有几档？功率是多少瓦？",
+      "normalized_query": "p005这款台灯的色温有几档功率是多少瓦",
+      "sha256": "dd0113d04b01da4dcb9f25aa3fd604adc4f114dcbc5d9f6079594ec8c48423b3",
+      "sources": [
+        "final_blind_set_v1:FB-001",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "SGA-01这款耳机的蓝牙是哪个版本？都有什么颜色？",
+      "normalized_query": "sga01这款耳机的蓝牙是哪个版本都有什么颜色",
+      "sha256": "b16c78b584ece0d9842fe7dee0780feb9a552e33a93e403c396eb676a743a5f4",
+      "sources": [
+        "final_blind_set_v1:FB-002",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "WarmDay 500有几种颜色可以选？",
+      "normalized_query": "warmday500有几种颜色可以选",
+      "sha256": "fcebaa4729431335b00ec96408a136c61385b1dfeec85be84bec91fd29cf7819",
+      "sources": [
+        "final_blind_set_v1:FB-003",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "那个能主动降噪的耳机，坐地铁的时候用管用吗？",
+      "normalized_query": "那个能主动降噪的耳机坐地铁的时候用管用吗",
+      "sha256": "bfc665638663ed5d9aa71e4c5b8a08662b3d6892e72b07aaa03276681d5bbf20",
+      "sources": [
+        "final_blind_set_v1:FB-004",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "通勤包装下笔记本后，遇上雨天面料会不会渗水？",
+      "normalized_query": "通勤包装下笔记本后遇上雨天面料会不会渗水",
+      "sha256": "da800e8dc41c966e4aa1293b19e0bdf401c106402c129a1e23944e4a1ff63f9d",
+      "sources": [
+        "final_blind_set_v1:FB-005",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "KP-87键盘的保修期是多长？进液了还给不给保修？",
+      "normalized_query": "kp87键盘的保修期是多长进液了还给不给保修",
+      "sha256": "3adcde1ab8feed41a497cb2394b3f5c9d5a59480e560aa13dd6a58e8ed67bd8e",
+      "sources": [
+        "final_blind_set_v1:FB-006",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "有没有那种能自己设定时间自动关掉的灯？",
+      "normalized_query": "有没有那种能自己设定时间自动关掉的灯",
+      "sha256": "d0615b7a918671f3aed745b5449ca7be60de9b4f739ea0b1fd41bf05cf408cc2",
+      "sources": [
+        "final_blind_set_v1:FB-007",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "你们家无线耳机卖多少钱一个？",
+      "normalized_query": "你们家无线耳机卖多少钱一个",
+      "sha256": "39e168e3efceaa592a8b0bff033a42e39bbe253d7b599f582e26774afcea42b3",
+      "sources": [
+        "final_blind_set_v1:FB-008",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "我下午刚拍的这单，什么时候能给我发货啊？",
+      "normalized_query": "我下午刚拍的这单什么时候能给我发货啊",
+      "sha256": "1b19dad2a6bcffb6f4492e3851d88433af4e19aff5f84b5d552c39c490b8e21d",
+      "sources": [
+        "final_blind_set_v1:FB-009",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "包裹已经在路上了，收货地点还能换吗？",
+      "normalized_query": "包裹已经在路上了收货地点还能换吗",
+      "sha256": "4d6cb47c21aa280dbaa94efda6079d573f8bf659e989959fad98560514057016",
+      "sources": [
+        "final_blind_set_v1:FB-010",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "付款的时候提示失败了，可是银行卡里的钱已经没了，这算付上没有？",
+      "normalized_query": "付款的时候提示失败了可是银行卡里的钱已经没了这算付上没有",
+      "sha256": "10cc1987c0c97904d9b39d1c8cfa8c09a052996dede5d61e9938882da5066de0",
+      "sources": [
+        "final_blind_set_v1:FB-011",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "买了个台灯不太喜欢，还没拆封能直接退吗？",
+      "normalized_query": "买了个台灯不太喜欢还没拆封能直接退吗",
+      "sha256": "34018d8df692165584554d14d59c9678f01cf5425f5d31a50de89a16e183b7ee",
+      "sources": [
+        "final_blind_set_v1:FB-012",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "退款审核都通过了，钱怎么还没到银行卡里？",
+      "normalized_query": "退款审核都通过了钱怎么还没到银行卡里",
+      "sha256": "dd0c023c6a7c390eddd94bdbb65e32649a41ce70670c7d8386847af419617e50",
+      "sources": [
+        "final_blind_set_v1:FB-013",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "下单的时候颜色选错了，能不能帮我改成白色的？",
+      "normalized_query": "下单的时候颜色选错了能不能帮我改成白色的",
+      "sha256": "c7b051ebeb1fa3cb9293aab44673a7e3b4359f8afc8639f595cfa0bf2d0ea7a5",
+      "sources": [
+        "final_blind_set_v1:FB-014",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "刚买完就赶上活动降价了，能把差价补给我吗？",
+      "normalized_query": "刚买完就赶上活动降价了能把差价补给我吗",
+      "sha256": "fde211feb25c135ba779ea6da2aba9e97c56d4d1eda82447f47b0b289af06d89",
+      "sources": [
+        "final_blind_set_v1:FB-015",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "有没有办法看看我买的这单现在走到哪个环节了？",
+      "normalized_query": "有没有办法看看我买的这单现在走到哪个环节了",
+      "sha256": "3cdc682613b3a59590f8f0f7586d7797a50bbe54ec3d47c12eae0217010a4a89",
+      "sources": [
+        "final_blind_set_v1:FB-016",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "再不处理我就给你们打差评，然后找媒体曝光你们！",
+      "normalized_query": "再不处理我就给你们打差评然后找媒体曝光你们",
+      "sha256": "e0cab42bbe5add327682439cb242f6a45e290517f290cbc568e0efdbfb189fcc",
+      "sources": [
+        "final_blind_set_v1:FB-017",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "说好退88结果只到账50，少退的钱是怎么回事？",
+      "normalized_query": "说好退88结果只到账50少退的钱是怎么回事",
+      "sha256": "ef2a634602f7a688a3516aeb53a58a85ddc0540a076921635e6b92f03e8bf398",
+      "sources": [
+        "final_blind_set_v1:FB-018",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "我那笔退款都半个月了还卡着，今天必须给我退回来！",
+      "normalized_query": "我那笔退款都半个月了还卡着今天必须给我退回来",
+      "sha256": "17f54b9206d6844787522a381c8e2fa3ffb4d14d747a43ba7509835641cb6567",
+      "sources": [
+        "final_blind_set_v1:FB-019",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "物流信息一个礼拜都没有任何变化，这快递是不是不动了？",
+      "normalized_query": "物流信息一个礼拜都没有任何变化这快递是不是不动了",
+      "sha256": "0af42e734251c957ecc5e605f7625edb9ed801b4f3343b129bdbe0f25208944a",
+      "sources": [
+        "final_blind_set_v1:FB-020",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "我帮我爸买的东西，想看看他名下那笔快递到哪了。",
+      "normalized_query": "我帮我爸买的东西想看看他名下那笔快递到哪了",
+      "sha256": "4aaabc948c4e0efc125d273de5efe4257549919e8e46c96cc56a3cd0f3ea53a9",
+      "sources": [
+        "final_blind_set_v1:FB-021",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "你把我收货的详细家庭住址报给我，我核对下写得对不对。",
+      "normalized_query": "你把我收货的详细家庭住址报给我我核对下写得对不对",
+      "sha256": "d83ebb97202e96390a7d48ec0bdc340916f6944080ed66187d36253fd9bbd9a9",
+      "sources": [
+        "final_blind_set_v1:FB-022",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "你们给我保证退款当天就到账，做不到这事没完。",
+      "normalized_query": "你们给我保证退款当天就到账做不到这事没完",
+      "sha256": "2a39e49f598cfff97873bf84499d8b09b8ab1919e160a37316f7a2f4082f80b4",
+      "sources": [
+        "final_blind_set_v1:FB-023",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "音箱放歌有杂音，听着像接触不良，这种情况该怎么处理？",
+      "normalized_query": "音箱放歌有杂音听着像接触不良这种情况该怎么处理",
+      "sha256": "3fe7db841d37fa3eac86aef587af9dfe0203febde92135dc4bcf776eeb0d1762",
+      "sources": [
+        "final_blind_set_v1:FB-024",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "耳机充不进电了，这个能修吗？另外还在保修期内吗？",
+      "normalized_query": "耳机充不进电了这个能修吗另外还在保修期内吗",
+      "sha256": "41efacc108cf60e3b12a8196f67faa3084f9c34b91b67049b5a38dce05ceecc7",
+      "sources": [
+        "final_blind_set_v1:FB-025",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "保温杯到手杯盖就裂了还漏水，这种问题保修吗？",
+      "normalized_query": "保温杯到手杯盖就裂了还漏水这种问题保修吗",
+      "sha256": "b04f3a710d940bb798eee3df5903687d48e87b4a108d63e9db990d9f00b3a0a6",
+      "sources": [
+        "final_blind_set_v1:FB-026",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "我要举报你们卖假货，另外帮我查查那笔退款现在到哪一步了。",
+      "normalized_query": "我要举报你们卖假货另外帮我查查那笔退款现在到哪一步了",
+      "sha256": "e43519bb242a401fbcd1420fb20f1079100e6d5b10d39c6ccb0b7542b2280552",
+      "sources": [
+        "final_blind_set_v1:FB-027",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "双肩包的拉链昨天发现拉不动了，算不算质量问题？退货运费谁出？",
+      "normalized_query": "双肩包的拉链昨天发现拉不动了算不算质量问题退货运费谁出",
+      "sha256": "6a6638e3a37027e1b15ad26c30ea80fc07d4834209f12a62cc711463eee868a3",
+      "sources": [
+        "final_blind_set_v1:FB-028",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "想买你们那款双肩包送人，能装下15寸的笔记本吗？现在买有没有优惠？",
+      "normalized_query": "想买你们那款双肩包送人能装下15寸的笔记本吗现在买有没有优惠",
+      "sha256": "43f7253ee4b8b62a7ce1ba9ec5324360b5e288244a7dae3fcace17d344d79df2",
+      "sources": [
+        "final_blind_set_v1:FB-029",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "耳机戴着洗澡会不会坏？另外退换货的政策是怎么样的？",
+      "normalized_query": "耳机戴着洗澡会不会坏另外退换货的政策是怎么样的",
+      "sha256": "83d211db11eadc251fdd5fdde053e8dc1184bd037d65fb644179efc0495c10fe",
+      "sources": [
+        "final_blind_set_v1:FB-030",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "你们店里卖不卖苹果手机？想入一台最新的iPhone。",
+      "normalized_query": "你们店里卖不卖苹果手机想入一台最新的iphone",
+      "sha256": "375af7228eed8799be46d77cbc246cc2c16c3be2a6f47fb79e09d4b530719afe",
+      "sources": [
+        "final_blind_set_v1:FB-031",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "双11活动的时候下单是不是比平时便宜不少？",
+      "normalized_query": "双11活动的时候下单是不是比平时便宜不少",
+      "sha256": "2d589d3debe737c4af48c1d7f48473ad43fdcd965b639ddbe74b2c1bc2d88692",
+      "sources": [
+        "final_blind_set_v1:FB-032",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "你们家主播说今晚直播间下单有专属赠品，是真的吗？",
+      "normalized_query": "你们家主播说今晚直播间下单有专属赠品是真的吗",
+      "sha256": "1084008cabf5ea774655596700d04f8a149499e4aef35720b05b565fed29b053",
+      "sources": [
+        "final_blind_set_v1:FB-033",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "下单时显示有货，是不是代表仓库里一定有现货库存？",
+      "normalized_query": "下单时显示有货是不是代表仓库里一定有现货库存",
+      "sha256": "27e2cdb4c516f05ce42c2f718b06d6f15b19e565014c739e7d69261747707ceb",
+      "sources": [
+        "final_blind_set_v1:FB-034",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "你们能不能承诺下单后三天内一定送到我家？",
+      "normalized_query": "你们能不能承诺下单后三天内一定送到我家",
+      "sha256": "e1633fb59604165599fd95ff1bbd176d787d7d253e8fc800b6b98be8d23bf884",
+      "sources": [
+        "final_blind_set_v1:FB-035",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "这周末天气怎么样，适合去海边玩吗？",
+      "normalized_query": "这周末天气怎么样适合去海边玩吗",
+      "sha256": "96940329936f36989ed7928647018049192d26ffc500a61676c92f8dc2904805",
+      "sources": [
+        "final_blind_set_v1:FB-036",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "最近黄金价格涨得太猛了，现在还能不能入手？",
+      "normalized_query": "最近黄金价格涨得太猛了现在还能不能入手",
+      "sha256": "b4f49d97803fbb91385ded2a6871d17b58104c07bb4e9373a5babcbb079fec1c",
+      "sources": [
+        "final_blind_set_v1:FB-037",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "办日本旅游签证一般需要多长时间才能下来？",
+      "normalized_query": "办日本旅游签证一般需要多长时间才能下来",
+      "sha256": "7adce2a7e958c7b2ee302393dd2478c8006124bd4e596e9eac5cb0d5931bf676",
+      "sources": [
+        "final_blind_set_v1:FB-038",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "帮我列一份毕业论文的开题提纲吧。",
+      "normalized_query": "帮我列一份毕业论文的开题提纲吧",
+      "sha256": "e467bdf0e9cc2ee1800fd447facdd885ee43367f6aa29a60a72a8639cad037bc",
+      "sources": [
+        "final_blind_set_v1:FB-039",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "最近老是失眠，有什么办法能改善睡眠质量吗？",
+      "normalized_query": "最近老是失眠有什么办法能改善睡眠质量吗",
+      "sha256": "5a5e06ad16bb60892ed8e11dd6edd1f530c6304788ae2ccef415b91b47e6e066",
+      "sources": [
+        "final_blind_set_v1:FB-040",
+        "results:final_blind_eval_results.json"
+      ]
+    },
+    {
+      "query": "P002这把键盘最多能同时连几台设备？",
+      "normalized_query": "p002这把键盘最多能同时连几台设备",
+      "sha256": "784ab06d1687737ae2c669c431fd8dcf4a3fa6d75553c94bb6687b1d19177910",
+      "sources": [
+        "v3_1_dev_cases:DV-001",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "这个保温杯容量是多少毫升？",
+      "normalized_query": "这个保温杯容量是多少毫升",
+      "sha256": "7916fae5689bba825b49ee0a64ffb274bb05997ed9847a03508ba7a7cfc48ab4",
+      "sources": [
+        "v3_1_dev_cases:DV-002",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "P001充满电大概能用几个小时？",
+      "normalized_query": "p001充满电大概能用几个小时",
+      "sha256": "df22c4d7dd566942049487e03a1e154ed1c3149dede17258fe79061b16410822",
+      "sources": [
+        "v3_1_dev_cases:DV-003",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "书包最大能承重多少？面料是什么材质的？",
+      "normalized_query": "书包最大能承重多少面料是什么材质的",
+      "sha256": "259468966af1c2ba8f405fad89f4d18356d5fbfe326655dbd117050c928bfff4",
+      "sources": [
+        "v3_1_dev_cases:DV-004",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "台灯的亮度可以分几档调节？",
+      "normalized_query": "台灯的亮度可以分几档调节",
+      "sha256": "826f872206d21ba6c4f024c6c86d252ad5d09371826791113fc0a8d2ab412320",
+      "sources": [
+        "v3_1_dev_cases:DV-005",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "那个小键盘是蓝牙的还是要用线的？",
+      "normalized_query": "那个小键盘是蓝牙的还是要用线的",
+      "sha256": "b2264c4e606624ee3195213c771bb5b1647fec2a06610f2bc4451e2b610f269a",
+      "sources": [
+        "v3_1_dev_cases:DV-006",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "保温效果能坚持一整天吗？带出门方便吗？",
+      "normalized_query": "保温效果能坚持一整天吗带出门方便吗",
+      "sha256": "72e6a3cf5da17f47bb867f71dc1e6ce88aa227e9d97aef7cdfe33f27bbf4d23c",
+      "sources": [
+        "v3_1_dev_cases:DV-007",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "P004自己本身有多重？放台式机电源进去装得下吗？",
+      "normalized_query": "p004自己本身有多重放台式机电源进去装得下吗",
+      "sha256": "31195981e17d131ec54d82ddb08c05a18ed38f5e2c51696c43f7c1028ba01090",
+      "sources": [
+        "v3_1_dev_cases:DV-008",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "P005晚上开着看书会不会太刺眼？",
+      "normalized_query": "p005晚上开着看书会不会太刺眼",
+      "sha256": "8f400bcb3d3d6395c42e0a21a559be989e5f8c9a67a77a20e9a66590df9aa233",
+      "sources": [
+        "v3_1_dev_cases:DV-009",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "无线蓝芽耳机的防水等级是多少，跑步出汗戴着有问题不",
+      "normalized_query": "无线蓝芽耳机的防水等级是多少跑步出汗戴着有问题不",
+      "sha256": "c3bfae8c5a7edca857d50f9b0055096ff7d58d508ad28349af1dfcfcd1eaf708",
+      "sources": [
+        "v3_1_dev_cases:DV-010",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "想看下我那单现在处理得怎么样了",
+      "normalized_query": "想看下我那单现在处理得怎么样了",
+      "sha256": "0c33ad41eddbf52a47a1585e4a765c16e9934653fdbf9bb8902a2e06d4f0db3a",
+      "sources": [
+        "v3_1_dev_cases:DV-011",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "钱都扣了怎么订单还挂在那里显示待付款？",
+      "normalized_query": "钱都扣了怎么订单还挂在那里显示待付款",
+      "sha256": "302bb6810b81144a4b49eb1c337773c99f36f3ec90702c5880be7b8e75e04880",
+      "sources": [
+        "v3_1_dev_cases:DV-012",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "单子刚提交，能不能把里面的型号换成另一个？",
+      "normalized_query": "单子刚提交能不能把里面的型号换成另一个",
+      "sha256": "b88a148f8603623f14907a5ac9b60d758c941f8fab132403b911ef2c2c5164a1",
+      "sources": [
+        "v3_1_dev_cases:DV-013",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "买完多久会安排发货啊？",
+      "normalized_query": "买完多久会安排发货啊",
+      "sha256": "b84b0f6a474fb748015a4722617d99b0f5d8696d23e83acfa39f99de5db6c453",
+      "sources": [
+        "v3_1_dev_cases:DV-014",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "物流显示人家已经代签了，可我根本没拿到东西，这咋整？",
+      "normalized_query": "物流显示人家已经代签了可我根本没拿到东西这咋整",
+      "sha256": "0690a26198025466133d1f44aa023859bee7c85e38e4b6c7dea1cc924c5e8fc5",
+      "sources": [
+        "v3_1_dev_cases:DV-015",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "收件信息填岔了，还能改寄送地点不？",
+      "normalized_query": "收件信息填岔了还能改寄送地点不",
+      "sha256": "7c1bb6b7a9f9a4cb616f569a09d977feba698fe733d29ca3f9e193bbbc01d3bd",
+      "sources": [
+        "v3_1_dev_cases:DV-016",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "东西到手后就是不想要了，符合条件的话给退呗？",
+      "normalized_query": "东西到手后就是不想要了符合条件的话给退呗",
+      "sha256": "55e95468d433488be8389e27f243e170ade823d4bc026b921f6e325d409b8a6f",
+      "sources": [
+        "v3_1_dev_cases:DV-017",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "钱退回来一般得等几个工作日？",
+      "normalized_query": "钱退回来一般得等几个工作日",
+      "sha256": "e17c8608f69d6213d294e951f32625e2401eaafdbf069339bc6edb17d66eb244",
+      "sources": [
+        "v3_1_dev_cases:DV-018",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "把东西寄回去的邮费最后算谁的？",
+      "normalized_query": "把东西寄回去的邮费最后算谁的",
+      "sha256": "6e1a3574f6e7885e1ae765adbf44da07611e1a7544986e045206c2d0a740227b",
+      "sources": [
+        "v3_1_dev_cases:DV-019",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "买来的东西出了毛病，后续该怎么走流程？",
+      "normalized_query": "买来的东西出了毛病后续该怎么走流程",
+      "sha256": "65e3b457519cadc0d95709a02852a35857195e78d50802449384c0a8bd18e9f4",
+      "sources": [
+        "v3_1_dev_cases:DV-020",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "处理不好我就去各个平台都挂差评，让大家都看看！",
+      "normalized_query": "处理不好我就去各个平台都挂差评让大家都看看",
+      "sha256": "e492d5f2fe8c0f6eb6fa51172fc2fe892d9e6f450d924c07b63c974c9622506b",
+      "sources": [
+        "v3_1_dev_cases:DV-021",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "讲好是全额退的，结果只回来了一半的钱，剩下那笔怎么算？",
+      "normalized_query": "讲好是全额退的结果只回来了一半的钱剩下那笔怎么算",
+      "sha256": "3a2840d449bdcab20b010864ae25c1b0ce260c3c09229f1c6a5f9b29f03bb771",
+      "sources": [
+        "v3_1_dev_cases:DV-022",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "退款申请都三天了半点动静没有，赶紧把钱打回来！",
+      "normalized_query": "退款申请都三天了半点动静没有赶紧把钱打回来",
+      "sha256": "0b7e113b104a81c21eab0f2350814bcca0d26fd4e74021cd4bc643e4524ad8c6",
+      "sources": [
+        "v3_1_dev_cases:DV-023",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "这包裹都一个礼拜了轨迹一条没动过，是不是出问题了？",
+      "normalized_query": "这包裹都一个礼拜了轨迹一条没动过是不是出问题了",
+      "sha256": "2ba187571fd300c6399eabc3d5ba13df29147816d3b71bddc2fc502f6c056dc7",
+      "sources": [
+        "v3_1_dev_cases:DV-024",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "东西是我给我妈下单的，能不能帮我看看她名下那个件到哪儿了？",
+      "normalized_query": "东西是我给我妈下单的能不能帮我看看她名下那个件到哪儿了",
+      "sha256": "143baaae6678e144abbf0193f75789d050bb8cba75a4c8a1f2160a7dcbc46d7d",
+      "sources": [
+        "v3_1_dev_cases:DV-025",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "你把系统里留的收件电话念给我听一下，我自己核对下对不对。",
+      "normalized_query": "你把系统里留的收件电话念给我听一下我自己核对下对不对",
+      "sha256": "abd4b2c3bbedf583e633a3075638be00e2d5bb69d177ef5626bce950e0365250",
+      "sources": [
+        "v3_1_dev_cases:DV-026",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "你现在就跟我保证这笔退款百分之百能办成。",
+      "normalized_query": "你现在就跟我保证这笔退款百分之百能办成",
+      "sha256": "34edba514e7b80caf276900350917bff712acb3e82e3206f501a95e1b750ce4f",
+      "sources": [
+        "v3_1_dev_cases:DV-027",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "键盘到货第三天就有几个键按下去完全没反应，这算不算坏了？",
+      "normalized_query": "键盘到货第三天就有几个键按下去完全没反应这算不算坏了",
+      "sha256": "e181f4a7e68ca2988327004523a6564b0c9499e7f0623207dd53ced250a54bc8",
+      "sources": [
+        "v3_1_dev_cases:DV-028",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "杯盖拧上之后老往外渗水，密封好像不行了。",
+      "normalized_query": "杯盖拧上之后老往外渗水密封好像不行了",
+      "sha256": "6d538cb2f1cbd90cc64def566f1509a6f4a79c001adaa71a8d502be06b57c302",
+      "sources": [
+        "v3_1_dev_cases:DV-029",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "背包侧兜的线开了一截，背带缝那儿也开始脱线了。",
+      "normalized_query": "背包侧兜的线开了一截背带缝那儿也开始脱线了",
+      "sha256": "a0c77239b8edde858bf1df9c3ef66e56a28b235ee8ff2134fbec273a33a32317",
+      "sources": [
+        "v3_1_dev_cases:DV-030",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "台灯用了没几天灯管就不亮了，插上电也充不进去。",
+      "normalized_query": "台灯用了没几天灯管就不亮了插上电也充不进去",
+      "sha256": "5b8465e580012e54631d071015d69726e1a9fd55e2fdeb630c8143e1f3efd46a",
+      "sources": [
+        "v3_1_dev_cases:DV-031",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "耳机左边那只老是接触不良，戴一会儿就一只响一只不响。",
+      "normalized_query": "耳机左边那只老是接触不良戴一会儿就一只响一只不响",
+      "sha256": "b5ef2b71967e04ced2e4a5a1bfbac1d4b553211222b341beb8c54f9d507231ee",
+      "sources": [
+        "v3_1_dev_cases:DV-032",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "P004塞得进去14寸的笔记本不？顺便看下我这单出货了没。",
+      "normalized_query": "p004塞得进去14寸的笔记本不顺便看下我这单出货了没",
+      "sha256": "55a212ca3fb48354f337af2a92febfbeba353b6d07ce2c079293e227ab078a49",
+      "sources": [
+        "v3_1_dev_cases:DV-033",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "退款一般几天能回来？另外这笔钱怎么跟当时说好的数目对不上？",
+      "normalized_query": "退款一般几天能回来另外这笔钱怎么跟当时说好的数目对不上",
+      "sha256": "62821e3ac60ec6a0440a5ba502086059377977e9a5effa02da88901d64713864",
+      "sources": [
+        "v3_1_dev_cases:DV-034",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "这个杯子口沿有一道裂了，另外想问下它保温能撑多久？",
+      "normalized_query": "这个杯子口沿有一道裂了另外想问下它保温能撑多久",
+      "sha256": "3a3865dcc68eba6a577838bf4282bd7d297a0f438d4fc82b2197cdfabd708c8d",
+      "sources": [
+        "v3_1_dev_cases:DV-035",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "帮我瞅瞅单子走到哪步了，物流这两天跟停了似的。",
+      "normalized_query": "帮我瞅瞅单子走到哪步了物流这两天跟停了似的",
+      "sha256": "153cb73f94cc925f5b0f1b2e50d00927206fdb2ecff966d629494d1d01a57840",
+      "sources": [
+        "v3_1_dev_cases:DV-036",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "无理由退货都有哪些前提？寄回去的运费怎么划分？",
+      "normalized_query": "无理由退货都有哪些前提寄回去的运费怎么划分",
+      "sha256": "89736b95ac8ec684b8b870ea1115b3649e474a4b13b0717a6154d7d7ebe3ba52",
+      "sources": [
+        "v3_1_dev_cases:DV-037",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "我弟的单子麻烦帮我盯一下发货状态。",
+      "normalized_query": "我弟的单子麻烦帮我盯一下发货状态",
+      "sha256": "0c9dbb4ab589ce83c6c8a53b28a65cc3a921a7c17aefb87922bf9494d5a38991",
+      "sources": [
+        "v3_1_dev_cases:DV-038",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "P005有几档色温？是直插电源的还是里面带电池的？",
+      "normalized_query": "p005有几档色温是直插电源的还是里面带电池的",
+      "sha256": "0e550f9c5dfbe5ccf8769a6c394aa7d31d337e0bf5af66d910b45f08577840bd",
+      "sources": [
+        "v3_1_dev_cases:DV-039",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "耳机刚过保没几天就一个耳朵没声了，这种用过一回的还能退不？",
+      "normalized_query": "耳机刚过保没几天就一个耳朵没声了这种用过一回的还能退不",
+      "sha256": "0aec3670fa5d2bc6abf2ee0e16d6b45c33537b871cf34cf4cf0aa665531c4822",
+      "sources": [
+        "v3_1_dev_cases:DV-040",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "满减活动是不是从下周一开始？能省多少？",
+      "normalized_query": "满减活动是不是从下周一开始能省多少",
+      "sha256": "e0da59816cf485de5e928f02bd60a420dc4d4b9f31cda5170d81f4fa14fa6826",
+      "sources": [
+        "v3_1_dev_cases:DV-041",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "下单的时候会不会随单附赠收纳袋之类的礼品？",
+      "normalized_query": "下单的时候会不会随单附赠收纳袋之类的礼品",
+      "sha256": "7e4a8dfdd5a92d8e05f04171bc50c58ca8ec88ea549800dd285c576b70b540ae",
+      "sources": [
+        "v3_1_dev_cases:DV-042",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "听说你们晚上有主播开播，直播间里下单有什么专属待遇吗？",
+      "normalized_query": "听说你们晚上有主播开播直播间里下单有什么专属待遇吗",
+      "sha256": "0cbfefc535b97c45de738ded79c5e3795e89822fb4466466ea52c04f18786121",
+      "sources": [
+        "v3_1_dev_cases:DV-043",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "那款键盘现在还有存货吗？卖断了得等多久补？",
+      "normalized_query": "那款键盘现在还有存货吗卖断了得等多久补",
+      "sha256": "d27489a0c71111dcd658df99316fee37da33cdd65a0e5f003cbf12c0a1cc4af1",
+      "sources": [
+        "v3_1_dev_cases:DV-044",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "能不能跟我保证我明天下单，后天一早就能收着？",
+      "normalized_query": "能不能跟我保证我明天下单后天一早就能收着",
+      "sha256": "278e7ffafee30a73f11af9a5abea71c977fccbe2bb9f09f9f56c5ccc94b0df5f",
+      "sources": [
+        "v3_1_dev_cases:DV-045",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "买台灯可以给开增值税的票吗？走什么流程？",
+      "normalized_query": "买台灯可以给开增值税的票吗走什么流程",
+      "sha256": "05e1a4b122cde19bef303fbc4391b97629d6f6456241fa1f1b5db1f67bdbcb77",
+      "sources": [
+        "v3_1_dev_cases:DV-046",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "要是下周这商品降价了，之前买的能找你们补差的钱不？",
+      "normalized_query": "要是下周这商品降价了之前买的能找你们补差的钱不",
+      "sha256": "75c1ba0ca032d6fd8267e395ffc25a382ebee1fe9a61fa672e2824ead8cc80c3",
+      "sources": [
+        "v3_1_dev_cases:DV-047",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "你们店里卖不卖平板电脑？想要个大屏的学习机。",
+      "normalized_query": "你们店里卖不卖平板电脑想要个大屏的学习机",
+      "sha256": "dd452c48841874ef18fedf3b63c0fa1bd3359c681bece1bdb1b58a728ab5c630",
+      "sources": [
+        "v3_1_dev_cases:DV-048",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "预售阶段付定金后面是不是更划算？",
+      "normalized_query": "预售阶段付定金后面是不是更划算",
+      "sha256": "0393a709c5a70afc80fb57ee1d3fb40ef56a48d90649c85b1bcdfbc245bb1fb9",
+      "sources": [
+        "v3_1_dev_cases:DV-049",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "仓库从哪个城市发货啊？用的是哪家的快递？",
+      "normalized_query": "仓库从哪个城市发货啊用的是哪家的快递",
+      "sha256": "351f5dc13b725e9206141c68b3aa57ab7cc74209798f04d80f3110c3bbd85064",
+      "sources": [
+        "v3_1_dev_cases:DV-050",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "这周末去郊外烧烤会不会赶上下雨？",
+      "normalized_query": "这周末去郊外烧烤会不会赶上下雨",
+      "sha256": "4e16ab5dd194f4bed31b54935789bd2c9a40bdec527f90396894e9c445193618",
+      "sources": [
+        "v3_1_dev_cases:DV-051",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "最近想拿点闲钱买点基金，你觉得现在入手合适吗？",
+      "normalized_query": "最近想拿点闲钱买点基金你觉得现在入手合适吗",
+      "sha256": "cc854d27035961c703ebe3b38b7d3e57c70b4efb6ed2fc26e98c59aa4f119046",
+      "sources": [
+        "v3_1_dev_cases:DV-052",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "办护照提前预约要等多长时间？",
+      "normalized_query": "办护照提前预约要等多长时间",
+      "sha256": "64cc22d8a7125f6c140bfb113843934ed1d2e8c54eb721f0a779a406590feb8c",
+      "sources": [
+        "v3_1_dev_cases:DV-053",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "帮我参谋下毕业设计选什么方向好写一点？",
+      "normalized_query": "帮我参谋下毕业设计选什么方向好写一点",
+      "sha256": "a6671aa7e609943208ed18addf1365ccfee23697f3ce0b369193ab3aa1dcb350",
+      "sources": [
+        "v3_1_dev_cases:DV-054",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "天天晚上翻来覆去睡不踏实，有没有什么调理的法子？",
+      "normalized_query": "天天晚上翻来覆去睡不踏实有没有什么调理的法子",
+      "sha256": "9974c0dd6a3e3d8b68e2533af482efdb18af4b862d1520ed0b559008f52cbb93",
+      "sources": [
+        "v3_1_dev_cases:DV-055",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "最近有什么值得去电影院看的新片子吗？",
+      "normalized_query": "最近有什么值得去电影院看的新片子吗",
+      "sha256": "cb3e98c295b4a802e0f22333919a514c810f2e837722e9bf565e99f6032d5942",
+      "sources": [
+        "v3_1_dev_cases:DV-056",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "周末想带家人去山里徒步，有啥路线推荐没？",
+      "normalized_query": "周末想带家人去山里徒步有啥路线推荐没",
+      "sha256": "b82a79506da5d3b52c4215b4a9f3f3cf87f1be77b1d65d668d1f5c9ff21e6415",
+      "sources": [
+        "v3_1_dev_cases:DV-057",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "炖牛肉怎么才能炖得又烂又入味？",
+      "normalized_query": "炖牛肉怎么才能炖得又烂又入味",
+      "sha256": "26b2e2932e42b90dc382a094f9415dc50d296c9f45fad3108f5f79ceace137f6",
+      "sources": [
+        "v3_1_dev_cases:DV-058",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "零基础想学点数据分析，先从哪个工具上手比较好？",
+      "normalized_query": "零基础想学点数据分析先从哪个工具上手比较好",
+      "sha256": "3b38e76a6001f138a8f1b42e7881bf85bb691e2cb88aa6eff342d8eef5d50c6e",
+      "sources": [
+        "v3_1_dev_cases:DV-059",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "孩子上了初中数学跟不上，要不要给他报个补习班？",
+      "normalized_query": "孩子上了初中数学跟不上要不要给他报个补习班",
+      "sha256": "341446b1859d99c5c4f2b403cd953f0cfe2d14f2eec26d11b9a1b222521b1a1a",
+      "sources": [
+        "v3_1_dev_cases:DV-060",
+        "results:v3_1_dev_eval_results.json"
+      ]
+    },
+    {
+      "query": "那款无线的耳机，连续听歌一次能撑多久？",
+      "normalized_query": "那款无线的耳机连续听歌一次能撑多久",
+      "sha256": "e654c2e380fae9baca519621cfb81cdcff85386003e3721ad80d970ff29b196c",
+      "sources": [
+        "validation_v1_1_frozen:H-001",
+        "validation_v1_2_reviewed:H-001",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "敲起来很清脆的那个键盘，是红轴吗？能插线直接连电脑不？",
+      "normalized_query": "敲起来很清脆的那个键盘是红轴吗能插线直接连电脑不",
+      "sha256": "78e15f1733070ed81497524fb7d99e191633aea4ff1518762c8f3465a9e91de3",
+      "sources": [
+        "validation_v1_1_frozen:H-002",
+        "validation_v1_2_reviewed:H-002",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "你们那个钢内胆的杯子，内层是不是304的？能倒多少水进去？",
+      "normalized_query": "你们那个钢内胆的杯子内层是不是304的能倒多少水进去",
+      "sha256": "8ad3a66b44ba39a5031c7a268b7a599944c58fa333e27f496f1f48dff5645b3f",
+      "sources": [
+        "validation_v1_1_frozen:H-003",
+        "validation_v1_2_reviewed:H-003",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "书包侧面那个夹层，塞一台16寸的游戏本进去装得下吗？",
+      "normalized_query": "书包侧面那个夹层塞一台16寸的游戏本进去装得下吗",
+      "sha256": "8b2e9b4ba27a0ba9a068ed586e331e0a9bb0ae29b4b56913e1272063375b928f",
+      "sources": [
+        "validation_v1_1_frozen:H-004",
+        "validation_v1_2_reviewed:H-004",
+        "results:retrieval_mode_comparison.json",
+        "results:retrieval_failure_diagnosis.json"
+      ]
+    },
+    {
+      "query": "写字台上那盏灯是插电用的还是自带电池？能定个时候自动关吗？",
+      "normalized_query": "写字台上那盏灯是插电用的还是自带电池能定个时候自动关吗",
+      "sha256": "6710a08243c7c1c794216c71aee089ffad5e6e813afb0ba59e2d1f05ead726ea",
+      "sources": [
+        "validation_v1_1_frozen:H-005",
+        "validation_v1_2_reviewed:H-005",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "戴着耳机冲个淋浴，应该没什么事吧？",
+      "normalized_query": "戴着耳机冲个淋浴应该没什么事吧",
+      "sha256": "8d2989c5e007cd15c226edb4aaca184b1a538bde26ae29991cc20156a5ecc89e",
+      "sources": [
+        "validation_v1_1_frozen:H-006",
+        "validation_v1_2_reviewed:H-006",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "这台键盘接苹果电脑上能用吗，会不会有按键不管用？",
+      "normalized_query": "这台键盘接苹果电脑上能用吗会不会有按键不管用",
+      "sha256": "8a0957a779072300e0da574341ba7254a390e94bd3c874fb7f62e5708490f09f",
+      "sources": [
+        "validation_v1_1_frozen:H-007",
+        "validation_v1_2_reviewed:H-007",
+        "results:retrieval_mode_comparison.json",
+        "results:retrieval_failure_diagnosis.json"
+      ]
+    },
+    {
+      "query": "把可乐倒进那个保温杯里带着走，会不会炸开？",
+      "normalized_query": "把可乐倒进那个保温杯里带着走会不会炸开",
+      "sha256": "b9826448b103a9c9a19e6a3c11222ff285349f714913ebc46b03f8ac8721fe4d",
+      "sources": [
+        "validation_v1_1_frozen:H-008",
+        "validation_v1_2_reviewed:H-008",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "下雨天背这个包出门，里面的笔记本电脑会不会被淋湿？",
+      "normalized_query": "下雨天背这个包出门里面的笔记本电脑会不会被淋湿",
+      "sha256": "3dae19199928449c8e068479bb62efd5bdc505a613a65a8e454c50cd02c6ab6d",
+      "sources": [
+        "validation_v1_1_frozen:H-009",
+        "validation_v1_2_reviewed:H-009",
+        "results:retrieval_mode_comparison.json",
+        "results:retrieval_failure_diagnosis.json"
+      ]
+    },
+    {
+      "query": "快递明明显示送到了，可我手上根本没见着包裹，这找谁？",
+      "normalized_query": "快递明明显示送到了可我手上根本没见着包裹这找谁",
+      "sha256": "1446e7cea983157203a693f5a1145aeb2aeedeee18462fda9f74df687da32fec",
+      "sources": [
+        "validation_v1_1_frozen:H-010",
+        "validation_v1_2_reviewed:H-010",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "东西还没发出来，我想换个地方收货，还来得及改吗？",
+      "normalized_query": "东西还没发出来我想换个地方收货还来得及改吗",
+      "sha256": "64c64bed82a187a33d4b1eaceca4927d99f9e129ddd224ed87ae26586e014008",
+      "sources": [
+        "validation_v1_1_frozen:H-011",
+        "validation_v1_2_reviewed:H-011",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "明明已经扣过钱了，订单里怎么还让我再付一遍？",
+      "normalized_query": "明明已经扣过钱了订单里怎么还让我再付一遍",
+      "sha256": "ef0a43cbc7cc031119c08facc732801c2b2dda8cd82a00a21e9d28d8579a54da",
+      "sources": [
+        "validation_v1_1_frozen:H-012",
+        "validation_v1_2_reviewed:H-012",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "公司报销需要票据，你们这边能给开票吗？",
+      "normalized_query": "公司报销需要票据你们这边能给开票吗",
+      "sha256": "5847231725feca209a6222312640ae4f2290f2fbc264bdd29ecfad61124556e9",
+      "sources": [
+        "validation_v1_1_frozen:H-013",
+        "validation_v1_2_reviewed:H-013",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "再不给我解决，我就去消协举报你们这家店！",
+      "normalized_query": "再不给我解决我就去消协举报你们这家店",
+      "sha256": "5a85591443b90db465cacabcfe2d3b0238b65b7cbc8483309b060282ba0f0151",
+      "sources": [
+        "validation_v1_1_frozen:H-014",
+        "validation_v1_2_reviewed:H-014",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "银行卡明明被你们扣了两笔钱，多扣的那笔必须退回来！",
+      "normalized_query": "银行卡明明被你们扣了两笔钱多扣的那笔必须退回来",
+      "sha256": "59b0bdb47a77cb05730558820a9e1cb7298480314ad6b44e3f3fdec3f7d7a592",
+      "sources": [
+        "validation_v1_1_frozen:H-015",
+        "validation_v1_2_reviewed:H-015",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "退款拖了一个礼拜还没影，现在马上给我退！",
+      "normalized_query": "退款拖了一个礼拜还没影现在马上给我退",
+      "sha256": "5ab18a8d5104493d1d913e489c6de505842cfeb81819ec0ad8931b98e74f3534",
+      "sources": [
+        "validation_v1_1_frozen:H-016",
+        "validation_v1_2_reviewed:H-016",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "包裹停在半路三天没动静了，到底还送不送了？",
+      "normalized_query": "包裹停在半路三天没动静了到底还送不送了",
+      "sha256": "779a0299ba5ad22b1c03252bcd374fb347091f09584385834654087d469ae3da",
+      "sources": [
+        "validation_v1_1_frozen:H-017",
+        "validation_v1_2_reviewed:H-017",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "这是我给室友代买的东西，你帮我看看他那边的单子到哪一步了。",
+      "normalized_query": "这是我给室友代买的东西你帮我看看他那边的单子到哪一步了",
+      "sha256": "a5bce6094c19df8952498e9675bde783b130152480631483244c4397b4279c58",
+      "sources": [
+        "validation_v1_1_frozen:H-018",
+        "validation_v1_2_reviewed:H-018",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "耳机用了没几天，右边就没声音了，这属于质量问题吧？",
+      "normalized_query": "耳机用了没几天右边就没声音了这属于质量问题吧",
+      "sha256": "16ed24ff07bbcb15a4cba4df2a81af5d485a360c2800460e6ac76d7af7f487c5",
+      "sources": [
+        "validation_v1_1_frozen:H-019",
+        "validation_v1_2_reviewed:H-019",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "耳机想退，但我已经拆开用过一次了还能退不？退回去的运费算谁的？",
+      "normalized_query": "耳机想退但我已经拆开用过一次了还能退不退回去的运费算谁的",
+      "sha256": "9474681efb386ebe7af9542c695833514d71e58f6926d65363f03f872924e5e7",
+      "sources": [
+        "validation_v1_1_frozen:H-020",
+        "validation_v1_2_reviewed:H-020",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "杯子到手就有裂痕要退款，那钱一般多久能到我卡里？",
+      "normalized_query": "杯子到手就有裂痕要退款那钱一般多久能到我卡里",
+      "sha256": "1df26fddb08bf4fd5d61a3258f8e05ac1458d45b003440aa517c84c419ddddfd",
+      "sources": [
+        "validation_v1_1_frozen:H-021",
+        "validation_v1_2_reviewed:H-021",
+        "results:retrieval_mode_comparison.json",
+        "results:retrieval_failure_diagnosis.json"
+      ]
+    },
+    {
+      "query": "我要投诉你们发假货，顺便把我这单给退了。",
+      "normalized_query": "我要投诉你们发假货顺便把我这单给退了",
+      "sha256": "a13b25fe51b7533db279458224bc5b7155798e585845b965a2df0359424b0168",
+      "sources": [
+        "validation_v1_1_frozen:H-022",
+        "validation_v1_2_reviewed:H-022",
+        "results:retrieval_mode_comparison.json",
+        "results:retrieval_failure_diagnosis.json"
+      ]
+    },
+    {
+      "query": "你们这个灯是不是不用插电也能亮？",
+      "normalized_query": "你们这个灯是不是不用插电也能亮",
+      "sha256": "d470d49e5f81c02b6d6d7c08e534d53222e02251ca0dd3bad439f66bc1918649",
+      "sources": [
+        "validation_v1_1_frozen:H-023",
+        "validation_v1_2_reviewed:H-023",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "P003这个型号的杯子，可以直接放进洗碗机里清洗吗？",
+      "normalized_query": "p003这个型号的杯子可以直接放进洗碗机里清洗吗",
+      "sha256": "bdb2dd2d616e3d89329fa59e041b3c8add23d4e096ba676ace0c379c7b25926c",
+      "sources": [
+        "validation_v1_1_frozen:H-024",
+        "validation_v1_2_reviewed:H-024",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "直播间买的和店铺里发的货，质量是一样的吗？",
+      "normalized_query": "直播间买的和店铺里发的货质量是一样的吗",
+      "sha256": "1294540adabe4c05ef432492f8805a54bd7b389849e00a7aed07a0e3ef6cb941",
+      "sources": [
+        "validation_v1_1_frozen:H-025",
+        "validation_v1_2_reviewed:H-025",
+        "results:retrieval_mode_comparison.json",
+        "results:retrieval_failure_diagnosis.json"
+      ]
+    },
+    {
+      "query": "我是学生党没什么钱，能不能再给我打个折？",
+      "normalized_query": "我是学生党没什么钱能不能再给我打个折",
+      "sha256": "427503dcdd25ce6e2b4248c66fb0c638dc2ebc91be1a26d61c44e7b25bcdcdfe",
+      "sources": [
+        "validation_v1_1_frozen:H-026",
+        "validation_v1_2_reviewed:H-026",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "你们的货是从哪个仓发出来的？是自营仓库吗？",
+      "normalized_query": "你们的货是从哪个仓发出来的是自营仓库吗",
+      "sha256": "5bdda09bd6c1976379b6b510214395000f7910e1432518b17bb2a21dfacea4eb",
+      "sources": [
+        "validation_v1_1_frozen:H-027",
+        "validation_v1_2_reviewed:H-027",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "帮我写一首关于春天的短诗呗。",
+      "normalized_query": "帮我写一首关于春天的短诗呗",
+      "sha256": "7693aa71113b0ee7e777c133063656770897436228ebd4b3ff4ebe864bc005c4",
+      "sources": [
+        "validation_v1_1_frozen:H-028",
+        "validation_v1_2_reviewed:H-028",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "下一届世界杯在哪个国家举办来着？",
+      "normalized_query": "下一届世界杯在哪个国家举办来着",
+      "sha256": "232f62d2015d6418e912ebcd0e19394dc512711e7748bedc350e935b108785a6",
+      "sources": [
+        "validation_v1_1_frozen:H-029",
+        "validation_v1_2_reviewed:H-029",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "有没有好用的学英语手机App推荐几个？",
+      "normalized_query": "有没有好用的学英语手机app推荐几个",
+      "sha256": "3e46ef2851323baf7b602f28c84edbad3a7541cf0dbb885bbc8d0428afab3273",
+      "sources": [
+        "validation_v1_1_frozen:H-030",
+        "validation_v1_2_reviewed:H-030",
+        "results:retrieval_mode_comparison.json"
+      ]
+    },
+    {
+      "query": "V3.1 第三阶段：/api/chat 端到端集成测试（V3.1 混合检索接入后）。\n\n运行方式（backend 目录下或项目根目录）：\n    python backend/test_v3_1_api_integration.py\n\n要点：\n- 全程 DeepSeek 调用次数必须为 0：本测试显式清空 DEEPSEEK_API_KEY，\n  并验证无 Key 时 generate_reply 抛 DeepSeekConfigError（不发起网络请求）；\n  supported 问题在无 Key 时走本地降级（answer_mode=fallback）。\n- 不使用旧 final blind set 题目；全部测试表达为本阶段重新编写。\n- 覆盖 16 类：商品参数 / 已覆盖FAQ / 普通退货 / 质量缺陷 / 投诉赔偿 /\n  已知订单 / 不存在订单 / 发票未覆盖 / 促销赠品未覆盖 / 未知商品 /\n  完全无关 / 空输入 / 重复请求 / DeepSeek不可用降级 / health / ready。\n- 校验：HTTP 200、六字段+answer_mode+risk_decision、sources 合法、\n  用户文案不含内部术语、门控结果不携带知识来源、订单无回归、前端字段兼容。",
+      "normalized_query": "v31第三阶段/api/chat端到端集成测试v31混合检索接入后运行方式backend目录下或项目根目录pythonbackend/test_v3_1_api_integrationpy要点全程deepseek调用次数必须为0本测试显式清空deepseek_api_key并验证无key时generate_reply抛deepseekconfigerror不发起网络请求supported问题在无key时走本地降级answer_mode=fallback不使用旧finalblindset题目全部测试表达为本阶段重新编写覆盖16类商品参数/已覆盖faq/普通退货/质量缺陷/投诉赔偿/已知订单/不存在订单/发票未覆盖/促销赠品未覆盖/未知商品/完全无关/空输入/重复请求/deepseek不可用降级/health/ready校验http200六字段+answer_mode+risk_decisionsources合法用户文案不含内部术语门控结果不携带知识来源订单无回归前端字段兼容",
+      "sha256": "f3b1a5541718544c32c25a1327af252f2b6ba963e20c0937c8e51b9faaa8929b",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "HR-\\d|FAQ-\\d|SOP|知识库|门控|gated|scope|supported|unsupported|irrelevant|相似度|向量|关键词|RRF|rf|阈值|评分|分数|retriev|检索|DeepSeek|API|模型判断|风险决策|risk_level|handoff|answer_mode|来源|内部分析",
+      "normalized_query": "hr\\d|faq\\d|sop|知识库|门控|gated|scope|supported|unsupported|irrelevant|相似度|向量|关键词|rrf|rf|阈值|评分|分数|retriev|检索|deepseek|api|模型判断|风险决策|risk_level|handoff|answer_mode|来源|内部分析",
+      "sha256": "a5f7f35ff9748aba9e8210faebcef88037272a7a7430dc14be18a0c582b5598f",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "HTTP状态=200",
+      "normalized_query": "http状态=200",
+      "sha256": "358b6652eeeddb55814cabb8daae311a62efbbac228117da7c8a1a089a308674",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "字段结构完整(前端兼容)",
+      "normalized_query": "字段结构完整前端兼容",
+      "sha256": "a7c64f38191ef3b30c54a77c19da75ca9dd935e02ec5ebe6cf6c88639f5ac30f",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "answer非空",
+      "normalized_query": "answer非空",
+      "sha256": "fc67b875e2c7e19e3edcb301d1e8795e2c26e751c879b466a72d8e2ebd03afc6",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "sources为字符串数组",
+      "normalized_query": "sources为字符串数组",
+      "sha256": "36cd28ba3801339ea3287695fc546a8aa40d20011d07be77ca6e9b04800747b5",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "risk_level合法",
+      "normalized_query": "risk_level合法",
+      "sha256": "0a67e2216a6555d16c1d36d9b1942c5faa5d807b877f8e73fbadc9b2ff2ddf3b",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "answer_mode合法",
+      "normalized_query": "answer_mode合法",
+      "sha256": "73b780a1e9c60d48e831902c5d92a2e5bea52a37b9d57df2edb7a7cd8b03de72",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "risk_decision合法",
+      "normalized_query": "risk_decision合法",
+      "sha256": "081ad54c4f42714155f41163eb962fe80c6b802a668884a21b5c9200c8ef5973",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "answer无内部术语",
+      "normalized_query": "answer无内部术语",
+      "sha256": "964f301fde24b78bce59cea374274c5814677c8ee4594868e2d7d1b60e6147d4",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "DeepSeek成功调用次数=0",
+      "normalized_query": "deepseek成功调用次数=0",
+      "sha256": "a682e697fdb96d0a585255d972da581cc0513e2360705b5e8b53024430bdc22a",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "DeepSeek真实网络调用=0(无Key仅配置异常)",
+      "normalized_query": "deepseek真实网络调用=0无key仅配置异常",
+      "sha256": "6ebe1d316f9ce8c312f2d487b1773862c2c537d7b1f0b5ca030887dd6f70172c",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "===== V3.1 API 集成测试结论 =====",
+      "normalized_query": "=====v31api集成测试结论=====",
+      "sha256": "1ae0b0800cde7ef1b45103b1fbb3d736f03184443e63f367c7f9d9fda1745c69",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "DeepSeek隔离",
+      "normalized_query": "deepseek隔离",
+      "sha256": "091794b6c4eba47f5f184b4603a9e0481c372d1a923a4fbc68647a92ba29176b",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "无Key调用抛DeepSeekConfigError",
+      "normalized_query": "无key调用抛deepseekconfigerror",
+      "sha256": "113d92cf591ed914d16f1cf3aecbd81623b9c3338f6e1886f0862ab7a2ebcb78",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "机械键盘在苹果电脑上能用吗，Mac系统兼容不兼容？",
+      "normalized_query": "机械键盘在苹果电脑上能用吗mac系统兼容不兼容",
+      "sha256": "ece8feb726330c28c319c7c11a6da3198d5cf0bcd811ddc7b3e7fcb200af44c0",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C01商品参数",
+      "normalized_query": "c01商品参数",
+      "sha256": "f5e403bbdf45279c371eb88b445ef62e8d964f0dd1f21a928779675e51f8b336",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "sources来自知识库(非现有资料未覆盖)",
+      "normalized_query": "sources来自知识库非现有资料未覆盖",
+      "sha256": "706cfe747cbe79aed0b202455824cd720be8b4e73c408ec06827b0d7373efdcf",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "无Key本地降级(不走真实DeepSeek)",
+      "normalized_query": "无key本地降级不走真实deepseek",
+      "sha256": "f5a0d568ae8beac90198246e287d5eebb7a8b0d08a0075eaf96b2b8928032b59",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "付款成功了订单还是显示待付款，这是什么情况？",
+      "normalized_query": "付款成功了订单还是显示待付款这是什么情况",
+      "sha256": "3b57c0d0ea9a6fe60c0ab2207c1a862cfb81436465c411645aa498bc52493199",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C02已覆盖FAQ",
+      "normalized_query": "c02已覆盖faq",
+      "sha256": "d9d6ef1496b837a889c17400eccc7e1096ff0fcbaa2d41f61ef915163d07680f",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "sources来自知识库",
+      "normalized_query": "sources来自知识库",
+      "sha256": "add3815dc116fff9d2e83fb814298d1d53d93c8e5163551a33775bfe48df0e54",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "刚下单的键盘还没拆包装，不想要了想退，流程怎么走？",
+      "normalized_query": "刚下单的键盘还没拆包装不想要了想退流程怎么走",
+      "sha256": "b2390e9441301b9d4e36e4c2ad4fa9075950ac8649d3524922d15ba836105e56",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C03普通退货",
+      "normalized_query": "c03普通退货",
+      "sha256": "8200daaf8b2756fd17da91a4e1e9ef62b94e1a56c2d0b65622dc138915a53f00",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "刚收到的保温杯杯盖拧不开，螺纹那里好像坏了",
+      "normalized_query": "刚收到的保温杯杯盖拧不开螺纹那里好像坏了",
+      "sha256": "da785289d0821293df294337eaa2c9d5fd81c58f5fe0b2c314a1a67838174b08",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C04质量缺陷",
+      "normalized_query": "c04质量缺陷",
+      "sha256": "b5973ff6eabaa844118b96dc55df49666fd864e475f1d61d910eb41ea1cc9ed9",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "风险等级不被降低",
+      "normalized_query": "风险等级不被降低",
+      "sha256": "594a3c1209aa862c9c42cbc7b45595011110d34da5e94b40e543f42e3932bae9",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "你们再不处理我就去投诉，必须赔偿我的损失",
+      "normalized_query": "你们再不处理我就去投诉必须赔偿我的损失",
+      "sha256": "f9664170331467a1a6ac69fa4686ad524eb7546a464cfcdf71fc889679d3b25d",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C05投诉赔偿",
+      "normalized_query": "c05投诉赔偿",
+      "sha256": "6459feb8f52b2561a348408daeff68d2e980de55870619b1bc613efba95bf361",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "订单202609180003用的哪家快递？现在物流到哪儿了？",
+      "normalized_query": "订单202609180003用的哪家快递现在物流到哪儿了",
+      "sha256": "f83d3934198df4c3de5c31e5ce36d191ee1fd6a8e38ca2a22e53ae479fa6fedd",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C06已知订单",
+      "normalized_query": "c06已知订单",
+      "sha256": "c0e16e3eb32774d96f66818f7e529c4e030d6082d8d5ce13d6561593e0a806d7",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "category=订单与支付",
+      "normalized_query": "category=订单与支付",
+      "sha256": "7ebe86b371731a4342efd98c832bca9f34ecef537270733c7f7b373249e0d3bc",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "sources为订单资料",
+      "normalized_query": "sources为订单资料",
+      "sha256": "28c1091c9630c304777754aad7c6a473385e96fbf077eebeda40c393f31f34a8",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "低风险不转人工",
+      "normalized_query": "低风险不转人工",
+      "sha256": "c99933f14741d384e727180ba4b3852d003ff2245097b5ba7ec65cc80e26816c",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "订单202609180001你们必须马上退款赔偿我，不然我投诉到底",
+      "normalized_query": "订单202609180001你们必须马上退款赔偿我不然我投诉到底",
+      "sha256": "89895495f94707fb99ac9e0a5fd9ada13ae33d8e007fc14e9f625d3aab099fa1",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C06b订单+高风险",
+      "normalized_query": "c06b订单+高风险",
+      "sha256": "b03612f12033ed0de8f461579c7c29b7c88cdc69ca6086f6db92f1ff6719bfb5",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "转人工原因非空",
+      "normalized_query": "转人工原因非空",
+      "sha256": "dc0eddb4bc2a383abd9856ac3335868598821f3511757358bd17cfc6433d1a71",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "帮我查一下订单202609189999现在的状态",
+      "normalized_query": "帮我查一下订单202609189999现在的状态",
+      "sha256": "25ccb42315c8afaef7ae142b3acfc4ac22dfb0000c6005232cfc5bbe0df13521",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C07不存在订单",
+      "normalized_query": "c07不存在订单",
+      "sha256": "a4d43a62d2ad4cb7a59322b86ef386977c7954de3c85faf45dacc0a9619ce1a3",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "提示核对订单号",
+      "normalized_query": "提示核对订单号",
+      "sha256": "1c5c81e0cef0ac7fc0a055b838d1eb7773fe57bb4814d5143551560a04adc936",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "下单的时候忘了要发票，现在还能补开吗？",
+      "normalized_query": "下单的时候忘了要发票现在还能补开吗",
+      "sha256": "1f0ea8d805fe7556a92d118f440b26b7b9bfbd8635f79877f48eefe1223d78a6",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C08发票未覆盖",
+      "normalized_query": "c08发票未覆盖",
+      "sha256": "c6b4d3a3fac8831bc758efa71fb970016cebef6de28f5fb49c1b9903b5dbb84f",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "告知资料无法确认并给下一步",
+      "normalized_query": "告知资料无法确认并给下一步",
+      "sha256": "1b1ce7929a24b9654a0e4d675ecf0841f65051c4b234a87a45ed0d59c9028f62",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "sources不伪造知识来源",
+      "normalized_query": "sources不伪造知识来源",
+      "sha256": "30148a77e89581426c410c47de67da8135d048c4c46feb67d131ff01cae84ca9",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "无知识片段编号混入answer",
+      "normalized_query": "无知识片段编号混入answer",
+      "sha256": "567e3411d590cb452e2530cb3d967df717d72c35871d1fec7c3083cf98c5c58f",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "这周店里有什么满减活动或者赠品吗？",
+      "normalized_query": "这周店里有什么满减活动或者赠品吗",
+      "sha256": "73b8713eabc6de02f805612a73eed2be31148d7a4ee1431990f67260363796ef",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C09促销赠品未覆盖",
+      "normalized_query": "c09促销赠品未覆盖",
+      "sha256": "ce412d6370ec808ff8e2222fdc7246c26291d9dc5532f7ae84be47c91692a711",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "sources不伪造",
+      "normalized_query": "sources不伪造",
+      "sha256": "e63302c482efdbcd001b5fde078d27ac4c02d1c2c382f2e547ccaec51885a3af",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "你们店里卖不卖充电宝？",
+      "normalized_query": "你们店里卖不卖充电宝",
+      "sha256": "b227cae82dcc013ea2b2e7fb5e398a4730cb5cd73f5baa726e79ebcb0174a992",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C10未知商品",
+      "normalized_query": "c10未知商品",
+      "sha256": "eb0031d5321aeaf21d994321f5663ab2a5fa7d13516540b84c73384e22d565ab",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "最近有什么好看的电影推荐一下呗",
+      "normalized_query": "最近有什么好看的电影推荐一下呗",
+      "sha256": "d4982010fb5a584d01b0af248e5a19b2619ab980e4335533bcbd42d574fae75a",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C11完全无关",
+      "normalized_query": "c11完全无关",
+      "sha256": "8cb577f6525cdc9329ce9ad4682561e780358288e52d43018d285a0d0c30d566",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "范围说明文案",
+      "normalized_query": "范围说明文案",
+      "sha256": "f56d5612689464ead9d3a8fd26621274a27436d0d495602fe86bba022832b198",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "不携带知识来源",
+      "normalized_query": "不携带知识来源",
+      "sha256": "02ec2a9c9b66fd4f62d63a786a84e6c33b9ef911f68ef2eab9f12a9c250084cd",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C12空输入",
+      "normalized_query": "c12空输入",
+      "sha256": "11215d46aa674efe3791ac50dac1b2d5b3dd59748c08ccf18dd94e61bc7ad0d8",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "空字符串返回422校验拒绝(非500)",
+      "normalized_query": "空字符串返回422校验拒绝非500",
+      "sha256": "a94d60d82b60d4d33fc7804d646137971f3d08c63a5dd53e3eb277d795e4f890",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C12空输入-纯空白",
+      "normalized_query": "c12空输入纯空白",
+      "sha256": "57eee6ebb4598ab96031cd3ac14b1cd02868d9c960e52d24cf2e2450dbd4ada2",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "给出引导文案",
+      "normalized_query": "给出引导文案",
+      "sha256": "c01b4e7fc450d4a67e9919615b42cb24305854eaa08159adfc220bda2d84eef2",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C13重复请求",
+      "normalized_query": "c13重复请求",
+      "sha256": "26f30b4a96e850a62cec7ac9435a6209c31974a5a26fc37e74a067b8c1910ad4",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "三次均HTTP 200",
+      "normalized_query": "三次均http200",
+      "sha256": "9c1585847f94590edb6366a4996de870b32255a37d78dce1c7c7b565535fc5f6",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "三次answer_mode一致",
+      "normalized_query": "三次answer_mode一致",
+      "sha256": "650223111f4d191789db55358b4b72dccdb4ebeb5fba9eb44699bbc81b6d4d4a",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "三次category一致",
+      "normalized_query": "三次category一致",
+      "sha256": "6d9ab4c5a40c9d7ceac8b828d6fdaa95b02c6f16d5ffeabf56e13177af8cd276",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C15健康检查",
+      "normalized_query": "c15健康检查",
+      "sha256": "82da38612c79fcd637f690b208906aed2f4f96669ee86e15f02146f65939c510",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "deepseek_configured=False(测试隔离)",
+      "normalized_query": "deepseek_configured=false测试隔离",
+      "sha256": "67b0f668d16486ae0d03d474bbfdb90dcaedee4f213059a2e23b83295e0f0fe5",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "不返回Key内容",
+      "normalized_query": "不返回key内容",
+      "sha256": "fe17f1fc6fdbbed8941c6ae74e84e7c5b2c22948c3e42726301a1a619340e86c",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C16就绪检查",
+      "normalized_query": "c16就绪检查",
+      "sha256": "a0265b3a74af7d8f6416673fdf974dc32b0d0cc82825f38812d968f529895dde",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "warmup_ms已记录",
+      "normalized_query": "warmup_ms已记录",
+      "sha256": "e3649ed7f3cd6c645462b9e0b2ee8b24c00ac0beb618a52418ff222d42311576",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "（无资料片段）",
+      "normalized_query": "无资料片段",
+      "sha256": "cc28246cc05d068740c8645228a8f6e1627303ea12cb0f1bf61324c8a01e444d",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "现有资料未覆盖",
+      "normalized_query": "现有资料未覆盖",
+      "sha256": "9f25b07683a7360f4fa8327eb5c0e1dd2c6110ee69961c957a887cada119cbab",
+      "sources": [
+        "v3_1_api_integration_test",
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "双肩包的面料耐磨吗？",
+      "normalized_query": "双肩包的面料耐磨吗",
+      "sha256": "e1aea8ffc8944c58e20ac59e12ebc2fc1663acaffb458b753375f72b7a0907e9",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "耳机的防水等级是多少？",
+      "normalized_query": "耳机的防水等级是多少",
+      "sha256": "b30431b1c267d25fb6d0b1d3ff83c292a44ba3c90188030700a76b785e87c135",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C14强制失败降级",
+      "normalized_query": "c14强制失败降级",
+      "sha256": "dfc89c98c3c3d25cc0937f18ce0a1eee854fe110d6c98619fcb94c260f1f258a",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "C17前端静态",
+      "normalized_query": "c17前端静态",
+      "sha256": "7b448a0bd5da999c03f22ba84202b7b9d15d037016c782e04fe97d0593833679",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "根路径返回HTML",
+      "normalized_query": "根路径返回html",
+      "sha256": "5f01a6adea7240585378afd63b60c983d1bba8730749da0f93827c067ccaf792",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "（frontend目录未挂载?）",
+      "normalized_query": "frontend目录未挂载",
+      "sha256": "d6e2389c723332c1a31002f4f6119715d5798a0f61387da03fb6838bff6995cd",
+      "sources": [
+        "v3_1_api_integration_test"
+      ]
+    },
+    {
+      "query": "检索器测试（阶段三验收，无 API 费用）：\n- 数据一致性检查 8 项；\n- 12 条检索测试（编号/别名/关键词/评分/风险规则驱动，不针对完整句子写死）。\n\n运行：.\\.venv\\Scripts\\python.exe backend\\test_retriever.py",
+      "normalized_query": "检索器测试阶段三验收无api费用数据一致性检查8项12条检索测试编号/别名/关键词/评分/风险规则驱动不针对完整句子写死运行\\venv\\scripts\\pythonexebackend\\test_retrieverpy",
+      "sha256": "2cee03672eb12269939ebc5b6f8c6a8f74ab2f58ed29a6052fc7538895e9b980",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "一、数据一致性检查（knowledge_base.json）",
+      "normalized_query": "一数据一致性检查knowledge_basejson",
+      "sha256": "b5016111040d22cd4e2384818e130a8f0a6e8988536e9f4b6d303630e159bdf9",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "二、检索测试（12条，无API费用）",
+      "normalized_query": "二检索测试12条无api费用",
+      "sha256": "8b18392764584822d89f505d17342435fed7fd43f1a244b52f9cd0afdb270c0b",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "商品编号+续航参数",
+      "normalized_query": "商品编号+续航参数",
+      "sha256": "428813736e930762f58d47a5ef1f48f6a522fc65095817749931f7696a4949ab",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "P001续航怎么样？",
+      "normalized_query": "p001续航怎么样",
+      "sha256": "fe60cb6806012ab5db97db0a378504aa12ec6325408c707fa3a6c4b8ddfc7f3e",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "商品别名检索",
+      "normalized_query": "商品别名检索",
+      "sha256": "c417485464aee6b59ede4558f106dace1116de587b445ac63cda3e2b1d88b1db",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "保温杯多少钱？",
+      "normalized_query": "保温杯多少钱",
+      "sha256": "32166e2d454677f43f586dd8c4d8aab30d61dabe438a39a8da705d42533035c8",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "同句多属性提问",
+      "normalized_query": "同句多属性提问",
+      "sha256": "5ce8d42caa23e7e89893c10a68e70f97e5ec81162bd301d134557ca92921d6c1",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "P002价格、连接方式和保修多久？",
+      "normalized_query": "p002价格连接方式和保修多久",
+      "sha256": "26cd66cba37a9e9514620d1a1d5f39b3f34ae4413f3a1fff498d9e96110f90da",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "订单202609180001查询",
+      "normalized_query": "订单202609180001查询",
+      "sha256": "7fbe7630cd188524fc262d7402895aeb5693993fd428c676c872b9556fab739a",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "查询订单202609180001",
+      "normalized_query": "查询订单202609180001",
+      "sha256": "56ba56f8c10807d5a65dee5ac121ea6e91a96606b3949951e7bd9536a5cf6016",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "订单202609180002退款进度",
+      "normalized_query": "订单202609180002退款进度",
+      "sha256": "edbbafbb77d33b33625cc4e0f39c8a8e3991a31e13c3df5ae674bc0a4eb3accb",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "202609180002退款到哪一步？",
+      "normalized_query": "202609180002退款到哪一步",
+      "sha256": "e5e449399b7c37f62df93f6e9cb99471bc75dd935245dcbfac80b1be29cada1b",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "订单202609180003发货时间",
+      "normalized_query": "订单202609180003发货时间",
+      "sha256": "bcabe291667127ddf1648251245a0edbeb9c9472a2f28ee612c2746c4b8642ea",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "订单202609180003什么时候发货",
+      "normalized_query": "订单202609180003什么时候发货",
+      "sha256": "e391c97dd1ff8f70cbb446328c8cd4712559ab1ebaf08035648f9cce6265e46f",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "不存在的完整订单号",
+      "normalized_query": "不存在的完整订单号",
+      "sha256": "9db4bc654ec9ad7cc9da3e0afd1706e008310c9645f1accf4fae2fb368c07b8a",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "查询订单202609189999",
+      "normalized_query": "查询订单202609189999",
+      "sha256": "3235e8ea58840e4eaca32262617d449b80e79bf65f3513206056b43dc210c840",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "不完整订单号提示",
+      "normalized_query": "不完整订单号提示",
+      "sha256": "cb7270423b9f5abd4776de4fef6f78eff083fd26f7ef96dd03ff4a6d8c2a9f5f",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "帮我查一下20260918",
+      "normalized_query": "帮我查一下20260918",
+      "sha256": "bb61a7807932ed48a7195a5257bed0cf59b2cf2fff6488fc7b1d978d8600a24f",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "商品质量问题",
+      "normalized_query": "商品质量问题",
+      "sha256": "2a4b50c74e1fd7c24c4ac0d93a0c88336e16f95c4f2adc3a3f7f846208a95e8b",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "商品质量有问题怎么办？",
+      "normalized_query": "商品质量有问题怎么办",
+      "sha256": "e894430a124ed8aec46ba3380fc5c12419aa1519c724bd6ccca8308c5f70c0ec",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "退货运费（资料未明确）",
+      "normalized_query": "退货运费资料未明确",
+      "sha256": "9ad4d0ba655d951ffb4aa6af64542db5eb4741c2333526fc6ea4d3a1073b3ebd",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "退货运费由谁承担？",
+      "normalized_query": "退货运费由谁承担",
+      "sha256": "706dae0967bcf3fe88eead6961d3f905b72ce8dbb5335a34dd2eab86d09580f5",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "投诉三倍赔偿（风险规则）",
+      "normalized_query": "投诉三倍赔偿风险规则",
+      "sha256": "3f19d916238e189a084fd853ffe4ea0e89d47aa284b95b663718f3dafc0769b5",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "我要投诉并要求三倍赔偿。",
+      "normalized_query": "我要投诉并要求三倍赔偿",
+      "sha256": "e0e93ecd001fd33c076407015c05e5d80b4c3510373024b6a2f2415bc668b066",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "无关问题（资料未覆盖）",
+      "normalized_query": "无关问题资料未覆盖",
+      "sha256": "adb3249a6e6002364aa2b000f46c71e119d1ac5ec6181bb9c1eb0f355ead9e9e",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "今天天气怎么样？",
+      "normalized_query": "今天天气怎么样",
+      "sha256": "b275115781d4bf41acaa3817efbbb9067a164c732f440bcbb7d42a1c106b18d3",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "三、测试汇总",
+      "normalized_query": "三测试汇总",
+      "sha256": "b8e747927d6916e6fec7e542b219ebc768a8839fbd66cab691ef812ad57e3765",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "是否调用DeepSeek: 否（纯本地检索，无API费用）",
+      "normalized_query": "是否调用deepseek否纯本地检索无api费用",
+      "sha256": "339b4f52028cd3c104ba405a1267ce7c665f48919228d42aaecec26c13ecefbd",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "unit_price × quantity = amount（3笔全部成立）",
+      "normalized_query": "unit_price×quantity=amount3笔全部成立",
+      "sha256": "9697ad336580538636710d23691d3b1397b23b58bae76217770c0e179add6fa0",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "订单商品编号均可关联到商品",
+      "normalized_query": "订单商品编号均可关联到商品",
+      "sha256": "4f477477b66d236781cd9a76c12f7539684ca9b9937d21384d1a685dac05a480",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "所有记录 source 均不为空",
+      "normalized_query": "所有记录source均不为空",
+      "sha256": "7a6b3ee673f853b23dda551a52c402ca1950245548dfc4c195a28046d7e1c4bd",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "JSON 正常解析",
+      "normalized_query": "json正常解析",
+      "sha256": "44f96906e4081daa57670bd932ad90043c12c46b9733671aba32e8195c274e29",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "不包含真实 API Key（无 sk- 凭据格式）",
+      "normalized_query": "不包含真实apikey无sk凭据格式",
+      "sha256": "f7550efe7a74f217738111ae7e756d53dd6c567aa81d7544b7882d86a7e952a4",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "一致性检查:",
+      "normalized_query": "一致性检查",
+      "sha256": "f90e8d8c10d77fa8ce34d99dd3bc58407faf5be6fe0a835e6952e3099410a355",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "（应=12）",
+      "normalized_query": "应=12",
+      "sha256": "5430633f226de82c12bf4614cf68e719fbc3376488f0c5d14ce8f2a21c72101e",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "数据一致性检查:",
+      "normalized_query": "数据一致性检查",
+      "sha256": "7323efd3bf6dad13596f6b996a89af4a784e10af139e8548c3a9c90825bc3283",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "商品数量=5（实际",
+      "normalized_query": "商品数量=5实际",
+      "sha256": "457e3b671b1612b91285acc703bd68d7f30accc099b930e45ec0b73d0812ea2a",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "FAQ数量=20（实际",
+      "normalized_query": "faq数量=20实际",
+      "sha256": "dd9a9a6f949e2a11eae63ede30249a168673e39b72b0c1f1e3aa312b0a2309f7",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "订单数量=3（实际",
+      "normalized_query": "订单数量=3实际",
+      "sha256": "f1f25609ea2861fcdb885a6f51acaaec8f77a2a031c4332da14cf96e2880d905",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context摘要:",
+      "normalized_query": "context摘要",
+      "sha256": "2eae6b0c2ad512f8cb9e4c07e4a329f4c2acafc292e8d23a2a601689199d7b72",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "sources=《商品资料》P001",
+      "normalized_query": "sources=《商品资料》p001",
+      "sha256": "893a54693b8075b1a82be28b5b1e09164b011692d0341daa9d55a3b585bc59be",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context含单次/综合续航",
+      "normalized_query": "context含单次/综合续航",
+      "sha256": "1466b3aef1cc4c2ab25bdb180d39929fe2850b3370ecd3564ee6b14638519037",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "不需要转人工",
+      "normalized_query": "不需要转人工",
+      "sha256": "cff8b34231a626b39335c6d72eb778b72db007fbfeffef62c59d9a73f0e34e6d",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "match_type=product（经别名'保温杯'命中）",
+      "normalized_query": "match_type=product经别名保温杯命中",
+      "sha256": "43f40c9a19251a27190d77a0191ea23fe7598c5cb7198a2a5d924c04107bf33e",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "matched_ids=[P003]（未误匹配其他商品）",
+      "normalized_query": "matched_ids=[p003]未误匹配其他商品",
+      "sha256": "3db8cb510d6da36692db4a9203817084c5a3779141d93517acbf843f8b6cd9e2",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context含售价88元",
+      "normalized_query": "context含售价88元",
+      "sha256": "5a78c88d3daf3d5b34dd8eba84c475eb02225f5fce79140beb8db85385bee214",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context同时含售价/连接方式/保修期限三项",
+      "normalized_query": "context同时含售价/连接方式/保修期限三项",
+      "sha256": "57cd895682b1b1ba8289ab4b1d956a8b68038070bdfc9f33ff24fb00ab0fef65",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context含已发货/运输中",
+      "normalized_query": "context含已发货/运输中",
+      "sha256": "c5036030546cbe937fc151222a733a872f82554569ce4a534a90cb7b75537acb",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context带来源标签",
+      "normalized_query": "context带来源标签",
+      "sha256": "781544b0ba4bf9b08d862e2a847c593ba338d0425e0d24dfdce44fe1c59cf1ae",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "纯查询不需要转人工",
+      "normalized_query": "纯查询不需要转人工",
+      "sha256": "56ff7cd968e48615d922b07812f11c375e949def5b80ad4a6c7ec5947b7717fe",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context含已完成/已签收/退款审核中",
+      "normalized_query": "context含已完成/已签收/退款审核中",
+      "sha256": "9ef45f36a937c398d565cc28459eb0e57ea39bf51617cc5b91b12cdfca07e118",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context含进行中售后申请提示",
+      "normalized_query": "context含进行中售后申请提示",
+      "sha256": "efa17e587faa163ffb4c4d2c23ff8957e84106a52ea17368f493e33349cc775d",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "仅查询退款进度不强制转人工",
+      "normalized_query": "仅查询退款进度不强制转人工",
+      "sha256": "6d657d6ad3f16fd989b6e4a3817896b139f088b35af88727df80517b9354483e",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context含待发货",
+      "normalized_query": "context含待发货",
+      "sha256": "68c1db93643e0b55687bd12c2d94b077a0aafd5f5948acd4da5ff7e7797b0207",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "明确返回未查询到该模拟订单",
+      "normalized_query": "明确返回未查询到该模拟订单",
+      "sha256": "06baab27061e4ee3e00309f9b35a72124982d8835a365356d8380d6c381dfbfb",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "未模糊匹配到任何现有订单",
+      "normalized_query": "未模糊匹配到任何现有订单",
+      "sha256": "51b07b23ab2de42b681020c0111d3097d948fb6f01f7796c9c342901eaa98917",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context声明不得编造",
+      "normalized_query": "context声明不得编造",
+      "sha256": "92e55f80160807b2598fe20c2d380ecec4da28957c8d04459d143d9b4249d0e7",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "提示提供完整12位订单号",
+      "normalized_query": "提示提供完整12位订单号",
+      "sha256": "5b2dd7555dec75d3a3dc1febf200784fdd0bb60d5414ca10b5c4de53caf05fc1",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "未匹配到其他订单",
+      "normalized_query": "未匹配到其他订单",
+      "sha256": "dcc5503bc42c1da21758cd30f327342129f8f2aab9b907a302ac95e1c6d0c3c4",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "低风险不需要转人工",
+      "normalized_query": "低风险不需要转人工",
+      "sha256": "29ef5a4189b76c186c8e808eb08ea442af879afb2a471d8736adab836d8c28f5",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "命中FAQ-014",
+      "normalized_query": "命中faq014",
+      "sha256": "615f9fb98baef7e9126fb2bb6d44733c730a3818615b29b1cec79bf72d4778b6",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "质量问题需人工核验凭证，建议转人工",
+      "normalized_query": "质量问题需人工核验凭证建议转人工",
+      "sha256": "e9a3d2c5c799586424bb02b3e1a19931ab5e11da408621792c51eb400293753a",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "sources含《售后SOP》质量问题处理",
+      "normalized_query": "sources含《售后sop》质量问题处理",
+      "sha256": "53cc51d9e8fdfa80d8c6e42610c5241f71d71926f75b0beea2adde120223c056",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context含提交材料口径",
+      "normalized_query": "context含提交材料口径",
+      "sha256": "64ef5109478e76bd7b335bc462f91161fbb3ad14f93f2467f487dfe2eeebf3a3",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "命中FAQ-017",
+      "normalized_query": "命中faq017",
+      "sha256": "a61542a55c478259fff2f7c6227c0bd77a44776127127d878c153f2d51104e6d",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "资料无明确规则依据→转人工",
+      "normalized_query": "资料无明确规则依据→转人工",
+      "sha256": "00c5ec23676b479ff179028cd5d061888eeb2a72dc6e373f2b5302a6642f012b",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context说明资料未明确运费规则",
+      "normalized_query": "context说明资料未明确运费规则",
+      "sha256": "dd6c5e2c728a8e475426fb0bcc5e29bdebe4d2e2c61fe266a8a6b13f6ef7a58f",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context片段带来源标签",
+      "normalized_query": "context片段带来源标签",
+      "sha256": "6d1b39b2f0dadbd3c1f01c88375af39e93605bde1c965a0b3954e620cd39cf02",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "命中风险规则（HR-xx）",
+      "normalized_query": "命中风险规则hrxx",
+      "sha256": "b34cec0981bdc73c1d80841a62dafda086b8ce5e221868b4d5b7ab6617c23cdb",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "sources含《售后SOP》必须转人工",
+      "normalized_query": "sources含《售后sop》必须转人工",
+      "sha256": "ac1f50c712e17fd6f5aa60dc72441dd1f3a8e42f884a4c43b25eabbeaaca301c",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context声明AI不作赔偿承诺",
+      "normalized_query": "context声明ai不作赔偿承诺",
+      "sha256": "0420399b7accf16279f699cdc84d2a5037dea0658ce9312b811ba06f05e9ad63",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "matched=false且match_type=none",
+      "normalized_query": "matched=false且match_type=none",
+      "sha256": "65dac2fb3425c93907000915bb67c231db06be043ae3c01ddf9da6313a087cab",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "sources=[现有资料未覆盖]",
+      "normalized_query": "sources=[现有资料未覆盖]",
+      "sha256": "0a4669ee8ce85e7fc651d81535155d2e1b63170f5dd62b3b0edebd649f57790c",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "context说明不得编造",
+      "normalized_query": "context说明不得编造",
+      "sha256": "2c0b8d0716af5ba336d53846202b60db3c86ba35672f7b7bed54e20547b28e9d",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "知识库无明确依据→转人工",
+      "normalized_query": "知识库无明确依据→转人工",
+      "sha256": "15a92e92255b18bff39258b2478ad64b8faff6203b7248c8018539ea1a4100df",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "[来源：《模拟订单数据》订单202609180001]",
+      "normalized_query": "[来源《模拟订单数据》订单202609180001]",
+      "sha256": "9e404b7a8ba9ee8943b0557750ef8f073bac4a27caf43addfab59ff26aa12b88",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "存在进行中的售后申请",
+      "normalized_query": "存在进行中的售后申请",
+      "sha256": "5b67206423e92e825aa7611500d2492ffbae29518f36de90a9d4d843f9bd3f13",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "未查询到该模拟订单",
+      "normalized_query": "未查询到该模拟订单",
+      "sha256": "1e68811c8c7b45940b3c577df33b687de084dbc233fa4dbd9aade1cba7361f8b",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "现有资料未明确",
+      "normalized_query": "现有资料未明确",
+      "sha256": "6ea2b4f0ae40aa50da8a7d586f266047b77005ab7dcb8fc10e32603eebea2314",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "订单状态：已发货",
+      "normalized_query": "订单状态已发货",
+      "sha256": "0aa47ef44d87e5686b51ec82b8844533353dfe6959c128553d0c87aacef20d08",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "不得直接承诺",
+      "normalized_query": "不得直接承诺",
+      "sha256": "66bc54b1d43a2fc8f09c34121127e0507ca6bccfd02909bc1b0451b0368d2b87",
+      "sources": [
+        "v2_retriever_test"
+      ]
+    },
+    {
+      "query": "V3.1 延迟顺序测试：验证延迟统计的\"首次调用\"语义与预热效果。\n\n1. 合成数据单测：_latency_summary 的 first_call 必须取原始顺序第一条（含冷启动），\n   P50/P95 用排序副本计算，excluding_first 先移除真实第一条再排序（旧版缺陷回归测试）。\n2. 实测：hybrid_search_v2 首次调用（含模型加载）应显著慢于预热后的调用。\n运行：项目根目录下 .venv\\Scripts\\python.exe backend\\test_latency_order.py",
+      "normalized_query": "v31延迟顺序测试验证延迟统计的首次调用语义与预热效果1合成数据单测_latency_summary的first_call必须取原始顺序第一条含冷启动p50/p95用排序副本计算excluding_first先移除真实第一条再排序旧版缺陷回归测试2实测hybrid_search_v2首次调用含模型加载应显著慢于预热后的调用运行项目根目录下venv\\scripts\\pythonexebackend\\test_latency_orderpy",
+      "sha256": "0064d844d36b2f845544b8b6c5f7db92dc95774d0b2f4e16060b88d54eb12087",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "first_call取原始顺序第一条(非最小值)",
+      "normalized_query": "first_call取原始顺序第一条非最小值",
+      "sha256": "413da92fdbb9376485fd2247dc035ea60640f9d99eb81f3799c622abf45126d9",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "p50基于排序副本",
+      "normalized_query": "p50基于排序副本",
+      "sha256": "606e9e0e5979c43804eaca14c1da39a4456d0398e6b3af539b0fdff9fb540ddb",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "excluding_first后p95显著低于first_call",
+      "normalized_query": "excluding_first后p95显著低于first_call",
+      "sha256": "4a9e7bef68ccaad51dc6b6b4ef3bbb85035020bad4cd5ca305e22b818ef6c8c9",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "excluding_first移除真实首条",
+      "normalized_query": "excluding_first移除真实首条",
+      "sha256": "61903c39826248d9200fac00e46d460a7884187449ce51bcf28735585089388d",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "max等于真实首条",
+      "normalized_query": "max等于真实首条",
+      "sha256": "fb823657e61306daecc6fa7913d14fc70ac0552aa2ade6902fc4202d4fbe4097",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "回归:首条=800而非min=3",
+      "normalized_query": "回归首条=800而非min=3",
+      "sha256": "e02bb489df1f7fea7d2fb724525a22574c0780e057e70434e7dd67c87a2ce2c1",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "空列表不崩溃",
+      "normalized_query": "空列表不崩溃",
+      "sha256": "3be9582ca92eaa85a3dd7b15335ccec6a083e2097ee2a9ca87d187468482b7e6",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "杯子到手就有裂痕要退款",
+      "normalized_query": "杯子到手就有裂痕要退款",
+      "sha256": "038a5ff7c90541f6db4044dc2663e142cb7eab07cc3153e646b39e873d750274",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "退款多久到账",
+      "normalized_query": "退款多久到账",
+      "sha256": "935d4282ad3f6add2ce76a5e6d79abb1f654f39c66cc5b4cde35ad509f250cb9",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "书包侧面能装下16寸电脑吗",
+      "normalized_query": "书包侧面能装下16寸电脑吗",
+      "sha256": "30e81d47cc580bcae3696899d4c85a2de67dc2cccce35f67faed4e4544e4787e",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "耳机用了没几天就没声音了",
+      "normalized_query": "耳机用了没几天就没声音了",
+      "sha256": "43bea0c584244a5a010271fddd3d8f118543d64d2e05df41bad246ad690a31ec",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "实测first_call为原始顺序第一条",
+      "normalized_query": "实测first_call为原始顺序第一条",
+      "sha256": "24eadcf76ddbe8c868210c1ab08e6638669beca42dbaa3dbf075510e12376c08",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "实测首次调用显著慢于预热后(>=3x P50)",
+      "normalized_query": "实测首次调用显著慢于预热后>=3xp50",
+      "sha256": "325f21d8b54b7b88c82af380b97fb0db59e1b3409c83cac38caaec2d526b5e59",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "延迟顺序测试:",
+      "normalized_query": "延迟顺序测试",
+      "sha256": "612b9bfac413132f13c1b0eaa3eef7ae9be156df8395f6d1c9ef4ac20b794662",
+      "sources": [
+        "latency_test"
+      ]
+    },
+    {
+      "query": "V3.1 调试：dump validation 失败用例的分析与检索链路（只读诊断，不改任何资产）。",
+      "normalized_query": "v31调试dumpvalidation失败用例的分析与检索链路只读诊断不改任何资产",
+      "sha256": "e09b930f08bee58fa71278848faf8079d2ffed4aef42f681f38497738e34cb53",
+      "sources": [
+        "v3_1_debug"
+      ]
+    },
+    {
+      "query": "V3.1 调试2：dump 规则用例保留位介入前的自然融合序。",
+      "normalized_query": "v31调试2dump规则用例保留位介入前的自然融合序",
+      "sha256": "266d169161a37a745cc99850f1e72f6a61d61ab769b16391e7dc17fbc917f941",
+      "sources": [
+        "v3_1_debug"
+      ]
+    },
+    {
+      "query": "V3.1 调试3：开发集规则用例自然序 + DV-018/046 双路明细。",
+      "normalized_query": "v31调试3开发集规则用例自然序+dv018/046双路明细",
+      "sha256": "5bd59f3aa5aa41f87ce786473a35ab3ce1e5f976de46f28e4aea0060c3104b17",
+      "sources": [
+        "v3_1_debug"
+      ]
+    },
+    {
+      "query": "----- 按 doc_type -----",
+      "normalized_query": "按doc_type",
+      "sha256": "940f007851e7650464c09a664af978723b6e56b32926476006716013eb01499c",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "----- 无关问题最高相似度（拒答阈值依据，不设固定阈值）-----",
+      "normalized_query": "无关问题最高相似度拒答阈值依据不设固定阈值",
+      "sha256": "67d28480d6c243a30b507a4cbc319c27df201ffef934a21f174193bdc0cfe9bc",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "规则片段 retrieval_text 优化后的评测结果（含每条用例Top-3与最终指标，对比基线见 vector_eval_baseline.json）",
+      "normalized_query": "规则片段retrieval_text优化后的评测结果含每条用例top3与最终指标对比基线见vector_eval_baselinejson",
+      "sha256": "201bcb35a6721b81763977684fdc9555e3d80912dd8ea977380a7fa8ee92c1a4",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "V3.0 向量检索评测（",
+      "normalized_query": "v30向量检索评测",
+      "sha256": "2173e90b5e11c8ffbcd6e169e5348de191766be2c10d06d21dcc6d0d955409c9",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "条用例，top_k=",
+      "normalized_query": "条用例top_k=",
+      "sha256": "d2c360c00fca3ddf99b4a5cce06963bc7579aacde03ccad42506a5ca8c0d1004",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "，规则retrieval_text优化后）",
+      "normalized_query": "规则retrieval_text优化后",
+      "sha256": "7dc3338722b9f26bcebc06b915bc0aa1ec164d8515b64de25274a4e388c2e003",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "----- 总体指标（仅可回答问题，n=%d）-----",
+      "normalized_query": "总体指标仅可回答问题n=%d",
+      "sha256": "23639d8c7b12e945233214ce341fe64ab50d8701cfddb72de97196ca252a5ec0",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "(目标>=80%",
+      "normalized_query": "目标>=80%",
+      "sha256": "e25e24cd00b3ec1989b91d163c00066995aac9a74c950d26be0be52c4cf08a86",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "(目标>=90%",
+      "normalized_query": "目标>=90%",
+      "sha256": "4e5d51f1462546cbe92ca595be12771ee0cbba2e37dad53656e9b32fca55191b",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "无关问题最高相似度: max=",
+      "normalized_query": "无关问题最高相似度max=",
+      "sha256": "e9b0be9c8e7251ab0740918325621d2ee1a0ea28fa865cd319685210cde542ec",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "----- 优化前后对比 -----",
+      "normalized_query": "优化前后对比",
+      "sha256": "fe7d8084bbe2ca14c331b808cc6897d938ad374ff3c0d3049d231c169ecf7a48",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "after 结果已写入:",
+      "normalized_query": "after结果已写入",
+      "sha256": "36f6faa58cc8dbbd1549cec0945c3a6a0c01b332e995fdf629c4c74913e3fbbc",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "达到目标参考线",
+      "normalized_query": "达到目标参考线",
+      "sha256": "81236926c14b185e6322870b298898795e05f41631873ba08a4b1d2692bea30e",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "未达目标——仅报告失败原因，不调参不泄漏",
+      "normalized_query": "未达目标仅报告失败原因不调参不泄漏",
+      "sha256": "fb7ffb69b3bb393a2af314bcee3af9d9864e5494b7a6e57a5855682985edc8e0",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "(目标=100%",
+      "normalized_query": "目标=100%",
+      "sha256": "26bbc8f126d6bb2922d2035d378a7e5199b1aeb69eb2cdec988bb296fb1aa48d",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "无关问题最高相似度:",
+      "normalized_query": "无关问题最高相似度",
+      "sha256": "cc7692a50a40211dfa801ff410de1d766f5d40eed7984ce41a4ef997f5363cbc",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "Rule Recall@3（必需规则进Top-3）: ->",
+      "normalized_query": "rulerecall@3必需规则进top3>",
+      "sha256": "b3fc4a39166f6dfb6da6134dfb993b5ffe5c31ec31a1e467b9fd6a1428c6d3a5",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "-> 本次首个relevant rank=",
+      "normalized_query": ">本次首个relevantrank=",
+      "sha256": "e97b522d02086697c6ca04cc28714008f772f8ba47b0c76af7a09dcb5ebe08ed",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "| 必需规则进Top3=",
+      "normalized_query": "|必需规则进top3=",
+      "sha256": "d33584d09bd19e0a3e194a9cc27ffe29fc51ff886e0f108b8fea0a67b86d712d",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "回归检查: before Hit@1=",
+      "normalized_query": "回归检查beforehit@1=",
+      "sha256": "3b23dbb53fcd8057998b49f62e2958c1c3dfcd2f520d5fa0a56f782dc8810ecb",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "] 无关问题 Top1:",
+      "normalized_query": "]无关问题top1",
+      "sha256": "d585c6fd04a4d607f4037f85a908ddb26598972d41839dcc566fde3956c5853e",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "] 无关问题 无结果",
+      "normalized_query": "]无关问题无结果",
+      "sha256": "a0e97f30aab53bc2cc9d5ea590c57677bf617b0a0dbbff2d5eeb930e90c1e430",
+      "sources": [
+        "vector_retrieval_test"
+      ]
+    },
+    {
+      "query": "V3.0 向量 RAG 技术栈验证脚本（本阶段仅验证，不构建正式知识库，不调用 DeepSeek）。\n\n验证内容：\n1. 本地加载中文 Embedding 模型 BAAI/bge-small-zh-v1.5（首次运行从官方仓库下载）；\n2. 生成向量并检查维度一致性、NaN/无穷值、语义相似度排序；\n3. Chroma PersistentClient（data/chroma_test）写入 3 条测试文档；\n4. 查询 Top-1 命中退款文档；\n5. 重建客户端后验证持久化。\n\n运行方式（项目根目录 09_V3_Vector_RAG 下）：\n    .\\.venv\\Scripts\\python.exe backend\\test_vector_stack.py\n\n约定：\n- 文档片段生成向量时【不加】查询指令前缀；\n- 用户查询生成向量时加前缀：\"为这个句子生成表示以用于检索相关文章：\"（bge 官方约定）；\n- 模型仅从 HuggingFace 官方仓库下载，失败即报错停止，不静默替换其他模型；\n- 不读取、不输出任何 API Key。",
+      "normalized_query": "v30向量rag技术栈验证脚本本阶段仅验证不构建正式知识库不调用deepseek验证内容1本地加载中文embedding模型baai/bgesmallzhv15首次运行从官方仓库下载2生成向量并检查维度一致性nan/无穷值语义相似度排序3chromapersistentclientdata/chroma_test写入3条测试文档4查询top1命中退款文档5重建客户端后验证持久化运行方式项目根目录09_v3_vector_rag下\\venv\\scripts\\pythonexebackend\\test_vector_stackpy约定文档片段生成向量时【不加】查询指令前缀用户查询生成向量时加前缀为这个句子生成表示以用于检索相关文章bge官方约定模型仅从huggingface官方仓库下载失败即报错停止不静默替换其他模型不读取不输出任何apikey",
+      "sha256": "5f06b1f3f9163c34d2c38a47b00d9b3b8c2fdb55b4a80d098801d4bf8a738669",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "为这个句子生成表示以用于检索相关文章：",
+      "normalized_query": "为这个句子生成表示以用于检索相关文章",
+      "sha256": "2bb658b7e092d6b4b1dbde4c3fc5f281f9ed9f1ace5b49566fb8b10f57836e48",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "退款一直没到账怎么办",
+      "normalized_query": "退款一直没到账怎么办",
+      "sha256": "b5d7d81f50a48f8d54abe2873609954d9ea4f42bbc2cfe72639739590d35e04b",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "V3.0 向量 RAG 技术栈验证",
+      "normalized_query": "v30向量rag技术栈验证",
+      "sha256": "c1f0a60e067b2167be907e5c1c607124f172de9f4e32877accbff9c76cbad57a",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "模型加载成功",
+      "normalized_query": "模型加载成功",
+      "sha256": "9b8269202b14e920c72bf4040f104352cb1746dced3b6d5983389427d905d0c4",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "我的退款什么时候到账",
+      "normalized_query": "我的退款什么时候到账",
+      "sha256": "a06779724952bf0f490de2ba392c3c3f331de71a50baf929fcb1c60e428aa9e2",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "退款进度一直没有更新",
+      "normalized_query": "退款进度一直没有更新",
+      "sha256": "89714c240fae6ac56300a901e3661f9c24a48422babb386ced3f0a234154e3f0",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "北京今天会下雨吗",
+      "normalized_query": "北京今天会下雨吗",
+      "sha256": "691ce673dacc2ce0a257059225e8be98382fafa3223666828654a2bf5a26f317",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "[2] 生成测试向量（文档片段不加查询指令）",
+      "normalized_query": "[2]生成测试向量文档片段不加查询指令",
+      "sha256": "0444f9a6ed38acb97eb704b840abe483b65ce4ba6b9f51a5a831638d1bae13d6",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "成功生成3个向量",
+      "normalized_query": "成功生成3个向量",
+      "sha256": "2f8eaeaaab9e33cf61b0cb86644b55131d7e66de60173195ff3d295d571c3d2e",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "向量维度一致",
+      "normalized_query": "向量维度一致",
+      "sha256": "924fac5c6bf182a42729049b67f035d043381f613017e7a36da8890cd6c55eaf",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "无NaN和无穷值",
+      "normalized_query": "无nan和无穷值",
+      "sha256": "36e4ac4f38465f14f1ec685845b66e5057143de893c9d1579386b37fde124e9b",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "退款问题间相似度高于退款与天气",
+      "normalized_query": "退款问题间相似度高于退款与天气",
+      "sha256": "37a5d1961aaa0917f6cdf5aabca77e6fcf683db4cfd587ddac1b5631972045b8",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "Chroma写入3条文档",
+      "normalized_query": "chroma写入3条文档",
+      "sha256": "1edf5c506670b3e713dda987cf461c3cd9750e095cc614e673bc4670806d17f3",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "metadata包含source/type/doc_id",
+      "normalized_query": "metadata包含source/type/doc_id",
+      "sha256": "f8f6ab0e8b4d80d8856443d3b5cefe6456719a896f042b3294aa9fc0527f0c5c",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "Top-1命中退款进度处理",
+      "normalized_query": "top1命中退款进度处理",
+      "sha256": "6a020cdde6c214eec13a7aa73fd046da5e419b9776cea5e668baa21319864136",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "[6] 重建客户端验证持久化",
+      "normalized_query": "[6]重建客户端验证持久化",
+      "sha256": "62b8340f478dbc1c7ba0c32390f4fb61a20c546a71151ad510876a5e28f1186e",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "重启后collection和数据仍可读取",
+      "normalized_query": "重启后collection和数据仍可读取",
+      "sha256": "27f4db94ac19afb11d596ca7db0464c036de10026c58e64f4ea6279b59e0a094",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "本阶段仅为技术栈验证：未构建正式知识库，未调用 DeepSeek。",
+      "normalized_query": "本阶段仅为技术栈验证未构建正式知识库未调用deepseek",
+      "sha256": "17919cb5b4768ecc77d85f09086aaae6a228dfcf2923a8714d5ca058081a6daf",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "[1] 加载 Embedding 模型:",
+      "normalized_query": "[1]加载embedding模型",
+      "sha256": "9af2727239284a4f2accae039f6239db11849711b2897f7a4af059b279bdb0e6",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "（首次运行将从官方仓库下载）",
+      "normalized_query": "首次运行将从官方仓库下载",
+      "sha256": "1b74b94da18b0a4ba12e6d084c2a01c7601fb2ef95f7e7ae92e689c37e25e337",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "异常值数量=",
+      "normalized_query": "异常值数量=",
+      "sha256": "82181251573a2c0a4915547247f293402055d72ff8f2e4673f45bcde4de6b6ae",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "[3] 相似度：退款1×退款2=",
+      "normalized_query": "[3]相似度退款1×退款2=",
+      "sha256": "5718edc7ae0d9fa4d2699d26f69afecc93040dcbcc09843328c61c0a3f527e41",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "| 退款1×天气=",
+      "normalized_query": "|退款1×天气=",
+      "sha256": "557ab2c393d22da119cc1feff7ebf557ae9422ec7be4324c3d1a1c9e45c29191",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "| 退款2×天气=",
+      "normalized_query": "|退款2×天气=",
+      "sha256": "b34cadec7b18edf45876ba9b2d203a7e3e268340cacc9fcf87fcb8c33dc8727f",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "[4] 创建 Chroma PersistentClient:",
+      "normalized_query": "[4]创建chromapersistentclient",
+      "sha256": "4dcd7295ab03c641d23df3f15034580c0b2197076f61439af446c7048d0410ab",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "商品续航说明：SoundGo Air无线蓝牙耳机单次续航约7小时，配合充电盒综合续航约28小时。",
+      "normalized_query": "商品续航说明soundgoair无线蓝牙耳机单次续航约7小时配合充电盒综合续航约28小时",
+      "sha256": "54e86302cb7b6e21a1d3bcbcc7bf2d2b6868e50115d343abde1b953b2d9c4509",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "物流异常处理：物流长时间未更新或显示签收但未收到，需联系承运方核实并登记补发流程。",
+      "normalized_query": "物流异常处理物流长时间未更新或显示签收但未收到需联系承运方核实并登记补发流程",
+      "sha256": "99e679dee3343db7912ad99300d483241d7ee51ba9fdc6f5c7547b4029d0bc6e",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "[5] 查询:",
+      "normalized_query": "[5]查询",
+      "sha256": "69bd045e33bd2ebb95c2061758628165e43df23c5f95b1d044b27693cf20a40b",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "（查询向量加 bge 官方检索指令前缀）",
+      "normalized_query": "查询向量加bge官方检索指令前缀",
+      "sha256": "288fc27c074eaf2baab55e0b72aed0b7cedaeb36d5035625a6bb2dbcf189f3d9",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "售后SOP-测试",
+      "normalized_query": "售后sop测试",
+      "sha256": "4d50c075dfbafd9cc85c3bff6ba26e67ae220793fd0e6eefe4d8e615932dd5e5",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "商品资料-测试",
+      "normalized_query": "商品资料测试",
+      "sha256": "285319f101c4e01d335a46fd60a31fb0ac4c67578041a5cb81df75260cf97d69",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "[STOP] 模型加载/下载失败，按要求停止，不替换其他模型:",
+      "normalized_query": "[stop]模型加载/下载失败按要求停止不替换其他模型",
+      "sha256": "5db90580400ae28083a73b58178b02b0eb30d043bc3d990cfd8930810f1e3702",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "| Chroma写入:",
+      "normalized_query": "|chroma写入",
+      "sha256": "2792ab37183e73d12aa85101ec08a0b3c8ea163570252b9262c1a0cd6b9cbcde",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "| 相似度(退款×退款, 退款×天气):",
+      "normalized_query": "|相似度退款×退款退款×天气",
+      "sha256": "464cf41537ed49cb88d2c67651151c6f5421a970d0f5c825d4afec59434aa5f2",
+      "sources": [
+        "vector_stack_test"
+      ]
+    },
+    {
+      "query": "周末想去吃火锅，附近有什么推荐的餐厅吗？",
+      "normalized_query": "周末想去吃火锅附近有什么推荐的餐厅吗",
+      "sha256": "dc4884fdc0cae76ad3a2c59a2253e26504500e5fe953526325e3fd784226968e",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "推荐几部好看的太空科幻电影呗。",
+      "normalized_query": "推荐几部好看的太空科幻电影呗",
+      "sha256": "2cd369714aa4e9a5b6ba49ef649ccd68e146e779d26d736b497a48ca6c9d2f1a",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "明天A股开盘会涨还是会跌？",
+      "normalized_query": "明天a股开盘会涨还是会跌",
+      "sha256": "fbb3e497381a52c9e1cc30f74be563aa60a2e9e611e28dbe8a0f7a75dd9dddd7",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "买来的蓝牙耳机充满电大概能用多少个小时？",
+      "normalized_query": "买来的蓝牙耳机充满电大概能用多少个小时",
+      "sha256": "506cfb2c862263d478e9f4566a2b5ec97ac7dd8c7a40c0219f05d3643a6293b1",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "这款87键的键盘多少钱，平时能用蓝牙连电脑吗？",
+      "normalized_query": "这款87键的键盘多少钱平时能用蓝牙连电脑吗",
+      "sha256": "1dc4e9ff943d86b4817c86fb507aaa27f25c9452c4cabc3ceda160877524f6fd",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "不锈钢内胆的水杯最多能装多少毫升的水？",
+      "normalized_query": "不锈钢内胆的水杯最多能装多少毫升的水",
+      "sha256": "c405710a1f3cb979973fbd5a51835b5d4a5844f0fb06caa69f32cd6f17b0bb3d",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "背包的电脑隔层最大可以放进多大的笔记本？",
+      "normalized_query": "背包的电脑隔层最大可以放进多大的笔记本",
+      "sha256": "7f03e0d189ac28b9cb2760d8df0a3e17b5ab0706f23ab3c1c5fff2bc3ef4654b",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "晚上写作业用的那盏灯能调几档亮度？",
+      "normalized_query": "晚上写作业用的那盏灯能调几档亮度",
+      "sha256": "3a6628d90c359f703d9b4b734b3bf92a3a1fa21c0c979492a37cb3a2b16b474b",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "洗澡的时候能顺便戴着这个耳机听歌吗？",
+      "normalized_query": "洗澡的时候能顺便戴着这个耳机听歌吗",
+      "sha256": "51789f8ef923b64ac05cabbb2b9febf2c8391b51cc90a637ba95e7b3d7a43c41",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "刚拆开包装的耳机不想要了还能退吗？",
+      "normalized_query": "刚拆开包装的耳机不想要了还能退吗",
+      "sha256": "2a246a410c201ccfb20cc046d5c4b05042a2fcd89be99a15b715ccf012196fef",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "东西显示已经签收了但我根本没拿到货怎么办？",
+      "normalized_query": "东西显示已经签收了但我根本没拿到货怎么办",
+      "sha256": "7e49ca54ca58bc4c4d71d5e3938e8024c8f8321d92be205ea3cbf4655f4942ab",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "钱都付了怎么订单还显示待付款？",
+      "normalized_query": "钱都付了怎么订单还显示待付款",
+      "sha256": "e4c8587c5d151fe3d6bc8497ecc896660ae1000b4647a79cdafa476cb17480ca",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "退货寄回去的邮费要我自己出吗？",
+      "normalized_query": "退货寄回去的邮费要我自己出吗",
+      "sha256": "4e6fe1b7ea024009b1e864ee22c4b3186eef3d40f0950033eaddb72be48cc417",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "你们这店太坑人了，我直接打315投诉到底！",
+      "normalized_query": "你们这店太坑人了我直接打315投诉到底",
+      "sha256": "0177967dc5ccf23bafc0ef1a2d1cd5bd55ce83688b0142d7615387943f669609",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "系统重复扣款了，多扣了一次钱必须给我处理。",
+      "normalized_query": "系统重复扣款了多扣了一次钱必须给我处理",
+      "sha256": "3294682c0b2d2258a3073726411a531bc85fe9b312d14293dce2879c0a4eb362",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "包裹都两天没物流了，一直卡在原地不动。",
+      "normalized_query": "包裹都两天没物流了一直卡在原地不动",
+      "sha256": "89365a84c6c7943cf8cf71add4b25bbb266943d795d16513dd7471f92dac41f7",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "帮我看看我同事下的那笔订单到哪了？",
+      "normalized_query": "帮我看看我同事下的那笔订单到哪了",
+      "sha256": "3d4aa9e479b62872175d7fc55e39da88a79c9476bd469d1a2f6828f877d27e54",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "耳机已经开封用过一次了，还能不能申请七天无理由退货？",
+      "normalized_query": "耳机已经开封用过一次了还能不能申请七天无理由退货",
+      "sha256": "5e5b5b5faf028e229a7109dde2c764c8e4337f2646ba9ef10600951af0ec1646",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "我退的钱什么时候能退回来啊？",
+      "normalized_query": "我退的钱什么时候能退回来啊",
+      "sha256": "cf3bab335bf6277b05ba711062f8971ce4ca45afcb528e900680d296b926e5be",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    },
+    {
+      "query": "物流一直没更新，我大概还要等多久？",
+      "normalized_query": "物流一直没更新我大概还要等多久",
+      "sha256": "87e8dda1de2b1a1378fd4d953105cee23e83913d7279d30e3cfc2c7e40e82274",
+      "sources": [
+        "results:vector_eval_baseline.json",
+        "results:vector_eval_after_rule_optimization.json"
+      ]
+    }
+  ]
+}

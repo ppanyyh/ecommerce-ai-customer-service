@@ -1,0 +1,40 @@
+{
+  "executed_at": "2026-09-25T15:21:40",
+  "execution_count": 1,
+  "blind_set_sha256": "27ff8622aa3387b0e46f504b4c489bfd2755d63f2c7edd233e8f40479ea030c1",
+  "blind_set_sha256_after": "27ff8622aa3387b0e46f504b4c489bfd2755d63f2c7edd233e8f40479ea030c1",
+  "blind_set_unchanged": true,
+  "candidate_hashes_before": {
+    "query_analyzer.py": "cc3d09445d7f009b27a5502f4184a14e897f94b0ecfa8f739c9efd7ab44b24bb",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "721a554f844cc7f2eda366ae310c827263a3dbe54dc658117a0b762d70303c3f",
+    "data/knowledge_chunks.jsonl": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+    "build_vector_index.py": "af0dd5fdfa843fc371f6bf51ed92864c90a66e4d66ef25d8fe9b2be21ed849b0"
+  },
+  "candidate_hashes_after": {
+    "query_analyzer.py": "cc3d09445d7f009b27a5502f4184a14e897f94b0ecfa8f739c9efd7ab44b24bb",
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever_v2.py": "721a554f844cc7f2eda366ae310c827263a3dbe54dc658117a0b762d70303c3f",
+    "data/knowledge_chunks.jsonl": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+    "build_vector_index.py": "af0dd5fdfa843fc371f6bf51ed92864c90a66e4d66ef25d8fe9b2be21ed849b0"
+  },
+  "candidate_hashes_match_before": true,
+  "candidate_hashes_match_after": true,
+  "retrieval_executed": true,
+  "deepseek_called": false,
+  "evaluated_mode": "hybrid_business_v2",
+  "python_version": "3.12.0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependency_versions": {
+    "chromadb": "1.5.9",
+    "sentence_transformers": "6.1.0",
+    "torch": "2.14.0+cpu"
+  },
+  "results_file_sha256": "8665084371b6fe16acad24c94e04ea3685410aa2df8534391522c3bacbf62b90",
+  "exceptions_occurred": false,
+  "exceptions": [],
+  "final_blind_set_manifest_untouched": true,
+  "final_candidate_freeze_manifest_untouched": true
+}

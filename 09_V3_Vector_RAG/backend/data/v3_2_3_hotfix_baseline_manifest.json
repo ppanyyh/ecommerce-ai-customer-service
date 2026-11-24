@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-09-26",
+  "hotfix": "V3.2.3 post-archive safety hotfix: single-side audio defect missed (HR-08)",
+  "version_boundary": {
+    "v3_2_2_is_final_blind_v3_version": true,
+    "v3_2_3_only_specialized_and_regression_tested": true,
+    "v3_2_3_no_final_blind_rerun": true,
+    "must_not_claim_v322_blind_scores_as_v323": true
+  },
+  "archival_manifest_sha256": "fcc3681ca37959c181d9461c0225aca091903d8bccfe1279206e7724502ecd9f",
+  "candidate_freeze_manifest_sha256": "29d417d42bdb914a09e27a5c6ad6fbb6609227ceb9aee60bc41736cf582381cd",
+  "pre_hotfix_file_sha256": {
+    "backend/risk_intents.py": "a0e9c4e06f241836d06fdc80d7c14089697013d98daf6b3b6dadabbe642a190b",
+    "backend/main.py": "e72b7daaef975ade143699ab3a9640d7c8531da007a866d0c16f9774c8250070"
+  },
+  "blind_v3_assets_sha256": {
+    "final_blind_set_v3.json": "938582f31a5506c52c0beafdb0f395dd19e7d7fada04ef9697af8bbe2a9fc10d",
+    "final_blind_set_v3_manifest.json": "6f694fc4edbe2dbeac5ef0642b73058c8a31d4d1b5c42098604196cda9e3966d",
+    "final_blind_v3_eval_results.json": "8a95185980aac17755032855a2d0931ab2393ac04a285da21e19be981ed71e11",
+    "final_blind_v3_execution_manifest.json": "aa83ba48ca318b92f8fec130a1f90f53a65c02f29fcac35f5a536ad0831ae36a",
+    "final_blind_v3_eval_report.md": "a43498e3dfa51df0f2a450b1d4545c787675bc9802a90a415e3bcf349ebab594"
+  },
+  "blind_v3_reexecuted": false,
+  "deepseek_calls": 0
+}

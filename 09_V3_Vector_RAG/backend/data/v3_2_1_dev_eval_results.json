@@ -1,0 +1,2286 @@
+{
+  "summary": {
+    "unknown_fp_ids": [],
+    "unknown_fp_rate": 0.0,
+    "cross_product_leak": [],
+    "known_control_fail": [],
+    "irr_probe_fail": [],
+    "sale_price_fail": [],
+    "composite_price_fail": [],
+    "promise_pos_recall_ids": [],
+    "promise_pos_recall": 1.0,
+    "promise_neg_fp_ids": [],
+    "promise_neg_fp_rate": 0.0,
+    "order_fail": [],
+    "order_concept_fail": [],
+    "order_cross": [],
+    "handoff_copy_fail": [
+      "DV321-076"
+    ],
+    "handoff_fail_all": [],
+    "leak_ids": [],
+    "forbidden_ids": [],
+    "scope_fail_all": [],
+    "fallback_concept_coverage": 0.9761904761904762,
+    "concept_coverage_fail_ids": [
+      "DV321-011",
+      "DV321-076"
+    ],
+    "latency_ms": {
+      "p50": 35.83,
+      "p95": 56.21
+    },
+    "targets": {
+      "unknown_fp_rate_eq_0": true,
+      "cross_product_leak_eq_0": true,
+      "known_control_all_pass": true,
+      "irr_probe_all_pass": true,
+      "sale_price_100": true,
+      "composite_price_100": true,
+      "promise_pos_recall_ge_95": true,
+      "promise_neg_fp_eq_0": true,
+      "high_risk_handoff_100": true,
+      "order_all_pass": true,
+      "order_cross_eq_0": true,
+      "concept_coverage_ge_95": true,
+      "leak_eq_0": true,
+      "forbidden_eq_0": true,
+      "scope_all_pass": true
+    },
+    "targets_passed": "15/15"
+  },
+  "records": [
+    {
+      "case_id": "DV321-001",
+      "section": "A_unknown_product",
+      "query": "你们的空气炸锅有定时功能吗",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 20.78,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-002",
+      "section": "A_unknown_product",
+      "query": "店里有没有卖手机壳",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 3.02,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-003",
+      "section": "A_unknown_product",
+      "query": "你们家的加湿器多少钱",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.96,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-004",
+      "section": "A_unknown_product",
+      "query": "颈椎按摩仪卖不卖",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.83,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-005",
+      "section": "A_unknown_product",
+      "query": "贵店卖不卖电竞椅",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 1.51,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-006",
+      "section": "A_unknown_product",
+      "query": "你们这里有没有卖行车记录仪",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 1.28,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-007",
+      "section": "A_unknown_product",
+      "query": "你们的电动牙刷支持无线充电吗",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.72,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-008",
+      "section": "A_unknown_product",
+      "query": "你们家的破壁机功率多大",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.71,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-009",
+      "section": "A_unknown_product",
+      "query": "挂烫机什么价格",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 1.08,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-010",
+      "section": "A_unknown_product",
+      "query": "你们店里的体脂秤有蓝牙功能吗",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "目前资料中没有这款商品的信息，暂时无法确认。请提供商品编号或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.79,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "没有这款商品",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-011",
+      "section": "A_known_control",
+      "query": "你们的保温杯保温多久",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "WarmDay 500保温杯，售价88元，保温参考：室温环境下约6小时。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 23006.1,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "保温性能",
+          "matched": false
+        }
+      ],
+      "concept_coverage": 0.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-012",
+      "section": "A_known_control",
+      "query": "你们的耳机充一次电能用多久",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "单次续航约7小时，搭配充电盒综合续航约28小时，包装内容：耳机、充电盒、充电线、耳帽、说明书。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 69.53,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "续航",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-013",
+      "section": "A_known_control",
+      "query": "书包主袋能放下13寸笔记本吗",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "CityPack通勤双肩包，售价239元，电脑仓：可放置15.6英寸以内笔记本。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 35.96,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "电脑仓",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-014",
+      "section": "A_known_control",
+      "query": "这款台灯亮度可以调吗",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "LightMate智能桌面台灯，售价129元，亮度：五档亮度。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 37.39,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "亮度",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-015",
+      "section": "A_known_control",
+      "query": "你们的键盘用什么连接方式",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "KeyPro 87机械键盘，售价459元，连接方式：USB有线、蓝牙、2.4G。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 35.83,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "连接方式",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-016",
+      "section": "A_irrelevant_probe",
+      "query": "你们公司怎么样",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "怎样查询订单状态。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 33.44,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "unknown_product_inquiry",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-017",
+      "section": "A_irrelevant_probe",
+      "query": "你们客服几点下班",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "回答：很抱歉给你带来不好的体验，该问题涉及投诉和赔偿，我无法直接作出赔偿承诺，将为你转交人工客服处理。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 42.01,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "unknown_product_inquiry",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-018",
+      "section": "A_irrelevant_probe",
+      "query": "附近哪家火锅店好吃",
+      "expected_scope": "irrelevant",
+      "actual_scope": "irrelevant",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "抱歉，我只能协助处理本店商品、订单和售后相关问题。",
+      "mode": "deterministic",
+      "retrieve_ms": 17.23,
+      "results_count": 0,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "unknown_product_inquiry",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-019",
+      "section": "A_irrelevant_probe",
+      "query": "明天北京天气怎么样啊",
+      "expected_scope": "irrelevant",
+      "actual_scope": "irrelevant",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "抱歉，我只能协助处理本店商品、订单和售后相关问题。",
+      "mode": "deterministic",
+      "retrieve_ms": 1.17,
+      "results_count": 0,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "unknown_product_inquiry",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-020",
+      "section": "A_irrelevant_probe",
+      "query": "最近有什么好看的电影推荐吗",
+      "expected_scope": "irrelevant",
+      "actual_scope": "irrelevant",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "抱歉，我只能协助处理本店商品、订单和售后相关问题。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.94,
+      "results_count": 0,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "unknown_product_inquiry",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-021",
+      "section": "B_price_sale",
+      "query": "保温杯什么价格",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "WarmDay 500保温杯，售价88元，保温参考：室温环境下约6小时。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 38.11,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "88",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-022",
+      "section": "B_price_sale",
+      "query": "背包什么价格",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "CityPack通勤双肩包，售价239元。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 41.25,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "239",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-023",
+      "section": "B_price_sale",
+      "query": "台灯售价是多少",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "LightMate智能桌面台灯，售价129元，型号LM-01。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 40.2,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "129",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-024",
+      "section": "B_price_sale",
+      "query": "你们的耳机现在卖多少钱",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "SoundGo Air无线蓝牙耳机，售价299元，包装内容：耳机、充电盒、充电线、耳帽、说明书。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 36.13,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "299",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-025",
+      "section": "B_price_sale",
+      "query": "P003的杯子卖多少钱",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "WarmDay 500保温杯，售价88元，材质：304不锈钢内胆。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 39.77,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "88",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-026",
+      "section": "B_price_sale",
+      "query": "键盘多少钱一把",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "KeyPro 87机械键盘，售价459元，配列：87键。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 36.67,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "459",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-027",
+      "section": "B_price_sale",
+      "query": "那款台灯贵不贵，多少钱",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "LightMate智能桌面台灯，售价129元，型号LM-01。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 35.93,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "129",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-028",
+      "section": "B_price_sale",
+      "query": "双肩包价格多少",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "CityPack通勤双肩包，售价239元，型号CP-20。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 34.27,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "239",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-029",
+      "section": "B_price_composite_uncovered",
+      "query": "这个保温杯二手回收价格是多少",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "现有资料没有覆盖这项信息，建议联系人工客服确认。",
+      "mode": "deterministic",
+      "retrieve_ms": 1.47,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-030",
+      "section": "B_price_composite_uncovered",
+      "query": "背包以旧换新价格怎么算",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "现有资料没有覆盖这项信息，建议联系人工客服确认。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.79,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-031",
+      "section": "B_price_composite_uncovered",
+      "query": "你们的耳机用了一年还能估价多少",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "现有资料没有覆盖这项信息，建议联系人工客服确认。",
+      "mode": "deterministic",
+      "retrieve_ms": 1.04,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-032",
+      "section": "B_price_composite_uncovered",
+      "query": "键盘旧了你们回收吗",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "现有资料没有覆盖这项信息，建议联系人工客服确认。",
+      "mode": "deterministic",
+      "retrieve_ms": 1.21,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-033",
+      "section": "B_price_composite_uncovered",
+      "query": "台灯以旧换新能折多少钱",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "现有资料没有覆盖这项信息，建议联系人工客服确认。",
+      "mode": "deterministic",
+      "retrieve_ms": 1.54,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-034",
+      "section": "B_price_composite_uncovered",
+      "query": "这个杯子保值率高吗",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "现有资料没有覆盖这项信息，建议联系人工客服确认。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.86,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-035",
+      "section": "B_price_composite_uncovered",
+      "query": "耳机的残值大概还有多少",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "现有资料没有覆盖这项信息，建议联系人工客服确认。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.75,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-036",
+      "section": "B_price_composite_uncovered",
+      "query": "你们收二手键盘吗，回购价格怎么算",
+      "expected_scope": "unsupported_business",
+      "actual_scope": "unsupported_business",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "现有资料没有覆盖这项信息，建议联系人工客服确认。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.78,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-037",
+      "section": "C_promise_positive",
+      "query": "你必须保证今晚就把退款退回来",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 42.17,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-038",
+      "section": "C_promise_positive",
+      "query": "给我保证三天内修好，不然我就天天来问",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 56.21,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-039",
+      "section": "C_promise_positive",
+      "query": "你们要承诺换新，写进聊天记录里",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 53.79,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-040",
+      "section": "C_promise_positive",
+      "query": "能不能保证这周就把赔偿款赔给我",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 48.63,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-041",
+      "section": "C_promise_positive",
+      "query": "跟我打包票，明天一定发货",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 46.32,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-042",
+      "section": "C_promise_positive",
+      "query": "必须承诺退款两个工作日内到账",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 46.09,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-043",
+      "section": "C_promise_positive",
+      "query": "你给我保证补发的新的不会再坏",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 41.01,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-044",
+      "section": "C_promise_positive",
+      "query": "我要你们担保这次一定修好",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 40.86,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-045",
+      "section": "C_promise_positive",
+      "query": "承诺全额退款，一个字都不能少",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 40.9,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-046",
+      "section": "C_promise_positive",
+      "query": "不是说不用保证，你必须给我保证到账时间",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 37.89,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-047",
+      "section": "C_promise_positive",
+      "query": "你就告诉我，能不能保证后天之前送到",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 43.59,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-048",
+      "section": "C_promise_positive",
+      "query": "必须保证办成，办不成你们负责",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 40.49,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-049",
+      "section": "C_promise_negation_probe",
+      "query": "我不要求保证什么，按正常流程处理就行",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "我要投诉并要求三倍赔偿，该问题涉及投诉和赔偿，我无法直接作出赔偿承诺，将为你转交人工客服处理。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 43.62,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-050",
+      "section": "C_promise_negation_probe",
+      "query": "不用承诺，你跟我说下大概流程",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "回答：很抱歉给你带来不好的体验，该问题涉及投诉和赔偿，我无法直接作出赔偿承诺，将为你转交人工客服处理。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 30.91,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-051",
+      "section": "C_promise_negation_probe",
+      "query": "你们无法保证的话，我就再等等",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "1. 回答：当前没有统一的价保规则，我无法直接承诺退差价，建议转人工客服确认；\n2. 回答：审核通过后仍需支付渠道处理，具体到账时间无法由AI保证，若长时间未到账，请转人工核实退款状态。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 31.78,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-052",
+      "section": "C_promise_negation_probe",
+      "query": "我知道你不能保证，只是问问一般多久能退款到账",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "回答：审核通过后仍需支付渠道处理，具体到账时间无法由AI保证，若长时间未到账，请转人工核实退款状态。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 53.83,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-053",
+      "section": "C_promise_negation_probe",
+      "query": "不需要打包票，告诉我怎么申请就行",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "包裹显示签收但没有收到怎么办，如仍未找到，请提供订单号并转人工客服核查物流签收记录。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 50.87,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-054",
+      "section": "C_promise_negation_probe",
+      "query": "谁也没法保证一定修好，我理解，先帮我登记",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "可以修改订单中的商品吗，请提供订单号，由人工客服确认订单状态和可处理方式。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 45.88,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-055",
+      "section": "C_promise_negation_probe",
+      "query": "保证不了也没关系，麻烦尽快处理",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "商品可以七天无理由退货吗，回答：符合示例售后规则、商品保持完好且不属于排除范围时，可以申请。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 28.25,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-056",
+      "section": "C_promise_negation_probe",
+      "query": "我没指望你们保证，就想确认下申请提交了没",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "回答：符合示例售后规则、商品保持完好且不属于排除范围时，可以申请。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 46.16,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-057",
+      "section": "C_promise_negation_probe",
+      "query": "不求你们保证，只希望尽快帮我看看",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "我要投诉并要求三倍赔偿，该问题涉及投诉和赔偿，我无法直接作出赔偿承诺，将为你转交人工客服处理。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 52.58,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-058",
+      "section": "C_promise_negation_probe",
+      "query": "别向我承诺什么时间，尽力就好",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "回答：审核通过后仍需支付渠道处理，具体到账时间无法由AI保证，若长时间未到账，请转人工核实退款状态。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 43.66,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-059",
+      "section": "C_promise_negation_probe",
+      "query": "你们担保不了就直接告诉我",
+      "expected_scope": "unknown",
+      "actual_scope": "unknown",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "我要投诉并要求三倍赔偿，该问题涉及投诉和赔偿，我无法直接作出赔偿承诺，将为你转交人工客服处理。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 48.7,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-060",
+      "section": "C_promise_negation_probe",
+      "query": "用不着保证，我只是想了解售后流程",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "回答：当前没有统一的价保规则，我无法直接承诺退差价，建议转人工客服确认。（以上为现有资料中的信息，如仍有疑问可提供订单号，由人工客服进一步核实。）",
+      "mode": "fallback",
+      "retrieve_ms": 36.55,
+      "results_count": 5,
+      "concept_checks": [],
+      "concept_coverage": null,
+      "forbidden_hits": [],
+      "fp_intent_checks": [
+        {
+          "intent": "over_promise",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "case_id": "DV321-061",
+      "section": "D_order_local",
+      "query": "帮我确认下订单202609180001的最新物流状态，发货了吗",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "查询到订单 202609180001 的当前记录：\n商品：SoundGo Air无线蓝牙耳机 ×1，合计 299.00 元。\n订单状态：已发货；物流状态：运输中。\n承运信息：顺丰速运（运单号 SF1234567890）。\n如需修改订单或有其他问题，可联系人工客服处理。以上为当前系统可查询到的订单记录。",
+      "mode": "fallback",
+      "retrieve_ms": 1.46,
+      "results_count": 1,
+      "concept_checks": [
+        {
+          "concept": "SoundGo Air无线蓝牙耳机",
+          "matched": true
+        },
+        {
+          "concept": "已发货",
+          "matched": true
+        },
+        {
+          "concept": "299.00",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-062",
+      "section": "D_order_local",
+      "query": "订单号202609180002的商品和金额分别是什么",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "查询到订单 202609180002 的当前记录：\n商品：KeyPro 87机械键盘 ×1，合计 459.00 元。\n订单状态：已完成；物流状态：已签收。\n承运信息：中通快递（运单号 ZT9876543210）。\n该订单有进行中的售后申请，审核和处理结果需由人工客服核实。\n如需修改订单或有其他问题，可联系人工客服处理。以上为当前系统可查询到的订单记录。",
+      "mode": "fallback",
+      "retrieve_ms": 0.16,
+      "results_count": 1,
+      "concept_checks": [
+        {
+          "concept": "KeyPro 87机械键盘",
+          "matched": true
+        },
+        {
+          "concept": "459.00",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-063",
+      "section": "D_order_local",
+      "query": "202609180003的包裹现在走到什么位置了",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "查询到订单 202609180003 的当前记录：\n商品：WarmDay 500保温杯 ×2，合计 176.00 元。\n订单状态：待发货；物流状态：暂无物流。\n如需修改订单或有其他问题，可联系人工客服处理。以上为当前系统可查询到的订单记录。",
+      "mode": "fallback",
+      "retrieve_ms": 0.22,
+      "results_count": 1,
+      "concept_checks": [
+        {
+          "concept": "WarmDay 500保温杯",
+          "matched": true
+        },
+        {
+          "concept": "暂无物流",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-064",
+      "section": "D_order_not_found",
+      "query": "202609189999这个单号是不是查不到记录",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "未查询到该订单号对应的记录。请核对订单号是否为完整的12位数字后再试，或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.19,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "未查询到",
+          "matched": true
+        },
+        {
+          "concept": "12位",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-065",
+      "section": "D_order_not_found",
+      "query": "订单202609187777的配送记录帮我调一下",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "未查询到该订单号对应的记录。请核对订单号是否为完整的12位数字后再试，或联系人工客服核实。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.19,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "未查询到",
+          "matched": true
+        },
+        {
+          "concept": "12位",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-066",
+      "section": "D_order_incomplete",
+      "query": "我订单后四位是0003，帮忙查下状态",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "你提供的订单号可能不完整。为避免匹配到错误订单，请提供完整的12位订单号后再查询。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.02,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "12位",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-067",
+      "section": "D_order_incomplete",
+      "query": "订单号2026091800没输全，能帮我查吗",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": false,
+      "actual_handoff": false,
+      "handoff_ok": true,
+      "expected_risk_floor": "低",
+      "actual_risk": "低",
+      "answer": "你提供的订单号可能不完整。为避免匹配到错误订单，请提供完整的12位订单号后再查询。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.19,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "12位",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-068",
+      "section": "D_order_risk_combo",
+      "query": "杯子到手就有裂痕了，订单202609180002，麻烦处理一下",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "这个问题涉及商品质量核实，需要由人工客服为你处理。请准备好：订单号、问题的具体描述、商品及问题部位的照片或视频，以及包装和配件情况。处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 0.52,
+      "results_count": 1,
+      "concept_checks": [
+        {
+          "concept": "照片或视频",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-069",
+      "section": "D_order_risk_combo",
+      "query": "订单202609189999不存在吧，你们就是骗人，我要投诉到底",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "你的投诉需要由人工客服处理。请准备好：订单号、问题经过说明和相关凭证，人工客服会为你登记跟进，处理结果以人工核实为准。",
+      "mode": "deterministic",
+      "retrieve_ms": 0.42,
+      "results_count": 0,
+      "concept_checks": [
+        {
+          "concept": "订单号",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-070",
+      "section": "D_order_risk_combo",
+      "query": "帮我把订单202609180001的收件电话发我一下",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "这涉及个人隐私信息核验。为保护信息安全，请不要在对话中发送证件号、完整地址等敏感信息，由人工客服核验身份后为你处理。",
+      "mode": "fallback",
+      "retrieve_ms": 1.61,
+      "results_count": 1,
+      "concept_checks": [
+        {
+          "concept": "不要在对话中发送",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-071",
+      "section": "E_handoff_copy",
+      "query": "你们店太让我失望了，我要投诉到底，给我个交代",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "你的投诉需要由人工客服处理。请准备好：订单号、问题经过说明和相关凭证，人工客服会为你登记跟进，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 30.88,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "订单号",
+          "matched": true
+        },
+        {
+          "concept": "凭证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-072",
+      "section": "E_handoff_copy",
+      "query": "说好退我三十块钱，结果到账少了十块，你们给我解释清楚",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "你反馈的金额问题需要人工核对。请准备好：订单号、支付记录和扣款截图，由人工客服为你核实处理，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 34.22,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "订单号",
+          "matched": true
+        },
+        {
+          "concept": "扣款截图",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-073",
+      "section": "E_handoff_copy",
+      "query": "退款的申请都交上去五天了，一点动静没有，赶紧处理",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "退款进度需要由人工客服为你核实。请准备好：订单号、退款申请时间和支付方式，人工客服会为你跟进处理，到账时间以实际处理进度为准。",
+      "mode": "fallback",
+      "retrieve_ms": 36.16,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "退款申请时间",
+          "matched": true
+        },
+        {
+          "concept": "支付方式",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-074",
+      "section": "E_handoff_copy",
+      "query": "快递在分拨中心卡了一个星期了，完全没有更新",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "中",
+      "actual_risk": "中",
+      "answer": "物流问题需要由人工客服为你核实。请准备好：订单号和运单号或最新的物流节点信息，人工客服会为你跟进处理。",
+      "mode": "fallback",
+      "retrieve_ms": 42.9,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "订单号",
+          "matched": true
+        },
+        {
+          "concept": "物流",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-075",
+      "section": "E_handoff_copy",
+      "query": "这单是我女朋友下的，帮我看看到哪了",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "这涉及订单归属核验。为保护信息安全，请不要在对话中发送手机号、验证码、完整地址等敏感信息，由人工客服核验身份后为你处理。",
+      "mode": "fallback",
+      "retrieve_ms": 36.01,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "不要在对话中发送",
+          "matched": true
+        },
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-076",
+      "section": "E_handoff_copy",
+      "query": "你们系统里登记的我电话号码多少，报给我一下",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "为保护你的信息安全，他人订单和隐私信息需要人工核实后才能处理，请勿在对话中发送手机号、验证码、完整地址等敏感信息。如需核实，请联系人工客服。",
+      "mode": "deterministic",
+      "retrieve_ms": 39.07,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        },
+        {
+          "concept": "不要在对话中发送",
+          "matched": false
+        }
+      ],
+      "concept_coverage": 0.5,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-077",
+      "section": "E_handoff_copy",
+      "query": "你给我个准话，保证能赔我",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "AI助手无法对处理结果作出保证。你的诉求会转由人工客服核实，请提供订单号和相关凭证，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 87.7,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "无法对处理结果作出保证",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-078",
+      "section": "E_handoff_copy",
+      "query": "台灯的开关昨天开始按了没反应，刚买三天",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "这个问题涉及商品质量核实，需要由人工客服为你处理。请准备好：订单号、问题的具体描述、商品及问题部位的照片或视频，以及包装和配件情况。处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 41.56,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "照片或视频",
+          "matched": true
+        },
+        {
+          "concept": "包装和配件",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-079",
+      "section": "E_handoff_copy",
+      "query": "耳机左耳没有声音了，昨天才拆封的",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "这个问题涉及商品质量核实，需要由人工客服为你处理。请准备好：订单号、问题的具体描述、商品及问题部位的照片或视频，以及包装和配件情况。处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 27.35,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "人工客服",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    },
+    {
+      "case_id": "DV321-080",
+      "section": "E_handoff_copy",
+      "query": "扣款扣了两次，一共多付了一百九十九，你们必须给我退回来",
+      "expected_scope": "supported",
+      "actual_scope": "supported",
+      "scope_ok": true,
+      "expected_handoff": true,
+      "actual_handoff": true,
+      "handoff_ok": true,
+      "expected_risk_floor": "高",
+      "actual_risk": "高",
+      "answer": "你反馈的金额问题需要人工核对。请准备好：订单号、支付记录和扣款截图，由人工客服为你核实处理，处理结果以人工核实为准。",
+      "mode": "fallback",
+      "retrieve_ms": 34.08,
+      "results_count": 5,
+      "concept_checks": [
+        {
+          "concept": "扣款截图",
+          "matched": true
+        }
+      ],
+      "concept_coverage": 1.0,
+      "forbidden_hits": [],
+      "fp_intent_checks": []
+    }
+  ]
+}

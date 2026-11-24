@@ -1,0 +1,5960 @@
+{
+  "generated_at": "2026-09-25T22:28:24",
+  "validation_set": {
+    "file": "hybrid_holdout_eval_cases_v1_2_reviewed.json",
+    "label": "validation_set_v1",
+    "version": "1.2",
+    "sha256_old": "26ee720d21c486a5d9829a3fd390db9b173360f251a41a6f1523c74759616948",
+    "sha256_now": "a126a126e4e189a6752f01677d712f5400cc0f959b133832064f2e0693d90ba6",
+    "v1_1_change": "H-009 relevant_chunk_ids 人工复核扩展（+PRODUCT-P004），见 meta.annotation_revision"
+  },
+  "modes": {
+    "keyword_only": {
+      "metrics": {
+        "answer_hit_at_1": 0.7917,
+        "answer_recall_at_3": 0.9583,
+        "mrr": 0.875,
+        "rule_recall_at_3": 0.875,
+        "hit1_correct": 19,
+        "recall3_correct": 23,
+        "rule_cases": 8,
+        "rule_ok": 7
+      },
+      "category_metrics": {
+        "faq": {
+          "n": 8,
+          "hit_at_1": 0.625,
+          "recall_at_3": 1.0
+        },
+        "multi": {
+          "n": 4,
+          "hit_at_1": 0.75,
+          "recall_at_3": 1.0
+        },
+        "product": {
+          "n": 6,
+          "hit_at_1": 0.8333,
+          "recall_at_3": 0.8333
+        },
+        "rule": {
+          "n": 6,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        }
+      },
+      "failures": [
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "problem": "hit1_miss recall3_miss",
+          "top3": [
+            "FAQ-002",
+            "PRODUCT-P005",
+            "FAQ-004"
+          ]
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P001",
+            "FAQ-002",
+            "FAQ-007"
+          ]
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P002",
+            "FAQ-003",
+            "PRODUCT-P005"
+          ]
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-006",
+            "FAQ-007",
+            "RULE-HR-02"
+          ]
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "problem": "hit1_missrule_miss",
+          "top3": [
+            "PRODUCT-P003",
+            "FAQ-016",
+            "RULE-HR-02"
+          ]
+        }
+      ],
+      "irrelevant_records": [
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 7.9,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 7.9,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 1.5,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 7.9,
+          "error_hit_flag": true
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-007",
+          "top1_score": 0.8,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-015",
+          "top1_score": 0.6,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-04",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "top1_chunk_id": "FAQ-002",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "FAQ-010",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        }
+      ],
+      "latency": {
+        "warm_p50_ms": 0.26,
+        "warm_p95_ms": 0.41,
+        "n_samples": 30
+      },
+      "per_case_top3": [
+        {
+          "case_id": "H-001",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P001"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 6.8,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P002"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 6.4,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-003",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 8.1,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》隐私规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.4,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P003"
+            }
+          ],
+          "hit1": false,
+          "recall3": false,
+          "first_relevant_rank": null,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-005",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 2.1,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 1.5,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-002"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 6.4,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 6.4,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 1.0,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.4,
+              "source": "《商品资料》P005"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-008",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 8.5,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 8.1,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-005",
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.4,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-010",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-012"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 1.2,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-011",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-011"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 1.0,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-007"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 2.3,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 2.3,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 2.3,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-013",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-018"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-018",
+              "doc_type": "faq",
+              "score": 13.0,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-014",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "RULE-HR-01"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 13.0,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 6.6,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-015",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-007",
+            "RULE-HR-02"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-02"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 7.0,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 6.6,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-07",
+              "doc_type": "rule",
+              "score": 0.8,
+              "source": "《售后SOP》退款处理/必须转人工"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-016",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-016",
+            "RULE-HR-03"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-03"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 2.5,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-07",
+              "doc_type": "rule",
+              "score": 2.5,
+              "source": "《售后SOP》退款处理/必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 2.3,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-017",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-010",
+            "RULE-HR-04"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-04"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 6.8,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.8,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-018",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-006",
+            "RULE-HR-05"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-05"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-05",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-07",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》退款处理/必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-019",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 8.7,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 8.5,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 7.9,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-020",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-015",
+            "FAQ-017",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 13.0,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 7.2,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 6.8,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 6.4,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 2.5,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 2.5,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 8.3,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 8.3,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-023",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.4,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-024",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 7.9,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 1.7,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 1.7,
+              "source": "《商品资料》P002"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 7.9,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 7.9,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 1.5,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 7.9,
+          "error_hit_flag": true
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.8,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.6,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-007",
+          "top1_score": 0.8,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.6,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-015",
+          "top1_score": 0.6,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.2,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-04",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.4,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "top1_chunk_id": "FAQ-002",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.4,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "FAQ-010",
+          "top1_score": 0.4,
+          "error_hit_flag": false
+        }
+      ]
+    },
+    "vector_only": {
+      "metrics": {
+        "answer_hit_at_1": 0.8333,
+        "answer_recall_at_3": 1.0,
+        "mrr": 0.9167,
+        "rule_recall_at_3": 0.5,
+        "hit1_correct": 20,
+        "recall3_correct": 24,
+        "rule_cases": 8,
+        "rule_ok": 4
+      },
+      "category_metrics": {
+        "faq": {
+          "n": 8,
+          "hit_at_1": 0.875,
+          "recall_at_3": 1.0
+        },
+        "multi": {
+          "n": 4,
+          "hit_at_1": 0.75,
+          "recall_at_3": 1.0
+        },
+        "product": {
+          "n": 6,
+          "hit_at_1": 0.8333,
+          "recall_at_3": 1.0
+        },
+        "rule": {
+          "n": 6,
+          "hit_at_1": 0.8333,
+          "recall_at_3": 1.0
+        }
+      },
+      "failures": [
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-003",
+            "PRODUCT-P002",
+            "RULE-HR-08"
+          ]
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-006",
+            "FAQ-007",
+            "FAQ-008"
+          ]
+        },
+        {
+          "case_id": "H-014",
+          "category": "rule",
+          "problem": "rule_miss",
+          "top3": [
+            "FAQ-020",
+            "FAQ-014",
+            "FAQ-015"
+          ]
+        },
+        {
+          "case_id": "H-017",
+          "category": "rule",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-012",
+            "FAQ-010",
+            "RULE-HR-04"
+          ]
+        },
+        {
+          "case_id": "H-018",
+          "category": "rule",
+          "problem": "rule_miss",
+          "top3": [
+            "FAQ-006",
+            "FAQ-009",
+            "FAQ-011"
+          ]
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "problem": "rule_miss",
+          "top3": [
+            "FAQ-016",
+            "FAQ-015",
+            "FAQ-013"
+          ]
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "problem": "hit1_missrule_miss",
+          "top3": [
+            "FAQ-017",
+            "FAQ-013",
+            "FAQ-020"
+          ]
+        }
+      ],
+      "irrelevant_records": [
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.509912,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.49091,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.470277,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 0.509912,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.428788,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.373247,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.364132,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "FAQ-019",
+          "top1_score": 0.428788,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.485938,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.433757,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.421441,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.485938,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.268509,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.249711,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.237768,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.268509,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.296342,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.265569,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-018",
+              "doc_type": "faq",
+              "score": 0.255538,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P003",
+          "top1_score": 0.296342,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.427869,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.419542,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.411558,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-06",
+          "top1_score": 0.427869,
+          "error_hit_flag": false
+        }
+      ],
+      "latency": {
+        "warm_p50_ms": 18.56,
+        "warm_p95_ms": 20.08,
+        "n_samples": 30
+      },
+      "per_case_top3": [
+        {
+          "case_id": "H-001",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P001"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.510432,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.5077,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.480382,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P002"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.602645,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.543966,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.403442,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-003",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.496716,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.458282,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.347422,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.44361,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.388062,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.369764,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-005",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.548765,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.399024,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.396107,
+              "source": "《商品资料》P002"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-002"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.589715,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.382203,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.380696,
+              "source": "《商品资料》P003"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.680125,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.547634,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.405903,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-008",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.557955,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.444566,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.343972,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-005",
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.418277,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.415744,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.397328,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-010",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-012"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.66087,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.44076,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.430487,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-011",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-011"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.658067,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.547723,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.542835,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-007"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.520749,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.520648,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.509955,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-013",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-018"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-018",
+              "doc_type": "faq",
+              "score": 0.679506,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.473958,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.411948,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-014",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "RULE-HR-01"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.50265,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.473621,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.463715,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-015",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-007",
+            "RULE-HR-02"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-02"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.56039,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.531489,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.50873,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-016",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-016",
+            "RULE-HR-03"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-03"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.571832,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.562964,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.552313,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-017",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-010",
+            "RULE-HR-04"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-04"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.55549,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.546613,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.525686,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-018",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-006",
+            "RULE-HR-05"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-05"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.507434,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.47158,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.425426,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-019",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.591321,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.58258,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.577773,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-020",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-015",
+            "FAQ-017",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.590771,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.580231,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.557885,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.639324,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.530913,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.523778,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.554244,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.540479,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.501914,
+              "source": "《售后SOP》必须转人工"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-023",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.507139,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.341367,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.337833,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-024",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.631372,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.536796,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.425744,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.509912,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.49091,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.470277,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 0.509912,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.428788,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.373247,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.364132,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "FAQ-019",
+          "top1_score": 0.428788,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.485938,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.433757,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.421441,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.485938,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.268509,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.249711,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.237768,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.268509,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.296342,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.265569,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-018",
+              "doc_type": "faq",
+              "score": 0.255538,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P003",
+          "top1_score": 0.296342,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.427869,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.419542,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.411558,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-06",
+          "top1_score": 0.427869,
+          "error_hit_flag": false
+        }
+      ]
+    },
+    "hybrid_rrf_v1": {
+      "metrics": {
+        "answer_hit_at_1": 0.8333,
+        "answer_recall_at_3": 1.0,
+        "mrr": 0.9097,
+        "rule_recall_at_3": 0.75,
+        "hit1_correct": 20,
+        "recall3_correct": 24,
+        "rule_cases": 8,
+        "rule_ok": 6
+      },
+      "category_metrics": {
+        "faq": {
+          "n": 8,
+          "hit_at_1": 0.625,
+          "recall_at_3": 1.0
+        },
+        "multi": {
+          "n": 4,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        },
+        "product": {
+          "n": 6,
+          "hit_at_1": 0.8333,
+          "recall_at_3": 1.0
+        },
+        "rule": {
+          "n": 6,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        }
+      },
+      "failures": [
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-002",
+            "FAQ-005",
+            "PRODUCT-P004"
+          ]
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P001",
+            "FAQ-002",
+            "FAQ-001"
+          ]
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "problem": "hit1_miss",
+          "top3": [
+            "PRODUCT-P002",
+            "FAQ-003",
+            "PRODUCT-P005"
+          ]
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "problem": "hit1_miss",
+          "top3": [
+            "FAQ-006",
+            "FAQ-007",
+            "RULE-HR-02"
+          ]
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "problem": "rule_miss",
+          "top3": [
+            "FAQ-016",
+            "RULE-HR-02",
+            "RULE-HR-03"
+          ]
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "problem": "rule_miss",
+          "top3": [
+            "FAQ-020",
+            "FAQ-013",
+            "FAQ-017"
+          ]
+        }
+      ],
+      "irrelevant_records": [
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.031054,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.030622,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 0.032787,
+          "error_hit_flag": true
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.030798,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.016393,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.016393,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-03",
+          "top1_score": 0.030798,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.030886,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.032266,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.032522,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.031258,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.030777,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-04",
+          "top1_score": 0.032522,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.031778,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.029631,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P003",
+          "top1_score": 0.031778,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.031778,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.031281,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.030777,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-06",
+          "top1_score": 0.031778,
+          "error_hit_flag": false
+        }
+      ],
+      "latency": {
+        "warm_p50_ms": 19.63,
+        "warm_p95_ms": 21.53,
+        "n_samples": 30
+      },
+      "per_case_top3": [
+        {
+          "case_id": "H-001",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P001"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.03101,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P002"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-003",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.031754,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.030366,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.03125,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.031099,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 3,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-005",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032002,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.030579,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-002"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.032522,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.03125,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.031498,
+              "source": "《商品资料》P005"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-008",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032258,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-005",
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.031025,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-010",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-012"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.029199,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-011",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-011"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-007"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.031498,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": false,
+          "recall3": true,
+          "first_relevant_rank": 2,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-013",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-018"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-018",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.031754,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.030415,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-014",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "RULE-HR-01"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.031778,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.03101,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-015",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-007",
+            "RULE-HR-02"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-02"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.032787,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.03031,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.03031,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-016",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-016",
+            "RULE-HR-03"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-03"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.032266,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.032018,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.030798,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-017",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-010",
+            "RULE-HR-04"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-04"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.031746,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-018",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-006",
+            "RULE-HR-05"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-05"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-05",
+              "doc_type": "rule",
+              "score": 0.032018,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.031099,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.030798,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-019",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.032787,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.031258,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-020",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-015",
+            "FAQ-017",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.032018,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.032002,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.030366,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.03031,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.032002,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.031545,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": false
+        },
+        {
+          "case_id": "H-023",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.031498,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-024",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.03101,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.030835,
+              "source": "《商品资料》P003"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.031054,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.030622,
+              "source": "《模拟订单数据》"
+            }
+          ],
+          "top1_chunk_id": "FAQ-014",
+          "top1_score": 0.032787,
+          "error_hit_flag": true
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.030798,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.016393,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.016393,
+              "source": "无明确规则依据"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-03",
+          "top1_score": 0.030798,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.030886,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.032266,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.032522,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.031258,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.030777,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-04",
+          "top1_score": 0.032522,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.031778,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.031281,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.029631,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P003",
+          "top1_score": 0.031778,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-06",
+              "doc_type": "rule",
+              "score": 0.031778,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.031281,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.030777,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-06",
+          "top1_score": 0.031778,
+          "error_hit_flag": false
+        }
+      ]
+    },
+    "hybrid_business_v2": {
+      "metrics": {
+        "answer_hit_at_1": 0.9583,
+        "answer_recall_at_3": 0.9583,
+        "mrr": 0.9583,
+        "rule_recall_at_3": 1.0,
+        "hit1_correct": 23,
+        "recall3_correct": 23,
+        "rule_cases": 8,
+        "rule_ok": 8
+      },
+      "category_metrics": {
+        "faq": {
+          "n": 8,
+          "hit_at_1": 0.875,
+          "recall_at_3": 0.875
+        },
+        "multi": {
+          "n": 4,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        },
+        "product": {
+          "n": 6,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        },
+        "rule": {
+          "n": 6,
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0
+        }
+      },
+      "failures": [
+        {
+          "case_id": "H-013",
+          "category": "faq",
+          "problem": "hit1_miss recall3_miss",
+          "top3": []
+        }
+      ],
+      "irrelevant_records": [
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": true,
+          "top3": [],
+          "top1_chunk_id": null,
+          "top1_score": null,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.028798,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.016393,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.016129,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-03",
+          "top1_score": 0.028798,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.030886,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.032266,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": true,
+          "top3": [],
+          "top1_chunk_id": null,
+          "top1_score": null,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": true,
+          "top3": [],
+          "top1_chunk_id": null,
+          "top1_score": null,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.031281,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.030579,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P001",
+          "top1_score": 0.031281,
+          "error_hit_flag": false
+        }
+      ],
+      "latency": {
+        "warm_p50_ms": 38.37,
+        "warm_p95_ms": 44.82,
+        "n_samples": 30
+      },
+      "per_case_top3": [
+        {
+          "case_id": "H-001",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P001"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.032987,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.030798,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-002",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P002"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032722,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-003",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032987,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.031754,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.030366,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-004",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.032987,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.032002,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.03101,
+              "source": "《商品资料》P004"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-005",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032002,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.030579,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-006",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-002"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.032522,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.03125,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-007",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-003",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.032522,
+              "source": "《商品资料》P002"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.031498,
+              "source": "《商品资料》P005"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-008",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-004",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032258,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.031258,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-009",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-005",
+            "PRODUCT-P004"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P004",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-005",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《商品资料》P004"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.031025,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-010",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-012"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.013385,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-011",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-011"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-008",
+              "doc_type": "faq",
+              "score": 0.031754,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.031054,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-012",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-007"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.030002,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-013",
+          "category": "faq",
+          "relevant_chunk_ids": [
+            "FAQ-018"
+          ],
+          "required_rule_ids": [],
+          "gated": true,
+          "top3": [],
+          "hit1": false,
+          "recall3": false,
+          "first_relevant_rank": null,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-014",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "RULE-HR-01"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.031778,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.03101,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-015",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-007",
+            "RULE-HR-02"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-02"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.032787,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.03031,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.030303,
+              "source": "《售后SOP》退款处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-016",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-016",
+            "RULE-HR-03"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-03"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.032266,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.031778,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-02",
+              "doc_type": "rule",
+              "score": 0.030798,
+              "source": "《售后SOP》必须转人工（订单数据与用户描述冲突/超规则退款）"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-017",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-010",
+            "RULE-HR-04"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-04"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-010",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-04",
+              "doc_type": "rule",
+              "score": 0.031746,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-018",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-006",
+            "RULE-HR-05"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-05"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-006",
+              "doc_type": "faq",
+              "score": 0.031099,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-05",
+              "doc_type": "rule",
+              "score": 0.016393,
+              "source": "《售后SOP》隐私规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-012",
+              "doc_type": "faq",
+              "score": 0.03125,
+              "source": "《售后SOP》物流异常处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-019",
+          "category": "rule",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.032266,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-014",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《售后SOP》质量问题处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-020",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-015",
+            "FAQ-017",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.032787,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.032258,
+              "source": "《售后SOP》七天无理由规则"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-017",
+              "doc_type": "faq",
+              "score": 0.031746,
+              "source": "无明确规则依据"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-021",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-014",
+            "FAQ-016",
+            "RULE-HR-08"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-08"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-016",
+              "doc_type": "faq",
+              "score": 0.032522,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.030769,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.015152,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-022",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "FAQ-020",
+            "FAQ-013"
+          ],
+          "required_rule_ids": [
+            "RULE-HR-01"
+          ],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-020",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "RULE-HR-01",
+              "doc_type": "rule",
+              "score": 0.016129,
+              "source": "《售后SOP》必须转人工"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.032002,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": true
+        },
+        {
+          "case_id": "H-023",
+          "category": "product",
+          "relevant_chunk_ids": [
+            "PRODUCT-P005"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.032787,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-007",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "RULE-HR-08",
+              "doc_type": "rule",
+              "score": 0.029498,
+              "source": "《售后SOP》质量问题处理"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-024",
+          "category": "multi",
+          "relevant_chunk_ids": [
+            "PRODUCT-P003"
+          ],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P003",
+              "doc_type": "product",
+              "score": 0.032987,
+              "source": "《商品资料》P003"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "PRODUCT-P005",
+              "doc_type": "product",
+              "score": 0.03101,
+              "source": "《商品资料》P005"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "PRODUCT-P002",
+              "doc_type": "product",
+              "score": 0.030579,
+              "source": "《商品资料》P002"
+            }
+          ],
+          "hit1": true,
+          "recall3": true,
+          "first_relevant_rank": 1,
+          "rule_recall3": null
+        },
+        {
+          "case_id": "H-025",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": true,
+          "top3": [],
+          "top1_chunk_id": null,
+          "top1_score": null,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-026",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "RULE-HR-03",
+              "doc_type": "rule",
+              "score": 0.028798,
+              "source": "《售后SOP》退款处理"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-019",
+              "doc_type": "faq",
+              "score": 0.016393,
+              "source": "无明确规则依据"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-013",
+              "doc_type": "faq",
+              "score": 0.016129,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "RULE-HR-03",
+          "top1_score": 0.028798,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-027",
+          "category": "no_policy",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "FAQ-009",
+              "doc_type": "faq",
+              "score": 0.032266,
+              "source": "《模拟订单数据》"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-011",
+              "doc_type": "faq",
+              "score": 0.031498,
+              "source": "《售后SOP》物流异常处理"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-015",
+              "doc_type": "faq",
+              "score": 0.030886,
+              "source": "《售后SOP》七天无理由规则"
+            }
+          ],
+          "top1_chunk_id": "FAQ-009",
+          "top1_score": 0.032266,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-028",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": true,
+          "top3": [],
+          "top1_chunk_id": null,
+          "top1_score": null,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-029",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": true,
+          "top3": [],
+          "top1_chunk_id": null,
+          "top1_score": null,
+          "error_hit_flag": false
+        },
+        {
+          "case_id": "H-030",
+          "category": "irrelevant",
+          "relevant_chunk_ids": [],
+          "required_rule_ids": [],
+          "gated": false,
+          "top3": [
+            {
+              "rank": 1,
+              "chunk_id": "PRODUCT-P001",
+              "doc_type": "product",
+              "score": 0.031281,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "FAQ-001",
+              "doc_type": "faq",
+              "score": 0.030579,
+              "source": "《商品资料》P001"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "FAQ-002",
+              "doc_type": "faq",
+              "score": 0.030118,
+              "source": "《商品资料》P001"
+            }
+          ],
+          "top1_chunk_id": "PRODUCT-P001",
+          "top1_score": 0.031281,
+          "error_hit_flag": false
+        }
+      ]
+    }
+  },
+  "key_case_changes_v1_to_v2": {
+    "H-004": {
+      "case_id": "H-004",
+      "keyword_only": {
+        "top3": [
+          "FAQ-002",
+          "PRODUCT-P005",
+          "FAQ-004"
+        ],
+        "hit1": false,
+        "recall3": false,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "PRODUCT-P004",
+          "FAQ-014",
+          "FAQ-002"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "FAQ-002",
+          "FAQ-005",
+          "PRODUCT-P004"
+        ],
+        "hit1": false,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [
+          "PRODUCT-P004",
+          "FAQ-002",
+          "FAQ-005"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      }
+    },
+    "H-007": {
+      "case_id": "H-007",
+      "keyword_only": {
+        "top3": [
+          "PRODUCT-P002",
+          "FAQ-003",
+          "PRODUCT-P005"
+        ],
+        "hit1": false,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "FAQ-003",
+          "PRODUCT-P002",
+          "FAQ-001"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "PRODUCT-P002",
+          "FAQ-003",
+          "PRODUCT-P005"
+        ],
+        "hit1": false,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [
+          "FAQ-003",
+          "PRODUCT-P002",
+          "PRODUCT-P005"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      }
+    },
+    "H-009": {
+      "case_id": "H-009",
+      "keyword_only": {
+        "top3": [
+          "PRODUCT-P004",
+          "FAQ-005",
+          "FAQ-013"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "PRODUCT-P004",
+          "FAQ-005",
+          "FAQ-002"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "PRODUCT-P004",
+          "FAQ-005",
+          "FAQ-002"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [
+          "PRODUCT-P004",
+          "FAQ-005",
+          "FAQ-002"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": null,
+        "gated": false
+      }
+    },
+    "H-016": {
+      "case_id": "H-016",
+      "keyword_only": {
+        "top3": [
+          "RULE-HR-03",
+          "RULE-HR-07",
+          "RULE-HR-02"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "FAQ-016",
+          "FAQ-013",
+          "RULE-HR-03"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "RULE-HR-03",
+          "FAQ-016",
+          "RULE-HR-02"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [
+          "RULE-HR-03",
+          "FAQ-016",
+          "RULE-HR-02"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      }
+    },
+    "H-017": {
+      "case_id": "H-017",
+      "keyword_only": {
+        "top3": [
+          "FAQ-010",
+          "FAQ-012",
+          "RULE-HR-04"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "FAQ-012",
+          "FAQ-010",
+          "RULE-HR-04"
+        ],
+        "hit1": false,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "FAQ-010",
+          "FAQ-012",
+          "RULE-HR-04"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [
+          "FAQ-010",
+          "RULE-HR-04",
+          "FAQ-012"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      }
+    },
+    "H-018": {
+      "case_id": "H-018",
+      "keyword_only": {
+        "top3": [
+          "RULE-HR-05",
+          "RULE-HR-07",
+          "FAQ-008"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "FAQ-006",
+          "FAQ-009",
+          "FAQ-011"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": false,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "RULE-HR-05",
+          "FAQ-006",
+          "FAQ-008"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [
+          "FAQ-006",
+          "RULE-HR-05",
+          "FAQ-012"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      }
+    },
+    "H-021": {
+      "case_id": "H-021",
+      "keyword_only": {
+        "top3": [
+          "PRODUCT-P003",
+          "FAQ-016",
+          "RULE-HR-02"
+        ],
+        "hit1": false,
+        "recall3": true,
+        "rule_recall3": false,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "FAQ-016",
+          "FAQ-015",
+          "FAQ-013"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": false,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "FAQ-016",
+          "RULE-HR-02",
+          "RULE-HR-03"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": false,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [
+          "FAQ-016",
+          "RULE-HR-03",
+          "RULE-HR-08"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      }
+    },
+    "H-022": {
+      "case_id": "H-022",
+      "keyword_only": {
+        "top3": [
+          "FAQ-020",
+          "RULE-HR-01",
+          "FAQ-013"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "FAQ-017",
+          "FAQ-013",
+          "FAQ-020"
+        ],
+        "hit1": false,
+        "recall3": true,
+        "rule_recall3": false,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "FAQ-020",
+          "FAQ-013",
+          "FAQ-017"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": false,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [
+          "FAQ-020",
+          "RULE-HR-01",
+          "FAQ-013"
+        ],
+        "hit1": true,
+        "recall3": true,
+        "rule_recall3": true,
+        "gated": false
+      }
+    },
+    "H-025": {
+      "case_id": "H-025",
+      "keyword_only": {
+        "top3": [
+          "FAQ-014",
+          "RULE-HR-08",
+          "PRODUCT-P001"
+        ],
+        "hit1": null,
+        "recall3": null,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "vector_only": {
+        "top3": [
+          "FAQ-014",
+          "FAQ-009",
+          "FAQ-006"
+        ],
+        "hit1": null,
+        "recall3": null,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "hybrid_rrf_v1": {
+        "top3": [
+          "FAQ-014",
+          "RULE-HR-08",
+          "FAQ-009"
+        ],
+        "hit1": null,
+        "recall3": null,
+        "rule_recall3": null,
+        "gated": false
+      },
+      "hybrid_business_v2": {
+        "top3": [],
+        "hit1": null,
+        "recall3": null,
+        "rule_recall3": null,
+        "gated": true
+      }
+    }
+  },
+  "risk_intent_check": {
+    "H-014": {
+      "intents": [
+        "complaint_compensation"
+      ],
+      "required_rule_ids_analyzer": [
+        "RULE-HR-01"
+      ],
+      "required_rule_ids_expected": [
+        "RULE-HR-01"
+      ],
+      "identified": true
+    },
+    "H-015": {
+      "intents": [
+        "amount_dispute"
+      ],
+      "required_rule_ids_analyzer": [
+        "RULE-HR-02"
+      ],
+      "required_rule_ids_expected": [
+        "RULE-HR-02"
+      ],
+      "identified": true
+    },
+    "H-016": {
+      "intents": [
+        "refund_urge"
+      ],
+      "required_rule_ids_analyzer": [
+        "RULE-HR-03"
+      ],
+      "required_rule_ids_expected": [
+        "RULE-HR-03"
+      ],
+      "identified": true
+    },
+    "H-017": {
+      "intents": [
+        "logistics_stall"
+      ],
+      "required_rule_ids_analyzer": [
+        "RULE-HR-04"
+      ],
+      "required_rule_ids_expected": [
+        "RULE-HR-04"
+      ],
+      "identified": true
+    },
+    "H-018": {
+      "intents": [
+        "other_order"
+      ],
+      "required_rule_ids_analyzer": [
+        "RULE-HR-05"
+      ],
+      "required_rule_ids_expected": [
+        "RULE-HR-05"
+      ],
+      "identified": true
+    },
+    "H-019": {
+      "intents": [
+        "post_purchase_defect"
+      ],
+      "required_rule_ids_analyzer": [
+        "RULE-HR-08"
+      ],
+      "required_rule_ids_expected": [
+        "RULE-HR-08"
+      ],
+      "identified": true
+    },
+    "H-021": {
+      "intents": [
+        "refund_urge",
+        "post_purchase_defect"
+      ],
+      "required_rule_ids_analyzer": [
+        "RULE-HR-03",
+        "RULE-HR-08"
+      ],
+      "required_rule_ids_expected": [
+        "RULE-HR-08"
+      ],
+      "identified": true
+    },
+    "H-022": {
+      "intents": [
+        "complaint_compensation"
+      ],
+      "required_rule_ids_analyzer": [
+        "RULE-HR-01"
+      ],
+      "required_rule_ids_expected": [
+        "RULE-HR-01"
+      ],
+      "identified": true
+    }
+  },
+  "regressions_vs_v1": [
+    {
+      "case_id": "H-013",
+      "worse_in": [
+        "hit1",
+        "recall3"
+      ],
+      "v1_top3": [
+        "FAQ-018",
+        "FAQ-020",
+        "FAQ-013"
+      ],
+      "v2_top3": []
+    }
+  ],
+  "success_criteria": {
+    "1_v2_hit1_ge_vector": true,
+    "2_v2_recall3_100pct": false,
+    "3_v2_rule_recall3_100pct": true,
+    "4_v2_multi_hit1_100pct": true,
+    "5_H025_no_mis_hit": true,
+    "6_no_regression_vs_v1": false,
+    "7_risk_intents_identified": true,
+    "8_latency_p95_ok": true
+  },
+  "final_blind_set_ready": false,
+  "anti_overfit_check": {
+    "full_query_in_code": [],
+    "case_id_branch_in_code": [],
+    "passed": true
+  },
+  "freeze_hashes_verified": false,
+  "freeze_hashes_now": {
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever.py": "e71b454f5d07912b4a574c37e19e3daadfc1201da9c4e763e36552430faddffe",
+    "data/knowledge_chunks.jsonl": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+    "build_vector_index.py": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8"
+  },
+  "config": {
+    "EPSILON": 0.0003,
+    "ALIAS_BOOST": 0.0002,
+    "GENERIC_WEAK_WORDS": [
+      "商品",
+      "处理",
+      "怎么样",
+      "订单",
+      "质量",
+      "购物",
+      "问题"
+    ],
+    "WEAK_WORD_CAP": 0.5,
+    "HAN_CHAR_SCORE": 0.15,
+    "HAN_OVERLAP_CAP": 0.8,
+    "RRF_K": 60,
+    "KEYWORD_WEIGHT": 1.0,
+    "VECTOR_WEIGHT": 1.0,
+    "extended_synonyms": {
+      "书包": "P004"
+    }
+  },
+  "notes": "四种模式均在 validation_set_v1（v1.1 标注）上单次运行；keyword_only/vector_only/hybrid_rrf_v1 代码未改，其指标变化仅来自 H-009 标注修订；未设置向量拒答阈值；未调用 DeepSeek；未接入 /api/chat。"
+}

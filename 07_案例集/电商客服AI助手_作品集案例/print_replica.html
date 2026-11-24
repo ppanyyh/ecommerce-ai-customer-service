@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>电商客服AI助手_作品集案例</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Microsoft YaHei','PingFang SC',sans-serif; }
+  @page { size: 1280px 720px; margin: 0; }
+  body { background:#e5e7eb; }
+  .slide { width:1280px; height:720px; position:relative; overflow:hidden; background:#fff; page-break-after:always; }
+  .pagebar { position:absolute; left:60px; right:60px; bottom:18px; height:22px; display:flex; justify-content:space-between; align-items:center; font-size:13px; color:#94A3B8; }
+  .h1 { font-size:36px; font-weight:bold; color:#1A2333; }
+  .hrow { position:absolute; top:20px; left:60px; right:60px; height:80px; display:flex; justify-content:space-between; align-items:center; }
+  .hrow .tag { font-size:15px; color:#94A3B8; }
+  .card { background:#F4F7FE; border-radius:10px; }
+  .blue { color:#2563EB; }
+  .muted { color:#64748B; }
+</style>
+</head>
+<body>
+
+<!-- P1 封面 -->
+<div class="slide" style="background:linear-gradient(135deg,#1D4ED8 0%,#3B82F6 55%,#60A5FA 100%);color:#fff;">
+  <div style="position:absolute;top:-120px;right:-100px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
+  <div style="position:absolute;bottom:-160px;right:180px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,0.06);"></div>
+  <div style="position:absolute;top:96px;left:80px;display:flex;align-items:center;gap:12px;">
+    <div style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:bold;">AI</div>
+    <div style="font-size:15px;letter-spacing:2px;color:rgba(255,255,255,0.85);">个人作品集项目 · 能力验证 DEMO</div>
+  </div>
+  <div style="position:absolute;left:80px;top:210px;width:900px;">
+    <div style="font-size:66px;font-weight:bold;line-height:1.15;">电商客服AI助手</div>
+    <div style="font-size:24px;margin-top:18px;color:rgba(255,255,255,0.92);">基于业务资料和规则检索的客服能力验证 Demo</div>
+  </div>
+  <div style="position:absolute;left:80px;bottom:120px;right:80px;display:flex;gap:16px;">
+    <div style="background:rgba(255,255,255,0.14);border-radius:10px;padding:14px 20px;width:460px;"><div style="font-size:13px;color:rgba(255,255,255,0.75);margin-bottom:6px;">我的角色</div><div style="font-size:15px;">产品规划 · 知识整理 · Prompt设计 · 原型与测试</div></div>
+    <div style="background:rgba(255,255,255,0.14);border-radius:10px;padding:14px 20px;width:300px;"><div style="font-size:13px;color:rgba(255,255,255,0.75);margin-bottom:6px;">使用工具</div><div style="font-size:15px;">WorkBuddy · Axure RP 11 · WPS</div></div>
+    <div style="background:rgba(255,255,255,0.14);border-radius:10px;padding:14px 20px;flex:1;"><div style="font-size:13px;color:rgba(255,255,255,0.75);margin-bottom:6px;">数据说明</div><div style="font-size:15px;">全部为模拟数据，未接入真实系统</div></div>
+  </div>
+  <div style="position:absolute;left:80px;bottom:56px;font-size:14px;color:rgba(255,255,255,0.65);">2026 · 求职作品集案例</div>
+</div>
+
+<!-- P2 用户问题与项目目标 -->
+<div class="slide">
+  <div class="hrow"><div class="h1">用户问题与项目目标</div><div class="tag">01 / 问题定义</div></div>
+  <div style="position:absolute;top:108px;left:60px;right:60px;display:flex;gap:24px;">
+    <div style="width:500px;">
+      <div class="blue" style="font-size:19px;font-weight:bold;margin-bottom:12px;">客服场景的四个痛点</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="card" style="display:flex;gap:14px;padding:14px 16px;"><div class="blue" style="font-size:26px;font-weight:bold;width:44px;">01</div><div><div style="font-size:16px;font-weight:bold;margin-bottom:3px;">重复回答率高</div><div class="muted" style="font-size:13.5px;line-height:1.5;">商品参数、物流、售后问题被反复询问，占用大量人工坐席时间</div></div></div>
+        <div class="card" style="display:flex;gap:14px;padding:14px 16px;"><div class="blue" style="font-size:26px;font-weight:bold;width:44px;">02</div><div><div style="font-size:16px;font-weight:bold;margin-bottom:3px;">人工检索资料慢</div><div class="muted" style="font-size:13.5px;line-height:1.5;">客服需要在多份文档间翻找价格、参数与售后规则，响应慢</div></div></div>
+        <div class="card" style="display:flex;gap:14px;padding:14px 16px;"><div class="blue" style="font-size:26px;font-weight:bold;width:44px;">03</div><div><div style="font-size:16px;font-weight:bold;margin-bottom:3px;">回答口径不一致</div><div class="muted" style="font-size:13.5px;line-height:1.5;">不同客服对同一规则的表述可能不同，容易引发二次投诉</div></div></div>
+        <div class="card" style="display:flex;gap:14px;padding:14px 16px;"><div class="blue" style="font-size:26px;font-weight:bold;width:44px;">04</div><div><div style="font-size:16px;font-weight:bold;margin-bottom:3px;">高风险问题需及时升级</div><div class="muted" style="font-size:13.5px;line-height:1.5;">投诉、金额争议、赔偿诉求必须第一时间转人工，避免AI误承诺</div></div></div>
+      </div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:14px;">
+      <div style="background:#2563EB;border-radius:12px;padding:18px 20px;flex:1.35;">
+        <div style="font-size:17px;font-weight:bold;margin-bottom:10px;">产品目标</div>
+        <div style="font-size:14.5px;line-height:1.6;">▸ 基于资料生成客服建议回复，并标注信息依据<br>▸ 自动识别问题分类（商品 / 订单支付 / 物流 / 售后 / 其他）<br>▸ 支持 3 个模拟订单的状态查询与售后进度展示<br>▸ 识别风险并判断是否转人工，收集用户反馈</div>
+      </div>
+      <div class="card" style="border-radius:12px;padding:16px 20px;flex:1;">
+        <div style="font-size:17px;font-weight:bold;color:#1A2333;margin-bottom:8px;">非目标（当前版本不做）</div>
+        <div class="muted" style="font-size:14px;line-height:1.6;">不对接真实订单 / 支付 / 物流系统 · 不处理真实用户隐私数据 · 不自动批准退款或赔偿 · 不承诺到账或处理时间 · 不包含真实大模型 API 与 RAG</div>
+      </div>
+      <div style="display:flex;gap:12px;height:86px;">
+        <div style="flex:1;border:1px solid #DBE4F5;border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;justify-content:center;"><div class="blue" style="font-size:15px;font-weight:bold;margin-bottom:4px;">消费者</div><div class="muted" style="font-size:12.5px;">随时提问，获得有依据的回答</div></div>
+        <div style="flex:1;border:1px solid #DBE4F5;border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;justify-content:center;"><div class="blue" style="font-size:15px;font-weight:bold;margin-bottom:4px;">客服人员</div><div class="muted" style="font-size:12.5px;">参考建议回复，统一口径</div></div>
+        <div style="flex:1;border:1px solid #DBE4F5;border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;justify-content:center;"><div class="blue" style="font-size:15px;font-weight:bold;margin-bottom:4px;">客服主管 / 运营</div><div class="muted" style="font-size:12.5px;">关注风险问题与转人工质量</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="pagebar"><span>电商客服AI助手 · 个人作品集</span><span>02 / 07</span></div>
+</div>
+
+<!-- P3 产品方案与核心流程 -->
+<div class="slide">
+  <div class="hrow"><div class="h1">产品方案与核心流程</div><div class="tag">02 / 方案设计</div></div>
+  <div style="position:absolute;top:108px;left:60px;right:60px;display:flex;gap:24px;">
+    <div style="width:384px;background:#F8FAFE;border-radius:12px;padding:10px;display:flex;align-items:center;justify-content:center;">
+      <img src="assets/flowchart.png" style="width:364px;height:478px;object-fit:contain;">
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:14px;">
+      <div style="border:1px solid #DBE4F5;border-radius:12px;padding:16px 20px;">
+        <div style="font-size:17px;font-weight:bold;margin-bottom:12px;">核心业务流程 · 七个环节</div>
+        <div style="display:flex;gap:10px;margin-bottom:10px;">
+          <div class="card" style="flex:1;border-radius:8px;padding:10px 8px;text-align:center;"><div class="blue" style="font-size:12px;font-weight:bold;">STEP 1</div><div style="font-size:14px;">用户提问</div></div>
+          <div class="card" style="flex:1;border-radius:8px;padding:10px 8px;text-align:center;"><div class="blue" style="font-size:12px;font-weight:bold;">STEP 2</div><div style="font-size:14px;">输入有效性校验</div></div>
+          <div class="card" style="flex:1;border-radius:8px;padding:10px 8px;text-align:center;"><div class="blue" style="font-size:12px;font-weight:bold;">STEP 3</div><div style="font-size:14px;">订单号识别</div></div>
+          <div class="card" style="flex:1;border-radius:8px;padding:10px 8px;text-align:center;"><div class="blue" style="font-size:12px;font-weight:bold;">STEP 4</div><div style="font-size:14px;">问题分类</div></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:10px;">
+          <div class="card" style="flex:1;border-radius:8px;padding:10px 8px;text-align:center;"><div class="blue" style="font-size:12px;font-weight:bold;">STEP 5</div><div style="font-size:14px;">资料检索</div></div>
+          <div class="card" style="flex:1;border-radius:8px;padding:10px 8px;text-align:center;"><div class="blue" style="font-size:12px;font-weight:bold;">STEP 6</div><div style="font-size:14px;">生成建议回复</div></div>
+          <div class="card" style="flex:1;border-radius:8px;padding:10px 8px;text-align:center;"><div class="blue" style="font-size:12px;font-weight:bold;">STEP 7</div><div style="font-size:14px;">风险判断</div></div>
+          <div class="card" style="flex:1;border-radius:8px;padding:10px 8px;text-align:center;"><div class="blue" style="font-size:12px;font-weight:bold;">STEP 8</div><div style="font-size:14px;">回复或转人工</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;"><div style="flex:1;height:2px;background:#DBE4F5;"></div><div class="muted" style="font-size:13px;white-space:nowrap;">每条回答附用户反馈入口（有帮助 / 无帮助），闭环沉淀</div><div style="flex:1;height:2px;background:#DBE4F5;"></div></div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:17px;font-weight:bold;">四类知识源 · 回答的唯一依据</div>
+        <div style="display:flex;gap:10px;flex:1;">
+          <div class="card" style="flex:1;border-radius:10px;padding:12px 14px;"><div class="blue" style="font-size:15px;font-weight:bold;margin-bottom:5px;">商品资料</div><div class="muted" style="font-size:12.5px;line-height:1.45;">5款商品的参数、价格、材质、保修</div></div>
+          <div class="card" style="flex:1;border-radius:10px;padding:12px 14px;"><div class="blue" style="font-size:15px;font-weight:bold;margin-bottom:5px;">客服FAQ</div><div class="muted" style="font-size:12.5px;line-height:1.45;">20条标准问答，按5类问题组织</div></div>
+          <div class="card" style="flex:1;border-radius:10px;padding:12px 14px;"><div class="blue" style="font-size:15px;font-weight:bold;margin-bottom:5px;">售后SOP</div><div class="muted" style="font-size:12.5px;line-height:1.45;">售后流程、七天无理由与转人工规则</div></div>
+          <div class="card" style="flex:1;border-radius:10px;padding:12px 14px;"><div class="blue" style="font-size:15px;font-weight:bold;margin-bottom:5px;">模拟订单</div><div class="muted" style="font-size:12.5px;line-height:1.45;">3笔订单15字段，含数量与售后状态</div></div>
+        </div>
+        <div style="background:#2563EB;border-radius:10px;padding:12px 16px;font-size:14px;">有依据 → 回答并展示依据；无依据 → 明确告知「资料未覆盖」，绝不编造</div>
+      </div>
+    </div>
+  </div>
+  <div class="pagebar"><span>电商客服AI助手 · 个人作品集</span><span>03 / 07</span></div>
+</div>
+
+<!-- P4 功能架构与关键规则 -->
+<div class="slide">
+  <div class="hrow"><div class="h1">功能架构与关键规则</div><div class="tag">03 / 功能与规则</div></div>
+  <div style="position:absolute;top:108px;left:60px;right:60px;">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <div class="card" style="width:277px;padding:14px 16px;height:108px;"><div class="blue" style="font-size:16px;font-weight:bold;margin-bottom:6px;">商品问答</div><div class="muted" style="font-size:12.5px;line-height:1.5;">5款商品参数/价格/保修逐项作答</div></div>
+      <div class="card" style="width:277px;padding:14px 16px;height:108px;"><div class="blue" style="font-size:16px;font-weight:bold;margin-bottom:6px;">FAQ问答</div><div class="muted" style="font-size:12.5px;line-height:1.5;">20条标准问答匹配，附依据来源</div></div>
+      <div class="card" style="width:277px;padding:14px 16px;height:108px;"><div class="blue" style="font-size:16px;font-weight:bold;margin-bottom:6px;">模拟订单查询</div><div class="muted" style="font-size:12.5px;line-height:1.5;">识别12位订单号，返回状态三要素</div></div>
+      <div class="card" style="width:277px;padding:14px 16px;height:108px;"><div class="blue" style="font-size:16px;font-weight:bold;margin-bottom:6px;">问题分类</div><div class="muted" style="font-size:12.5px;line-height:1.5;">商品/订单支付/物流/售后/其他</div></div>
+      <div class="card" style="width:277px;padding:14px 16px;height:108px;"><div class="blue" style="font-size:16px;font-weight:bold;margin-bottom:6px;">信息依据</div><div class="muted" style="font-size:12.5px;line-height:1.5;">每条回答标注资料出处</div></div>
+      <div class="card" style="width:277px;padding:14px 16px;height:108px;"><div class="blue" style="font-size:16px;font-weight:bold;margin-bottom:6px;">风险识别</div><div class="muted" style="font-size:12.5px;line-height:1.5;">独立维度：低/中/高三级</div></div>
+      <div class="card" style="width:277px;padding:14px 16px;height:108px;"><div class="blue" style="font-size:16px;font-weight:bold;margin-bottom:6px;">转人工判断</div><div class="muted" style="font-size:12.5px;line-height:1.5;">9类情形强制建议转人工</div></div>
+      <div class="card" style="width:277px;padding:14px 16px;height:108px;"><div class="blue" style="font-size:16px;font-weight:bold;margin-bottom:6px;">用户反馈</div><div class="muted" style="font-size:12.5px;line-height:1.5;">有帮助/无帮助，会话内记录</div></div>
+    </div>
+    <div style="font-size:19px;font-weight:bold;margin:20px 0 10px;">三条核心业务规则 · 贯穿全部回答</div>
+    <div style="display:flex;gap:14px;">
+      <div style="flex:1;border:1.5px solid #DBE4F5;border-radius:12px;padding:16px 18px;height:190px;"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><div style="width:30px;height:30px;border-radius:15px;background:#2563EB;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:bold;">1</div><div style="font-size:17px;font-weight:bold;">有依据才回答</div></div><div class="muted" style="font-size:13.5px;line-height:1.6;">回答内容全部来自商品资料、FAQ、售后SOP 与订单数据；资料未覆盖的问题明确说明「现有资料未覆盖」，AI 不编造政策、参数与承诺。</div></div>
+      <div style="flex:1;border:1.5px solid #DBE4F5;border-radius:12px;padding:16px 18px;height:190px;"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><div style="width:30px;height:30px;border-radius:15px;background:#2563EB;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:bold;">2</div><div style="font-size:17px;font-weight:bold;">未知订单不编造</div></div><div class="muted" style="font-size:13.5px;line-height:1.6;">仅 3 个模拟订单号可查询；不存在的订单号一律提示「未查询到该模拟订单」，不完整订单号提示补全 12 位，绝不返回猜测信息。</div></div>
+      <div style="flex:1;background:#2563EB;border-radius:12px;padding:16px 18px;height:190px;color:#fff;"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><div style="width:30px;height:30px;border-radius:15px;background:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:bold;">3</div><div style="font-size:17px;font-weight:bold;">高风险必须转人工</div></div><div style="font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.92);">金额争议、重复扣款、投诉赔偿、隐私与他人订单请求：拒绝处理并转人工；仅查询退款进度不转人工，催促或质疑才升级。</div></div>
+    </div>
+  </div>
+  <div class="pagebar"><span>电商客服AI助手 · 个人作品集</span><span>04 / 07</span></div>
+</div>
+
+<!-- P5 原型与可运行Demo -->
+<div class="slide">
+  <div class="hrow"><div class="h1">原型与可运行 Demo</div><div class="tag">04 / 原型与实现</div></div>
+  <div style="position:absolute;top:108px;left:60px;right:60px;display:flex;flex-direction:column;gap:10px;">
+    <div style="display:flex;gap:16px;">
+      <div style="width:376px;"><img src="assets/proto_product.png" style="width:376px;height:178px;object-fit:cover;border-radius:8px;border:1px solid #DBE4F5;"><div class="muted" style="font-size:13px;margin-top:5px;text-align:center;">商品问答 · 回答附资料依据</div></div>
+      <div style="width:376px;"><img src="assets/proto_order.png" style="width:376px;height:178px;object-fit:cover;border-radius:8px;border:1px solid #DBE4F5;"><div class="muted" style="font-size:13px;margin-top:5px;text-align:center;">退款进度查询 · 展示售后状态</div></div>
+      <div style="width:376px;"><img src="assets/proto_uncovered.png" style="width:376px;height:178px;object-fit:cover;border-radius:8px;border:1px solid #DBE4F5;"><div class="muted" style="font-size:13px;margin-top:5px;text-align:center;">资料未覆盖 · 明确告知不编造</div></div>
+    </div>
+    <div style="display:flex;gap:16px;">
+      <div style="width:572px;"><img src="assets/proto_risk.png" style="width:572px;height:224px;object-fit:cover;border-radius:8px;border:1px solid #DBE4F5;"><div class="muted" style="font-size:13px;margin-top:5px;text-align:center;">风险转人工 · 高风险提示与原因</div></div>
+      <div style="width:572px;"><img src="assets/proto_blank.png" style="width:572px;height:224px;object-fit:cover;border-radius:8px;border:1px solid #DBE4F5;"><div class="muted" style="font-size:13px;margin-top:5px;text-align:center;">空白会话 · 快捷问题与三栏布局</div></div>
+    </div>
+    <div style="background:#EFF4FF;border-radius:10px;padding:8px 16px;font-size:13.5px;line-height:1.5;">
+      <b class="blue">Axure RP 11</b> 用于关键状态与路径展示（上图为 5 个典型状态）；<b class="blue">HTML/CSS/JavaScript 网页 Demo</b> 可本地实际运行，每条回答同时展示问题分类、信息依据、风险等级与转人工判断。
+    </div>
+  </div>
+  <div class="pagebar"><span>电商客服AI助手 · 个人作品集</span><span>05 / 07</span></div>
+</div>
+
+<!-- P6 测试与迭代 -->
+<div class="slide">
+  <div class="hrow"><div class="h1">测试与迭代</div><div class="tag">05 / 质量验证</div></div>
+  <div style="position:absolute;top:108px;left:60px;right:60px;display:flex;gap:24px;">
+    <div style="width:552px;">
+      <div style="display:flex;align-items:flex-end;gap:18px;margin-bottom:6px;">
+        <div style="font-size:56px;font-weight:bold;color:#94A3B8;">80%</div>
+        <div style="font-size:26px;color:#94A3B8;padding-bottom:8px;">→</div>
+        <div class="blue" style="font-size:64px;font-weight:bold;">100%</div>
+        <div class="muted" style="font-size:13.5px;padding-bottom:10px;line-height:1.4;">严格通过率<br>（25条正式用例 × 2轮）</div>
+      </div>
+      <div style="border:1px solid #E2E8F0;border-radius:10px;padding:10px;">
+        <div style="font-size:14px;font-weight:bold;margin-bottom:6px;">两轮测试结果对比（条数）</div>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;text-align:center;">
+          <tr style="background:#F4F7FE;"><th style="padding:6px;border:1px solid #E2E8F0;">轮次</th><th style="padding:6px;border:1px solid #E2E8F0;color:#2563EB;">通过</th><th style="padding:6px;border:1px solid #E2E8F0;color:#F59E0B;">部分通过</th><th style="padding:6px;border:1px solid #E2E8F0;color:#EF4444;">不通过</th></tr>
+          <tr><td style="padding:6px;border:1px solid #E2E8F0;">第一轮</td><td style="padding:6px;border:1px solid #E2E8F0;font-weight:bold;">20</td><td style="padding:6px;border:1px solid #E2E8F0;">4</td><td style="padding:6px;border:1px solid #E2E8F0;">1</td></tr>
+          <tr><td style="padding:6px;border:1px solid #E2E8F0;">第二轮</td><td style="padding:6px;border:1px solid #E2E8F0;font-weight:bold;">25</td><td style="padding:6px;border:1px solid #E2E8F0;">0</td><td style="padding:6px;border:1px solid #E2E8F0;">0</td></tr>
+        </table>
+        <div style="display:flex;gap:14px;margin-top:8px;height:120px;align-items:flex-end;padding:0 20px;">
+          <div style="flex:1;display:flex;align-items:flex-end;gap:6px;justify-content:center;"><div style="width:44px;height:96px;background:#2563EB;border-radius:4px 4px 0 0;"></div><div style="width:26px;height:19px;background:#F59E0B;border-radius:4px 4px 0 0;"></div><div style="width:26px;height:5px;background:#EF4444;border-radius:4px 4px 0 0;"></div></div>
+          <div style="flex:1;display:flex;align-items:flex-end;gap:6px;justify-content:center;"><div style="width:44px;height:120px;background:#2563EB;border-radius:4px 4px 0 0;"></div><div style="width:26px;height:3px;background:#F59E0B;"></div><div style="width:26px;height:3px;background:#EF4444;"></div></div>
+        </div>
+      </div>
+      <div style="background:#FFF7ED;border:1px solid #FDBA74;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;color:#9A3412;line-height:1.5;">边界声明：100% 仅代表现有 25 条预设测试用例全部通过，不代表覆盖所有真实用户表达。</div>
+    </div>
+    <div style="flex:1;">
+      <div style="font-size:17px;font-weight:bold;margin-bottom:10px;">第一轮发现 6 个问题 · 第二轮全部修复</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div style="display:flex;align-items:center;gap:8px;background:#F8FAFE;border-radius:8px;padding:8px 12px;"><div style="width:20px;height:20px;border-radius:10px;background:#EFF4FF;color:#2563EB;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;">1</div><div style="font-size:13.5px;width:210px;">口语化投诉表达漏识别</div><div style="font-size:13px;color:#16A34A;">→</div><div class="muted" style="font-size:13px;flex:1;">建立可维护风险关键词集合</div></div>
+        <div style="display:flex;align-items:center;gap:8px;background:#F8FAFE;border-radius:8px;padding:8px 12px;"><div style="width:20px;height:20px;border-radius:10px;background:#EFF4FF;color:#2563EB;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;">2</div><div style="font-size:13.5px;width:210px;">多属性提问回答不完整</div><div style="font-size:13px;color:#16A34A;">→</div><div class="muted" style="font-size:13px;flex:1;">按属性逐项作答并标注未覆盖项</div></div>
+        <div style="display:flex;align-items:center;gap:8px;background:#F8FAFE;border-radius:8px;padding:8px 12px;"><div style="width:20px;height:20px;border-radius:10px;background:#EFF4FF;color:#2563EB;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;">3</div><div style="font-size:13.5px;width:210px;">物流停滞判断不足</div><div style="font-size:13px;color:#16A34A;">→</div><div class="muted" style="font-size:13px;flex:1;">超24h未更新识别为物流/中风险/转人工</div></div>
+        <div style="display:flex;align-items:center;gap:8px;background:#F8FAFE;border-radius:8px;padding:8px 12px;"><div style="width:20px;height:20px;border-radius:10px;background:#EFF4FF;color:#2563EB;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;">4</div><div style="font-size:13.5px;width:210px;">具体FAQ匹配优先级不足</div><div style="font-size:13px;color:#16A34A;">→</div><div class="muted" style="font-size:13px;flex:1;">专用条目优先于泛化条目</div></div>
+        <div style="display:flex;align-items:center;gap:8px;background:#F8FAFE;border-radius:8px;padding:8px 12px;"><div style="width:20px;height:20px;border-radius:10px;background:#EFF4FF;color:#2563EB;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;">5</div><div style="font-size:13.5px;width:210px;">不完整订单号无提示</div><div style="font-size:13px;color:#16A34A;">→</div><div class="muted" style="font-size:13px;flex:1;">6~11位数字提示补全12位</div></div>
+        <div style="display:flex;align-items:center;gap:8px;background:#F8FAFE;border-radius:8px;padding:8px 12px;"><div style="width:20px;height:20px;border-radius:10px;background:#EFF4FF;color:#2563EB;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;">6</div><div style="font-size:13.5px;width:210px;">金额争议话术过于通用</div><div style="font-size:13px;color:#16A34A;">→</div><div class="muted" style="font-size:13px;flex:1;">金额争议专用回复，要求人工核对</div></div>
+      </div>
+      <div style="font-size:12.5px;color:#94A3B8;margin-top:6px;line-height:1.5;">第二轮回归：25/25 通过，P0/P1/P2 遗留均为 0；空输入用例经浏览器实测复核。</div>
+    </div>
+  </div>
+  <div class="pagebar"><span>电商客服AI助手 · 个人作品集</span><span>06 / 07</span></div>
+</div>
+
+<!-- P7 项目结果与复盘 -->
+<div class="slide">
+  <div class="hrow"><div class="h1">项目结果与复盘</div><div class="tag">06 / 结果与沉淀</div></div>
+  <div style="position:absolute;top:108px;left:60px;right:60px;display:flex;gap:24px;">
+    <div style="width:470px;">
+      <div style="font-size:17px;font-weight:bold;margin-bottom:12px;">实际交付物</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="card" style="display:flex;align-items:center;gap:12px;border-radius:9px;padding:9px 14px;"><div class="blue" style="font-size:24px;font-weight:bold;width:40px;">1</div><div style="font-size:14.5px;font-weight:bold;width:200px;">份需求分析</div><div class="muted" style="font-size:12.5px;flex:1;">产品与用户需求文档</div></div>
+        <div class="card" style="display:flex;align-items:center;gap:12px;border-radius:9px;padding:9px 14px;"><div class="blue" style="font-size:24px;font-weight:bold;width:40px;">1</div><div style="font-size:14.5px;font-weight:bold;width:200px;">份 PRD（3~5页）</div><div class="muted" style="font-size:12.5px;flex:1;">V1.0，12章节正式文档</div></div>
+        <div class="card" style="display:flex;align-items:center;gap:12px;border-radius:9px;padding:9px 14px;"><div class="blue" style="font-size:24px;font-weight:bold;width:40px;">1</div><div style="font-size:14.5px;font-weight:bold;width:200px;">张业务流程图</div><div class="muted" style="font-size:12.5px;flex:1;">标准图形，嵌入PRD</div></div>
+        <div class="card" style="display:flex;align-items:center;gap:12px;border-radius:9px;padding:9px 14px;"><div class="blue" style="font-size:24px;font-weight:bold;width:40px;">5</div><div style="font-size:14.5px;font-weight:bold;width:200px;">个Axure关键页面状态</div><div class="muted" style="font-size:12.5px;flex:1;">覆盖典型交互路径</div></div>
+        <div class="card" style="display:flex;align-items:center;gap:12px;border-radius:9px;padding:9px 14px;"><div class="blue" style="font-size:24px;font-weight:bold;width:40px;">1</div><div style="font-size:14.5px;font-weight:bold;width:200px;">个可运行网页Demo</div><div class="muted" style="font-size:12.5px;flex:1;">HTML/CSS/JS 本地运行</div></div>
+        <div class="card" style="display:flex;align-items:center;gap:12px;border-radius:9px;padding:9px 14px;"><div class="blue" style="font-size:24px;font-weight:bold;width:40px;">25</div><div style="font-size:14.5px;font-weight:bold;width:200px;">条正式测试用例</div><div class="muted" style="font-size:12.5px;flex:1;">15字段记录，两轮执行</div></div>
+        <div class="card" style="display:flex;align-items:center;gap:12px;border-radius:9px;padding:9px 14px;"><div class="blue" style="font-size:24px;font-weight:bold;width:40px;">2</div><div style="font-size:14.5px;font-weight:bold;width:200px;">轮测试与迭代记录</div><div class="muted" style="font-size:12.5px;flex:1;">问题清单+回归记录</div></div>
+      </div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:14px;">
+      <div style="background:#F8FAFE;border:1px solid #DBE4F5;border-radius:12px;padding:16px 20px;flex:1.4;">
+        <div style="font-size:17px;font-weight:bold;margin-bottom:10px;">复盘 · 关键经验</div>
+        <div style="font-size:13.5px;line-height:1.7;">
+          <div style="margin-bottom:8px;"><b class="blue">✓</b> 先整理知识与回答边界，再制作 Demo —— 数据层质量决定回答质量</div>
+          <div style="margin-bottom:8px;"><b class="blue">✓</b> 问题分类与风险判断拆成两个独立维度，避免「分类即定风险」的误判</div>
+          <div style="margin-bottom:8px;"><b class="blue">✓</b> 测试不只验证答案，还验证依据出处与转人工判断的正确性</div>
+          <div><b class="blue">✓</b> 规则匹配能快速验证业务流程，但语义泛化能力有限，需大模型补充</div>
+        </div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:17px;font-weight:bold;margin-bottom:8px;">后续规划</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="background:#2563EB;border-radius:16px;padding:7px 14px;font-size:12.5px;color:#fff;">接入 DeepSeek 等大模型 API</div>
+          <div style="background:#2563EB;border-radius:16px;padding:7px 14px;font-size:12.5px;color:#fff;">向量知识库 + RAG</div>
+          <div style="background:#2563EB;border-radius:16px;padding:7px 14px;font-size:12.5px;color:#fff;">多轮上下文对话</div>
+          <div style="background:#2563EB;border-radius:16px;padding:7px 14px;font-size:12.5px;color:#fff;">接入真实订单系统</div>
+          <div style="background:#2563EB;border-radius:16px;padding:7px 14px;font-size:12.5px;color:#fff;">运营效果看板</div>
+        </div>
+        <div style="font-size:12px;color:#94A3B8;margin-top:8px;line-height:1.5;">当前版本为规则匹配 Demo（模拟数据），用于验证业务流程与回答边界，为接入大模型 API 做准备。</div>
+      </div>
+    </div>
+  </div>
+  <div class="pagebar"><span>电商客服AI助手 · 个人作品集</span><span>07 / 07</span></div>
+</div>
+
+</body>
+</html>

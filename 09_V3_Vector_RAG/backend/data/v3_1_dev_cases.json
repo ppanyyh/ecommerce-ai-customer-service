@@ -1,0 +1,1153 @@
+{
+  "meta": {
+    "name": "v3_1_dev_cases",
+    "version": "1.0",
+    "created_at": "2026-09-25",
+    "purpose": "V3.1 第一阶段调修开发集：用于业务范围三分类门控、质量缺陷意图、FAQ口语召回的调试与阈值校准。不是最终盲测集。",
+    "design_note": "全部用例按能力边界与业务类别重新设计，未复制旧盲测原句、未做简单同义词替换、未使用旧盲测 case_id。",
+    "scope_labels": [
+      "supported",
+      "unsupported_business",
+      "irrelevant"
+    ],
+    "distribution": {
+      "covered_product": 10,
+      "covered_faq": 10,
+      "risk_rules": 12,
+      "multi_intent": 8,
+      "uncovered_business": 10,
+      "irrelevant": 10
+    },
+    "leakage_check": "backend/check_v3_1_dev_set.py",
+    "annotation_revision": [
+      {
+        "case_id": "DV-009",
+        "change": "relevant_chunk_ids 由 [PRODUCT-P005, FAQ-001] 修正为 [PRODUCT-P005]",
+        "reason": "人工复核：FAQ-001 是耳机降噪FAQ，与台灯光线刺眼问题无关，原标注有误（运行正式统计前修正，非按结果改预期）。"
+      },
+      {
+        "case_id": "DV-036",
+        "change": "relevant_chunk_ids 增加 FAQ-009",
+        "reason": "人工复核：订单走到哪步的进度查询，FAQ-009（发货时间/状态判断）与 FAQ-006 均能回答，原标注过窄。"
+      },
+      {
+        "case_id": "DV-038",
+        "change": "relevant_chunk_ids 增加 FAQ-009",
+        "reason": "人工复核：盯发货状态可由 FAQ-009 回答，原标注过窄。"
+      },
+      {
+        "case_id": "DV-040",
+        "change": "relevant_chunk_ids 增加 FAQ-013",
+        "reason": "人工复核：用过一回还能不能退属无理由退货条件，FAQ-013 可回答，原标注过窄。"
+      },
+      {
+        "case_id": "DV-046",
+        "revised_at": "2026-09-25",
+        "change": "uncovered_business(unsupported_business/不可回答) 修正为 supported(可回答)，relevant_chunk_ids=[FAQ-018]",
+        "reason": "知识库存在发票专门承接片段 FAQ-018（答案内容即'资料未覆盖，转人工核实'），发票问题属于已覆盖领域；门控职责是路由到该 FAQ，而非拦截。与 validation_set_v1 H-013 口径对齐；原标注误读知识库范围。",
+        "query_unchanged": true,
+        "original_annotation": {
+          "is_answerable": false,
+          "expected_supported": false,
+          "expected_scope": "unsupported_business",
+          "relevant_chunk_ids": [],
+          "reason": "发票类型与开票流程资料未覆盖"
+        }
+      },
+      {
+        "case_id": "DV-046",
+        "revised_at": "2026-09-25 (V3.1 Phase 2)",
+        "change": "恢复为 is_answerable=false / expected_supported=false / expected_scope=unsupported_business / relevant_chunk_ids=[]（撤销阶段一将发票改 supported 的修订）",
+        "reason": "用户审核不批准：FAQ-018 仅说明现有资料未覆盖发票类型/条件/流程并给出转人工步骤，不构成发票政策答案；按 V3.1 三分类属业务相关但资料未覆盖。发票口径为 V3.1 有意进行的业务语义变更。",
+        "before_phase2_revert": {
+          "expected_supported": true,
+          "expected_scope": "supported",
+          "relevant_chunk_ids": [
+            "FAQ-018"
+          ],
+          "is_answerable": true
+        },
+        "approved_by": "user (V3.1 Phase 2 指令 第二节)"
+      }
+    ],
+    "set_nature": "本集合是开发集（development set）：允许用于调试、阈值校准与失败迭代，在多轮评测中根据失败结果修订过标注（见 annotation_revision）并据此调整过实现；其结果只证明开发集拟合通过，不能作为最终泛化成绩，不得称为盲测集。最终泛化评估须另建独立 final blind set（本阶段未创建、未运行）。"
+  },
+  "cases": [
+    {
+      "case_id": "DV-001",
+      "category": "covered_product",
+      "query": "P002这把键盘最多能同时连几台设备？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P002"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "P002编号+多设备连接属性，商品片段含连接规格",
+      "source_refs": [
+        "knowledge_base.product.P002"
+      ]
+    },
+    {
+      "case_id": "DV-002",
+      "category": "covered_product",
+      "query": "这个保温杯容量是多少毫升？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P003"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "杯子为P003别名，容量属于商品基础参数",
+      "source_refs": [
+        "knowledge_base.product.P003"
+      ]
+    },
+    {
+      "case_id": "DV-003",
+      "category": "covered_product",
+      "query": "P001充满电大概能用几个小时？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P001"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "P001编号+续航属性，商品片段含电池续航规格",
+      "source_refs": [
+        "knowledge_base.product.P001"
+      ]
+    },
+    {
+      "case_id": "DV-004",
+      "category": "covered_product",
+      "query": "书包最大能承重多少？面料是什么材质的？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P004"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "书包经同义词扩展映射P004，材质与承重属于商品参数",
+      "source_refs": [
+        "knowledge_base.product.P004"
+      ]
+    },
+    {
+      "case_id": "DV-005",
+      "category": "covered_product",
+      "query": "台灯的亮度可以分几档调节？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P005"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "台灯为P005别名，亮度调节档位属于商品功能参数",
+      "source_refs": [
+        "knowledge_base.product.P005"
+      ]
+    },
+    {
+      "case_id": "DV-006",
+      "category": "covered_product",
+      "query": "那个小键盘是蓝牙的还是要用线的？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P002"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "口语指代+键盘别名命中P002，连接方式为商品参数",
+      "source_refs": [
+        "knowledge_base.product.P002"
+      ]
+    },
+    {
+      "case_id": "DV-007",
+      "category": "covered_product",
+      "query": "保温效果能坚持一整天吗？带出门方便吗？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P003"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "保温时长与便携性属于P003商品资料范围",
+      "source_refs": [
+        "knowledge_base.product.P003"
+      ]
+    },
+    {
+      "case_id": "DV-008",
+      "category": "covered_product",
+      "query": "P004自己本身有多重？放台式机电源进去装得下吗？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P004"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "hard",
+      "reason": "P004编号+自重与容纳能力，属性组合查询",
+      "source_refs": [
+        "knowledge_base.product.P004"
+      ]
+    },
+    {
+      "case_id": "DV-009",
+      "category": "covered_product",
+      "query": "P005晚上开着看书会不会太刺眼？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P005"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "hard",
+      "reason": "P005编号+使用体验询问，商品片段含色温亮度说明；FAQ-001涉及使用舒适度为可接受的辅助内容",
+      "source_refs": [
+        "knowledge_base.product.P005"
+      ]
+    },
+    {
+      "case_id": "DV-010",
+      "category": "covered_product",
+      "query": "无线蓝芽耳机的防水等级是多少，跑步出汗戴着有问题不",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P001",
+        "FAQ-002"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "hard",
+      "reason": "含错别字（蓝芽）+口语（有问题不），P001防水等级与FAQ-002生活防水说明均可回答",
+      "source_refs": [
+        "knowledge_base.product.P001",
+        "knowledge_base.faq.FAQ-002"
+      ]
+    },
+    {
+      "case_id": "DV-011",
+      "category": "covered_faq",
+      "query": "想看下我那单现在处理得怎么样了",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-006"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "口语化订单进度查询，FAQ-006提供订单状态查询方式",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-006"
+      ]
+    },
+    {
+      "case_id": "DV-012",
+      "category": "covered_faq",
+      "query": "钱都扣了怎么订单还挂在那里显示待付款？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-007"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "付款状态不同步问题，对应FAQ-007",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-007"
+      ]
+    },
+    {
+      "case_id": "DV-013",
+      "category": "covered_faq",
+      "query": "单子刚提交，能不能把里面的型号换成另一个？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-008"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "修改已提交订单商品，对应FAQ-008",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-008"
+      ]
+    },
+    {
+      "case_id": "DV-014",
+      "category": "covered_faq",
+      "query": "买完多久会安排发货啊？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-009"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "发货时间询问，FAQ-009按订单状态说明发货判断",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-009"
+      ]
+    },
+    {
+      "case_id": "DV-015",
+      "category": "covered_faq",
+      "query": "物流显示人家已经代签了，可我根本没拿到东西，这咋整？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-012"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "签收但未收到包裹，对应FAQ-012处理流程",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-012"
+      ]
+    },
+    {
+      "case_id": "DV-016",
+      "category": "covered_faq",
+      "query": "收件信息填岔了，还能改寄送地点不？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-011"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "口语化修改收货地址，对应FAQ-011",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-011"
+      ]
+    },
+    {
+      "case_id": "DV-017",
+      "category": "covered_faq",
+      "query": "东西到手后就是不想要了，符合条件的话给退呗？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-013"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "无理由退货条件询问，对应FAQ-013",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-013"
+      ]
+    },
+    {
+      "case_id": "DV-018",
+      "category": "covered_faq",
+      "query": "钱退回来一般得等几个工作日？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-016"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "退款到账时间询问，FAQ-016说明到账流程与AI无法保证的口径",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-016"
+      ]
+    },
+    {
+      "case_id": "DV-019",
+      "category": "covered_faq",
+      "query": "把东西寄回去的邮费最后算谁的？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-017"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "退货运费承担询问，对应FAQ-017",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-017"
+      ]
+    },
+    {
+      "case_id": "DV-020",
+      "category": "covered_faq",
+      "query": "买来的东西出了毛病，后续该怎么走流程？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-014"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "一般售后处理流程询问，对应FAQ-014",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-014"
+      ]
+    },
+    {
+      "case_id": "DV-021",
+      "category": "risk_rules",
+      "query": "处理不好我就去各个平台都挂差评，让大家都看看！",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-01",
+        "FAQ-020"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-01"
+      ],
+      "difficulty": "medium",
+      "reason": "差评威胁属于投诉维权风险，必须召回HR-01；FAQ-020投诉赔偿答复为辅助",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-01",
+        "knowledge_base.faq.FAQ-020"
+      ]
+    },
+    {
+      "case_id": "DV-022",
+      "category": "risk_rules",
+      "query": "讲好是全额退的，结果只回来了一半的钱，剩下那笔怎么算？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-02",
+        "FAQ-016"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-02"
+      ],
+      "difficulty": "hard",
+      "reason": "退款金额与承诺不一致属金额争议，必须召回HR-02",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-02",
+        "knowledge_base.faq.FAQ-016"
+      ]
+    },
+    {
+      "case_id": "DV-023",
+      "category": "risk_rules",
+      "query": "退款申请都三天了半点动静没有，赶紧把钱打回来！",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-03",
+        "FAQ-016"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-03"
+      ],
+      "difficulty": "medium",
+      "reason": "催促退款属HR-03触发场景",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-03",
+        "knowledge_base.faq.FAQ-016"
+      ]
+    },
+    {
+      "case_id": "DV-024",
+      "category": "risk_rules",
+      "query": "这包裹都一个礼拜了轨迹一条没动过，是不是出问题了？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-04",
+        "FAQ-010"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-04"
+      ],
+      "difficulty": "medium",
+      "reason": "物流长时间无更新属HR-04触发场景；FAQ-010为物流延迟说明",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-04",
+        "knowledge_base.faq.FAQ-010"
+      ]
+    },
+    {
+      "case_id": "DV-025",
+      "category": "risk_rules",
+      "query": "东西是我给我妈下单的，能不能帮我看看她名下那个件到哪儿了？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-05",
+        "FAQ-006"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-05"
+      ],
+      "difficulty": "hard",
+      "reason": "查询非本人订单属HR-05隐私规则；FAQ-006订单查询为辅助",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-05",
+        "knowledge_base.faq.FAQ-006"
+      ]
+    },
+    {
+      "case_id": "DV-026",
+      "category": "risk_rules",
+      "query": "你把系统里留的收件电话念给我听一下，我自己核对下对不对。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-06"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-06"
+      ],
+      "difficulty": "medium",
+      "reason": "索要个人联系信息属HR-06隐私保护规则",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-06"
+      ]
+    },
+    {
+      "case_id": "DV-027",
+      "category": "risk_rules",
+      "query": "你现在就跟我保证这笔退款百分之百能办成。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-07",
+        "FAQ-016"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-07"
+      ],
+      "difficulty": "medium",
+      "reason": "要求AI作出范围外保证属HR-07",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-07",
+        "knowledge_base.faq.FAQ-016"
+      ]
+    },
+    {
+      "case_id": "DV-028",
+      "category": "risk_rules",
+      "query": "键盘到货第三天就有几个键按下去完全没反应，这算不算坏了？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "PRODUCT-P002"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "difficulty": "medium",
+      "reason": "到货后按键失灵属已发生质量缺陷，必须召回HR-08并转人工",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-08",
+        "knowledge_base.faq.FAQ-014",
+        "knowledge_base.product.P002"
+      ]
+    },
+    {
+      "case_id": "DV-029",
+      "category": "risk_rules",
+      "query": "杯盖拧上之后老往外渗水，密封好像不行了。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "PRODUCT-P003"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "difficulty": "hard",
+      "reason": "密封失效渗漏属已发生质量缺陷，必须召回HR-08",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-08",
+        "knowledge_base.faq.FAQ-014",
+        "knowledge_base.product.P003"
+      ]
+    },
+    {
+      "case_id": "DV-030",
+      "category": "risk_rules",
+      "query": "背包侧兜的线开了一截，背带缝那儿也开始脱线了。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "PRODUCT-P004"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "difficulty": "hard",
+      "reason": "开线脱线属已发生质量缺陷，必须召回HR-08",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-08",
+        "knowledge_base.faq.FAQ-014",
+        "knowledge_base.product.P004"
+      ]
+    },
+    {
+      "case_id": "DV-031",
+      "category": "risk_rules",
+      "query": "台灯用了没几天灯管就不亮了，插上电也充不进去。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "PRODUCT-P005"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "difficulty": "medium",
+      "reason": "灯光与充电功能失效属已发生质量缺陷，必须召回HR-08",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-08",
+        "knowledge_base.faq.FAQ-014",
+        "knowledge_base.product.P005"
+      ]
+    },
+    {
+      "case_id": "DV-032",
+      "category": "risk_rules",
+      "query": "耳机左边那只老是接触不良，戴一会儿就一只响一只不响。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-014",
+        "PRODUCT-P001"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "difficulty": "hard",
+      "reason": "接触不良属已发生质量缺陷，必须召回HR-08",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-08",
+        "knowledge_base.faq.FAQ-014",
+        "knowledge_base.product.P001"
+      ]
+    },
+    {
+      "case_id": "DV-033",
+      "category": "multi_intent",
+      "query": "P004塞得进去14寸的笔记本不？顺便看下我这单出货了没。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P004",
+        "FAQ-009",
+        "FAQ-006"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "hard",
+      "reason": "商品容量参数+订单发货状态双意图",
+      "source_refs": [
+        "knowledge_base.product.P004",
+        "knowledge_base.faq.FAQ-009"
+      ]
+    },
+    {
+      "case_id": "DV-034",
+      "category": "multi_intent",
+      "query": "退款一般几天能回来？另外这笔钱怎么跟当时说好的数目对不上？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-016",
+        "RULE-HR-02"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-02"
+      ],
+      "difficulty": "hard",
+      "reason": "退款到账时间+金额不一致双意图，金额争议必须召回HR-02",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-016",
+        "knowledge_base.handoff_rules.HR-02"
+      ]
+    },
+    {
+      "case_id": "DV-035",
+      "category": "multi_intent",
+      "query": "这个杯子口沿有一道裂了，另外想问下它保温能撑多久？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "PRODUCT-P003",
+        "FAQ-014"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "difficulty": "hard",
+      "reason": "已发生破损（需转人工）+商品保温参数双意图，必须召回HR-08",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-08",
+        "knowledge_base.product.P003"
+      ]
+    },
+    {
+      "case_id": "DV-036",
+      "category": "multi_intent",
+      "query": "帮我瞅瞅单子走到哪步了，物流这两天跟停了似的。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-006",
+        "RULE-HR-04",
+        "FAQ-010",
+        "FAQ-009"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-04"
+      ],
+      "difficulty": "hard",
+      "reason": "订单进度查询+物流停滞双意图，必须召回HR-04",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-006",
+        "knowledge_base.handoff_rules.HR-04"
+      ]
+    },
+    {
+      "case_id": "DV-037",
+      "category": "multi_intent",
+      "query": "无理由退货都有哪些前提？寄回去的运费怎么划分？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "FAQ-013",
+        "FAQ-017"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "退货条件+运费承担双FAQ意图",
+      "source_refs": [
+        "knowledge_base.faq.FAQ-013",
+        "knowledge_base.faq.FAQ-017"
+      ]
+    },
+    {
+      "case_id": "DV-038",
+      "category": "multi_intent",
+      "query": "我弟的单子麻烦帮我盯一下发货状态。",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-05",
+        "FAQ-006",
+        "FAQ-009"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-05"
+      ],
+      "difficulty": "medium",
+      "reason": "查询他人订单（风险）+订单状态（FAQ）双意图，必须召回HR-05",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-05",
+        "knowledge_base.faq.FAQ-006"
+      ]
+    },
+    {
+      "case_id": "DV-039",
+      "category": "multi_intent",
+      "query": "P005有几档色温？是直插电源的还是里面带电池的？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "PRODUCT-P005"
+      ],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "同商品两属性组合，均由P005片段回答",
+      "source_refs": [
+        "knowledge_base.product.P005"
+      ]
+    },
+    {
+      "case_id": "DV-040",
+      "category": "multi_intent",
+      "query": "耳机刚过保没几天就一个耳朵没声了，这种用过一回的还能退不？",
+      "is_answerable": true,
+      "expected_supported": true,
+      "expected_scope": "supported",
+      "relevant_chunk_ids": [
+        "RULE-HR-08",
+        "FAQ-015",
+        "FAQ-014",
+        "FAQ-013"
+      ],
+      "required_rule_ids": [
+        "RULE-HR-08"
+      ],
+      "difficulty": "hard",
+      "reason": "功能失效（需HR-08转人工）+拆封退货条件双意图",
+      "source_refs": [
+        "knowledge_base.handoff_rules.HR-08",
+        "knowledge_base.faq.FAQ-015"
+      ]
+    },
+    {
+      "case_id": "DV-041",
+      "category": "uncovered_business",
+      "query": "满减活动是不是从下周一开始？能省多少？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "促销活动政策资料未覆盖",
+      "source_refs": [
+        "能力边界：促销/优惠类无政策资料"
+      ]
+    },
+    {
+      "case_id": "DV-042",
+      "category": "uncovered_business",
+      "query": "下单的时候会不会随单附赠收纳袋之类的礼品？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "赠品政策资料未覆盖",
+      "source_refs": [
+        "能力边界：赠品类无政策资料"
+      ]
+    },
+    {
+      "case_id": "DV-043",
+      "category": "uncovered_business",
+      "query": "听说你们晚上有主播开播，直播间里下单有什么专属待遇吗？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "直播间政策资料未覆盖",
+      "source_refs": [
+        "能力边界：直播间类无政策资料"
+      ]
+    },
+    {
+      "case_id": "DV-044",
+      "category": "uncovered_business",
+      "query": "那款键盘现在还有存货吗？卖断了得等多久补？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "库存与补货承诺资料未覆盖（虽提及已知商品，但库存信息无政策支撑）",
+      "source_refs": [
+        "能力边界：库存类无政策资料"
+      ]
+    },
+    {
+      "case_id": "DV-045",
+      "category": "uncovered_business",
+      "query": "能不能跟我保证我明天下单，后天一早就能收着？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "配送时效承诺资料未覆盖",
+      "source_refs": [
+        "能力边界：配送时效承诺类无政策资料"
+      ]
+    },
+    {
+      "case_id": "DV-046",
+      "category": "uncovered_business",
+      "query": "买台灯可以给开增值税的票吗？走什么流程？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "发票问题由知识库 FAQ-018 专门承接，其内容即：现有资料未覆盖发票类型、申请条件和开票流程，由人工客服核实处理。门控应放行（supported）并检索到 FAQ-018，转人工由应答层按 FAQ-018 内容决定。原标注把'无政策资料'误当作'知识库无对应 FAQ'，与 validation H-013 口径不一致，予以修正。",
+      "source_refs": [
+        "能力边界：发票类无政策资料"
+      ],
+      "original_annotation_dv046": {
+        "is_answerable": false,
+        "expected_supported": false,
+        "expected_scope": "unsupported_business",
+        "relevant_chunk_ids": [],
+        "reason": "发票类型与开票流程资料未覆盖"
+      }
+    },
+    {
+      "case_id": "DV-047",
+      "category": "uncovered_business",
+      "query": "要是下周这商品降价了，之前买的能找你们补差的钱不？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "价保/退差价政策资料未覆盖",
+      "source_refs": [
+        "能力边界：价保类无政策资料"
+      ]
+    },
+    {
+      "case_id": "DV-048",
+      "category": "uncovered_business",
+      "query": "你们店里卖不卖平板电脑？想要个大屏的学习机。",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "未收录商品类目（平板/学习机），知识库无对应资料",
+      "source_refs": [
+        "能力边界：未收录商品"
+      ]
+    },
+    {
+      "case_id": "DV-049",
+      "category": "uncovered_business",
+      "query": "预售阶段付定金后面是不是更划算？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "预售定金优惠资料未覆盖",
+      "source_refs": [
+        "能力边界：预售/优惠类无政策资料"
+      ]
+    },
+    {
+      "case_id": "DV-050",
+      "category": "uncovered_business",
+      "query": "仓库从哪个城市发货啊？用的是哪家的快递？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "unsupported_business",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "发货仓与承运快递信息资料未覆盖",
+      "source_refs": [
+        "能力边界：仓储物流配置类无资料"
+      ]
+    },
+    {
+      "case_id": "DV-051",
+      "category": "irrelevant",
+      "query": "这周末去郊外烧烤会不会赶上下雨？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "天气问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-天气"
+      ]
+    },
+    {
+      "case_id": "DV-052",
+      "category": "irrelevant",
+      "query": "最近想拿点闲钱买点基金，你觉得现在入手合适吗？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "投资理财问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-投资"
+      ]
+    },
+    {
+      "case_id": "DV-053",
+      "category": "irrelevant",
+      "query": "办护照提前预约要等多长时间？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "出入境证件问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-证件"
+      ]
+    },
+    {
+      "case_id": "DV-054",
+      "category": "irrelevant",
+      "query": "帮我参谋下毕业设计选什么方向好写一点？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "学业写作问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-学业"
+      ]
+    },
+    {
+      "case_id": "DV-055",
+      "category": "irrelevant",
+      "query": "天天晚上翻来覆去睡不踏实，有没有什么调理的法子？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "健康睡眠问题，与电商客服无关（注意不是商品质量咨询）",
+      "source_refs": [
+        "能力边界：非电商话题-健康"
+      ]
+    },
+    {
+      "case_id": "DV-056",
+      "category": "irrelevant",
+      "query": "最近有什么值得去电影院看的新片子吗？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "影视娱乐问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-娱乐"
+      ]
+    },
+    {
+      "case_id": "DV-057",
+      "category": "irrelevant",
+      "query": "周末想带家人去山里徒步，有啥路线推荐没？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "户外出游问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-出游"
+      ]
+    },
+    {
+      "case_id": "DV-058",
+      "category": "irrelevant",
+      "query": "炖牛肉怎么才能炖得又烂又入味？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "烹饪问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-烹饪"
+      ]
+    },
+    {
+      "case_id": "DV-059",
+      "category": "irrelevant",
+      "query": "零基础想学点数据分析，先从哪个工具上手比较好？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "medium",
+      "reason": "技能学习问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-技能学习"
+      ]
+    },
+    {
+      "case_id": "DV-060",
+      "category": "irrelevant",
+      "query": "孩子上了初中数学跟不上，要不要给他报个补习班？",
+      "is_answerable": false,
+      "expected_supported": false,
+      "expected_scope": "irrelevant",
+      "relevant_chunk_ids": [],
+      "required_rule_ids": [],
+      "difficulty": "easy",
+      "reason": "子女教育问题，与电商客服无关",
+      "source_refs": [
+        "能力边界：非电商话题-教育"
+      ]
+    }
+  ]
+}

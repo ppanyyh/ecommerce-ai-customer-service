@@ -1,0 +1,62 @@
+<Slide style={{ width: 1280, height: 720, padding: '20px 60px', background: '#FFFFFF' }}>
+  <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1A2333' }}>测试与迭代</Text>
+    <Text style={{ fontSize: 15, color: '#94A3B8' }}>05 / 质量验证</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', gap: 24, height: 520, marginTop: 8 }}>
+    <Box style={{ width: 552, flexDirection: 'column' }}>
+      <Box style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 18, marginBottom: 6 }}>
+        <Text style={{ fontSize: 56, fontWeight: 'bold', color: '#94A3B8' }}>80%</Text>
+        <Text style={{ fontSize: 26, color: '#94A3B8', paddingBottom: 8 }}>→</Text>
+        <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#2563EB' }}>100%</Text>
+        <Text style={{ fontSize: 13.5, color: '#64748B', paddingBottom: 10, lineHeight: 1.4 }}>严格通过率<br />（25条正式用例 × 2轮）</Text>
+      </Box>
+      <Chart
+        style={{ width: 552, height: 300 }}
+        chartType='barChart'
+        barDirection='column'
+        title='两轮测试结果对比（条数）'
+        titleColor='#1A2333'
+        legendColor='#64748B'
+        axisColor='#94A3B8'
+        dataLabelColor='#1A2333'
+        showLegend={true}
+        showDataLabels={true}
+        colors={['#2563EB', '#F59E0B', '#EF4444']}
+        data={[
+          ['轮次', '通过', '部分通过', '不通过'],
+          ['第一轮', 20, 4, 1],
+          ['第二轮', 25, 0, 0]
+        ]}
+      />
+      <Box style={{ background: '#FFF7ED', border: '1px solid #FDBA74', borderRadius: 8, padding: '8px 12px', marginTop: 8 }}>
+        <Text style={{ fontSize: 12, color: '#9A3412', lineHeight: 1.5 }}>边界声明：100% 仅代表现有 25 条预设测试用例全部通过，不代表覆盖所有真实用户表达。</Text>
+      </Box>
+    </Box>
+    <Box style={{ flex: 1, flexDirection: 'column' }}>
+      <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#1A2333', marginBottom: 10 }}>第一轮发现 6 个问题 · 第二轮全部修复</Text>
+      {[
+        { p: '口语化投诉表达漏识别', f: '建立可维护风险关键词集合' },
+        { p: '多属性提问回答不完整', f: '按属性逐项作答并标注未覆盖项' },
+        { p: '物流停滞判断不足', f: '超24h未更新识别为物流/中风险/转人工' },
+        { p: '具体FAQ匹配优先级不足', f: '专用条目优先于泛化条目' },
+        { p: '不完整订单号无提示', f: '6~11位数字提示补全12位' },
+        { p: '金额争议话术过于通用', f: '金额争议专用回复，要求人工核对' }
+      ].map((x, i) => (
+        <Box key={i} style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 7, background: '#F8FAFE', borderRadius: 8, padding: '8px 12px' }}>
+          <Box style={{ width: 20, height: 20, borderRadius: 10, background: '#EFF4FF', alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 11, fontWeight: 'bold', color: '#2563EB' }}>{i + 1}</Text>
+          </Box>
+          <Text style={{ fontSize: 13.5, color: '#1A2333', width: 210 }}>{x.p}</Text>
+          <Text style={{ fontSize: 13, color: '#16A34A' }}>→</Text>
+          <Text style={{ fontSize: 13, color: '#64748B', flex: 1, lineHeight: 1.35 }}>{x.f}</Text>
+        </Box>
+      ))}
+      <Text style={{ fontSize: 12.5, color: '#94A3B8', marginTop: 4, lineHeight: 1.5 }}>第二轮回归：25/25 通过，P0/P1/P2 遗留均为 0；空输入用例经浏览器实测复核。</Text>
+    </Box>
+  </Box>
+  <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>电商客服AI助手 · 个人作品集</Text>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>06 / 07</Text>
+  </Box>
+</Slide>

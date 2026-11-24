@@ -1,0 +1,57 @@
+V2.0 阶段六集成测试（/api/chat 全链路 + 双层输出口径，含风险决策模式与内部信息泄露检查）
+
+== 一、8条集成用例（含真实DeepSeek调用） ==
+[TC-01] mode=deepseek category=商品 risk=低 handoff=False decision=allow_model attempts+1 sources=['《商品资料》P001']
+    answer: SoundGo Air无线蓝牙耳机（P001）单次续航约7小时，搭配充电盒使用综合续航约28小时。你可以根据日常使用习惯参考一下，如需进一步了解其他参数，也欢迎随时告诉我。
+[TC-02] mode=deepseek category=商品 risk=低 handoff=False decision=allow_model attempts+1 sources=['《商品资料》P002']
+    answer: KeyPro 87机械键盘（商品编号P002）售价为¥459.00；支持USB有线、蓝牙、2.4G三种连接方式；非人为质量问题提供12个月保修。请问还需要了解其他信息吗？
+[TC-03] mode=deepseek category=订单与支付 risk=低 handoff=False decision=allow_model attempts+1 sources=['《模拟订单数据》订单202609180001']
+    answer: 已为你查到订单202609180001的信息：  - 商品：SoundGo Air无线蓝牙耳机 x1 - 金额：299.00元 - 订单状态：已发货 - 物流状态：运输中（顺丰速运，运单号 SF1234567890） - 售后状态：无  目
+[TC-04] mode=deepseek category=售后 risk=低 handoff=False decision=force_safe attempts+1 sources=['《模拟订单数据》订单202609180002']
+    answer: 你的订单202609180002的退款申请目前仍在审核中。退款进度需要结合订单状态进一步核实，具体审核结果和到账时间以实际处理进度为准。我将为你转接人工客服跟进处理，请留意后续处理结果。
+[TC-05] mode=deepseek category=售后 risk=高 handoff=True decision=force_handoff attempts+1 sources=['《售后SOP》质量问题处理']
+    answer: 很抱歉给你带来不好的体验。请先保留商品、原包装和问题凭证，并提供以下信息：订单号、商品问题的具体描述、能清晰体现问题的商品照片或视频、包装及配件是否齐全。质量问题需要人工核实处理，我会为你转接人工客服跟进。
+[TC-06] mode=deepseek category=售后 risk=高 handoff=True decision=force_handoff attempts+1 sources=['《售后SOP》必须转人工']
+    answer: 很抱歉给你带来不好的体验。你的问题涉及投诉和赔偿，我无法直接确认赔偿方案，将为你转接人工客服进一步处理。
+[TC-07] mode=deterministic category=订单与支付 risk=低 handoff=False decision=force_safe attempts+0 sources=['《模拟订单数据》']
+    answer: 未查询到该模拟订单，请核对完整订单号。
+[TC-08] mode=deterministic category=其他 risk=低 handoff=False decision=force_safe attempts+0 sources=['现有资料未覆盖']
+    answer: 抱歉，我目前只能协助处理商品、订单、物流和售后相关问题。
+
+== 二、业务口径回归用例（6条，风险决策模式） ==
+[RG-01] mode=deepseek category=售后 risk=低 handoff=False decision=force_safe attempts+1 sources=['《模拟订单数据》订单202609180002']
+    answer: 你查询的订单202609180002目前售后状态为退款审核中，说明退款申请已提交、正在审核环节（该订单已完成签收，物流为中通快递）。具体审核结果和到账时间需要结合处理进度确认，我这边无法提前承诺。我将为你转接人工客服跟进核实，请留意后续回复
+[RG-02] mode=deepseek category=售后 risk=中 handoff=True decision=force_handoff attempts+1 sources=['《模拟订单数据》订单202609180002']
+    answer: 你好，订单202609180002目前显示退款正在审核中，具体审核结果和到账时间需要结合实际处理进度确认，暂时还无法给出确定的到账时间。这笔申请需要人工进一步核实，我将为你转接人工客服跟进处理，请留意后续通知。
+[RG-03] mode=deepseek category=售后 risk=高 handoff=True decision=force_handoff attempts+1 sources=['《售后SOP》必须转人工']
+    answer: 很抱歉给你带来不好的体验。你的问题涉及退款金额争议和投诉，我无法直接确认具体金额，将为你转接人工客服进一步核实处理。具体审核结果和到账时间以实际处理进度为准。
+[RG-04] mode=deterministic category=其他 risk=低 handoff=False decision=force_safe attempts+0 sources=['现有资料未覆盖']
+    answer: 抱歉，我目前只能协助处理商品、订单、物流和售后相关问题。
+[RG-05] mode=deepseek category=其他 risk=中 handoff=True decision=allow_model attempts+1 sources=['无明确规则依据']
+    answer: 关于开发票的问题，目前暂时无法直接确认可开具的发票类型、申请条件和办理流程。请提供订单号和具体开票需求，我会为你转接人工客服核实处理。
+[RG-06] mode=deepseek category=售后 risk=高 handoff=True decision=force_handoff attempts+1 sources=['《售后SOP》必须转人工']
+    answer: 很抱歉给你带来不好的体验。你的问题涉及投诉和赔偿，我无法直接确认或承诺赔偿方案，将为你转接人工客服进一步处理。
+
+== 三、补充确定性用例（空输入 / 隐私 / 不完整订单号） ==
+[TC-EX1] mode=deterministic category=其他 risk=低 handoff=False decision=force_safe attempts+0 sources=['现有资料未覆盖']
+    answer: 请输入你需要咨询的问题，例如商品参数、订单进度或售后规则。
+[TC-EX2] mode=deterministic category=其他 risk=高 handoff=True decision=force_handoff attempts+0 sources=['《售后SOP》隐私规则']
+    answer: 为保护你的信息安全，他人订单和隐私信息需要人工核实后才能处理，请勿在对话中发送手机号、验证码、完整地址等敏感信息。如需核实，请联系人工客服。
+[TC-EX3] mode=deterministic category=订单与支付 risk=低 handoff=False decision=force_safe attempts+0 sources=['《模拟订单数据》']
+    answer: 你输入的订单号可能不完整，请提供完整的12位订单号后再查询。
+
+== 四、health 接口 ==
+health 响应：{"status": "ok", "version": "2.0.0", "mode": "deepseek_with_retrieval", "deepseek_configured": true}
+
+== 五、回退测试（FORCE_DEEPSEEK_FAILURE=true，模拟失败不泄露Key） ==
+[FB-01] mode=fallback risk=低 handoff=False sources=['《商品资料》P001']
+[FB-02] mode=fallback risk=高 handoff=True
+FORCE_DEEPSEEK_FAILURE 已恢复关闭
+[FB-03] 恢复后 mode=deepseek
+
+== 六、统计 ==
+检查项：309/309 通过
+DeepSeek实际调用次数(attempts)=12，成功=12，失败/未过校验=0
+确定性回答次数=6，降级回答次数=2
+未通过项：无
+P0/P1问题：未发现

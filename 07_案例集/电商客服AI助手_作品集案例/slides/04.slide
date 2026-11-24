@@ -1,0 +1,47 @@
+<Slide style={{ width: 1280, height: 720, padding: '20px 60px', background: '#FFFFFF' }}>
+  <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1A2333' }}>功能架构与关键规则</Text>
+    <Text style={{ fontSize: 15, color: '#94A3B8' }}>03 / 功能与规则</Text>
+  </Box>
+  <Box style={{ height: 505, marginTop: 8 }}>
+    <Box style={{ flexDirection: 'row', gap: 10, flexWrap: 'wrap' }}>
+      {[
+        { t: '商品问答', d: '5款商品参数/价格/保修逐项作答' },
+        { t: 'FAQ问答', d: '20条标准问答匹配，附依据来源' },
+        { t: '模拟订单查询', d: '识别12位订单号，返回状态三要素' },
+        { t: '问题分类', d: '商品/订单支付/物流/售后/其他' },
+        { t: '信息依据', d: '每条回答标注资料出处' },
+        { t: '风险识别', d: '独立维度：低/中/高三级' },
+        { t: '转人工判断', d: '9类情形强制建议转人工' },
+        { t: '用户反馈', d: '有帮助/无帮助，会话内记录' }
+      ].map((f, i) => (
+        <Box key={i} style={{ width: 272, background: '#F4F7FE', borderRadius: 10, padding: '14px 16px', height: 108 }}>
+          <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#2563EB', marginBottom: 6 }}>{f.t}</Text>
+          <Text style={{ fontSize: 12.5, color: '#64748B', lineHeight: 1.5 }}>{f.d}</Text>
+        </Box>
+      ))}
+    </Box>
+    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#1A2333', marginTop: 20, marginBottom: 10 }}>三条核心业务规则 · 贯穿全部回答</Text>
+    <Box style={{ flexDirection: 'row', gap: 14 }}>
+      {[
+        { n: '1', t: '有依据才回答', d: '回答内容全部来自商品资料、FAQ、售后SOP 与订单数据；资料未覆盖的问题明确说明「现有资料未覆盖」，AI 不编造政策、参数与承诺。' },
+        { n: '2', t: '未知订单不编造', d: '仅 3 个模拟订单号可查询；不存在的订单号一律提示「未查询到该模拟订单」，不完整订单号提示补全 12 位，绝不返回猜测信息。' },
+        { n: '3', t: '高风险必须转人工', d: '金额争议、重复扣款、投诉赔偿、隐私与他人订单请求：拒绝处理并转人工；仅查询退款进度不转人工，催促或质疑才升级。' }
+      ].map((r, i) => (
+        <Box key={i} style={{ flex: 1, borderRadius: 12, padding: '16px 18px', background: i === 2 ? '#2563EB' : '#FFFFFF', border: i === 2 ? 'none' : '1.5px solid #DBE4F5', height: 190 }}>
+          <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+            <Box style={{ width: 30, height: 30, borderRadius: 15, background: i === 2 ? 'rgba(255,255,255,0.25)' : '#2563EB', alignItems: 'center', justifyContent: 'center' }}>
+              <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#FFFFFF' }}>{r.n}</Text>
+            </Box>
+            <Text style={{ fontSize: 17, fontWeight: 'bold', color: i === 2 ? '#FFFFFF' : '#1A2333' }}>{r.t}</Text>
+          </Box>
+          <Text style={{ fontSize: 13.5, color: i === 2 ? 'rgba(255,255,255,0.92)' : '#64748B', lineHeight: 1.6 }}>{r.d}</Text>
+        </Box>
+      ))}
+    </Box>
+  </Box>
+  <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>电商客服AI助手 · 个人作品集</Text>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>04 / 07</Text>
+  </Box>
+</Slide>

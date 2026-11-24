@@ -1,0 +1,22 @@
+# 密钥与本地配置（严禁提交）
+.env
+backend/.env
+.venv/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# V3 向量数据库与模型缓存
+data/chroma_db/
+data/chroma_test/
+models/
+*.onnx
+*.bin
+*.safetensors
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store

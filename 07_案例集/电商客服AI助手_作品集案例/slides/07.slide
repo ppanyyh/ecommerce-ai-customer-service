@@ -1,0 +1,57 @@
+<Slide style={{ width: 1280, height: 720, padding: '20px 60px', background: '#FFFFFF' }}>
+  <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1A2333' }}>项目结果与复盘</Text>
+    <Text style={{ fontSize: 15, color: '#94A3B8' }}>06 / 结果与沉淀</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', gap: 24, height: 520, marginTop: 8 }}>
+    <Box style={{ width: 470, flexDirection: 'column', gap: 12 }}>
+      <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#1A2333' }}>实际交付物</Text>
+      {[
+        { n: '1', t: '份需求分析', d: '产品与用户需求文档' },
+        { n: '1', t: '份 PRD（3~5页）', d: 'V1.0，12章节正式文档' },
+        { n: '1', t: '张业务流程图', d: '标准图形，嵌入PRD' },
+        { n: '5', t: '个Axure关键页面状态', d: '覆盖典型交互路径' },
+        { n: '1', t: '个可运行网页Demo', d: 'HTML/CSS/JS 本地运行' },
+        { n: '25', t: '条正式测试用例', d: '15字段记录，两轮执行' },
+        { n: '2', t: '轮测试与迭代记录', d: '问题清单+回归记录' }
+      ].map((d, i) => (
+        <Box key={i} style={{ flexDirection: 'row', alignItems: 'center', gap: 12, background: '#F4F7FE', borderRadius: 9, padding: '9px 14px' }}>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#2563EB', width: 40 }}>{d.n}</Text>
+          <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A2333', width: 200 }}>{d.t}</Text>
+          <Text style={{ fontSize: 12.5, color: '#64748B', flex: 1 }}>{d.d}</Text>
+        </Box>
+      ))}
+    </Box>
+    <Box style={{ flex: 1, flexDirection: 'column', gap: 14 }}>
+      <Box style={{ background: '#F8FAFE', border: '1px solid #DBE4F5', borderRadius: 12, padding: '16px 20px', flex: 1.4 }}>
+        <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#1A2333', marginBottom: 10 }}>复盘 · 关键经验</Text>
+        {[
+          '先整理知识与回答边界，再制作 Demo —— 数据层质量决定回答质量',
+          '问题分类与风险判断拆成两个独立维度，避免「分类即定风险」的误判',
+          '测试不只验证答案，还验证依据出处与转人工判断的正确性',
+          '规则匹配能快速验证业务流程，但语义泛化能力有限，需大模型补充'
+        ].map((r, i) => (
+          <Box key={i} style={{ flexDirection: 'row', gap: 8, marginBottom: 8, alignItems: 'flex-start' }}>
+            <Text style={{ fontSize: 14, color: '#2563EB', fontWeight: 'bold' }}>✓</Text>
+            <Text style={{ fontSize: 13.5, color: '#1A2333', lineHeight: 1.5, flex: 1 }}>{r}</Text>
+          </Box>
+        ))}
+      </Box>
+      <Box style={{ flex: 1, flexDirection: 'column' }}>
+        <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#1A2333', marginBottom: 8 }}>后续规划</Text>
+        <Box style={{ flexDirection: 'row', gap: 8, flexWrap: 'wrap' }}>
+          {['接入 DeepSeek 等大模型 API', '向量知识库 + RAG', '多轮上下文对话', '接入真实订单系统', '运营效果看板'].map((p, i) => (
+            <Box key={i} style={{ background: '#2563EB', borderRadius: 16, padding: '7px 14px' }}>
+              <Text style={{ fontSize: 12.5, color: '#FFFFFF' }}>{p}</Text>
+            </Box>
+          ))}
+        </Box>
+        <Text style={{ fontSize: 12, color: '#94A3B8', marginTop: 8, lineHeight: 1.5 }}>当前版本为规则匹配 Demo（模拟数据），用于验证业务流程与回答边界，为接入大模型 API 做准备。</Text>
+      </Box>
+    </Box>
+  </Box>
+  <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>电商客服AI助手 · 个人作品集</Text>
+    <Text style={{ fontSize: 13, color: '#94A3B8' }}>07 / 07</Text>
+  </Box>
+</Slide>

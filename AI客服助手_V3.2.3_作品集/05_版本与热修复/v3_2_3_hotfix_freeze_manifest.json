@@ -1,0 +1,162 @@
+{
+  "manifest": "V3.2.3 hotfix freeze manifest (post-archive safety hotfix: single-side audio defect / HR-08)",
+  "created_at": "2026-09-26",
+  "version_boundary": {
+    "v3_2_2_is_final_blind_v3_version": true,
+    "v3_2_3_only_specialized_and_regression_tested": true,
+    "v3_2_3_no_final_blind_rerun": true,
+    "must_not_claim_v322_blind_scores_as_v323": true
+  },
+  "changed_files": {
+    "backend/risk_intents.py": {
+      "pre_sha256": "a0e9c4e06f241836d06fdc80d7c14089697013d98daf6b3b6dadabbe642a190b",
+      "post_sha256": "40ea8e2b93227cb18e84ac24428efe8c049588ba4a1c42fc407d5f8f69567503"
+    },
+    "backend/main.py": {
+      "pre_sha256": "e72b7daaef975ade143699ab3a9640d7c8531da007a866d0c16f9774c8250070",
+      "post_sha256": "59b0eda5438b59a279d63436eca7d3f7e5601ef70bfd9fcb673703ee270a83d4"
+    }
+  },
+  "candidate_files_17": {
+    "build_vector_index.py": {
+      "status": "unmodified",
+      "sha256": "ae224ebba8db6717888a9048b48750176919c6939b21abac13b35660453361b8",
+      "matches_v322_freeze": true
+    },
+    "data/business_capability_catalog.json": {
+      "status": "unmodified",
+      "sha256": "921fe8299678b48dc47d086ded84be11edabcb73e278023791dc4bbb1c0c635a",
+      "matches_v322_freeze": true
+    },
+    "data/index_manifest.json": {
+      "status": "unmodified",
+      "sha256": "cc0da3fe74433c1a8a782a9165e71806b2ddbd3a4744537f57cdf8a1c4c44602",
+      "matches_v322_freeze": true
+    },
+    "data/knowledge_chunks.jsonl": {
+      "status": "unmodified",
+      "sha256": "f97e84992073721bcfd554efd2eff865c9c975a8d4162f47b72bcb26869d681d",
+      "matches_v322_freeze": true
+    },
+    "deepseek_client.py": {
+      "status": "unmodified",
+      "sha256": "a5c7597edf7d04ba9c01759a3e31561c8917e42d3ef5465a06ce187e9b512ecd",
+      "matches_v322_freeze": true
+    },
+    "evaluate_final_blind_v2.py": {
+      "status": "unmodified",
+      "sha256": "ae2312b1e09a0eb013445770506cf066218c01e31dab39e9d2ec01761d3abfcd",
+      "matches_v322_freeze": true
+    },
+    "hybrid_retriever_v2.py": {
+      "status": "unmodified",
+      "sha256": "77545608c56ba2b24fd1676c2becd84af644eec701784050917a1d12aae28f0e",
+      "matches_v322_freeze": true
+    },
+    "keyword_retriever_v3.py": {
+      "status": "unmodified",
+      "sha256": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+      "matches_v322_freeze": true
+    },
+    "main.py": {
+      "status": "intentionally_changed",
+      "pre": "e72b7daaef975ade143699ab3a9640d7c8531da007a866d0c16f9774c8250070",
+      "post": "59b0eda5438b59a279d63436eca7d3f7e5601ef70bfd9fcb673703ee270a83d4"
+    },
+    "prompts.py": {
+      "status": "unmodified",
+      "sha256": "3e170b796feda8c6e16f0b08ad0cb5abf91e3974daed54a0e55592e2a9df476b",
+      "matches_v322_freeze": true
+    },
+    "query_analyzer.py": {
+      "status": "unmodified",
+      "sha256": "877d0475d6443a8402b905de3e402a0dce65e02524cf0db8248d813827648aab",
+      "matches_v322_freeze": true
+    },
+    "retriever.py": {
+      "status": "unmodified",
+      "sha256": "6023270bbe38716b9cc339fb7ef64aa2820297a43f6718e81ebc4c05c1a9c794",
+      "matches_v322_freeze": true
+    },
+    "risk_intents.py": {
+      "status": "intentionally_changed",
+      "pre": "a0e9c4e06f241836d06fdc80d7c14089697013d98daf6b3b6dadabbe642a190b",
+      "post": "40ea8e2b93227cb18e84ac24428efe8c049588ba4a1c42fc407d5f8f69567503"
+    },
+    "risk_levels.py": {
+      "status": "unmodified",
+      "sha256": "18767229344d2a343dc0e6af880ae8189a9afd4176cc2aff7f8c6124c603ca16",
+      "matches_v322_freeze": true
+    },
+    "schemas.py": {
+      "status": "unmodified",
+      "sha256": "b52c293ac31f2ca8fc90e08d02b3d141fa7034cb4b67771ce489eea3499216f8",
+      "matches_v322_freeze": true
+    },
+    "v3_retrieval_adapter.py": {
+      "status": "unmodified",
+      "sha256": "3df86468f27577c1f24fa41acf22a131afd467483015171455b88bb054f6d15a",
+      "matches_v322_freeze": true
+    },
+    "vector_retriever.py": {
+      "status": "unmodified",
+      "sha256": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+      "matches_v322_freeze": true
+    }
+  },
+  "test_results": {
+    "hotfix_specialized_30cases": "30/30 PASS",
+    "hotfix_api_regression": "13/13 PASS",
+    "risk_levels_unit": "43/43 PASS (rc=0)",
+    "risk_selftest": "rc=0",
+    "v321_dev": "15/15 rc=0",
+    "v32_dev": "17/17 rc=0",
+    "v31_dev": "rc=0 (与基线一致)",
+    "validation_v1_1_frozen": "rc=0 (与基线一致)",
+    "validation_v1_2_reviewed": "rc=0 (与基线一致)",
+    "api_integration": "rc=0",
+    "test_retriever": "rc=0",
+    "latency_order": "rc=0",
+    "leakage": "rc=0",
+    "chat_integration": "268/309（41条失败与V3.2.2基线逐位相同，均为DeepSeek禁用预期差异；零新增回归）"
+  },
+  "user_original_sentence_fix": {
+    "query": "昨天刚收到的耳机，今天早上右边就不出声了",
+    "category": "售后",
+    "risk_level": "高",
+    "handoff_required": true,
+    "answer_contains_order_and_evidence_hints": true,
+    "answer_no_price": true,
+    "answer_no_package_list": true,
+    "answer_no_promise": true,
+    "answer_no_internal_terms": true
+  },
+  "deepseek_calls": 0,
+  "blind_flags": {
+    "old_blind_v1_reexecuted": false,
+    "old_blind_v2_reexecuted": false,
+    "blind_v3_reexecuted": false,
+    "no_blind_v4": true,
+    "final_blind_score_source": "V3.2.2 only",
+    "hotfix_final_blind_evaluated": false
+  },
+  "baseline_manifest_sha256": "ca96a809b2a43142b3817e660252e15ab07765885568b3de03a3f20e81a3ec7b",
+  "regress_raw_rc": {
+    "hotfix_specialized": 0,
+    "hotfix_api": 0,
+    "risk_levels_unit": 0,
+    "risk_selftest": 0,
+    "v321_dev": 0,
+    "v32_dev": 0,
+    "v31_dev": 0,
+    "validation_v1_1_frozen": 0,
+    "validation_v1_2_reviewed": 0,
+    "api_integration": 0,
+    "test_retriever": 0,
+    "latency_order": 0,
+    "leakage": 0,
+    "chat_integration": 1
+  },
+  "unmodified_candidates_match_v322_freeze": true,
+  "all_match": true
+}

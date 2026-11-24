@@ -1,0 +1,83 @@
+{
+  "purpose": "最终盲测集冻结清单：final_blind_set_v1.json 创建后不得修改；盲测运行前 final_candidate_freeze_manifest.json 中哈希必须保持不变。",
+  "created_at": "2026-09-25T14:52:25",
+  "files_sha256": {
+    "final_blind_set_v1.json": "27ff8622aa3387b0e46f504b4c489bfd2755d63f2c7edd233e8f40479ea030c1",
+    "final_blind_set_label_review.md": "7007c4110da27dffb5b09769c05da593488530344bd3e62d35460cf875aaf774",
+    "eval_query_blacklist.json": "8c36d22bc8c6de7b27d1f7231ed6797c3e5cd88167426c5237a9449f63649f40",
+    "final_candidate_freeze_manifest.json": "f84ea9037c43af27a1d62b133778a87e1233e81074ccfa6995d1c17f4c10e607"
+  },
+  "case_stats": {
+    "total": 40,
+    "answerable": 30,
+    "unanswerable": 10,
+    "category_distribution": {
+      "product": 8,
+      "faq": 8,
+      "rule": 8,
+      "multi": 6,
+      "no_policy": 5,
+      "irrelevant": 5
+    },
+    "difficulty_distribution": {
+      "medium": 18,
+      "easy": 10,
+      "hard": 12
+    },
+    "multi_answer_case_ids": [
+      "FB-004",
+      "FB-005",
+      "FB-017",
+      "FB-019",
+      "FB-020",
+      "FB-021",
+      "FB-023",
+      "FB-024",
+      "FB-025",
+      "FB-026",
+      "FB-027",
+      "FB-028",
+      "FB-030"
+    ],
+    "multi_answer_count": 13,
+    "risk_rule_case_ids": [
+      "FB-017",
+      "FB-018",
+      "FB-019",
+      "FB-020",
+      "FB-021",
+      "FB-022",
+      "FB-023",
+      "FB-024",
+      "FB-025",
+      "FB-026",
+      "FB-027",
+      "FB-028"
+    ],
+    "risk_rule_case_count": 12
+  },
+  "label_review_check": "final_blind_set_label_review.md 逐条标注依据与多答案说明已完成（13条多答案用例全部提前列入relevant_chunk_ids）",
+  "check_final_blind_set_result": "12/12 通过（backend/check_final_blind_set.py，2026-09-25）",
+  "candidate_code_hashes_unchanged": {
+    "all_match": true,
+    "per_file": {
+      "query_analyzer.py": true,
+      "keyword_retriever_v3.py": true,
+      "vector_retriever.py": true,
+      "hybrid_retriever_v2.py": true,
+      "data/knowledge_chunks.jsonl": true,
+      "build_vector_index.py": true
+    },
+    "current_sha256": {
+      "query_analyzer.py": "cc3d09445d7f009b27a5502f4184a14e897f94b0ecfa8f739c9efd7ab44b24bb",
+      "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+      "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+      "hybrid_retriever_v2.py": "721a554f844cc7f2eda366ae310c827263a3dbe54dc658117a0b762d70303c3f",
+      "data/knowledge_chunks.jsonl": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+      "build_vector_index.py": "af0dd5fdfa843fc371f6bf51ed92864c90a66e4d66ef25d8fe9b2be21ed849b0"
+    }
+  },
+  "retrieval_executed": false,
+  "deepseek_called": false,
+  "notes": "盲测集创建与检查全程未导入/未调用 keyword_retriever / vector_retriever / hybrid_retriever(v1/v2)，未查看任何Top-K结果，未调用DeepSeek。"
+}

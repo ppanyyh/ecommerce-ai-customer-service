@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-09-25T17:47:19",
+  "dev_set": {
+    "file": "v3_1_dev_cases.json",
+    "n_cases": 60,
+    "sha256": "5d0643bdc1bf084fea8e4205b505b57069d2aa24b88c999d9f76ba1522744c70",
+    "nature": "本集合是开发集（development set）：允许用于调试、阈值校准与失败迭代，在多轮评测中根据失败结果修订过标注（见 annotation_revision）并据此调整过实现；其结果只证明开发集拟合通过，不能作为最终泛化成绩，不得称为盲测集。最终泛化评估须另建独立 final blind set（本阶段未创建、未运行）。"
+  },
+  "blind_set": {
+    "file": "final_blind_set_v1.json",
+    "n_cases": 40,
+    "note": "只读取做比对，未运行、未修改。"
+  },
+  "method": {
+    "normalization": "小写、去空白与标点",
+    "exact_match": "规范化后完全一致",
+    "near_match": "字符 bigram Jaccard >= 0.6（疑似简单改写，人工复核）"
+  },
+  "exact_leaks": [],
+  "near_matches": [],
+  "conclusion": "通过：无原句泄漏、无疑似改写"
+}

@@ -1,0 +1,24 @@
+{
+  "frozen_at": "2026-09-25T11:01:01",
+  "purpose": "混合检索阶段代码冻结：冻结后本阶段不得再修改检索代码与知识片段",
+  "files_sha256": {
+    "keyword_retriever_v3.py": "58e45ac2a9956b8aa4e01bf81e9a1d60a80f65114987e3c93c7e93e3e6863c7e",
+    "vector_retriever.py": "92f915a5b78a2ec3fa62aa0f8f440e9b1c5092cb37fbd191bae5c3c50b6baad1",
+    "hybrid_retriever.py": "e71b454f5d07912b4a574c37e19e3daadfc1201da9c4e763e36552430faddffe",
+    "data/knowledge_chunks.jsonl": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+    "build_vector_index.py": "af0dd5fdfa843fc371f6bf51ed92864c90a66e4d66ef25d8fe9b2be21ed849b0"
+  },
+  "rrf_params": {
+    "RRF_K": 60,
+    "KEYWORD_WEIGHT": 1.0,
+    "VECTOR_WEIGHT": 1.0,
+    "KEYWORD_TOP_N": 10,
+    "VECTOR_TOP_N": 10
+  },
+  "collection": "ecommerce_kb_v1",
+  "collection_data_version": "1.1",
+  "chunks_sha256_in_manifest": "f96c60dfdc3e1621b4dcf4c0dbc348a38a36bb88769a049f0a800b2c2f69fdfd",
+  "embedding_model": "BAAI/bge-small-zh-v1.5",
+  "vector_dimension": 512,
+  "unit_test": "backend/test_hybrid_retriever_unit.py 10/10 通过（2026-09-25）"
+}
